@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Quantum Threat Timeline — Strategic Dashboard</title>
+<title>Quantum Threat Timeline — Global Research Tracker</title>
 <style>
   :root{
     --ink:#0d1b2a; --ink-soft:#3d4f5d; --faint:#7c8b96;
@@ -282,6 +282,15 @@
     .assessment-row{grid-template-columns:1fr}
     .hero-actions a{width:100%;justify-content:center}
   }
+
+
+  .hero h1{max-width:13ch!important}
+  .hero-copy .lede{max-width:62ch!important}
+  .tiers{grid-template-columns:repeat(auto-fit,minmax(190px,1fr))!important}
+  footer{padding:34px 0;background:#0d1b2a;color:#dce7ee}
+  footer p{max-width:78ch;line-height:1.65}
+  footer strong{color:#fff}
+  @media(max-width:760px){.hero h1{max-width:none!important}}
 </style>
 </head>
 <body>
@@ -291,53 +300,54 @@
 <div class="wrap">
 <div class="hero-grid">
 <div class="hero-copy">
-<div class="eyebrow">Quantum risk · internal briefing</div>
-<h1>The code-breaking clock has <em>moved forward</em>.</h1>
-<p class="lede">Between 2022 and 2025 the expert-estimated chance of a cryptographically relevant quantum computer within ten years rose sharply. At the same time, fault-tolerance experiments improved and published resource estimates for attacking RSA and elliptic-curve cryptography fell. The important signal is convergence across evidence types — not any single forecast or qubit number.</p>
-<p class="note" style="margin-top:14px;max-width:62ch">This page is designed as a living strategic dashboard: it combines trend data, the two-front timeline, Mosca’s decision framework, HNDL, regulatory deadlines, a Singapore whole-of-government focus, the counter-case, and a watch-list for what should change next.</p>
-<div class="updated"><span class="pulse"></span>Living document — fact-checked <span id="updated-date">14 August 2026</span></div>
+<div class="eyebrow">Global quantum threat tracker · continuously updated</div>
+<h1>The quantum threat is still uncertain. <em>The migration problem is not.</em></h1>
+<p class="lede">A continuously updated, evidence-led view of how quantum-computing progress, cryptanalytic resource estimates, standards, policy, and migration guidance are changing the risk to today’s public-key cryptography.</p>
+<p class="note" style="margin-top:14px;max-width:64ch">The tracker separates demonstrated results from resource estimates, expert opinion, vendor roadmaps, and policy so that changes in the global threat landscape can be interpreted without turning uncertainty into hype.</p>
+<div class="updated"><span class="pulse"></span>Living research tracker — fact-checked <span id="updated-date">14 August 2026</span></div>
 <div class="hero-meta">
-<div class="meta-pill"><strong>Status:</strong> Canonical GitHub Pages edition</div>
-<div class="meta-pill"><strong>Focus:</strong> CRQC timeline relevance</div>
-<div class="meta-pill"><strong>Audience:</strong> leadership, policy, migration planning</div>
+<div class="meta-pill"><strong>Scope:</strong> Global</div>
+<div class="meta-pill"><strong>Featured lens:</strong> Singapore</div>
+<div class="meta-pill"><strong>Method:</strong> Evidence classes kept separate</div>
+<div class="meta-pill"><strong>Maintained by:</strong> Vincent Tan · @leovtdto</div>
 </div>
 </div>
 <aside aria-label="Current assessment summary" class="command-card">
-<div class="command-kicker">At-a-glance assessment</div>
-<h3>Why this page matters right now</h3>
-<p>This is not a generic quantum news page. It is a decision-oriented tracker for whether current developments change the urgency, sequencing, or governance of post-quantum migration.</p>
+<div class="command-kicker">Current assessment</div>
+<h3>The evidence is converging faster than any single forecast.</h3>
+<p>No public result shows that a cryptographically relevant quantum computer exists today. The preparation problem, however, has moved into the present: standards are final, migration is multi-year, Harvest-Now-Decrypt-Later creates exposure before CRQC arrival, and governments are setting implementation milestones.</p>
 <div class="assessment-row">
 <div class="assessment">
-<div class="label">Current read</div>
-<div class="value">Migration urgency is rising</div>
-<div class="small">Because survey opinion, resource estimates, and hardware/policy signals are moving together.</div>
+<div class="label">Threat timing</div>
+<div class="value">Uncertain</div>
+<div class="small">There is no scientifically proven date for a CRQC.</div>
 </div>
 <div class="assessment">
-<div class="label">How to read</div>
-<div class="value">Separate evidence classes</div>
-<div class="small">Measured results, estimates, roadmaps, and policy are related — but not interchangeable.</div>
+<div class="label">Migration timing</div>
+<div class="value">Present-tense</div>
+<div class="small">Cryptographic discovery, prioritisation and migration are multi-year engineering work.</div>
 </div>
 <div class="assessment">
-<div class="label">Next checkpoints</div>
-<div class="value">2027 · 2030 · 2031</div>
-<div class="small">US pilot / HVA key-establishment / HVA signature milestones under EO 14412.</div>
+<div class="label">Evidence discipline</div>
+<div class="value">Five classes</div>
+<div class="small">Measurements, estimates, expert opinion, vendor roadmaps, and policy/standards are not treated as equivalent.</div>
 </div>
 <div class="assessment">
-<div class="label">Watch items</div>
-<div class="value">Hardware · Policy · Singapore</div>
-<div class="small">These are the fastest-moving levers for whether the HTML needs updating.</div>
+<div class="label">Research status</div>
+<div class="value">Living tracker</div>
+<div class="small">New evidence is reviewed for whether it changes facts, interpretation, or migration urgency.</div>
 </div>
 </div>
 <div class="hero-actions">
-<a href="#timeline">View the timeline</a>
-<a class="secondary" href="#deadlines">Check deadlines</a>
-<a class="secondary" href="#singapore">Singapore focus</a>
+<a href="#singapore">Singapore case study</a>
+<a class="secondary" href="#timeline">Global timeline</a>
+<a class="secondary" href="#deadlines">Policy deadlines</a>
 </div>
 </aside>
 </div>
 <div class="bignum">
-<div class="stat"><div class="n">20M → &lt;1M</div><div class="l">Representative RSA-2048 physical-qubit estimate, 2019 → 2025, under the same stated hardware assumptions.</div></div>
-<div class="stat"><div class="n">28–49%</div><div class="l">10-year CRQC probability in the 2025 expert survey — a marked increase from the 2022 baseline.</div></div>
+<div class="stat"><div class="n">20M → &lt;1M</div><div class="l">RSA-2048 physical-qubit resource estimate, 2019 → 2025, under the same stated hardware assumptions.</div></div>
+<div class="stat"><div class="n">28–49%</div><div class="l">10-year CRQC probability range in the 2025 expert survey; opinion evidence, not a measured forecast.</div></div>
 <div class="stat"><div class="n">2027 / 2030 / 2031</div><div class="l">US EO 14412 milestones: NIST pilot, HVA key establishment, and HVA signatures.</div></div>
 </div>
 </div>
@@ -363,40 +373,35 @@
 <div class="wrap">
 <div class="signal-grid">
 <article class="signal-card">
+<div class="type">Singapore</div>
+<h4>From consultation to living migration guidance.</h4>
+<p>The July 2026 Quantum-Safe Migration Handbook V1 and Quantum Readiness Index V1 incorporate public-consultation feedback and are intended to evolve as standards and implementation practice change.</p>
+<div class="mini-tools"><a href="#singapore">Open Singapore case study</a></div>
+</article>
+<article class="signal-card">
 <div class="type">Hardware</div>
-<h4>Fault tolerance is no longer hypothetical.</h4>
-<p>Willow, Helios, and other demonstrations do not break cryptography — but they do move the discussion from raw-qubit hype toward error-corrected capability.</p>
+<h4>Fault-tolerance evidence is becoming system-relevant.</h4>
+<p>Recent demonstrations do not break cryptography, but they move the field beyond raw-qubit counts toward error-corrected capability and architecture-level scaling.</p>
 </article>
 <article class="signal-card">
 <div class="type">Algorithms</div>
-<h4>Published resource estimates have compressed.</h4>
-<p>The cleanest comparison is still Gidney’s RSA shift from ~20M to &lt;1M physical qubits under the same assumptions, with 2026 studies pushing further under different architectures.</p>
+<h4>Cryptanalytic resource estimates are compressing.</h4>
+<p>The cleanest comparison remains Gidney’s RSA-2048 shift from about 20 million to fewer than 1 million physical qubits under the same stated assumptions, while newer studies explore different architectures and trade-offs.</p>
 </article>
 <article class="signal-card">
 <div class="type">Policy</div>
-<h4>Regulatory dates now anchor the story.</h4>
-<p>NIST standards are final, EO 14412 sets explicit US milestones, and several jurisdictions are turning quantum risk into scheduled migration work.</p>
+<h4>Migration is being translated into dated programmes.</h4>
+<p>NIST standards are final, national transition programmes are taking shape, and several governments now publish milestones that make cryptographic migration a planning problem rather than a future concept.</p>
 </article>
 <article class="signal-card">
-<div class="type">Singapore</div>
-<h4>Singapore now has live instruments, not drafts.</h4>
-<p>The Quantum-Safe Migration Handbook V1 and Quantum Readiness Index V1 make the local section of this page operationally relevant, not merely advisory.</p>
-</article>
-<article class="signal-card">
-<div class="type">How to use</div>
-<h4>Use this page as a briefing dashboard.</h4>
-<p>Start with the trend and collapse charts, then scan the two-front timeline, deadlines, and Singapore section to understand what should change in your migration posture.</p>
-<div class="mini-tools">
-<a href="#trend">Trend</a>
-<a href="#timeline">Timeline</a>
-<a href="#deadlines">Deadlines</a>
-<a href="#watch">Watch-list</a>
-</div>
+<div class="type">Research</div>
+<h4>The next problem is safe implementation.</h4>
+<p>Standardising PQC algorithms does not guarantee safe deployment. Implementation risk, protocol integration, configuration, lifecycle management, and assurance remain active research problems.</p>
+<div class="mini-tools"><a href="#method">Evidence method</a><a href="#watch">Watch-list</a></div>
 </article>
 </div>
 </div>
 </section>
-
 <section id="trend">
 <div class="wrap">
 <div class="kicker">Progress over time</div>
@@ -434,11 +439,11 @@
 <section id="timeline">
 <div class="wrap">
 <div class="kicker">Timeline</div>
-<h2>Why opinion moved — the events behind the numbers</h2>
-<p class="sub">The disruption since 2022 came from <em>two independent directions at once</em>, which is what makes it serious: the algorithms needed to break encryption got dramatically cheaper (Front 1), <em>while</em> the hardware, error-correction, and national programs all advanced (Front 2). Either alone would matter; together they compress the timeline from both ends. <strong style="color:var(--mid)">Click any event</strong> for the mechanism, the numbers, and the honest caveat.</p>
+<h2>The evidence landscape behind the timeline</h2>
+<p class="sub">Since 2022, two technical directions have mattered simultaneously: published cryptanalytic resource estimates have fallen, while hardware and quantum-error-correction experiments have improved. Standards and national migration programmes have also moved from preparation toward implementation. These streams should be read together, but not treated as the same kind of evidence.</p>
 <div class="attrib">
-<div class="attrib-h"><i>◆</i> What the report itself attributes the shift to</div>
-<p>To keep this honest: the 2025 Quantum Threat Timeline Report <em>explicitly names</em> the developments its experts cited as catalysts — Google's Willow processor, and two theoretical papers (Gidney, May 2025; Chevignard–Fouque–Schrottenloher, CRYPTO 2025). Those are marked <strong>“report-cited driver”</strong> below. But the survey is only a snapshot: it captures a much larger wave of algorithmic progress that began with <strong>Regev's 2023 breakthrough</strong> and continued <em>after</em> the survey closed with the 2026 neutral-atom and ECC results. Those are marked <strong>“foundational”</strong> or <strong>“theory”</strong> — real disruptions to the timeline that the 2025 survey number does not yet fully reflect. Events marked <strong>“context”</strong> (NIST, IBM, Microsoft) are part of the landscape but not named by the survey as causes. Every figure links to its primary source at the foot of the page.</p>
+<div class="attrib-h">◆ What the 2025 report discusses — and what it does not prove</div>
+<p>The 2025 Quantum Threat Timeline Report discusses recent hardware and cryptanalytic-resource developments, including Google Willow and lower resource estimates, as part of the context for an accelerating threat assessment. That does <strong>not</strong> establish that any single development caused the survey probabilities to move. Events below are therefore labelled by evidence type and timing rather than presented as statistically proven drivers.</p>
 </div>
 <div class="tl">
 <div class="tl-item">
@@ -446,26 +451,26 @@
 <div class="tl-body">
 <span class="tag t-survey">Baseline</span> <span class="tag t-context">Survey</span>
 <h3>The quiet starting point</h3>
-<p>Most experts put under 30% on a 10-year timeline. The field was still about raw qubit count, not error correction — no fault-tolerance claims yet. This is the report first surfaced internally.</p>
+<p>The 2022 survey provides a useful baseline for expert opinion: the 10-year CRQC probability was still below the levels reported in later editions. It should be read as an opinion snapshot, not as a statement that quantum error correction or fault-tolerance research was absent at the time.</p>
 <button aria-expanded="false" class="expand-btn"><span class="chev">›</span>Why it matters</button>
 <div class="detail"><div class="detail-inner">
-<div class="layer mech"><div class="lh"><span class="dot"></span>Mechanism</div><p>This is the "before" picture. Progress was measured in qubit count, and more qubits simply meant more errors — no one had shown you could scale a machine up without the noise scaling up with it. Everything that follows is the field solving exactly that problem.</p></div>
-<div class="layer nums"><div class="lh"><span class="dot"></span>The numbers</div><p>IBM's flagship that year was the 433-qubit Osprey. Expert consensus: well under 30% chance of a code-breaker within 10 years — and the authors note estimates had actually softened slightly from 2019–2021.</p></div>
-<div class="layer cav"><div class="lh"><span class="dot"></span>The honest caveat</div><p>Don't over-read the 2022 low point. The report's own authors attribute the 2022–2023 dip to a post-pandemic funding recalibration, not a genuine scientific slowdown — so treat this as a local floor, not the true trend.</p></div>
+<div class="layer mech"><div class="lh"><span class="dot"></span>Mechanism</div><p>The value of the 2022 point is comparative. It anchors how expert judgement changed over subsequent editions while the underlying hardware, error-correction and cryptanalytic-resource literature evolved.</p></div>
+<div class="layer nums"><div class="lh"><span class="dot"></span>The numbers</div><p>IBM announced the 433-qubit Osprey processor in 2022, while the GRI survey still placed the 10-year cryptographic threat below the later 2025 range. These are different evidence types and should not be treated as a direct causal relationship.</p></div>
+<div class="layer cav"><div class="lh"><span class="dot"></span>The honest caveat</div><p>Annual survey movement should not be over-interpreted. Respondent pools, probability bins and expert judgement introduce uncertainty, so multi-year direction matters more than a single-year change.</p></div>
 <a class="src-link" href="https://globalriskinstitute.org/publication/quantum-threat-timeline-report-2022/" rel="noopener" target="_blank">Source: GRI Quantum Threat Timeline Report 2022 ↗</a>
 </div></div>
 </div>
 </div>
 <div class="thread-head alt">
-<h3>Front 1 · The algorithmic collapse — the target shrinks</h3>
-<p>These results reduce the qubits <em>needed</em> to break RSA/ECC. No new hardware — the goalposts move toward us. This is the thread the GRI survey most directly cited.</p>
+<h3>Front 1 · Cryptanalytic resource compression — the target shrinks</h3>
+<p>These results reduce estimated resources for attacks on RSA or elliptic-curve cryptography. They are technical estimates, not evidence that the required hardware already exists.</p>
 </div>
 <div class="tl-item">
 <div class="tl-year">2023<span class="m">Aug</span></div>
 <div class="tl-body">
 <span class="tag t-road">Theory</span> <span class="tag t-context">Foundational</span>
 <h3>Regev breaks a 30-year deadlock on Shor's algorithm</h3>
-<p>Oded Regev published the first fundamental improvement to Shor's factoring algorithm in nearly three decades — a multidimensional variant needing far fewer quantum gates. This opened the algorithmic floodgates that Gidney and others poured through in 2024–2025.</p>
+<p>Oded Regev published the first fundamental improvement to Shor's factoring algorithm in nearly three decades — a multidimensional variant needing far fewer quantum gates. Subsequent work explored how the approach and related arithmetic improvements could affect concrete quantum resource estimates.</p>
 <button aria-expanded="false" class="expand-btn"><span class="chev">›</span>Why it matters</button>
 <div class="detail"><div class="detail-inner">
 <div class="layer mech"><div class="lh"><span class="dot"></span>Mechanism</div><p>Shor's 1994 algorithm was the benchmark for "how hard is it to break RSA" for 29 years. Regev found a genuinely new formulation — operating in a higher-dimensional space — that cuts the circuit size (gate count). Because every later resource estimate builds on the best available algorithm, a foundational improvement like this cascades into every downstream qubit count. It's the source of the collapse in the chart above.</p></div>
@@ -478,7 +483,7 @@
 <div class="tl-item">
 <div class="tl-year">2025<span class="m">Feb</span></div>
 <div class="tl-body">
-<span class="tag t-road">Theory</span> <span class="tag t-driver">Report-cited driver</span>
+<span class="tag t-road">Theory</span> <span class="tag t-context">Report-cited context</span>
 <h3>The 1,730-qubit result (Chevignard–Fouque–Schrottenloher)</h3>
 <p>A CRYPTO 2025 paper cut the number of <em>logical</em> qubits needed to factor RSA-2048 to just 1,730 — providing the algorithmic foundation that the Gidney estimate then compiled into physical hardware numbers. The 2025 report names this as a key theoretical advance its experts cited.</p>
 <button aria-expanded="false" class="expand-btn"><span class="chev">›</span>Why it matters</button>
@@ -493,14 +498,14 @@
 <div class="tl-item">
 <div class="tl-year">2025<span class="m">May</span></div>
 <div class="tl-body">
-<span class="tag t-road">Theory</span> <span class="tag t-driver">Report-cited driver</span>
+<span class="tag t-road">Theory</span> <span class="tag t-context">Resource estimate</span>
 <h3>Gidney: RSA-2048 with under 1 million qubits</h3>
-<p>Google researcher Craig Gidney's May 2025 paper cut the estimated physical qubits to break RSA-2048 from 20 million (his own 2019 figure) to <em>under 1 million</em> — a ~20× reduction, under identical hardware assumptions. This is arguably the single biggest input to the 2025 survey's jump, and the report names it directly.</p>
+<p>Craig Gidney’s May 2025 paper reduced his estimated physical-qubit requirement for factoring RSA-2048 from 20 million in 2019 to <em>fewer than 1 million</em> under the same stated hardware assumptions. The result is a major resource-estimate update; it does not demonstrate an RSA-2048 attack.</p>
 <button aria-expanded="false" class="expand-btn"><span class="chev">›</span>Why it matters</button>
 <div class="detail"><div class="detail-inner">
-<div class="layer mech"><div class="lh"><span class="dot"></span>Mechanism</div><p>This is the "the goalposts moved toward us" event. The threat was always framed as "we need a 20-million-qubit machine, and those are decades away." Gidney showed the same attack needs an order of magnitude fewer qubits — so the hardware the industry is <em>already</em> racing toward (IBM's roadmap, Google's Willow line) is much closer to the requirement than anyone assumed. Nothing new was built; the target simply got smaller.</p></div>
-<div class="layer nums"><div class="lh"><span class="dot"></span>The numbers</div><p>20 million qubits (Gidney–Ekerå 2019) → under 1 million (2025), roughly a 20× cut, with runtime under a week. Same stated assumptions both times: 0.1% gate error, 1 µs surface-code cycle, nearest-neighbour grid. The Toffoli-gate count was cut over 100× versus the 2024 approach it built on.</p></div>
-<div class="layer cav"><div class="lh"><span class="dot"></span>The honest caveat</div><p>This is a resource <em>estimate</em>, not a demonstration — no machine has factored RSA-2048. Gidney himself states he sees no way to shave another order of magnitude under the same assumptions, and endorses NIST's "deprecate after 2030, disallow after 2035" line rather than claiming imminent collapse.</p></div>
+<div class="layer mech"><div class="lh"><span class="dot"></span>Mechanism</div><p>The significance is that the estimated hardware target moved substantially under a comparable assumption set. The reduction comes from improvements in arithmetic, logical-qubit storage and magic-state handling rather than from a new physical machine.</p></div>
+<div class="layer nums"><div class="lh"><span class="dot"></span>The numbers</div><p>2019 estimate: about 20 million noisy qubits and an eight-hour runtime. 2025 estimate: fewer than 1 million noisy qubits and a runtime of less than one week. Both use a nearest-neighbour grid, 0.1% gate error, 1 μs surface-code cycle and 10 μs reaction time.</p></div>
+<div class="layer cav"><div class="lh"><span class="dot"></span>The honest caveat</div><p>This remains a resource <em>estimate</em>. No existing machine can execute the attack, and the result should not be converted into a CRQC arrival date. It is best used as evidence that cryptanalytic resource requirements can change materially as algorithms and fault-tolerance techniques improve.</p></div>
 <a class="src-link" href="https://arxiv.org/abs/2505.15917" rel="noopener" target="_blank">Primary source: Gidney, arXiv:2505.15917 (2025) ↗</a>
 </div></div>
 </div>
@@ -530,7 +535,7 @@
 <div class="detail"><div class="detail-inner">
 <div class="layer mech"><div class="lh"><span class="dot"></span>Mechanism</div><p>The GRI survey uses RSA-2048 as its benchmark, but many deployed systems rely on elliptic-curve public-key cryptography. Tracking ECDLP resource estimates therefore gives a complementary view of quantum risk; organisations should inventory the algorithms they actually use rather than infer their exposure from RSA alone.</p></div>
 <div class="layer nums"><div class="lh"><span class="dot"></span>The numbers</div><p>The 2026 whitepaper reports either &lt;1,200 logical qubits with &lt;90 million Toffoli gates, or &lt;1,450 logical qubits with &lt;70 million Toffoli gates. Under its model of a superconducting architecture with 10<sup>−3</sup> physical error rates and planar connectivity, the circuits can run in minutes using fewer than 500,000 physical qubits.</p></div>
-<div class="layer cav"><div class="lh"><span class="dot"></span>The honest caveat</div><p>Still a resource estimate, not a demonstration. But it reframes the target: if your migration plan only tracks RSA timelines, it may be aimed at the slower of the two threats.</p></div>
+<div class="layer cav"><div class="lh"><span class="dot"></span>The honest caveat</div><p>Still a resource estimate, not a demonstration. But it reframes the target: migration plans that track only RSA timelines may underestimate the relevance of elliptic-curve cryptography to the threat surface.</p></div>
 <a class="src-link" href="https://research.google/pubs/securing-elliptic-curve-cryptocurrencies-against-quantum-vulnerabilities-resource-estimates-and-mitigations/" rel="noopener" target="_blank">Primary source: Google Research / arXiv:2603.28846 (2026) ↗</a>
 </div></div>
 </div>
@@ -559,12 +564,12 @@
 <div class="tl-body">
 <span class="tag t-policy">Policy</span> <span class="tag t-context">Context</span>
 <h3>NIST finalizes the PQC standards</h3>
-<p>FIPS 203 (ML-KEM), 204 (ML-DSA) and 205 (SLH-DSA) are published, giving organisations deployable NIST standards for key establishment and signatures. Standardisation continues for additional algorithms, but the migration problem is now operational rather than hypothetical. NSA's CNSA 2.0 schedule adds concrete milestones for National Security Systems.</p>
+<p>FIPS 203 (ML-KEM), 204 (ML-DSA) and 205 (SLH-DSA) were published in August 2024, giving organisations final NIST standards for post-quantum key establishment and digital signatures. This turns algorithm selection into an implementation and migration problem, while actual obligations still depend on sector, policy and jurisdiction.</p>
 <button aria-expanded="false" class="expand-btn"><span class="chev">›</span>Why it matters</button>
 <div class="detail"><div class="detail-inner">
-<div class="layer mech"><div class="lh"><span class="dot"></span>Mechanism</div><p>This is the event that turns "quantum" from a research topic into a compliance obligation. Once NIST names the replacement algorithms and NSA attaches a deadline, migration stops being optional and starts being a scheduled program of work — regardless of exactly when a quantum computer arrives.</p></div>
-<div class="layer nums"><div class="lh"><span class="dot"></span>The numbers</div><p>Three standards were finalised on 13 Aug 2024: FIPS 203 (ML-KEM), FIPS 204 (ML-DSA) and FIPS 205 (SLH-DSA). HQC was selected in March 2025 as an additional KEM for future standardisation. NIST IR 8547 describes a staged transition away from quantum-vulnerable public-key cryptography, but as of this fact-check it remains an <strong>Initial Public Draft</strong>, not a final binding rule.</p></div>
-<div class="layer cav"><div class="lh"><span class="dot"></span>The honest caveat</div><p>Standardizing the algorithms is the easy half. Real deployments have already hit implementation bugs — our own audit found a constant-time flaw in an SLH-DSA (FIPS 205) implementation — so "standard exists" is not "safely deployed." In the US, the Quantum Computing Cybersecurity Preparedness Act already requires federal agencies to inventory vulnerable systems and report migration progress. This is policy context, not a survey-cited driver.</p></div>
+<div class="layer mech"><div class="lh"><span class="dot"></span>Mechanism</div><p>Standardisation removes a major blocker: organisations can now design migration programmes around named algorithms and parameter sets. It does <em>not</em> mean every system is immediately required to migrate, nor does it guarantee that implementations and protocol integrations are secure.</p></div>
+<div class="layer nums"><div class="lh"><span class="dot"></span>The numbers</div><p>FIPS 203, 204 and 205 were finalised on 13 Aug 2024. HQC was selected in March 2025 as an additional KEM for future standardisation. NIST IR 8547 remains an <strong>Initial Public Draft</strong> as of this fact-check and should not be presented as a final binding transition rule.</p></div>
+<div class="layer cav"><div class="lh"><span class="dot"></span>The honest caveat</div><p>Safe migration requires more than a standard: implementations, protocol integration, key and secret lifecycle, configuration, testing and assurance all remain separate engineering risks. Policy obligations should be attributed to the specific law, executive order, security policy or sector rule that creates them.</p></div>
 <a class="src-link" href="https://www.federalregister.gov/documents/2024/08/14/2024-17956/announcing-issuance-of-federal-information-processing-standards-fips-fips-203-module-lattice-based" rel="noopener" target="_blank">Primary source: NIST FIPS 203/204/205, Federal Register (2024) ↗</a>
 </div></div>
 </div>
@@ -572,14 +577,14 @@
 <div class="tl-item">
 <div class="tl-year">2024<span class="m">Dec</span></div>
 <div class="tl-body">
-<span class="tag t-hw">Hardware</span> <span class="tag t-driver">Report-cited driver</span>
+<span class="tag t-hw">Hardware</span> <span class="tag t-context">Report-cited context</span>
 <h3>Google Willow — below threshold</h3>
-<p>The first processor where adding qubits <em>reduces</em> the logical error rate. The 2025 report names Willow as a milestone its experts cited when revising estimates upward.</p>
+<p>Google reported below-threshold surface-code quantum memories on its Willow processors: logical error decreased as code distance increased, a key condition for scalable quantum error correction.</p>
 <button aria-expanded="false" class="expand-btn"><span class="chev">›</span>Why it matters</button>
 <div class="detail"><div class="detail-inner">
-<div class="layer mech"><div class="lh"><span class="dot"></span>Mechanism</div><p>For thirty years, making a quantum computer bigger made it <em>worse</em> — errors piled up faster than you could fix them. Willow is the first machine where the curve bent the other way: scale the error-correcting code up, and the error rate goes <em>down</em>. That flip is the precondition for every large fault-tolerant machine. Without it, fault tolerance is theory; with it, it's engineering.</p></div>
-<div class="layer nums"><div class="lh"><span class="dot"></span>The numbers</div><p>105 qubits. Logical error ~0.14% per cycle, and a suppression factor Λ≈2.14 — the error roughly halves each time the code distance steps up. The distance-7 logical qubit outlived its best physical qubit by ~2.4× — the first demonstration of correction beating the raw hardware ("beyond break-even").</p></div>
-<div class="layer cav"><div class="lh"><span class="dot"></span>The honest caveat</div><p>Willow is still a research prototype in the noisy, pre-fault-tolerant era. It ran a contrived benchmark, not a useful algorithm, and is nowhere near breaking RSA. It proves the <em>principle</em> scales — it is not itself a threat.</p></div>
+<div class="layer mech"><div class="lh"><span class="dot"></span>Mechanism</div><p>Below-threshold operation means increasing the size of the error-correcting code suppresses logical error rather than amplifying it. That behaviour is foundational for large fault-tolerant systems, but it is still several engineering steps removed from cryptanalytic computation.</p></div>
+<div class="layer nums"><div class="lh"><span class="dot"></span>The numbers</div><p>On the 105-qubit Willow processor, the distance-7 surface-code memory used 101 qubits and reported a logical error of 0.143% per cycle with an error-suppression factor Λ = 2.14 ± 0.02. The logical memory lifetime exceeded its best constituent physical qubit by about 2.4×.</p></div>
+<div class="layer cav"><div class="lh"><span class="dot"></span>The honest caveat</div><p>This was an error-corrected memory experiment, not an RSA or ECC attack and not a general-purpose fault-tolerant computer. It demonstrates an important scaling property, while large-scale computation still requires much larger systems, logical operations, decoding, stability and system integration.</p></div>
 <a class="src-link" href="https://www.nature.com/articles/s41586-024-08449-y" rel="noopener" target="_blank">Primary source: Acharya et al., Nature (2024) ↗</a>
 </div></div>
 </div>
@@ -664,44 +669,32 @@
 </section>
 <section id="mosca">
 <div class="wrap">
-<div class="kicker">What it means for us · the decision framework</div>
-<h2>The Mosca Inequality — turning a timeline into a deadline</h2>
-<p class="sub">The threat isn't a date on a calendar; it's a relationship. Michele Mosca's inequality is the standard tool for converting "how far away is quantum" into "are we already exposed." If the time to protect our data is longer than the time until it can be broken, we're too late — and the arithmetic below is what every board should see.</p>
+<div class="kicker">Decision framework · converting threat time into migration time</div>
+<h2>The Mosca Inequality — why migration can become urgent before Q-Day</h2>
+<p class="sub">The decision problem is not simply “When will a CRQC arrive?” It is whether the time needed to protect information exceeds the time available before that information could become vulnerable. Mosca’s framework makes those variables explicit without pretending that the CRQC date is known.</p>
 <div class="mosca">
 <div class="mosca-eq">
-<div class="mvar"><div class="k">X</div><div class="lbl">Shelf-life</div><div class="desc">years our data must stay secret</div></div>
+<div class="mvar"><div class="k">X</div><div class="lbl">Data shelf-life</div><div class="desc">how long confidentiality must be preserved</div></div>
 <div class="mop">+</div>
-<div class="mvar"><div class="k">Y</div><div class="lbl">Migration time</div><div class="desc">years to re-encrypt everything</div></div>
+<div class="mvar"><div class="k">Y</div><div class="lbl">Migration time</div><div class="desc">time to discover, replace, validate and deploy cryptography</div></div>
 <div class="mop">&gt;</div>
-<div class="mvar z"><div class="k">Z</div><div class="lbl">Threat time</div><div class="desc">years until a CRQC exists</div></div>
+<div class="mvar z"><div class="k">Z</div><div class="lbl">Threat horizon</div><div class="desc">a chosen conservative estimate for time to CRQC</div></div>
 </div>
-<div class="verdict">If <strong>X + Y &gt; Z</strong>, the organisation has entered the risk window. The 2025 survey puts a CRQC within ten years in a 28–49% probability range, while official migration roadmaps such as the UK's extend to 2035. That does <em>not</em> prove a universal deadline; it means each organisation should quantify its own data shelf-life (X), realistic migration time (Y), and conservative threat horizon (Z) now.</div>
-<p class="note" style="margin-top:16px">Applied to us: the action item isn't "wait for Q-Day." It's to estimate our own X (how long does our most sensitive data need to stay confidential?) and Y (how long would a full cryptographic inventory and migration realistically take?), and compare the sum to a conservative Z. For most organisations with long-lived secrets, X + Y already exceeds any plausible Z — which is the entire argument for starting now.</p>
+<div class="verdict">If <strong>X + Y &gt; Z</strong>, the organisation is inside the risk window under the chosen threat horizon. The inequality does not prove Z; it shows why long-lived data and slow migration can require action even when the CRQC date remains uncertain.</div>
+<p class="note" style="margin-top:16px">The practical use is organisation-specific: estimate the confidentiality lifetime of important data, the realistic duration of cryptographic discovery and migration, and more than one plausible threat horizon. Sensitivity analysis is more defensible than treating a single survey midpoint as a deadline.</p>
 </div>
 </div>
 </section>
 <section id="hndl">
 <div class="wrap">
-<div class="kicker">Why a future machine is a present threat</div>
+<div class="kicker">Why a future machine can create present exposure</div>
 <h2>Harvest Now, Decrypt Later (HNDL)</h2>
-<p class="sub">The most important idea for leadership to internalise: an adversary does not need a quantum computer <em>today</em> to attack us today. They need only to <em>record</em> our encrypted traffic now and store it until a CRQC exists.</p>
+<p class="sub">HNDL separates the attack into two moments: encrypted information can be collected before a CRQC exists, while quantum-enabled decryption occurs later. This is why confidentiality requirements can create migration pressure well before any public “Q-Day.”</p>
 <div class="cards2">
-<div class="icard warn">
-<h4>The attack is already possible</h4>
-<p>The risk is recognised explicitly in US Executive Order 14412: ongoing cyber activity creates the possibility that adversaries collect information now and decrypt it later once large-scale quantum computers are operational. The collection can occur before a CRQC exists; only the decryption capability is deferred.</p>
-</div>
-<div class="icard warn">
-<h4>Our real deadline is earlier than Q-Day</h4>
-<p>For any data with a 10–15 year confidentiality requirement, the effective deadline is <em>Q-Day minus the shelf-life</em>. If a CRQC arrives in 2033 and our data must stay secret for 12 years, data stolen today is already compromised. The clock ran out before it started ticking.</p>
-</div>
-<div class="icard cool">
-<h4>Signatures vs. secrets behave differently</h4>
-<p>HNDL threatens <em>confidentiality</em> (encrypted data), so key-exchange migration (ML-KEM) is the urgent priority. Digital signatures are less exposed to harvesting — a forged signature is only useful <em>after</em> a CRQC exists — but still need migration before Q-Day.</p>
-</div>
-<div class="icard cool">
-<h4>Hybrid buys time safely</h4>
-<p>Deploying classical + post-quantum together (hybrid mode) protects against HNDL now without betting everything on a young algorithm. It's the recommended transitional posture in most national roadmaps.</p>
-</div>
+<div class="icard warn"><h4>Collection can occur before CRQC</h4><p>US Executive Order 14412 explicitly recognises the risk that adversaries collect protected information now and decrypt it later when sufficiently capable quantum computers become available. The collection step is possible today; the future decryption step is the capability that remains uncertain.</p></div>
+<div class="icard warn"><h4>The confidentiality deadline can precede Q-Day</h4><p>If information must remain secret beyond the estimated time to CRQC, collection today can place that information inside an exposure window. The relevant calculation is therefore linked to data shelf-life, not only to the date on which a CRQC may appear.</p></div>
+<div class="icard cool"><h4>Confidentiality and authentication have different risk profiles</h4><p>HNDL most directly affects encrypted data whose confidentiality must survive into the future, making quantum-vulnerable key establishment a major migration concern. Digital-signature migration remains important as well, but its threat model is different because a future forgery cannot generally be “harvested” in the same way as ciphertext.</p></div>
+<div class="icard cool"><h4>Hybrid designs require protocol-specific assurance</h4><p>Combining classical and post-quantum mechanisms can reduce transition risk when the construction is standardised or otherwise well analysed for the protocol in question. Hybrid deployment is not a universal substitute for a planned PQC migration, and poorly designed combinations can introduce their own implementation and interoperability problems.</p></div>
 </div>
 </div>
 </section>
@@ -709,7 +702,7 @@
 <div class="wrap">
 <div class="kicker">The regulatory clock · national &amp; sector mandates</div>
 <h2>Dates are converging — but their legal force differs</h2>
-<p class="sub">Governments and security authorities have attached dates to PQC transition, but they are not all equivalent: some are laws or executive requirements for defined federal systems, some are procurement/security policies, and others are roadmaps or guidance. For planning, use the <strong>earliest requirement or policy target that actually applies to your systems, contracts and jurisdictions</strong> — and do not label a recommendation “binding” unless its scope makes that true.</p>
+<p class="sub">Governments and security authorities have attached dates to PQC transition, but they are not all equivalent: some are laws or executive requirements for defined federal systems, some are procurement/security policies, and others are roadmaps or guidance. For planning, the relevant date is the <strong>earliest requirement or policy target that actually applies to the system, contract, sector or jurisdiction in question</strong>. Recommendations and draft plans should not be described as “binding” unless their legal or policy scope makes that true.</p>
 <table class="dtable">
 <thead><tr><th>Date</th><th>Jurisdiction / body</th><th>Requirement / target</th><th>Status</th></tr></thead>
 <tbody>
@@ -738,124 +731,97 @@
 </section>
 <section id="singapore">
 <div class="wrap">
-<div class="kicker">🇸🇬 Singapore in focus · the whole-of-government picture</div>
-<h2>Singapore has a coordinated national quantum-safe programme</h2>
-<p class="sub">Beyond the MAS financial-sector advisory, Singapore runs one of the most joined-up national approaches in the region — a rare case where the finance regulator, the national cyber agency, the digital-government agency, and the infocomm regulator all pull in the same direction, backed by a funded national network. For a Singapore-based briefing, this is the part your audience will most want to see.</p>
+<div class="kicker">Featured national case study · Singapore</div>
+<h2>From quantum risk to migration practice</h2>
+<p class="sub">Singapore provides a useful case study of how a national programme can translate a global cryptographic risk into migration guidance, readiness assessment, network infrastructure, sector-specific action, and continuing technical review. The approach takes NIST post-quantum standards as a baseline, while treating QKD as a complementary option for niche high-assurance applications.</p>
+<div class="attrib">
+<div class="attrib-h">Why Singapore is featured</div>
+<p>The significance is not that Singapore has declared a universal CRQC date or a single blanket migration deadline. It is that multiple public institutions are already turning uncertainty into practical preparation: guidance, readiness measurement, network capability, and sector-level expectations.</p>
+</div>
 <div class="sg-band"><div class="sg-actors">
-<div class="sg-actor"><div class="who">CSA</div><div class="role">Cyber Security Agency — national cyber authority. Co-author of the <strong>Quantum-Safe Migration Handbook V1</strong> and <strong>Quantum Readiness Index V1</strong>; the July 2026 Handbook also reflects Singapore's latest requirements for CII owners.</div></div>
-<div class="sg-actor"><div class="who">GovTech</div><div class="role">Government Technology Agency — secures government digital systems and platforms; co-author of the Handbook and QRI; drives public-sector migration.</div></div>
-<div class="sg-actor"><div class="who">IMDA</div><div class="role">Infocomm Media Development Authority — runs <strong>NQSN+</strong>, the nationwide quantum-safe network programme; co-author of the Handbook; leads international interoperability (e.g. with Japan).</div></div>
-<div class="sg-actor"><div class="who">MAS</div><div class="role">Monetary Authority of Singapore — financial-sector advisory (Feb 2024) and the QKD sandbox with DBS, HSBC, OCBC, UOB.</div></div>
-<div class="sg-actor"><div class="who">NQO / QEP</div><div class="role">National Quantum Office (hosted in A*STAR) under the Quantum Engineering Programme — funds and coordinates the underlying research via NRF.</div></div>
+<div class="sg-actor"><div class="who">CSA</div><div class="role">National cybersecurity authority; co-developer of the <strong>Quantum-Safe Migration Handbook V1</strong> and <strong>Quantum Readiness Index V1</strong>. The July 2026 materials include updated algorithm recommendations, “no-regrets” moves and Singapore’s latest requirements for CII owners.</div></div>
+<div class="sg-actor"><div class="who">GovTech</div><div class="role">Singapore’s government digital-services agency and co-developer of the Handbook and QRI, alongside CSA and IMDA.</div></div>
+<div class="sg-actor"><div class="who">IMDA</div><div class="role">Leads the <strong>NQSN+</strong> programme, supporting nationwide quantum-safe network deployment and international interoperability and standardisation work.</div></div>
+<div class="sg-actor"><div class="who">MAS</div><div class="role">Issued its February 2024 advisory to financial institutions on cybersecurity risks associated with quantum computing and the need to prepare for quantum-safe migration.</div></div>
+<div class="sg-actor"><div class="who">NQO / QEP</div><div class="role">The National Quantum Office and national quantum research programmes provide the R&amp;D and capability-building foundation behind Singapore’s broader quantum strategy.</div></div>
 </div></div>
-<h3 style="font-size:19px;margin:32px 0 6px">The key instruments (all recent)</h3>
+<h3 style="margin-top:28px">The migration instruments</h3>
 <div class="cards2">
-<div class="icard cool">
-<h4>Quantum-Safe Migration Handbook V1 (Jul 2026)</h4>
-<p>CSA, GovTech and IMDA released Version 1 on 16 Jul 2026 after the 2025 public consultation. It incorporates stakeholder feedback, updated quantum-safe algorithm recommendations, “no-regrets” moves, crown-jewel identification guidance, and Singapore's latest requirements for CII owners. This supersedes the consultation-draft description previously shown on this page.</p>
+<div class="icard cool"><h4>Quantum-Safe Migration Handbook V1 · Jul 2026</h4><p>Released by CSA, GovTech and IMDA after the formal 2025 public consultation. Version 1 incorporates stakeholder feedback, updates algorithm recommendations, introduces practical “no-regrets” moves, and includes guidance on crown-jewel identification and current CII requirements. CSA states that the Handbook will continue to be revised as the field evolves.</p></div>
+<div class="icard cool"><h4>Quantum Readiness Index V1 · Jul 2026</h4><p>A five-domain self-assessment that helps organisations gauge readiness, identify gaps, prioritise migration actions, structure management discussions, and track progress through periodic reassessment.</p></div>
+<div class="icard cool"><h4>NQSN+ · nationwide quantum-safe networks</h4><p>IMDA’s programme supports Singtel and SPTel with SpeQtral in building nationwide, interoperable quantum-safe networks. Businesses can integrate solutions including QKD and PQC, while the programme also works toward interoperability with overseas quantum-ready networks.</p></div>
+<div class="icard cool"><h4>Public feedback remains part of the model</h4><p>The formal consultation ran from 23 Oct to 31 Dec 2025 and is closed. The July 2026 materials explicitly describe the tools as continuing to evolve; CSA still provides a channel for feedback or enquiries at <strong>quantum-safe@csa.gov.sg</strong>.</p></div>
 </div>
-<div class="icard cool">
-<h4>Quantum Readiness Index V1 (Jul 2026)</h4>
-<p>The companion QRI V1 is a five-domain self-assessment. It helps organisations gauge readiness, prioritise action areas, track progress and structure senior-management discussions. CSA explicitly recommends periodic reuse as internal progress and external standards evolve.</p>
+<div aria-label="Singapore quantum-safe ecosystem" class="sg-flow">
+<div class="node">National quantum R&amp;D and capability</div><div class="arr">→</div>
+<div class="node">CSA · GovTech · IMDA guidance</div><div class="arr">→</div>
+<div class="node">QRI readiness assessment</div><div class="arr">→</div>
+<div class="node">Sector and CII action</div><div class="arr">→</div>
+<div class="node">NQSN+ deployment capability</div>
 </div>
-<div class="icard cool">
-<h4>NQSN+ (IMDA)</h4>
-<p>The National Quantum-Safe Network Plus — nationwide, interoperable quantum-safe networks operated by Singtel, SPTel and SpeQtral, giving businesses ready access to QKD and PQC. Built on the earlier NQSN testbed run by the Quantum Engineering Programme.</p>
-</div>
-<div class="icard cool">
-<h4>Quantum + agentic-AI frameworks (ICW 2025)</h4>
-<p>At International Cyber Week 2025, the Minister for Digital Development and Information unveiled draft CSA/GovTech/IMDA frameworks on both the quantum threat to cryptography and agentic-AI governance — signalling quantum-safe sits inside a broader national tech-risk posture.</p>
-</div>
-</div>
-<div class="sg-flow">
-<span class="node">National Quantum Office / QEP (research + funding)</span><span class="arr">→</span>
-<span class="node">CSA · GovTech · IMDA (Handbook + QRI)</span><span class="arr">→</span>
-<span class="node">MAS (finance-sector advisory)</span><span class="arr">→</span>
-<span class="node">NQSN+ (deployable QKD/PQC)</span>
-</div>
-<p class="note"><strong>Singapore's current posture:</strong> the July 2026 Handbook and QRI move the national programme from consultation into usable Version 1 guidance. Singapore continues to emphasise early planning, risk-based prioritisation and practical migration readiness rather than a single universal public disallowance date. For a Singapore organisation, the strongest immediate move is to run QRI V1, use the Handbook to turn gaps into an action plan, inventory cryptographic dependencies, and separately map any overseas or sector-specific requirements that actually apply.</p>
+<div class="verdict"><strong>Why it matters globally:</strong> Singapore illustrates a broader transition now visible internationally: the quantum threat remains uncertain in date, but migration is increasingly being treated as an engineering and governance programme that must begin before cryptanalytic capability arrives.</div>
 </div>
 </section>
 <section id="counter">
 <div class="wrap">
-<div class="kicker">The honest counter-case</div>
-<h2>Reasons the timeline might be longer than it looks</h2>
-<p class="sub">Intellectual integrity requires steelmanning the other side. A briefing that only argues for acceleration invites the obvious pushback — so here it is, made as strongly as the optimistic case. These caveats don't reverse the conclusion (the Mosca arithmetic still says act now), but they're why "act now" means "plan and migrate," not "panic."</p>
+<div class="kicker">The counter-case</div>
+<h2>Reasons the CRQC timeline could still be longer than headline progress suggests</h2>
+<p class="sub">A credible tracker must preserve uncertainty. Resource estimates are not machines, logical scaling remains difficult, benchmark advantage does not equal cryptanalytic capability, and vendor roadmaps can slip. These points argue against panic and against treating any single year as “Q-Day”; they do not remove the need for multi-year migration planning.</p>
 <div class="cards2">
-<div class="icard cool">
-<h4>Estimates are not machines</h4>
-<p>Every "qubits to break RSA" figure is a resource <em>estimate</em> under idealised assumptions (fixed error rates, specific architectures). No quantum computer has factored anything larger than small demonstration numbers. The gap between a paper's assumptions and a working fault-tolerant machine is enormous — and historically underestimated.</p>
+<div class="icard cool"><h4>Estimates are not machines</h4><p>“Qubits to break RSA” figures are model-dependent resource estimates. They rely on specific assumptions about architecture, physical error, error correction, routing, runtime and classical control. No existing quantum computer can execute an RSA-2048 attack.</p></div>
+<div class="icard cool"><h4>Logical scale remains an engineering challenge</h4><p>Current logical-qubit demonstrations remain far below the scale and sustained operation required for cryptographically relevant algorithms. Scaling introduces system-level constraints including control, connectivity, decoding, calibration, leakage, correlated errors and modular integration.</p></div>
+<div class="icard cool"><h4>Benchmark advantage is not cryptanalytic capability</h4><p>Sampling and specialised benchmark results can demonstrate quantum computational advantage without implying the ability to run Shor-scale workloads. Classical algorithmic improvements can also narrow previously reported benchmark gaps.</p></div>
+<div class="icard cool"><h4>Some high-profile claims remain contested or roadmap-dependent</h4><p>Microsoft’s Majorana interpretation has faced published scientific scrutiny, and vendor roadmaps should be read as engineering targets rather than independent forecasts. A slower-than-expected path to fault tolerance remains plausible.</p></div>
 </div>
-<div class="icard cool">
-<h4>Logical ≠ physical, and scale is brutal</h4>
-<p>Today's best machines have tens of logical qubits (Quantinuum's 48); RSA needs thousands of high-quality logical qubits sustained over billions of operations. Each order of magnitude in scale has historically taken years and surfaced new engineering problems (crosstalk, wiring, cryogenics, decoder latency).</p>
-</div>
-<div class="icard cool">
-<h4>Benchmarks can be clawed back</h4>
-<p>"Quantum advantage" claims (Sycamore, Zuchongzhi) have repeatedly been narrowed or matched by improved classical algorithms afterwards. Random-circuit-sampling speed is not cryptographic capability, and headline "×10¹⁵ faster" figures don't translate to breaking encryption.</p>
-</div>
-<div class="icard cool">
-<h4>Contested results and hype cycles</h4>
-<p>Microsoft's Majorana claim drew serious scientific dispute. Vendor roadmaps are marketing as much as engineering, and the field has a history of optimistic dates slipping. Some respected physicists still put fault tolerance decades out.</p>
-</div>
-</div>
-<p class="note" style="margin-top:16px">Why this doesn't change the recommendation: HNDL means we're defending against the <em>earliest plausible</em> Z, not the median. Even if the skeptics are right and a CRQC is 20 years away, data we need secret for 15 years and a migration that takes 8 still fails the Mosca test. The counter-case lengthens Z; it doesn't shrink X + Y.</p>
+<p class="note" style="margin-top:16px">The counter-case mainly changes the plausible value of Z in the Mosca framework. It does not eliminate X (data shelf-life) or Y (migration time). This is why a risk-based migration programme can be justified without asserting an imminent CRQC.</p>
 </div>
 </section>
 <section id="method">
 <div class="wrap">
-<div class="kicker">How to read this page · methodology</div>
-<h2>Three kinds of evidence, not one</h2>
-<p class="sub">Everything on this page falls into one of three tiers of certainty. Keeping them separate is what makes the analysis trustworthy — and prevents an opinion figure from being cited as if it were a measurement.</p>
+<div class="kicker">How to read the tracker · methodology</div>
+<h2>Five evidence classes — deliberately kept separate</h2>
+<p class="sub">The credibility of a quantum-threat tracker depends less on collecting dramatic headlines than on identifying what kind of evidence each headline actually represents. A hardware demonstration, a resource estimate, an expert survey, a vendor roadmap and a government deadline answer different questions.</p>
 <div class="tiers">
-<div class="tier measured">
-<div class="tl">Measured</div>
-<p>Demonstrated on real hardware and published in peer-reviewed venues: Willow's below-threshold error correction, Quantinuum's 48 logical qubits, Zuchongzhi's fidelities. The most solid tier — but none of it is yet a code-breaker.</p>
+<div class="tier measured"><div class="tl">1 · Measured result</div><p>Demonstrated on real hardware or empirically observed. Strong evidence for what a system achieved under the reported conditions, but not automatically evidence of cryptanalytic capability.</p></div>
+<div class="tier estimated"><div class="tl">2 · Resource estimate</div><p>Technical calculations under stated assumptions. Valuable for understanding feasibility, but sensitive to architecture, runtime, error model, code choice and engineering constraints.</p></div>
+<div class="tier opinion"><div class="tl">3 · Expert opinion</div><p>Surveyed or attributed judgement about future timelines. Useful as a sentiment signal, but it remains opinion rather than measurement.</p></div>
+<div class="tier opinion"><div class="tl">4 · Vendor roadmap / claim</div><p>Targets, engineering plans and company statements. Important signals of intent and investment, but not independent forecasts and not guaranteed delivery dates.</p></div>
+<div class="tier measured"><div class="tl">5 · Policy / standards</div><p>Standards, laws, executive orders, security policies, roadmaps and guidance. These can create real migration obligations or planning milestones even when the CRQC date remains uncertain.</p></div>
 </div>
-<div class="tier estimated">
-<div class="tl">Estimated</div>
-<p>Resource calculations under stated assumptions: e.g. 20M→&lt;1M for RSA under comparable 2019/2025 assumptions, plus separate 2026 neutral-atom and ECC studies. These are assumption-dependent; cross-paper figures are often <em>not</em> like-for-like. Compare architecture, runtime and error model before comparing qubit counts.</p>
-</div>
-<div class="tier opinion">
-<div class="tl">Opinion</div>
-<p>The GRI survey: 26 experts' subjective probabilities. Valuable as sentiment, but a lagging indicator with a small pool, wide bins, and the authors' own caveats. Never cite the 28–49% without the sample-size context.</p>
-</div>
-</div>
-<p class="note" style="margin-top:16px">The strongest claims here combine tiers: a measured hardware trend, plus an estimated resource collapse, plus rising expert opinion, all pointing the same direction. Where only one tier supports a claim (e.g. a single vendor roadmap date), it's flagged as such. Causation between events and the survey's movement is limited to what the report itself states — inference is labelled as inference.</p>
+<p class="note">The strongest conclusions appear when several independent evidence classes point in the same direction. Cross-paper qubit counts are not treated as directly comparable unless their assumptions, architecture and runtime are sufficiently aligned. Inference is labelled as inference, and contested claims are presented with the relevant scrutiny.</p>
 </div>
 </section>
 <section id="watch">
 <div class="wrap">
-<div class="kicker">On the horizon · what to watch next</div>
+<div class="kicker">On the horizon · what would change the tracker</div>
 <h2>Leading indicators from August 2026 onward</h2>
-<p class="sub">Because opinion surveys lag, these are the concrete signals that would move the timeline before the next annual report captures them. Tracking these is how we stay ahead rather than reacting.</p>
+<p class="sub">The most useful signals are those that would alter the factual record, change confidence in the CRQC timeline, or change the urgency and sequencing of migration. These are the developments most likely to trigger an update.</p>
 <div class="watch">
-<div class="witem"><div class="wtag">Algorithm</div><h4>Independent review of 2026 resource estimates</h4><p>Watch whether the new neutral-atom Shor and P-256 ECDLP estimates survive independent scrutiny, implementation-level costing and alternative error models. Reproduction matters more than another headline minimum.</p></div>
-<div class="witem"><div class="wtag">Hardware</div><h4>First logical-qubit scaling milestones</h4><p>IBM Loon/Kookaburra, Quantinuum's path to Apollo, QuEra's Megaquop system. Watch for logical-qubit counts crossing into the low hundreds with sustained error rates.</p></div>
-<div class="witem"><div class="wtag">Error correction</div><h4>qLDPC on real hardware</h4><p>The ~90%-overhead-cut codes are mostly on paper. A convincing hardware demonstration of high-rate qLDPC would materially pull in fault-tolerance timelines.</p></div>
-<div class="witem"><div class="wtag">Geopolitics</div><h4>Covert-program signals</h4><p>The GRI report warns state programs could be 2+ years ahead of open publications. National funding announcements and classified-lab hints are worth monitoring.</p></div>
-<div class="witem"><div class="wtag">Standards</div><h4>PQC in protocols</h4><p>IETF finalising PQC for TLS (~2027), plus HSM/TPM and X.509 certificate standards. These turn algorithms into deployable infrastructure.</p></div>
-<div class="witem"><div class="wtag">Our research</div><h4>Implementation vulnerabilities</h4><p>Standardised ≠ safely deployed. Our own SLH-DSA (FIPS 205) constant-time finding shows the migration surface has its own bugs — a thread worth expanding as libraries mature.</p></div>
+<div class="witem"><div class="wtag">Algorithms</div><h4>Independent review of 2026 resource estimates</h4><p>Watch whether neutral-atom Shor and P-256 ECDLP estimates survive independent scrutiny, implementation-level costing, alternative error models and reproduction.</p></div>
+<div class="witem"><div class="wtag">Hardware</div><h4>Logical-qubit scaling and sustained error performance</h4><p>Watch for systems that combine larger logical-qubit counts with sustained logical error performance, useful circuit depth and credible paths to modular scaling.</p></div>
+<div class="witem"><div class="wtag">Error correction</div><h4>High-rate codes on real systems</h4><p>qLDPC and other high-rate approaches may reduce fault-tolerance overhead under suitable architectures. Convincing system-level demonstrations would matter more than isolated theoretical ratios.</p></div>
+<div class="witem"><div class="wtag">Standards</div><h4>PQC moves from algorithms into protocols and infrastructure</h4><p>Track IETF protocol work and the surrounding PKI, certificate, HSM, TPM and platform ecosystem that turns standardized algorithms into deployable infrastructure.</p></div>
+<div class="witem"><div class="wtag">Policy</div><h4>New migration requirements and implementation milestones</h4><p>Changes in laws, executive orders, security policies, government guidance, procurement rules or sector requirements can alter migration urgency even without a hardware breakthrough.</p></div>
+<div class="witem"><div class="wtag">Research thread</div><h4>Implementation vulnerabilities after standardisation</h4><p>A related research stream examines the gap between standardized PQC and safe deployment: validation, arithmetic and parameter handling, secret lifecycle, protocol integration, configuration and assurance boundaries.</p></div>
 </div>
 </div>
 </section>
 <section id="glossary">
 <div class="wrap">
-<div class="kicker">Key terms</div>
-<h2>Glossary</h2>
+<div class="kicker">Key terms</div><h2>Glossary</h2>
 <div class="gloss">
-<dl class="gterm"><dt>CRQC</dt><dd>Cryptographically-Relevant Quantum Computer — one powerful enough to break RSA-2048 (or equivalent) in a practical timeframe. None exists yet.</dd></dl>
-<dl class="gterm"><dt>Q-Day</dt><dd>The (future) day a CRQC first exists. The thing every timeline is trying to estimate.</dd></dl>
-<dl class="gterm"><dt>Physical vs. logical qubit</dt><dd>Physical qubits are the noisy hardware units; many are combined via error correction into one stable logical qubit. RSA needs thousands of logical qubits.</dd></dl>
-<dl class="gterm"><dt>Below threshold</dt><dd>The point where adding more physical qubits <em>reduces</em> the logical error rate instead of raising it — the precondition for scaling (Willow, 2024).</dd></dl>
-<dl class="gterm"><dt>qLDPC codes</dt><dd>Quantum low-density parity-check codes — error-correcting codes needing far fewer physical qubits per logical qubit than surface codes (~90% less overhead in IBM's plan).</dd></dl>
-<dl class="gterm"><dt>Magic states</dt><dd>Special states required for universal computation; historically made by costly "distillation," now cheaper via "cultivation."</dd></dl>
-<dl class="gterm"><dt>PQC</dt><dd>Post-Quantum Cryptography — classical algorithms believed secure against quantum attack. The NIST standards below are the approved set.</dd></dl>
-<dl class="gterm"><dt>ML-KEM / ML-DSA / SLH-DSA</dt><dd>The finalised NIST standards: FIPS 203 (key exchange), 204 and 205 (signatures). Replacements for RSA and ECC.</dd></dl>
-<dl class="gterm"><dt>HNDL</dt><dd>Harvest Now, Decrypt Later — recording encrypted data today to decrypt once a CRQC exists.</dd></dl>
-<dl class="gterm"><dt>Mosca Inequality</dt><dd>X + Y &gt; Z: if data shelf-life plus migration time exceeds time-to-CRQC, you're already exposed.</dd></dl>
-<dl class="gterm"><dt>QKD</dt><dd>Quantum Key Distribution — a hardware method of exchanging keys whose security rests on physics, not maths. Distinct from PQC (which is software/algorithmic). Singapore's MAS actively pilots both; most Western roadmaps favour PQC as the primary path.</dd></dl>
-<dl class="gterm"><dt>Crypto-agility</dt><dd>Designing systems so cryptographic algorithms can be swapped without re-architecting — the capability MAS and most regulators emphasise as the first practical step.</dd></dl>
+<dl class="gterm"><dt>CRQC</dt><dd>Cryptographically Relevant Quantum Computer — a quantum computer capable of breaking currently deployed public-key cryptography at a practically meaningful scale. No public system is known to meet this threshold today.</dd></dl>
+<dl class="gterm"><dt>Q-Day</dt><dd>Informal shorthand for the future point at which quantum cryptanalysis becomes practically relevant. It is not a scientifically fixed date.</dd></dl>
+<dl class="gterm"><dt>Physical vs. logical qubit</dt><dd>Physical qubits are hardware units subject to noise. Logical qubits encode protected quantum information using error correction and additional physical resources.</dd></dl>
+<dl class="gterm"><dt>Below threshold</dt><dd>A regime in which increasing the size or distance of an error-correcting code reduces logical error. This is a key scaling condition for fault-tolerant quantum computing.</dd></dl>
+<dl class="gterm"><dt>qLDPC codes</dt><dd>Quantum low-density parity-check codes — a family of quantum error-correcting codes with potentially higher encoding rates and lower overhead than surface-code approaches under suitable hardware and decoding assumptions.</dd></dl>
+<dl class="gterm"><dt>Magic states</dt><dd>Special resource states used to implement non-Clifford operations required for universal fault-tolerant quantum computation. Producing them efficiently is an important resource-cost problem.</dd></dl>
+<dl class="gterm"><dt>PQC</dt><dd>Post-Quantum Cryptography — classical cryptographic algorithms designed to resist known quantum attacks while running on conventional computing systems.</dd></dl>
+<dl class="gterm"><dt>ML-KEM / ML-DSA / SLH-DSA</dt><dd>NIST FIPS 203 defines ML-KEM for key establishment; FIPS 204 and 205 define ML-DSA and SLH-DSA for digital signatures.</dd></dl>
+<dl class="gterm"><dt>HNDL</dt><dd>Harvest Now, Decrypt Later — collecting encrypted information before a CRQC exists with the intention of decrypting it after quantum capability becomes sufficient.</dd></dl>
+<dl class="gterm"><dt>Mosca framework</dt><dd>The relationship X + Y &gt; Z, where data shelf-life plus migration time exceeds an assumed threat horizon. It is a risk-management framework, not a prediction of the CRQC date.</dd></dl>
+<dl class="gterm"><dt>QKD</dt><dd>Quantum Key Distribution — key-distribution protocols whose security properties rely on quantum-mechanical behaviour and protocol assumptions. QKD is distinct from software-based PQC and is generally considered complementary rather than interchangeable.</dd></dl>
+<dl class="gterm"><dt>Crypto-agility</dt><dd>The ability to discover, replace and manage cryptographic algorithms, protocols, certificates and keys without redesigning an entire system. It reduces the cost and risk of future cryptographic change.</dd></dl>
 </div>
 </div>
 </section>
@@ -863,7 +829,7 @@
 <div class="wrap">
 <div class="kicker">Sources</div>
 <h2>Primary sources first; independent scrutiny where needed</h2>
-<p class="sub">Compiled for research use and fact-checked on 14 Aug 2026. Links go to primary papers, standards bodies and issuing organisations wherever possible. Independent reporting is used only where scientific scrutiny or contested claims need a second viewpoint. Resource estimates are labelled as estimates and cross-architecture comparisons are not treated as equivalent measurements.</p>
+<p class="sub">This public research tracker prioritises original papers, standards bodies, government publications and issuing organisations. Independent sources are added where claims are contested or where scientific scrutiny materially changes interpretation.</p>
 <ol>
 <li><span class="stype sp-report">Report</span>Global Risk Institute &amp; evolutionQ — <em>Quantum Threat Timeline Report 2025</em> (7th ed., dated 9 Mar 2026; Mosca &amp; Piani). Headline: 28–49% at 10 years. <a href="https://globalriskinstitute.org/publication/quantum-threat-timeline-report-2025b/" rel="noopener" target="_blank">globalriskinstitute.org</a></li>
 <li><span class="stype sp-report">Report</span>GRI/evolutionQ — earlier editions for the trend line: <a href="https://globalriskinstitute.org/publication/quantum-threat-timeline-report-2022/" rel="noopener" target="_blank">2022</a>, <a href="https://www.evolutionq.com/publications/quantum-threat-timeline-2023" rel="noopener" target="_blank">2023 (17–31%)</a>, <a href="https://www.evolutionq.com/post/the-quantum-threat-timeline-why-organizations-must-act-now" rel="noopener" target="_blank">2024 (19–34%)</a>.</li>
@@ -895,9 +861,10 @@
 </section>
 <footer>
 <div class="wrap">
-    The quantum threat still has no single proven arrival date. What has changed is that migration standards, policy milestones and credible technical progress now overlap — making cryptographic discovery and migration a present engineering programme, not a last-minute response.<br/>
-    Sources: GRI/evolutionQ Quantum Threat Timeline Reports 2022–2025 · NIST FIPS 203/204/205 · Google Quantum AI (Nature, 2024) · IBM Quantum roadmap · Microsoft Azure Quantum. Compiled for internal briefing use.
-  </div>
+<p><strong>The quantum threat has no single proven arrival date.</strong> What has changed is the overlap between technical progress, migration standards and policy milestones — making cryptographic discovery, prioritisation and migration a present engineering programme rather than a last-minute response.</p>
+<p style="margin-top:12px"><strong>Maintained by Vincent Tan · @leovtdto.</strong> This living research artefact supports ongoing work on post-quantum migration, cryptographic implementation risk and quantum communications security.</p>
+<p style="margin-top:10px;font-size:12px;color:var(--faint)">The tracker is an evidence-synthesis resource, not official legal or regulatory advice. Primary issuing sources should be consulted for decisions requiring authoritative interpretation.</p>
+</div>
 </footer>
 <script>
 document.querySelectorAll('.expand-btn').forEach(function(btn){
