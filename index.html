@@ -2,7 +2,7 @@
 
 <html lang="en">
 <head>
-<meta charset="utf-8"/><meta content="default-src 'self'; script-src 'none'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; font-src 'self' https: data:; connect-src 'none'; media-src 'none'; frame-src 'none'; form-action 'none'" http-equiv="Content-Security-Policy"/>
+<meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Quantum Threat Timeline — Global Research Tracker</title>
 <style>
@@ -639,36 +639,11 @@
   .evidence-legend{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;margin:14px 0 20px;padding:14px 16px;background:#fff;border:1px solid var(--line);border-radius:12px;font-size:12px;color:var(--ink-soft)}
   .evidence-legend strong{color:var(--ink)}
   .evidence-legend .legend-copy{display:inline-flex;align-items:center;gap:6px;flex-wrap:wrap}
-
-  /* hardened static build */
-  .static-chart{width:100%;height:100%;min-height:260px}
-  .static-chart svg{display:block;width:100%;height:100%}
-  details.native-detail{margin-top:12px}
-  details.native-detail summary{
-    cursor:pointer;
-    list-style:none;
-    display:inline-flex;
-    align-items:center;
-    gap:6px;
-    font-size:12.5px;
-    font-weight:700;
-    letter-spacing:.06em;
-    text-transform:uppercase;
-    color:var(--mid);
-    padding:4px 0;
-  }
-  details.native-detail summary::-webkit-details-marker{display:none}
-  details.native-detail summary::before{content:"›";font-size:17px;line-height:1;transition:transform .2s ease}
-  details.native-detail[open] summary::before{transform:rotate(90deg)}
-  @media(max-width:700px){
-    .static-chart{min-height:300px}
-    #collapse .static-chart{min-height:330px}
-  }
 </style>
-<meta content="2026-08-20-hardened-v25" name="qtl-build"/></head>
+<meta content="2026-08-20-full-responsive-v24" name="qtl-build"/></head>
 <body>
-
-
+<div class="progress" id="progress"></div>
+<button aria-label="Back to top" class="totop" id="totop">↑</button>
 <header class="hero">
 <div class="wrap">
 <div class="masthead">
@@ -812,7 +787,7 @@
 <span><span class="sw" style="background:#0f3d5c"></span>10-year estimate — pessimistic (low)</span>
 </div>
 <div class="chart-box">
-<div class="static-chart"><svg aria-label="Expert survey 10-year CRQC estimates from 2022 to 2025" preserveaspectratio="xMidYMid meet" role="img" viewbox="0 0 920 360"><rect fill="white" height="100%" width="100%" x="0" y="0"></rect><line stroke="#e8eceb" stroke-width="1" x1="70" x2="890" y1="300.0" y2="300.0"></line><text fill="#7c8b96" font-size="12" text-anchor="end" x="58" y="304.0">0%</text><line stroke="#e8eceb" stroke-width="1" x1="70" x2="890" y1="252.7" y2="252.7"></line><text fill="#7c8b96" font-size="12" text-anchor="end" x="58" y="256.7">10%</text><line stroke="#e8eceb" stroke-width="1" x1="70" x2="890" y1="205.5" y2="205.5"></line><text fill="#7c8b96" font-size="12" text-anchor="end" x="58" y="209.5">20%</text><line stroke="#e8eceb" stroke-width="1" x1="70" x2="890" y1="158.2" y2="158.2"></line><text fill="#7c8b96" font-size="12" text-anchor="end" x="58" y="162.2">30%</text><line stroke="#e8eceb" stroke-width="1" x1="70" x2="890" y1="110.9" y2="110.9"></line><text fill="#7c8b96" font-size="12" text-anchor="end" x="58" y="114.9">40%</text><line stroke="#e8eceb" stroke-width="1" x1="70" x2="890" y1="63.6" y2="63.6"></line><text fill="#7c8b96" font-size="12" text-anchor="end" x="58" y="67.6">50%</text><text fill="#3d4f5d" font-size="13" font-weight="700" text-anchor="middle" x="172.5" y="338">2022</text><rect fill="#8fc2df" height="141.8" rx="5" width="28" x="158.5" y="158.2"></rect><text fill="#3d4f5d" font-size="11" text-anchor="middle" x="172.5" y="150.2">30%</text><text fill="#3d4f5d" font-size="13" font-weight="700" text-anchor="middle" x="377.5" y="338">2023</text><rect fill="#0f3d5c" height="80.4" rx="5" width="28" x="345.5" y="219.6"></rect><text fill="#3d4f5d" font-size="11" text-anchor="middle" x="359.5" y="211.6">17%</text><rect fill="#8fc2df" height="146.5" rx="5" width="28" x="381.5" y="153.5"></rect><text fill="#3d4f5d" font-size="11" text-anchor="middle" x="395.5" y="145.5">31%</text><text fill="#3d4f5d" font-size="13" font-weight="700" text-anchor="middle" x="582.5" y="338">2024</text><rect fill="#0f3d5c" height="89.8" rx="5" width="28" x="550.5" y="210.2"></rect><text fill="#3d4f5d" font-size="11" text-anchor="middle" x="564.5" y="202.2">19%</text><rect fill="#8fc2df" height="160.7" rx="5" width="28" x="586.5" y="139.3"></rect><text fill="#3d4f5d" font-size="11" text-anchor="middle" x="600.5" y="131.3">34%</text><text fill="#3d4f5d" font-size="13" font-weight="700" text-anchor="middle" x="787.5" y="338">2025</text><rect fill="#0f3d5c" height="132.4" rx="5" width="28" x="755.5" y="167.6"></rect><text fill="#3d4f5d" font-size="11" text-anchor="middle" x="769.5" y="159.6">28%</text><rect fill="#8fc2df" height="231.6" rx="5" width="28" x="791.5" y="68.4"></rect><text fill="#3d4f5d" font-size="11" text-anchor="middle" x="805.5" y="60.4">49%</text></svg></div>
+<canvas aria-label="Bar chart of the expert-estimated 10-year probability of a code-breaking quantum computer, rising from about 30 percent in 2022 to a range of 28 to 49 percent in 2025." id="c" role="img">10-year CRQC estimates: 2022 up to about 30 percent, 2023 17 to 31 percent, 2024 19 to 34 percent, 2025 28 to 49 percent.</canvas>
 </div>
 <p class="note">Source: Global Risk Institute / evolutionQ Quantum Threat Timeline Reports, 2022–2025. Respondent pool shrank over the period (≈40 → 37 → 32 → 26), so single-year swings deserve modest discount. The 2022 survey did not publish the same low/high split.</p>
 <div class="evidence-links"><span class="ev-label">Evidence</span><a href="https://globalriskinstitute.org/publication/2022-quantum-threat-timeline-report/" rel="noopener" target="_blank">GRI 2022</a><a href="https://globalriskinstitute.org/publication/2023-quantum-threat-timeline-report/" rel="noopener" target="_blank">GRI 2023</a><a href="https://globalriskinstitute.org/publication/2024-quantum-threat-timeline-report/" rel="noopener" target="_blank">GRI 2024</a><a href="https://globalriskinstitute.org/publication/quantum-threat-timeline-report-2025b/" rel="noopener" target="_blank">GRI 2025</a></div></div>
@@ -828,7 +803,7 @@
 <span><span class="sw" style="background:#c0532f"></span>Representative published physical-qubit resource estimates (log scale; not like-for-like)</span>
 </div>
 <div class="chart-box">
-<div class="static-chart"><svg aria-label="Representative published physical-qubit resource estimates: RSA 2019 20 million, RSA 2025 1 million, neutral-atom 2026 10 thousand" preserveaspectratio="xMidYMid meet" role="img" viewbox="0 0 920 360"><rect fill="white" height="100%" width="100%" x="0" y="0"></rect><line stroke="#e8eceb" stroke-width="1" x1="85" x2="870" y1="270.8" y2="270.8"></line><text fill="#7c8b96" font-size="12" text-anchor="end" x="71" y="274.8">10K</text><line stroke="#e8eceb" stroke-width="1" x1="85" x2="870" y1="207.1" y2="207.1"></line><text fill="#7c8b96" font-size="12" text-anchor="end" x="71" y="211.1">100K</text><line stroke="#e8eceb" stroke-width="1" x1="85" x2="870" y1="143.3" y2="143.3"></line><text fill="#7c8b96" font-size="12" text-anchor="end" x="71" y="147.3">1M</text><line stroke="#e8eceb" stroke-width="1" x1="85" x2="870" y1="79.6" y2="79.6"></line><text fill="#7c8b96" font-size="12" text-anchor="end" x="71" y="83.6">10M</text><circle cx="226.3" cy="60.4" fill="#c0532f" r="8" stroke="#fff" stroke-width="2"></circle><text fill="#3d4f5d" font-size="13" font-weight="700" text-anchor="middle" x="226.3" y="324">RSA</text><text fill="#3d4f5d" font-size="13" font-weight="700" text-anchor="middle" x="226.3" y="341">2019</text><circle cx="477.5" cy="143.3" fill="#c0532f" r="8" stroke="#fff" stroke-width="2"></circle><text fill="#3d4f5d" font-size="13" font-weight="700" text-anchor="middle" x="477.5" y="324">RSA</text><text fill="#3d4f5d" font-size="13" font-weight="700" text-anchor="middle" x="477.5" y="341">2025</text><polygon fill="#2f7fb5" points="728.7,261.8 737.7,270.8 728.7,279.8 719.7,270.8" stroke="#fff" stroke-width="2"></polygon><text fill="#3d4f5d" font-size="13" font-weight="700" text-anchor="middle" x="728.7" y="324">Neutral-atom</text><text fill="#3d4f5d" font-size="13" font-weight="700" text-anchor="middle" x="728.7" y="341">2026</text></svg></div>
+<canvas aria-label="Logarithmic chart comparing representative cryptanalytic resource estimates: about 20 million physical qubits for RSA-2048 in 2019, under 1 million for RSA-2048 in 2025 under the same assumptions, and a separate 2026 neutral-atom Shor-scale study reporting a floor of about 10,000 reconfigurable atomic qubits." id="c2" role="img">Representative estimates: RSA-2048 20 million in 2019; RSA-2048 under 1 million in 2025 under the same stated assumptions; and a separate 2026 neutral-atom study with a roughly 10,000-qubit floor for cryptographically relevant Shor-scale workloads.</canvas>
 </div>
 <p class="note"><strong>What this shows:</strong> Published resource estimates have fallen substantially as algorithms, error correction and hardware-aware designs have improved. The 2019 and 2025 RSA estimates are directly comparable because Gidney states the same hardware assumptions. The 2026 Cain et al. neutral-atom result provides additional evidence of resource compression, but it is architecture-specific and trades space against substantially longer runtime. <strong>Interpretation:</strong> the 2026 point should not be read as “RSA-2048 now requires only 10,000 physical qubits.” The defensible conclusion is that old qubit-count assumptions can become stale as multiple technical fronts improve. Full sources below.</p>
 <div class="evidence-links"><span class="ev-label">Evidence</span><a href="https://arxiv.org/abs/1905.09749" rel="noopener" target="_blank">Gidney 2019</a><a href="https://arxiv.org/abs/2505.15917" rel="noopener" target="_blank">Gidney 2025</a><a href="https://arxiv.org/abs/2603.28627" rel="noopener" target="_blank">Cain et al. 2026</a></div></div>
@@ -851,13 +826,13 @@
 <span class="tag t-survey">Baseline</span> <span class="tag t-context">Survey</span>
 <h3>The quiet starting point</h3>
 <p>The 2022 survey provides a useful baseline for expert opinion: the 10-year CRQC probability was still below the levels reported in later editions. It should be read as an opinion snapshot, not as a statement that quantum error correction or fault-tolerance research was absent at the time.</p>
-<details class="native-detail"><summary>Why it matters</summary>
+<button aria-expanded="false" class="expand-btn"><span class="chev">›</span>Why it matters</button>
+<div class="detail"><div class="detail-inner">
 <div class="layer mech"><div class="lh"><span class="dot"></span>Mechanism</div><p>The value of the 2022 point is comparative. It anchors how expert judgement changed over subsequent editions while the underlying hardware, error-correction and cryptanalytic-resource literature evolved.</p></div>
 <div class="layer nums"><div class="lh"><span class="dot"></span>The numbers</div><p>IBM announced the 433-qubit Osprey processor in 2022, while the GRI survey still placed the 10-year cryptographic threat below the later 2025 range. These are different evidence types and should not be treated as a direct causal relationship.</p></div>
 <div class="layer cav"><div class="lh"><span class="dot"></span>The honest caveat</div><p>Annual survey movement should not be over-interpreted. Respondent pools, probability bins and expert judgement introduce uncertainty, so multi-year direction matters more than a single-year change.</p></div>
 <a class="src-link" href="https://globalriskinstitute.org/publication/2022-quantum-threat-timeline-report/" rel="noopener" target="_blank">Source: GRI Quantum Threat Timeline Report 2022 ↗</a>
-</details>
-
+</div></div>
 </div>
 </div><div class="tl-item">
 <div class="tl-year">2023<span class="m">Aug</span></div>
@@ -865,13 +840,13 @@
 <span class="tag t-road">Theory</span> <span class="tag t-context">Foundational</span>
 <h3>Regev breaks a 30-year deadlock on Shor's algorithm</h3>
 <p>Oded Regev published the first fundamental improvement to Shor's factoring algorithm in nearly three decades — a multidimensional variant needing far fewer quantum gates. Subsequent work explored how the approach and related arithmetic improvements could affect concrete quantum resource estimates.</p>
-<details class="native-detail"><summary>Why it matters</summary>
+<button aria-expanded="false" class="expand-btn"><span class="chev">›</span>Why it matters</button>
+<div class="detail"><div class="detail-inner">
 <div class="layer mech"><div class="lh"><span class="dot"></span>Mechanism</div><p>Shor's 1994 algorithm was the benchmark for "how hard is it to break RSA" for 29 years. Regev found a genuinely new formulation — operating in a higher-dimensional space — that cuts the circuit size (gate count). Because every later resource estimate builds on the best available algorithm, a foundational improvement like this cascades into every downstream qubit count. It's the source of the collapse in the chart above.</p></div>
 <div class="layer nums"><div class="lh"><span class="dot"></span>The numbers</div><p>Reduces circuit size by a factor of ~√n for an n-bit integer, at the cost of ~√n separate runs. Follow-on work (Ragavan &amp; Vaikuntanathan, Oct 2023) cut the space overhead back down, addressing its main drawback.</p></div>
 <div class="layer cav"><div class="lh"><span class="dot"></span>The honest caveat</div><p>Regev's algorithm relies on a heuristic number-theoretic assumption (since given a proof under certain conditions), and early implementations were actually <em>slower</em> than Shor's for small numbers. Its value is asymptotic and foundational, not an immediate practical speedup — but it reset the theoretical baseline.</p></div>
 <a class="src-link" href="https://arxiv.org/abs/2308.06572" rel="noopener" target="_blank">Primary source: Regev, arXiv:2308.06572 (2023) ↗</a>
-<a class="src-link" href="https://www.quantamagazine.org/thirty-years-later-a-speed-boost-for-quantum-factoring-20231017/" rel="noopener" target="_blank">Independent explainer: Quanta (2023) ↗</a></details>
-
+<a class="src-link" href="https://www.quantamagazine.org/thirty-years-later-a-speed-boost-for-quantum-factoring-20231017/" rel="noopener" target="_blank">Independent explainer: Quanta (2023) ↗</a></div></div>
 </div>
 </div><div class="tl-item">
 <div class="tl-year">2023<span class="m">Dec</span></div>
@@ -879,13 +854,13 @@
 <span class="tag t-hw">Hardware pivot</span> <span class="tag t-context">Context</span>
 <h3>From more qubits to better qubits</h3>
 <p>Investment described as skyrocketing. IBM ships its 1,121-qubit Condor but publicly pivots toward modular, error-corrected designs — conceding that raw scaling alone won't reach fault tolerance. 10-year survey estimate: 17–31%.</p>
-<details class="native-detail"><summary>Why it matters</summary>
+<button aria-expanded="false" class="expand-btn"><span class="chev">›</span>Why it matters</button>
+<div class="detail"><div class="detail-inner">
 <div class="layer mech"><div class="lh"><span class="dot"></span>Mechanism</div><p>The tell was in one processor pair. IBM's giant 1,121-qubit Condor performed no better than the previous 433-qubit chip — proof that just adding qubits had hit diminishing returns. The smaller Heron, with far lower error rates, was the real signal: the industry pivoted from "biggest" to "cleanest."</p></div>
 <div class="layer nums"><div class="lh"><span class="dot"></span>The numbers</div><p>Condor: 1,121 qubits, with IBM describing performance as comparable to its previous 433-qubit Osprey. Heron: 133 qubits in its first revision, with IBM reporting a 3–5× improvement in device performance over its prior flagship Eagle processors. The 2023 GRI survey reported a 17–31% 10-year range.</p></div>
 <div class="layer cav"><div class="lh"><span class="dot"></span>The honest caveat</div><p>Lower error rates on a small chip are not the same as error correction. Heron made qubits better; it did not yet make them self-correcting. That threshold wasn't crossed until Willow the following year. Note: this is landscape context — the survey does not name Condor as a driver.</p></div>
 <a class="src-link" href="https://newsroom.ibm.com/2023-12-04-IBM-Debuts-Next-Generation-Quantum-Processor-IBM-Quantum-System-Two%2C-Extends-Roadmap-to-Advance-Era-of-Quantum-Utility" rel="noopener" target="_blank">Primary source: IBM Quantum Summit 2023 announcement ↗</a>
-<a class="src-link" href="https://globalriskinstitute.org/publication/2023-quantum-threat-timeline-report/" rel="noopener" target="_blank">Survey context: GRI 2023 ↗</a></details>
-
+<a class="src-link" href="https://globalriskinstitute.org/publication/2023-quantum-threat-timeline-report/" rel="noopener" target="_blank">Survey context: GRI 2023 ↗</a></div></div>
 </div>
 </div><div class="tl-item">
 <div class="tl-year">2024<span class="m">Aug</span></div>
@@ -893,13 +868,13 @@
 <span class="tag t-policy">Policy</span> <span class="tag t-context">Context</span>
 <h3>NIST finalizes the PQC standards</h3>
 <p>FIPS 203 (ML-KEM), 204 (ML-DSA) and 205 (SLH-DSA) were published in August 2024, giving organisations final NIST standards for post-quantum key establishment and digital signatures. This turns algorithm selection into an implementation and migration problem, while actual obligations still depend on sector, policy and jurisdiction.</p>
-<details class="native-detail"><summary>Why it matters</summary>
+<button aria-expanded="false" class="expand-btn"><span class="chev">›</span>Why it matters</button>
+<div class="detail"><div class="detail-inner">
 <div class="layer mech"><div class="lh"><span class="dot"></span>Mechanism</div><p>Standardisation removes a major blocker: organisations can now design migration programmes around named algorithms and parameter sets. It does <em>not</em> mean every system is immediately required to migrate, nor does it guarantee that implementations and protocol integrations are secure.</p></div>
 <div class="layer nums"><div class="lh"><span class="dot"></span>The numbers</div><p>FIPS 203, 204 and 205 were finalised on 13 Aug 2024. HQC was selected in March 2025 as an additional KEM for future standardisation. NIST IR 8547 remains an <strong>Initial Public Draft</strong> as of this fact-check and should not be presented as a final binding transition rule.</p></div>
 <div class="layer cav"><div class="lh"><span class="dot"></span>The honest caveat</div><p>Safe migration requires more than a standard: implementations, protocol integration, key and secret lifecycle, configuration, testing and assurance all remain separate engineering risks. Policy obligations should be attributed to the specific law, executive order, security policy or sector rule that creates them.</p></div>
 <a class="src-link" href="https://www.federalregister.gov/documents/2024/08/14/2024-17956/announcing-issuance-of-federal-information-processing-standards-fips-fips-203-module-lattice-based" rel="noopener" target="_blank">Primary source: NIST FIPS 203/204/205, Federal Register (2024) ↗</a>
-</details>
-
+</div></div>
 </div>
 </div><div class="tl-item">
 <div class="tl-year">2024<span class="m">Sep</span></div>
@@ -907,13 +882,13 @@
 <span class="tag t-road">Error correction</span> <span class="tag t-context">Overhead cut</span>
 <h3>Magic state cultivation — a proposed route to lower fault-tolerant overhead</h3>
 <p>Gidney, Shutty &amp; Jones proposed “magic state cultivation,” a protocol designed to produce the non-Clifford resource states needed for universal fault-tolerant computation with physical-gate costs comparable to a lattice-surgery CNOT of similar reliability. It targets one of the expensive components in fault-tolerant resource budgets.</p>
-<details class="native-detail"><summary>Why it matters</summary>
+<button aria-expanded="false" class="expand-btn"><span class="chev">›</span>Why it matters</button>
+<div class="detail"><div class="detail-inner">
 <div class="layer mech"><div class="lh"><span class="dot"></span>Mechanism</div><p>Error-corrected machines can do "easy" (Clifford) gates cheaply, but universal computation needs "magic states," historically made by <em>distillation</em> — enormous factories consuming huge numbers of physical qubits. Cultivation grows them directly inside a logical qubit, potentially eliminating whole distillation rounds. Every resource estimate above (Gidney's &lt;1M, the neutral-atom 10K) quietly depends on advances like this to be credible.</p></div>
 <div class="layer nums"><div class="lh"><span class="dot"></span>The numbers</div><p>The cited 2024 paper is a protocol-and-simulation result, not a hardware demonstration. Its simulations report substantial reductions in qubit-round cost relative to conventional distillation approaches at representative physical error rates. The exact benefit depends on the code, noise model and target logical error rate.</p></div>
 <div class="layer cav"><div class="lh"><span class="dot"></span>The honest caveat</div><p>This is a component-level advance, not a full machine. It makes the big resource estimates more plausible but doesn't by itself build a CRQC — it's one of many pieces that all have to scale together.</p></div>
 <a class="src-link" href="https://arxiv.org/abs/2409.17595" rel="noopener" target="_blank">Primary source: Gidney, Shutty &amp; Jones, arXiv:2409.17595 (2024) ↗</a>
-</details>
-
+</div></div>
 </div>
 </div><div class="tl-item">
 <div class="tl-year">2024<span class="m">Dec</span></div>
@@ -921,13 +896,13 @@
 <span class="tag t-hw">Hardware</span> <span class="tag t-context">Report-cited context</span>
 <h3>Google Willow — below threshold</h3>
 <p>Google reported below-threshold surface-code quantum memories on its Willow processors: logical error decreased as code distance increased, a key condition for scalable quantum error correction.</p>
-<details class="native-detail"><summary>Why it matters</summary>
+<button aria-expanded="false" class="expand-btn"><span class="chev">›</span>Why it matters</button>
+<div class="detail"><div class="detail-inner">
 <div class="layer mech"><div class="lh"><span class="dot"></span>Mechanism</div><p>Below-threshold operation means increasing the size of the error-correcting code suppresses logical error rather than amplifying it. That behaviour is foundational for large fault-tolerant systems, but it is still several engineering steps removed from cryptanalytic computation.</p></div>
 <div class="layer nums"><div class="lh"><span class="dot"></span>The numbers</div><p>On the 105-qubit Willow processor, the distance-7 surface-code memory used 101 qubits and reported a logical error of 0.143% per cycle with an error-suppression factor Λ = 2.14 ± 0.02. The logical memory lifetime exceeded its best constituent physical qubit by about 2.4×.</p></div>
 <div class="layer cav"><div class="lh"><span class="dot"></span>The honest caveat</div><p>This was an error-corrected memory experiment, not an RSA or ECC attack and not a general-purpose fault-tolerant computer. It demonstrates an important scaling property, while large-scale computation still requires much larger systems, logical operations, decoding, stability and system integration.</p></div>
 <a class="src-link" href="https://www.nature.com/articles/s41586-024-08449-y" rel="noopener" target="_blank">Primary source: Acharya et al., Nature (2024) ↗</a>
-</details>
-
+</div></div>
 </div>
 </div><div class="tl-item">
 <div class="tl-year">2025<span class="m">Feb</span></div>
@@ -935,12 +910,12 @@
 <span class="tag t-road">Theory</span> <span class="tag t-context">Resource-estimate context</span>
 <h3>The 1,730-qubit result (Chevignard–Fouque–Schrottenloher)</h3>
 <p>A CRYPTO 2025 paper estimated that factoring RSA-2048 can be carried out using about <em>1,730 logical qubits</em>, trading qubit count against a much larger number of operations and repeated runs. Gidney’s 2025 physical-resource estimate explicitly cites this approximate-residue arithmetic as one of the main sources of its qubit-count reduction.</p>
-<details class="native-detail"><summary>Why it matters</summary>
+<button aria-expanded="false" class="expand-btn"><span class="chev">›</span>Why it matters</button>
+<div class="detail"><div class="detail-inner">
 <div class="layer mech"><div class="lh"><span class="dot"></span>Mechanism</div><p>The threat timeline isn't only about building bigger machines — it's also about needing <em>smaller</em> ones. Every algorithmic improvement that reduces the qubits required to break RSA pulls Q-Day closer without a single new piece of hardware. This paper attacked the problem from the maths side, using approximate residue arithmetic to shrink the logical-qubit requirement dramatically.</p></div>
 <div class="layer nums"><div class="lh"><span class="dot"></span>The numbers</div><p>Reduced the logical-qubit count for factoring RSA-2048 to ~1,730 — roughly (0.5 + ε)·n logical qubits for an n-bit integer. This is the algorithmic groundwork the subsequent physical-resource estimate was built on.</p></div>
 <div class="layer cav"><div class="lh"><span class="dot"></span>The honest caveat</div><p>Logical qubits are not physical qubits — the earlier version of this algorithm needed an astronomically high gate count (~2×10¹² Toffoli gates), making it impractical until the follow-on work optimized it. It's a foundation, not a turnkey attack.</p></div>
-<a class="src-link" href="https://eprint.iacr.org/2024/222" rel="noopener" target="_blank">Primary preprint: Chevignard, Fouque &amp; Schrottenloher, IACR ePrint 2024/222 ↗</a> <a class="src-link" href="https://doi.org/10.1007/978-3-032-01878-6_13" rel="noopener" target="_blank">CRYPTO 2025 proceedings (DOI) ↗</a></details>
-
+<a class="src-link" href="https://eprint.iacr.org/2024/222" rel="noopener" target="_blank">Primary preprint: Chevignard, Fouque &amp; Schrottenloher, IACR ePrint 2024/222 ↗</a> <a class="src-link" href="https://doi.org/10.1007/978-3-032-01878-6_13" rel="noopener" target="_blank">CRYPTO 2025 proceedings (DOI) ↗</a></div></div>
 </div>
 </div><div class="tl-item">
 <div class="tl-year">2025<span class="m">Feb</span></div>
@@ -948,13 +923,13 @@
 <span class="tag t-hw">Hardware · contested</span> <span class="tag t-context">Context</span>
 <h3>Microsoft's Majorana programme — ambitious and still contested</h3>
 <p>Microsoft announced Majorana 1 in Feb 2025 and an upgraded Majorana 2 in Jun 2026, arguing that topological hardware could offer a scalable path to fault tolerance. The core topological interpretation remains actively contested in the scientific literature, so this belongs in the tracker as a high-upside but low-confidence hardware path.</p>
-<details class="native-detail"><summary>Why it matters</summary><a class="src-link" href="https://news.microsoft.com/source/features/innovation/majorana-2-microsoft-discovery-agentic-ai/" rel="noopener" target="_blank">Vendor source: Microsoft Majorana 2 (Jun 2026) ↗</a>
+<button aria-expanded="false" class="expand-btn"><span class="chev">›</span>Why it matters</button>
+<div class="detail"><div class="detail-inner"><a class="src-link" href="https://news.microsoft.com/source/features/innovation/majorana-2-microsoft-discovery-agentic-ai/" rel="noopener" target="_blank">Vendor source: Microsoft Majorana 2 (Jun 2026) ↗</a>
 <div class="layer mech"><div class="lh"><span class="dot"></span>Mechanism</div><p>A completely different bet from Google's and IBM's. Instead of correcting errors with software and extra qubits, a topological qubit would resist errors in the hardware itself — protection built into the physics. If it works, it needs far fewer physical qubits per logical one. It's the high-risk, high-reward path.</p></div>
 <div class="layer nums"><div class="lh"><span class="dot"></span>The numbers</div><p>Majorana 1 was announced as an eight-qubit device with a claimed architecture intended to scale much further. Microsoft announced Majorana 2 in June 2026, but device count and roadmap claims should be read separately from evidence that the underlying states are genuinely topological.</p></div>
 <div class="layer cav"><div class="lh"><span class="dot"></span>The honest caveat</div><p>Scientific disagreement is current, not historical. A Nature <em>Matters Arising</em> article published 24 Jun 2026 argued that transport data underlying the topological-gap interpretation may instead be consistent with trivial mechanisms; Microsoft published a formal reply defending its interpretation. Present the programme as contested evidence, not a settled topological-qubit milestone.</p></div>
 <a class="src-link" href="https://www.nature.com/articles/s41586-026-10567-8" rel="noopener" target="_blank">Independent scrutiny: Nature Matters Arising (Jun 2026) ↗</a> <a class="src-link" href="https://www.nature.com/articles/s41586-026-10568-7" rel="noopener" target="_blank">Microsoft reply ↗</a>
-</details>
-
+</div></div>
 </div>
 </div><div class="tl-item">
 <div class="tl-year">2025<span class="m">Mar</span></div>
@@ -962,13 +937,13 @@
 <span class="tag t-hw">Hardware</span> <span class="tag t-context">Benchmark</span>
 <h3>Zuchongzhi 3.0 — 105-qubit superconducting benchmark</h3>
 <p>A USTC-led team reported a 105-qubit superconducting processor and a random-circuit-sampling experiment whose classical simulation cost was estimated to be far beyond Frontier under the paper’s benchmark assumptions. This is evidence of high-performance quantum hardware, not a cryptanalytic demonstration.</p>
-<details class="native-detail"><summary>Why it matters</summary>
+<button aria-expanded="false" class="expand-btn"><span class="chev">›</span>Why it matters</button>
+<div class="detail"><div class="detail-inner">
 <div class="layer mech"><div class="lh"><span class="dot"></span>Mechanism</div><p>Random-circuit sampling is a benchmark for quantum computational advantage: the processor samples outputs from random quantum circuits that are difficult to reproduce classically. The experiment does not run Shor’s algorithm or attack deployed cryptography.</p></div>
 <div class="layer nums"><div class="lh"><span class="dot"></span>The numbers</div><p>The processor comprises 105 qubits. Reported single-qubit, two-qubit and readout fidelities are 99.90%, 99.62% and 99.13%, respectively. For the 83-qubit, 32-cycle sampling task, the paper estimates that Frontier would require approximately 5.9 × 10^9 years to reproduce the task.</p></div>
 <div class="layer cav"><div class="lh"><span class="dot"></span>The honest caveat</div><p>The result is a sampling benchmark, not a code-breaking demonstration. It should therefore be used as evidence of processor capability and scaling progress, not as a direct estimate of proximity to breaking RSA or elliptic-curve cryptography.</p></div>
 <a class="src-link" href="https://link.aps.org/doi/10.1103/PhysRevLett.134.090601" rel="noopener" target="_blank">Primary source: Phys. Rev. Lett. 134, 090601 (2025) ↗</a>
-</details>
-
+</div></div>
 </div>
 </div><div class="tl-item">
 <div class="tl-year">2025<span class="m">May</span></div>
@@ -976,13 +951,13 @@
 <span class="tag t-road">Theory</span> <span class="tag t-context">Resource estimate</span>
 <h3>Gidney: RSA-2048 with under 1 million qubits</h3>
 <p>Craig Gidney’s May 2025 paper reduced his estimated physical-qubit requirement for factoring RSA-2048 from 20 million in 2019 to <em>fewer than 1 million</em> under the same stated hardware assumptions. The result is a major resource-estimate update; it does not demonstrate an RSA-2048 attack.</p>
-<details class="native-detail"><summary>Why it matters</summary>
+<button aria-expanded="false" class="expand-btn"><span class="chev">›</span>Why it matters</button>
+<div class="detail"><div class="detail-inner">
 <div class="layer mech"><div class="lh"><span class="dot"></span>Mechanism</div><p>The significance is that the estimated hardware target moved substantially under a comparable assumption set. The reduction comes from improvements in arithmetic, logical-qubit storage and magic-state handling rather than from a new physical machine.</p></div>
 <div class="layer nums"><div class="lh"><span class="dot"></span>The numbers</div><p>2019 estimate: about 20 million noisy qubits and an eight-hour runtime. 2025 estimate: fewer than 1 million noisy qubits and a runtime of less than one week. Both use a nearest-neighbour grid, 0.1% gate error, 1 μs surface-code cycle and 10 μs reaction time.</p></div>
 <div class="layer cav"><div class="lh"><span class="dot"></span>The honest caveat</div><p>This remains a resource <em>estimate</em>. No existing machine can execute the attack, and the result should not be converted into a CRQC arrival date. It is best used as evidence that cryptanalytic resource requirements can change materially as algorithms and fault-tolerance techniques improve.</p></div>
 <a class="src-link" href="https://arxiv.org/abs/2505.15917" rel="noopener" target="_blank">Primary source: Gidney, arXiv:2505.15917 (2025) ↗</a>
-</details>
-
+</div></div>
 </div>
 </div><div class="tl-item">
 <div class="tl-year">2025<span class="m">Nov</span></div>
@@ -990,13 +965,13 @@
 <span class="tag t-hw">Hardware</span> <span class="tag t-context">Different modality</span>
 <h3>Quantinuum Helios — 48 error-corrected logical qubits</h3>
 <p>Quantinuum's 98-physical-qubit trapped-ion Helios system reported 99.921% two-qubit gate fidelity and demonstrations including 48 error-corrected logical qubits at a 2:1 physical-to-logical encoding rate. A reminder that fault-tolerance progress must be tracked across multiple hardware modalities, not only superconducting systems.</p>
-<details class="native-detail"><summary>Why it matters</summary>
+<button aria-expanded="false" class="expand-btn"><span class="chev">›</span>Why it matters</button>
+<div class="detail"><div class="detail-inner">
 <div class="layer mech"><div class="lh"><span class="dot"></span>Mechanism</div><p>Helios uses trapped ions with high connectivity and high physical-gate fidelity, and Quantinuum demonstrated high-rate logical encodings using concatenated codes. The 2:1 result is a specific code-and-workload demonstration; it should not be read as a universal physical-to-logical conversion ratio for arbitrary fault-tolerant computation.</p></div>
 <div class="layer nums"><div class="lh"><span class="dot"></span>The numbers</div><p>Quantinuum reports 98 physical qubits at 99.921% two-qubit gate fidelity and 99.9975% one-qubit gate fidelity. Helios demonstrations include 94 error-detected logical qubits in a GHZ state, 50 error-detected logical qubits in a magnetism simulation, and 48 error-corrected logical qubits with better-than-physical performance.</p></div>
 <div class="layer cav"><div class="lh"><span class="dot"></span>The honest caveat</div><p>48 logical qubits is worlds away from the thousands needed for RSA, and trapped-ion clock speeds are slower than superconducting. High fidelity and low overhead are real advantages, but scale remains the open question for every platform.</p></div>
 <a class="src-link" href="https://www.quantinuum.com/press-releases/quantinuum-announces-commercial-launch-of-new-helios-quantum-computer-that-offers-unprecedented-accuracy-to-enable-generative-quantum-ai-genqai" rel="noopener" target="_blank">Primary source: Quantinuum Helios launch (2025) ↗</a>
-</details>
-
+</div></div>
 </div>
 </div><div class="tl-item">
 <div class="tl-year">2026<span class="m">Mar</span></div>
@@ -1004,13 +979,13 @@
 <span class="tag t-road">Theory</span> <span class="tag t-hw">Hardware-specific</span>
 <h3>Neutral-atom co-design pushes Shor-scale estimates toward ~10,000 qubits</h3>
 <p>A Caltech/Oratomic/UC Berkeley team (Cain, Preskill, Bluvstein et al.) reported that cryptographically relevant Shor-scale computation could be possible with as few as ~10,000 reconfigurable atomic qubits by co-designing algorithms, high-rate quantum error correction and neutral-atom hardware. This is a different architecture and runtime regime from Gidney's RSA estimate, so it should not be plotted as a direct continuation of the same curve.</p>
-<details class="native-detail"><summary>Why it matters</summary>
+<button aria-expanded="false" class="expand-btn"><span class="chev">›</span>Why it matters</button>
+<div class="detail"><div class="detail-inner">
 <div class="layer mech"><div class="lh"><span class="dot"></span>Mechanism</div><p>This is where algorithm and hardware modality meet. qLDPC codes need long-range connections between qubits — something superconducting chips struggle with, but neutral atoms do naturally because they can be <em>physically moved</em>. Matching the code to the hardware slashes the requirement again. It also means watching only one hardware type (e.g. superconducting) gives a false sense of how far away the threat is.</p></div>
 <div class="layer nums"><div class="lh"><span class="dot"></span>The numbers</div><p>The paper's abstract gives an overall floor of about 10,000 reconfigurable atomic qubits for cryptographically relevant Shor-scale workloads. For P-256 it gives an example of about 26,000 physical qubits and a runtime of a few days; it says RSA-2048 would take one to two orders of magnitude longer. Those figures are architecture- and assumption-dependent.</p></div>
 <div class="layer cav"><div class="lh"><span class="dot"></span>The honest caveat</div><p>These are aggressive, assumption-heavy resource estimates with very long runtimes, and no neutral-atom machine is close to 10,000 <em>error-corrected</em> qubits today. But a slow code-breaker doesn't need to be fast — for "harvest now, decrypt later," patience is enough.</p></div>
 <a class="src-link" href="https://arxiv.org/abs/2603.28627" rel="noopener" target="_blank">Primary source: Cain et al., arXiv:2603.28627 (2026) ↗</a>
-</details>
-
+</div></div>
 </div>
 </div><div class="tl-item">
 <div class="tl-year">2026<span class="m">Mar</span></div>
@@ -1018,13 +993,13 @@
 <span class="tag t-road">Theory</span> <span class="tag t-context">Context</span>
 <h3>Google: P-256 ECDLP below 1,200 logical qubits in a 2026 resource study</h3>
 <p>Google researchers published new resource estimates for the 256-bit elliptic-curve discrete-log problem used in many modern TLS, SSH, code-signing and cryptocurrency deployments. Their study gives circuits below 1,200 logical qubits and models execution on a superconducting architecture using fewer than half a million physical qubits.</p>
-<details class="native-detail"><summary>Why it matters</summary>
+<button aria-expanded="false" class="expand-btn"><span class="chev">›</span>Why it matters</button>
+<div class="detail"><div class="detail-inner">
 <div class="layer mech"><div class="lh"><span class="dot"></span>Mechanism</div><p>The GRI survey uses RSA-2048 as its benchmark, but many deployed systems rely on elliptic-curve public-key cryptography. Tracking ECDLP resource estimates therefore gives a complementary view of quantum risk; organisations should inventory the algorithms they actually use rather than infer their exposure from RSA alone.</p></div>
 <div class="layer nums"><div class="lh"><span class="dot"></span>The numbers</div><p>The 2026 whitepaper reports either &lt;1,200 logical qubits with &lt;90 million Toffoli gates, or &lt;1,450 logical qubits with &lt;70 million Toffoli gates. Under its model of a superconducting architecture with 10<sup>−3</sup> physical error rates and planar connectivity, the circuits can run in minutes using fewer than 500,000 physical qubits.</p></div>
 <div class="layer cav"><div class="lh"><span class="dot"></span>The honest caveat</div><p>Still a resource estimate, not a demonstration. But it reframes the target: migration plans that track only RSA timelines may underestimate the relevance of elliptic-curve cryptography to the threat surface.</p></div>
 <a class="src-link" href="https://research.google/pubs/securing-elliptic-curve-cryptocurrencies-against-quantum-vulnerabilities-resource-estimates-and-mitigations/" rel="noopener" target="_blank">Primary source: Google Research / arXiv:2603.28846 (2026) ↗</a>
-</details>
-
+</div></div>
 </div>
 </div><div class="tl-item future">
 <div class="tl-year">2029<span class="m">target</span></div>
@@ -1032,13 +1007,13 @@
 <span class="tag t-road">Roadmap</span> <span class="tag t-context">Context</span>
 <h3>IBM "Starling" — fault-tolerant, dated</h3>
 <p>IBM's roadmap, still current in March 2026, targets Starling for 2029 with 200 logical qubits and 100 million gates. IBM's approach uses high-rate error-correcting codes and modular systems to reduce overhead, but the date remains a vendor roadmap goal rather than a demonstrated capability.</p>
-<details class="native-detail"><summary>Why it matters</summary>
+<button aria-expanded="false" class="expand-btn"><span class="chev">›</span>Why it matters</button>
+<div class="detail"><div class="detail-inner">
 <div class="layer mech"><div class="lh"><span class="dot"></span>Mechanism</div><p>IBM is pursuing modular fault-tolerant systems based on high-rate quantum error-correcting codes rather than assuming surface-code overheads forever. If the planned code, coupler, decoder and module milestones work together, the architecture could substantially reduce the physical resources needed per useful logical computation.</p></div>
 <div class="layer nums"><div class="lh"><span class="dot"></span>The numbers</div><p>Current IBM roadmap: Kookaburra in 2026 to demonstrate a Starling module with logical processing plus quantum memory; Cockatoo in 2027 to demonstrate inter-module entanglement; Starling in 2029 targeting 200 logical qubits and 100 million gates.</p></div>
 <div class="layer cav"><div class="lh"><span class="dot"></span>The honest caveat</div><p>IBM explicitly labels the roadmap as current intent that is subject to change or withdrawal. Treat 2029 as a leading indicator of engineering ambition and investment — not as a forecast that Starling will necessarily ship on that date.</p></div>
 <a class="src-link" href="https://newsroom.ibm.com/2025-06-10-ibm-details-plan-to-build-first-large-scale-fault-tolerant-quantum-computer" rel="noopener" target="_blank">Primary source: IBM newsroom (June 2025) ↗</a>
-</details>
-
+</div></div>
 </div>
 </div></div>
 </div>
@@ -1426,9 +1401,164 @@
 <p style="margin-top:10px;font-size:12px;color:var(--faint)">The tracker is an evidence-synthesis resource, not official legal or regulatory advice. Primary issuing sources should be consulted for decisions requiring authoritative interpretation.</p>
 <div class="evidence-links"><span class="ev-label">Evidence basis</span><a href="https://pages.nist.gov/nccoe-migration-post-quantum-cryptography/" rel="noopener" target="_blank">NIST PQC migration</a><a href="https://www.csa.gov.sg/resources/publications/quantum-safe-handbook-and-quantum-readiness-index/" rel="noopener" target="_blank">CSA Handbook/QRI V1</a><a href="https://globalriskinstitute.org/publication/quantum-threat-timeline-report-2025b/" rel="noopener" target="_blank">GRI 2025</a></div></div>
 </footer>
+<script>
+document.querySelectorAll('.expand-btn').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var open=btn.getAttribute('aria-expanded')==='true';
+    var panel=btn.nextElementSibling;
+    btn.setAttribute('aria-expanded',String(!open));
+    if(open){panel.style.maxHeight=null;btn.lastChild.textContent='Why it matters';}
+    else{panel.style.maxHeight=panel.scrollHeight+'px';btn.lastChild.textContent='Show less';}
+  });
+});
+</script>
+<script>
+(function(){
+  var progress=document.getElementById('progress');
+  var totop=document.getElementById('totop');
+  var navLinks=Array.prototype.slice.call(document.querySelectorAll('.topnav a'));
+  var sections=navLinks.map(function(a){return document.getElementById(a.getAttribute('href').slice(1));});
 
-
-
-
+  function onScroll(){
+    var st=window.scrollY||document.documentElement.scrollTop;
+    var h=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+    progress.style.width=(h>0?(st/h*100):0)+'%';
+    totop.classList.toggle('show', st>500);
+    // active section
+    var idx=0;
+    for(var i=0;i<sections.length;i++){
+      if(sections[i] && sections[i].getBoundingClientRect().top<=120) idx=i;
+    }
+    navLinks.forEach(function(a,i){a.classList.toggle('active',i===idx);});
+    var active=navLinks[idx];
+    if(active && active.offsetParent){
+      var nav=active.parentElement;
+      var target=active.offsetLeft-nav.clientWidth/2+active.clientWidth/2;
+      nav.scrollTo({left:target,behavior:'smooth'});
+    }
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll);
+  totop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  onScroll();
+})();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+new Chart(document.getElementById('c'),{
+  type:'bar',
+  data:{
+    labels:['2022','2023','2024','2025'],
+    datasets:[
+      {label:'Low (pessimistic)',data:[null,17,19,28],backgroundColor:'#0f3d5c',borderRadius:5,barPercentage:.6,categoryPercentage:.7},
+      {label:'High (optimistic)',data:[30,31,34,49],backgroundColor:'#8fc2df',borderRadius:5,barPercentage:.6,categoryPercentage:.7}
+    ]
+  },
+  options:{
+    responsive:true,maintainAspectRatio:false,
+    scales:{
+      y:{beginAtZero:true,max:55,ticks:{callback:v=>v+'%',color:'#7c8b96',font:{size:12}},grid:{color:'#e8eceb'}},
+      x:{ticks:{color:'#3d4f5d',font:{size:14,weight:'600'}},grid:{display:false}}
+    },
+    plugins:{
+      legend:{display:false},
+      tooltip:{callbacks:{label:c=>c.dataset.label+': '+c.parsed.y+'%'}}
+    }
+  }
+});
+new Chart(document.getElementById('c2'),{
+  type:'scatter',
+  data:{
+    datasets:[
+      {
+        label:'Comparable RSA estimates',
+        data:[
+          {x:1,y:20000000,label:'RSA 2019'},
+          {x:2,y:1000000,label:'RSA 2025'}
+        ],
+        showLine:false,
+        pointRadius:7,
+        pointHoverRadius:8,
+        pointBackgroundColor:'#c0532f',
+        pointBorderColor:'#fff',
+        pointBorderWidth:2
+      },
+      {
+        label:'Architecture-specific neutral-atom result',
+        data:[
+          {x:3,y:10000,label:'Neutral-atom 2026'}
+        ],
+        showLine:false,
+        pointRadius:8,
+        pointHoverRadius:9,
+        pointStyle:'rectRot',
+        pointBackgroundColor:'#2f7fb5',
+        pointBorderColor:'#fff',
+        pointBorderWidth:2
+      }
+    ]
+  },
+  options:{
+    responsive:true,
+    maintainAspectRatio:false,
+    layout:{padding:{left:12,right:18,top:8,bottom:0}},
+    scales:{
+      y:{
+        type:'logarithmic',
+        min:5000,
+        max:50000000,
+        ticks:{
+          color:'#7c8b96',
+          font:{size:12},
+          callback:function(v){
+            if(v===10000)return'10K';
+            if(v===100000)return'100K';
+            if(v===1000000)return'1M';
+            if(v===10000000)return'10M';
+            return null;
+          }
+        },
+        grid:{color:'#e8eceb'}
+      },
+      x:{
+        type:'linear',
+        min:0.55,
+        max:3.45,
+        afterBuildTicks:function(axis){
+          axis.ticks=[{value:1},{value:2},{value:3}];
+        },
+        ticks:{
+          autoSkip:false,
+          maxRotation:0,
+          minRotation:0,
+          padding:10,
+          color:'#3d4f5d',
+          font:{size:13,weight:'600'},
+          callback:function(v){
+            if(v===1)return ['RSA','2019'];
+            if(v===2)return ['RSA','2025'];
+            if(v===3)return ['Neutral-atom','2026'];
+            return '';
+          }
+        },
+        grid:{display:false},
+        border:{display:false}
+      }
+    },
+    plugins:{
+      legend:{display:false},
+      tooltip:{callbacks:{
+        title:function(items){return items[0].raw.label;},
+        label:function(c){
+          var v=c.raw.y;
+          var s=v>=1000000?(v/1000000)+'M':(v/1000)+'K';
+          if(c.datasetIndex===1) return s+' physical qubits · architecture-specific neutral-atom/QEC result';
+          return s+' physical qubits · comparable RSA estimate';
+        }
+      }}
+    }
+  }
+});
+</script>
 </body>
 </html>
