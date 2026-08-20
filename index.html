@@ -19,12 +19,16 @@
   /* sticky nav */
   .progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--mid);z-index:60;transition:width .1s}
   .topnav{position:sticky;top:0;z-index:50;background:rgba(244,246,245,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-  .topnav-inner{max-width:960px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:6px;height:52px;overflow-x:auto;scrollbar-width:none}
+  .topnav-inner{max-width:1280px;margin:0 auto;padding:8px 24px;display:flex;align-items:center;justify-content:flex-start;gap:6px;min-height:52px;height:auto;flex-wrap:wrap;overflow:visible}
   .topnav-inner::-webkit-scrollbar{display:none}
   .topnav a{flex:none;font-size:12.5px;font-weight:600;color:var(--ink-soft);text-decoration:none;padding:6px 11px;border-radius:20px;white-space:nowrap;transition:background .15s,color .15s}
   .topnav a:hover{background:#e4eaea;color:var(--ink)}
   .topnav a.active{background:var(--deep);color:#fff}
   .nav-label{flex:none;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-right:6px}
+  @media(max-width:900px){
+    .topnav-inner{max-width:100%;padding:0 16px;height:52px;min-height:52px;flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;scrollbar-width:none}
+    .topnav a{padding:6px 10px}
+  }
   @media(max-width:560px){.nav-label{display:none}}
 
   /* back to top */
@@ -176,6 +180,335 @@
   .witem h4{font-size:14.5px;font-weight:700;margin-bottom:4px}
   .witem p{font-size:13px;color:var(--ink-soft)}
 
+
+  /* migration toolkit */
+  .toolkit-principles{background:#eef4f8;border:1px solid #cfe0ea;border-radius:14px;padding:18px 20px;margin:18px 0 24px}
+  .toolkit-principles strong{color:var(--deep)}
+  .toolkit-flow{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin:18px 0 26px}
+  .toolkit-step{background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 11px;font-size:12px;font-weight:700;color:var(--deep)}
+  .toolkit-arrow{color:var(--faint);font-weight:700}
+  .toolkit-group{margin-top:30px}
+  .toolkit-group h3{font-size:19px;margin-bottom:5px;color:var(--ink)}
+  .toolkit-group>.group-sub{font-size:13.5px;color:var(--ink-soft);margin-bottom:14px;max-width:72ch}
+  .tool-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:14px}
+  .tool-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 19px}
+  .tool-card.sg{border-top:4px solid #b23636}
+  .tool-card h4{font-size:15.5px;line-height:1.3;margin:7px 0 10px;color:var(--ink)}
+  .tool-meta{display:grid;grid-template-columns:78px 1fr;gap:5px 9px;font-size:12.5px;margin-top:11px}
+  .tool-meta .mk{font-weight:800;color:var(--faint);text-transform:uppercase;letter-spacing:.05em;font-size:10.5px}
+  .tool-meta .mv{color:var(--ink-soft)}
+  .access{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;padding:4px 8px;border-radius:999px;background:#dcede2;color:#1a6b3f;border:1px solid #b9dac7;margin:2px 0 5px}
+  .context{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:4px 8px;border-radius:999px;background:#e4eef5;color:#0f3d5c;border:1px solid #c8dce9;margin:2px 4px 5px 0}
+  .context.sg{background:#fbeaea;color:#9e2f2f;border-color:#e8cccc}
+  .tool-limit{margin-top:11px;padding-top:10px;border-top:1px solid var(--line);font-size:12.5px;color:var(--ink-soft)}
+  .tool-limit strong{color:var(--coral)}
+  .commercial-note{background:#f7f7f6;border:1px dashed #cfd5d3;border-radius:12px;padding:16px 18px;margin-top:26px;font-size:13px;color:var(--ink-soft)}
+
+
+  /* v12 executive masthead + dashboard */
+  .hero{padding:24px 0 18px!important;background:#fff!important}
+  .masthead{display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .brand-block{min-width:0}
+  .brand-kicker{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:6px}
+  .brand-title{font-family:var(--serif);font-size:clamp(28px,4vw,46px);line-height:1.02;letter-spacing:-.025em;color:var(--deep);margin:0}
+  .brand-sub{font-size:14px;color:var(--ink-soft);margin-top:7px;max-width:760px}
+  .brand-meta{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
+  .brand-meta span{font-size:10.5px;font-weight:700;color:var(--ink-soft);background:#f2f6f7;border:1px solid var(--line);padding:4px 8px;border-radius:999px}
+  .update-box{flex:0 0 310px;border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:#fbfcfc}
+  .update-box .urow{display:flex;justify-content:space-between;gap:12px;font-size:11px;color:var(--ink-soft);line-height:1.6}
+  .update-box strong{color:var(--deep)}
+  .exec-dashboard{padding:20px 0 26px;background:linear-gradient(180deg,#eef7f9,#f8fbfc);border-bottom:1px solid var(--line)}
+  .exec-panel{background:#fff;border:1px solid #d6e3e8;border-radius:16px;box-shadow:0 12px 32px rgba(20,50,65,.07);overflow:hidden}
+  .exec-top{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(430px,1fr);gap:24px;padding:25px 28px}
+  .exec-copy .mini{font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:6px}
+  .exec-copy h2{font-family:var(--serif);font-size:clamp(27px,3.2vw,41px);line-height:1.12;letter-spacing:-.02em;color:var(--deep);margin:0 0 10px}
+  .exec-copy p{font-size:14px;color:var(--ink-soft);line-height:1.65;max-width:760px;margin:0}
+  .exec-cta{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}
+  .exec-cta a{font-size:11.5px;font-weight:800;text-decoration:none;border-radius:8px;padding:8px 11px;background:var(--deep);color:#fff}
+  .exec-cta a.secondary{background:#fff;color:var(--deep);border:1px solid #c9d9e1}
+  .exec-metrics{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}
+  .exec-metric{border:1px solid var(--line);border-radius:11px;padding:13px 14px;background:#fbfcfc}
+  .exec-metric .n{font-family:var(--serif);font-size:25px;font-weight:700;color:var(--deep);line-height:1}
+  .exec-metric .t{font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--ink);margin-top:6px}
+  .exec-metric .d{font-size:11px;color:var(--ink-soft);line-height:1.4;margin-top:3px}
+  .latest-band{border-top:1px solid var(--line);padding:17px 20px 20px}
+  .latest-head{display:flex;justify-content:space-between;align-items:center;gap:15px;margin:0 2px 11px}
+  .latest-head h3{font-size:14.5px;color:var(--deep);margin:0}
+  .latest-head span{font-size:10.8px;color:var(--faint)}
+  .latest-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}
+  .latest-card{border:1px solid var(--line);border-radius:10px;padding:12px;background:#fff}
+  .latest-card .date{font-size:10px;color:var(--faint);margin:4px 0}
+  .latest-card h4{font-size:12.8px;line-height:1.35;color:var(--ink);margin:0 0 6px}
+  .latest-card p{font-size:11.2px;line-height:1.45;color:var(--ink-soft);margin:0 0 8px}
+  .latest-card .evidence-links{margin-top:7px}
+  .audience-paths{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 20px 20px}
+  .audience-path{border:1px solid var(--line);background:#fafcfc;border-radius:10px;padding:12px 14px}
+  .audience-path strong{font-size:12px;color:var(--deep);display:block;margin-bottom:4px}
+  .audience-path span{font-size:11.5px;color:var(--ink-soft);line-height:1.45}
+  .audience-path a{font-weight:800;color:var(--teal);text-decoration:underline;text-underline-offset:2px}
+  .evidence-links a{
+    display:inline-flex;align-items:center;gap:4px;font-weight:800;color:#0f5f9a;
+    text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px;
+    border-bottom:none!important;background:#f6fbff;border:1px solid #d8e8f2!important;
+    border-radius:7px;padding:5px 8px;margin:4px 5px 0 0;
+    transition:background .15s,color .15s,border-color .15s,transform .15s;
+  }
+  .evidence-links a::after{content:"↗";font-size:10px;line-height:1}
+  .evidence-links a:hover{color:var(--deep);background:#edf7fc;border-color:#bcd6e6!important;transform:translateY(-1px)}
+  .topnav a:hover{text-decoration:underline;text-underline-offset:3px}
+  .topnav a.active{text-decoration:none}
+  .exec-cta a{box-shadow:0 1px 0 rgba(0,0,0,.04)}
+  .exec-cta a:hover{filter:brightness(.97);transform:translateY(-1px)}
+  @media(max-width:980px){
+    .masthead{align-items:flex-start}.update-box{flex-basis:260px}
+    .exec-top{grid-template-columns:1fr}.latest-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:700px){
+    .masthead{display:block}.update-box{margin-top:14px;width:100%}
+    .exec-top{padding:20px 16px}.latest-band{padding:16px 12px 18px}
+    .latest-grid,.audience-paths{grid-template-columns:1fr}
+    .audience-paths{padding:0 12px 16px}
+    .exec-cta a{flex:1 1 100%;justify-content:center;text-align:center;min-height:42px}
+    .evidence-links a{display:flex;width:100%;justify-content:space-between;min-height:40px;padding:8px 10px}
+    .update-box .urow{font-size:11.5px}
+    .brand-meta{gap:6px}.brand-meta span{font-size:10px}
+  }
+
+
+
+  /* interaction cues: internal actions → ; external evidence ↗ */
+  .mini-tools a,
+  .exec-cta a{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+  }
+  .mini-tools a::after,
+  .exec-cta a::after{
+    content:"→";
+    font-size:.95em;
+    font-weight:800;
+    line-height:1;
+    transition:transform .15s ease;
+  }
+  .mini-tools a:hover::after,
+  .exec-cta a:hover::after{
+    transform:translateX(2px);
+  }
+  .mini-tools a:hover{
+    background:#e5f0f4;
+    border-color:#bfd8e2;
+    color:var(--deep);
+  }
+  .mini-tools a:focus-visible,
+  .exec-cta a:focus-visible,
+  .evidence-links a:focus-visible{
+    outline:3px solid rgba(47,127,181,.28);
+    outline-offset:2px;
+  }
+  @media(max-width:700px){
+    .mini-tools a{
+      min-height:40px;
+      justify-content:space-between;
+    }
+  }
+
+
+  /* full-site responsive hardening — formatting only */
+  img,canvas,svg{max-width:100%}
+
+  /* prevent long tokens / URLs / labels from forcing overflow */
+  .wrap,.chart-card,.icard,.witem,.tier,.tool-card,.signal-card,.sg-actor,
+  .latest-card,.audience-path,.attrib,.mosca,.commercial-note{
+    min-width:0;
+  }
+  h1,h2,h3,h4,p,li,td,th,a,span{
+    overflow-wrap:anywhere;
+  }
+
+  /* charts: keep bounded and readable */
+  .chart-box{min-height:260px}
+  .chart-card{overflow:hidden}
+  #collapse .chart-box{height:360px}
+
+  /* tables: allow safe horizontal scroll on smaller screens */
+  .table-scroll{
+    width:100%;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    border-radius:10px;
+  }
+  .table-scroll .dtable{min-width:760px}
+
+  /* cards: stable spacing and natural mobile heights */
+  .signal-card,.icard,.witem,.tier,.tool-card,.sg-actor,.latest-card{
+    min-height:0;
+  }
+
+  /* source/action groups */
+  .evidence-links{max-width:100%}
+  .evidence-links a,.mini-tools a,.exec-cta a{
+    max-width:100%;
+  }
+
+  @media(max-width:980px){
+    section{padding:44px 0}
+    .wrap{padding-left:20px;padding-right:20px}
+    .signal-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+    .latest-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+    .exec-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .dtable{font-size:12.5px}
+  }
+
+  @media(max-width:820px){
+    .cards2,.watch,.tiers,.tool-grid,.sg-actors,.signal-grid,.latest-grid,.audience-paths{
+      grid-template-columns:1fr!important;
+    }
+    .tl-item{grid-template-columns:78px minmax(0,1fr);gap:16px}
+    .tl-year{font-size:22px}
+    .mosca-eq{gap:8px}
+    .mvar{min-width:130px}
+  }
+
+  @media(max-width:700px){
+    section{padding:36px 0}
+    .wrap{padding-left:16px;padding-right:16px}
+
+    /* navigation remains horizontally scrollable */
+    .topnav-inner{
+      max-width:100%;
+      padding:0 14px;
+      height:52px;
+      min-height:52px;
+      flex-wrap:nowrap!important;
+      overflow-x:auto!important;
+      overflow-y:hidden!important;
+      scroll-snap-type:x proximity;
+    }
+    .topnav a{scroll-snap-align:start}
+
+    /* mobile tap targets */
+    .mini-tools a,.exec-cta a,.evidence-links a{
+      min-height:42px;
+    }
+    .mini-tools a,.exec-cta a{
+      width:100%;
+      justify-content:space-between;
+    }
+    .evidence-links a{
+      display:flex;
+      width:100%;
+      justify-content:space-between;
+      margin-right:0;
+    }
+
+    /* charts */
+    .chart-card{padding:16px 12px}
+    .chart-box{height:320px;min-height:320px;max-height:320px}
+    #collapse .chart-box{height:350px;min-height:350px;max-height:350px}
+    .legend{gap:8px 12px;font-size:11.5px;line-height:1.35}
+    .note{font-size:12.5px;line-height:1.55}
+
+    /* timeline */
+    .tl-item{grid-template-columns:1fr;gap:8px;padding:18px 0}
+    .tl-year{display:flex;align-items:baseline;gap:8px;font-size:22px}
+    .tl-year .m{display:inline;font-size:11px}
+    .tl-body h3{font-size:16px}
+
+    /* cards */
+    .tier .tl{min-height:0}
+    .tool-meta{grid-template-columns:70px minmax(0,1fr)}
+    .sg-flow{gap:6px}
+
+    /* typography */
+    h2{font-size:24px}
+    .sub{max-width:none}
+
+    /* avoid over-wide tables while preserving information */
+    .table-scroll{margin-left:0;margin-right:0}
+  }
+
+  @media(max-width:430px){
+    .wrap{padding-left:14px;padding-right:14px}
+    .chart-card{padding:14px 10px}
+    .chart-box{height:300px;min-height:300px;max-height:300px}
+    #collapse .chart-box{height:330px;min-height:330px;max-height:330px}
+    .legend{display:block}
+    .legend span{margin-bottom:7px}
+    .tool-meta{grid-template-columns:1fr;gap:2px}
+    .tool-meta .mk{margin-top:7px}
+    .brand-meta span{font-size:10px}
+  }
+
+  /* site-wide comparable-card alignment */
+  .cards2,.watch,.tiers,.tool-grid,.sg-actors,.exec-metrics,.latest-grid,.audience-paths{
+    align-items:stretch;
+  }
+  .cards2>.icard,
+  .watch>.witem,
+  .tiers>.tier,
+  .tool-grid>.tool-card,
+  .sg-actors>.sg-actor,
+  .latest-grid>.latest-card,
+  .audience-paths>.audience-path{
+    height:100%;
+  }
+  .cards2>.icard,
+  .watch>.witem,
+  .tiers>.tier,
+  .tool-grid>.tool-card,
+  .latest-grid>.latest-card{
+    display:flex;
+    flex-direction:column;
+  }
+  .tiers>.tier>p,
+  .watch>.witem>p,
+  .cards2>.icard>p{
+    flex-grow:1;
+  }
+  .tiers>.tier>.evidence-links,
+  .watch>.witem>.evidence-links,
+  .cards2>.icard>.evidence-links,
+  .tool-grid>.tool-card>.evidence-links,
+  .latest-grid>.latest-card>.evidence-links{
+    margin-top:auto;
+    padding-top:12px;
+  }
+  .tiers>.tier .evidence-links{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:flex-start;
+    gap:6px;
+  }
+  .tiers>.tier .evidence-links .ev-label{
+    flex-basis:100%;
+    margin-bottom:1px;
+  }
+  .tiers>.tier .evidence-links a{
+    margin:0;
+  }
+  .tier .tl{
+    min-height:42px;
+    display:flex;
+    align-items:flex-start;
+  }
+  .tier>p{
+    margin-top:2px;
+  }
+  .tool-card h4,.witem h4,.icard h4,.latest-card h4{
+    text-wrap:balance;
+  }
+  @media(max-width:700px){
+    .tiers,.cards2,.watch,.tool-grid,.sg-actors{
+      grid-template-columns:1fr!important;
+    }
+    .tiers>.tier .evidence-links a{
+      width:100%;
+      justify-content:space-between;
+    }
+    .tier .tl{min-height:0}
+  }
+
   /* attribution callout */
   .attrib{background:#eef4f8;border:1px solid #cfe0ea;border-left:4px solid var(--mid);border-radius:0 10px 10px 0;padding:18px 20px;margin-bottom:30px}
   .attrib-h{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--deep);margin-bottom:8px}
@@ -307,63 +640,27 @@
   .evidence-legend strong{color:var(--ink)}
   .evidence-legend .legend-copy{display:inline-flex;align-items:center;gap:6px;flex-wrap:wrap}
 </style>
-<meta content="2026-08-20-evidence-linked-v8" name="qtl-build"/></head>
+<meta content="2026-08-20-full-responsive-v24" name="qtl-build"/></head>
 <body>
 <div class="progress" id="progress"></div>
 <button aria-label="Back to top" class="totop" id="totop">↑</button>
 <header class="hero">
 <div class="wrap">
-<div class="hero-grid">
-<div class="hero-copy">
-<div class="eyebrow">Global quantum threat tracker · continuously updated</div>
-<h1>The quantum threat is still uncertain. <em>The migration problem is not.</em></h1>
-<p class="lede">A continuously updated, evidence-led view of how quantum-computing progress, cryptanalytic resource estimates, standards, policy, and migration guidance are changing the risk to today’s public-key cryptography.</p>
-<p class="note" style="margin-top:14px;max-width:64ch">The tracker separates demonstrated results from resource estimates, expert opinion, vendor roadmaps, and policy so that changes in the global threat landscape can be interpreted without turning uncertainty into hype.</p>
-<div class="updated"><span class="pulse"></span>Living research tracker — fact-checked <span id="updated-date">20 August 2026</span></div>
-<div class="hero-meta">
-<div class="meta-pill"><strong>Scope:</strong> Global</div>
-<div class="meta-pill"><strong>Featured lens:</strong> Singapore</div>
-<div class="meta-pill"><strong>Method:</strong> Evidence classes kept separate</div>
-<div class="meta-pill"><strong>Maintained by:</strong> Vincent Tan · @leovtdto</div>
+<div class="masthead">
+<div class="brand-block">
+<div class="brand-kicker">Global quantum threat tracker</div>
+<h1 class="brand-title">Quantum Threat Timeline</h1>
+<div class="brand-sub">Evidence-linked tracker for post-quantum cryptography readiness · Singapore perspective, global evidence</div>
+<div class="brand-meta">
+<span>Maintained by Vincent Tan</span>
+<span>Evidence classes kept separate</span>
+<span>Continuously updated</span>
 </div>
-<div class="evidence-links"><span class="ev-label">Basis</span><a href="https://globalriskinstitute.org/publication/quantum-threat-timeline-report-2025b/" rel="noopener" target="_blank">GRI 2025</a><a href="https://www.nist.gov/pqc" rel="noopener" target="_blank">NIST PQC</a><a href="https://www.csa.gov.sg/resources/publications/quantum-safe-handbook-and-quantum-readiness-index/" rel="noopener" target="_blank">CSA Handbook/QRI V1</a></div></div>
-<aside aria-label="Current assessment summary" class="command-card">
-<div class="command-kicker">Current assessment</div>
-<h3>The evidence is converging faster than any single forecast.</h3>
-<p>No public result shows that a cryptographically relevant quantum computer exists today. The preparation problem, however, has moved into the present: standards are final, migration is multi-year, Harvest-Now-Decrypt-Later creates exposure before CRQC arrival, and governments are setting implementation milestones.</p>
-<div class="assessment-row">
-<div class="assessment">
-<div class="label">Threat timing</div>
-<div class="value">Uncertain</div>
-<div class="small">There is no scientifically proven date for a CRQC.</div>
-<div class="evidence-links"><span class="ev-label">Evidence</span><a href="https://www.nist.gov/cybersecurity-and-privacy/what-post-quantum-cryptography" rel="noopener" target="_blank">NIST PQC explainer</a><a href="https://globalriskinstitute.org/publication/quantum-threat-timeline-report-2025b/" rel="noopener" target="_blank">GRI 2025</a></div></div>
-<div class="assessment">
-<div class="label">Migration timing</div>
-<div class="value">Present-tense</div>
-<div class="small">Cryptographic discovery, prioritisation and migration are multi-year engineering work.</div>
-<div class="evidence-links"><span class="ev-label">Evidence</span><a href="https://pages.nist.gov/nccoe-migration-post-quantum-cryptography/" rel="noopener" target="_blank">NIST migration project</a><a href="https://www.csa.gov.sg/resources/publications/quantum-safe-handbook-and-quantum-readiness-index/" rel="noopener" target="_blank">CSA Handbook/QRI V1</a></div></div>
-<div class="assessment">
-<div class="label">Evidence discipline</div>
-<div class="value">Five classes</div>
-<div class="small">Measurements, estimates, expert opinion, vendor roadmaps, and policy/standards are not treated as equivalent.</div>
-<div class="evidence-links"><span class="ev-label">Method</span><a href="#method" rel="noopener" target="_blank">Evidence method</a></div></div>
-<div class="assessment">
-<div class="label">Research status</div>
-<div class="value">Living tracker</div>
-<div class="small">New evidence is reviewed for whether it changes facts, interpretation, or migration urgency.</div>
-<div class="evidence-links"><span class="ev-label">Tracker method</span><a href="#watch" rel="noopener" target="_blank">Watch-list</a></div></div>
 </div>
-<div class="hero-actions">
-<a href="#singapore">Singapore case study</a>
-<a class="secondary" href="#timeline">Global timeline</a>
-<a class="secondary" href="#deadlines">Policy deadlines</a>
+<div class="update-box">
+<div class="urow"><span>Last fact-checked</span><strong>20 August 2026</strong></div>
+<div class="urow"><span>Scope</span><strong>Global · Singapore lens</strong></div>
 </div>
-<div class="evidence-links"><span class="ev-label">Evidence</span><a href="https://globalriskinstitute.org/publication/quantum-threat-timeline-report-2025b/" rel="noopener" target="_blank">GRI 2025</a><a href="https://pages.nist.gov/nccoe-migration-post-quantum-cryptography/" rel="noopener" target="_blank">NIST migration FAQ</a><a href="https://blog.google/innovation-and-ai/technology/safety-security/cryptography-migration-timeline/" rel="noopener" target="_blank">Google 2029 migration timeline</a></div></aside>
-</div>
-<div class="bignum">
-<div class="stat"><div class="n">20M → &lt;1M</div><div class="l">RSA-2048 physical-qubit resource estimate, 2019 → 2025, under the same stated hardware assumptions.</div><div class="evidence-links"><span class="ev-label">Evidence</span><a href="https://arxiv.org/abs/1905.09749" rel="noopener" target="_blank">Gidney 2019</a><a href="https://arxiv.org/abs/2505.15917" rel="noopener" target="_blank">Gidney 2025</a></div></div>
-<div class="stat"><div class="n">28–49%</div><div class="l">10-year CRQC probability range in the 2025 expert survey; opinion evidence, not a measured forecast.</div><div class="evidence-links"><span class="ev-label">Evidence</span><a href="https://globalriskinstitute.org/publication/quantum-threat-timeline-report-2025b/" rel="noopener" target="_blank">GRI 2025</a></div></div>
-<div class="stat"><div class="n">2027 / 2030 / 2031</div><div class="l">US EO 14412 milestones: NIST pilot, HVA key establishment, and HVA signatures.</div><div class="evidence-links"><span class="ev-label">Evidence</span><a href="https://www.whitehouse.gov/presidential-actions/2026/06/securing-the-nation-against-advanced-cryptographic-attacks/" rel="noopener" target="_blank">EO 14412</a></div></div>
 </div>
 </div>
 </header>
@@ -377,6 +674,7 @@
 <a href="#hndl">HNDL</a>
 <a href="#deadlines">Deadlines</a>
 <a href="#singapore">🇸🇬 Singapore</a>
+<a href="#toolkit">Migration Toolkit</a>
 <a href="#counter">Counter-case</a>
 <a href="#method">Method</a>
 <a href="#watch">Watch 2026</a>
@@ -384,6 +682,67 @@
 <a href="#sources">Sources</a>
 </div>
 </nav>
+<section class="exec-dashboard" id="executive-summary">
+<div class="wrap">
+<div class="exec-panel">
+<div class="exec-top">
+<div class="exec-copy">
+<div class="mini">Current assessment</div>
+<h2>The quantum threat is uncertain in timing. The migration problem is not.</h2>
+<p>No public result shows that a cryptographically relevant quantum computer exists today. But standards are final, migration takes years, Harvest-Now-Decrypt-Later creates exposure before CRQC arrival, and deployment signals are now visible across major platforms and enterprise infrastructure.</p>
+<div class="exec-cta">
+<a href="#timeline">Understand the threat</a>
+<a class="secondary" href="#toolkit">Start migration</a>
+<a class="secondary" href="#singapore">🇸🇬 Singapore context</a>
+</div>
+</div>
+<div class="exec-metrics">
+<div class="exec-metric"><div class="n">2024</div><div class="t">NIST standards final</div><div class="d">ML-KEM, ML-DSA and SLH-DSA established the first deployment baseline.</div></div>
+<div class="exec-metric"><div class="n">2030s</div><div class="t">Transition milestones</div><div class="d">Government roadmaps make migration a present planning problem.</div></div>
+<div class="exec-metric"><div class="n">2026</div><div class="t">Deployment is visible</div><div class="d">Cloud, Android and enterprise software now provide concrete migration signals.</div></div>
+<div class="exec-metric"><div class="n">Now</div><div class="t">Best first move</div><div class="d">Assess risk, discover cryptography, build inventory and plan replacement.</div></div>
+</div>
+</div>
+<div class="latest-band">
+<div class="latest-head"><h3>Latest developments · evidence-linked</h3><span>Primary sources beside each claim</span></div>
+<div class="latest-grid">
+<div class="latest-card">
+<div class="evidence-badges"><span class="evidence-badge prov-reported">Reported</span><span class="evidence-badge etype">Deployment signal</span></div>
+<div class="date">12 Aug 2026</div>
+<h4>Google extends PQC into the Android device trust chain</h4>
+<p>Android 17 integrates ML-DSA into platform security; Titan M3-specific coverage remains reported evidence.</p>
+<div class="evidence-links"><a href="https://blog.google/security/security-for-the-quantum-era-implementing-post-quantum-cryptography-in-android/" rel="noopener" target="_blank">Google source</a></div>
+</div>
+<div class="latest-card">
+<div class="evidence-badges"><span class="evidence-badge prov-verified">Verified</span><span class="evidence-badge etype">Deployment signal</span></div>
+<div class="date">29 Jul 2026</div>
+<h4>Cloudflare begins post-quantum authentication deployment</h4>
+<p>ML-DSA support expands PQC from key establishment toward production authentication workflows.</p>
+<div class="evidence-links"><a href="https://blog.cloudflare.com/post-quantum-authentication-to-origins/" rel="noopener" target="_blank">Cloudflare source</a></div>
+</div>
+<div class="latest-card">
+<div class="evidence-badges"><span class="evidence-badge prov-verified">Verified</span><span class="evidence-badge etype">Deployment measurement</span></div>
+<div class="date">3 Aug 2026 · preprint</div>
+<h4>Internet-visible PQC adoption remains uneven</h4>
+<p>UK measurement data shows deployment is real but fragmented; visible support does not equal organisation-wide migration.</p>
+<div class="evidence-links"><a href="https://arxiv.org/abs/2608.02147" rel="noopener" target="_blank">Research source</a></div>
+</div>
+<div class="latest-card">
+<div class="evidence-badges"><span class="evidence-badge prov-verified">Verified</span><span class="evidence-badge etype">Deployment signal · software</span></div>
+<div class="date">11 Aug 2026</div>
+<h4>Windows Server 2025 expands PQC certificate support</h4>
+<p>Microsoft improves PQC certificate-authority configuration and certificate-template enrolment.</p>
+<div class="evidence-links"><a href="https://support.microsoft.com/help/5120233" rel="noopener" target="_blank">Microsoft source</a></div>
+</div>
+</div>
+</div>
+<div class="audience-paths">
+<div class="audience-path"><strong>For leaders</strong><span>Use <a href="#trend">Trend</a>, <a href="#collapse">Collapse</a>, <a href="#hndl">HNDL</a> and <a href="#deadlines">Deadlines</a> to understand why timing uncertainty does not remove migration urgency.</span></div>
+<div class="audience-path"><strong>For practitioners</strong><span>Use the <a href="#toolkit">Migration Toolkit</a> to assess risk, discover cryptography, build inventory and plan migration using free-first, vendor-neutral resources.</span></div>
+</div>
+</div>
+</div>
+</section>
 <section aria-label="What matters now" class="signal-strip">
 <div class="wrap">
 <div class="signal-grid">
@@ -446,16 +805,16 @@
 <div class="chart-box">
 <canvas aria-label="Logarithmic chart comparing representative cryptanalytic resource estimates: about 20 million physical qubits for RSA-2048 in 2019, under 1 million for RSA-2048 in 2025 under the same assumptions, and a separate 2026 neutral-atom Shor-scale study reporting a floor of about 10,000 reconfigurable atomic qubits." id="c2" role="img">Representative estimates: RSA-2048 20 million in 2019; RSA-2048 under 1 million in 2025 under the same stated assumptions; and a separate 2026 neutral-atom study with a roughly 10,000-qubit floor for cryptographically relevant Shor-scale workloads.</canvas>
 </div>
-<p class="note"><strong>Do not read the three points as one continuous RSA curve.</strong> The 2019 and 2025 RSA estimates are directly comparable because Gidney states the same hardware assumptions. The 2026 Cain et al. result is architecture-specific neutral-atom/QEC co-design and trades space against much longer runtime. The defensible conclusion is resource compression across multiple technical fronts, not “RSA now needs 10,000 qubits.” Full sources below.</p>
+<p class="note"><strong>What this shows:</strong> Published resource estimates have fallen substantially as algorithms, error correction and hardware-aware designs have improved. The 2019 and 2025 RSA estimates are directly comparable because Gidney states the same hardware assumptions. The 2026 Cain et al. neutral-atom result provides additional evidence of resource compression, but it is architecture-specific and trades space against substantially longer runtime. <strong>Interpretation:</strong> the 2026 point should not be read as “RSA-2048 now requires only 10,000 physical qubits.” The defensible conclusion is that old qubit-count assumptions can become stale as multiple technical fronts improve. Full sources below.</p>
 <div class="evidence-links"><span class="ev-label">Evidence</span><a href="https://arxiv.org/abs/1905.09749" rel="noopener" target="_blank">Gidney 2019</a><a href="https://arxiv.org/abs/2505.15917" rel="noopener" target="_blank">Gidney 2025</a><a href="https://arxiv.org/abs/2603.28627" rel="noopener" target="_blank">Cain et al. 2026</a></div></div>
-<p class="sub" style="margin-top:24px">Why this matters alongside the survey: an annual opinion poll of 26 people is a sentiment indicator, while peer-reviewed experiments and resource analyses provide different evidence. Several important 2026 results appeared after the 2025 survey period, so they should be tracked separately rather than retroactively folded into the survey number.</p><div class="evidence-links"><span class="ev-label">Evidence</span><a href="https://globalriskinstitute.org/publication/quantum-briefing-recent-quantum-computing-progress-and-its-implications-for-cybersecurity/" rel="noopener" target="_blank">GRI June 2026 briefing</a><a href="https://research.google/pubs/securing-elliptic-curve-cryptocurrencies-against-quantum-vulnerabilities-resource-estimates-and-mitigations/" rel="noopener" target="_blank">Google P-256 study</a></div>
+<p class="sub" style="margin-top:24px"><strong>Management takeaway:</strong> a quantum computer has not suddenly become capable of breaking RSA, but published research continues to reduce some of the resources previously thought necessary. Migration planning should therefore avoid anchoring to a single historic qubit estimate. Resource requirements can change faster than large organisations can replace cryptography.</p><div class="evidence-links"><span class="ev-label">Evidence</span><a href="https://globalriskinstitute.org/publication/quantum-briefing-recent-quantum-computing-progress-and-its-implications-for-cybersecurity/" rel="noopener" target="_blank">GRI June 2026 briefing</a><a href="https://research.google/pubs/securing-elliptic-curve-cryptocurrencies-against-quantum-vulnerabilities-resource-estimates-and-mitigations/" rel="noopener" target="_blank">Google P-256 study</a></div>
 </div>
 </section>
 <section id="timeline">
 <div class="wrap">
 <div class="kicker">Timeline</div>
 <h2>The evidence landscape behind the timeline</h2>
-<p class="sub">Since 2022, two technical directions have mattered simultaneously: published cryptanalytic resource estimates have fallen, while hardware and quantum-error-correction experiments have improved. Standards and national migration programmes have also moved from preparation toward implementation. These streams should be read together, but not treated as the same kind of evidence.</p>
+<p class="sub">Since 2022, published cryptanalytic resource estimates, hardware and quantum-error-correction experiments, standards, and migration programmes have all moved. <strong>The events below are ordered strictly chronologically.</strong> The badges distinguish theory, resource estimates, hardware, policy and other evidence types, so different technical fronts can be compared without breaking the timeline sequence.</p>
 <div class="attrib">
 <div class="attrib-h">◆ What the 2025 report discusses — and what it does not prove</div>
 <p>The 2025 Quantum Threat Timeline Report discusses recent hardware and cryptanalytic-resource developments, including Google Willow and lower resource estimates, as part of the context for an accelerating threat assessment. That does <strong>not</strong> establish that any single development caused the survey probabilities to move. Events below are therefore labelled by evidence type and timing rather than presented as statistically proven drivers.</p>
@@ -475,12 +834,7 @@
 <a class="src-link" href="https://globalriskinstitute.org/publication/2022-quantum-threat-timeline-report/" rel="noopener" target="_blank">Source: GRI Quantum Threat Timeline Report 2022 ↗</a>
 </div></div>
 </div>
-</div>
-<div class="thread-head alt">
-<h3>Front 1 · Cryptanalytic resource compression — the target shrinks</h3>
-<p>These results reduce estimated resources for attacks on RSA or elliptic-curve cryptography. They are technical estimates, not evidence that the required hardware already exists.</p>
-</div>
-<div class="tl-item">
+</div><div class="tl-item">
 <div class="tl-year">2023<span class="m">Aug</span></div>
 <div class="tl-body">
 <span class="tag t-road">Theory</span> <span class="tag t-context">Foundational</span>
@@ -492,74 +846,9 @@
 <div class="layer nums"><div class="lh"><span class="dot"></span>The numbers</div><p>Reduces circuit size by a factor of ~√n for an n-bit integer, at the cost of ~√n separate runs. Follow-on work (Ragavan &amp; Vaikuntanathan, Oct 2023) cut the space overhead back down, addressing its main drawback.</p></div>
 <div class="layer cav"><div class="lh"><span class="dot"></span>The honest caveat</div><p>Regev's algorithm relies on a heuristic number-theoretic assumption (since given a proof under certain conditions), and early implementations were actually <em>slower</em> than Shor's for small numbers. Its value is asymptotic and foundational, not an immediate practical speedup — but it reset the theoretical baseline.</p></div>
 <a class="src-link" href="https://arxiv.org/abs/2308.06572" rel="noopener" target="_blank">Primary source: Regev, arXiv:2308.06572 (2023) ↗</a>
- <a class="src-link" href="https://www.quantamagazine.org/thirty-years-later-a-speed-boost-for-quantum-factoring-20231017/" rel="noopener" target="_blank">Independent explainer: Quanta (2023) ↗</a></div></div>
+<a class="src-link" href="https://www.quantamagazine.org/thirty-years-later-a-speed-boost-for-quantum-factoring-20231017/" rel="noopener" target="_blank">Independent explainer: Quanta (2023) ↗</a></div></div>
 </div>
-</div>
-<div class="tl-item">
-<div class="tl-year">2025<span class="m">Feb</span></div>
-<div class="tl-body">
-<span class="tag t-road">Theory</span> <span class="tag t-context">Resource-estimate context</span>
-<h3>The 1,730-qubit result (Chevignard–Fouque–Schrottenloher)</h3>
-<p>A CRYPTO 2025 paper estimated that factoring RSA-2048 can be carried out using about <em>1,730 logical qubits</em>, trading qubit count against a much larger number of operations and repeated runs. Gidney’s 2025 physical-resource estimate explicitly cites this approximate-residue arithmetic as one of the main sources of its qubit-count reduction.</p>
-<button aria-expanded="false" class="expand-btn"><span class="chev">›</span>Why it matters</button>
-<div class="detail"><div class="detail-inner">
-<div class="layer mech"><div class="lh"><span class="dot"></span>Mechanism</div><p>The threat timeline isn't only about building bigger machines — it's also about needing <em>smaller</em> ones. Every algorithmic improvement that reduces the qubits required to break RSA pulls Q-Day closer without a single new piece of hardware. This paper attacked the problem from the maths side, using approximate residue arithmetic to shrink the logical-qubit requirement dramatically.</p></div>
-<div class="layer nums"><div class="lh"><span class="dot"></span>The numbers</div><p>Reduced the logical-qubit count for factoring RSA-2048 to ~1,730 — roughly (0.5 + ε)·n logical qubits for an n-bit integer. This is the algorithmic groundwork the subsequent physical-resource estimate was built on.</p></div>
-<div class="layer cav"><div class="lh"><span class="dot"></span>The honest caveat</div><p>Logical qubits are not physical qubits — the earlier version of this algorithm needed an astronomically high gate count (~2×10¹² Toffoli gates), making it impractical until the follow-on work optimized it. It's a foundation, not a turnkey attack.</p></div>
-
-<a class="src-link" href="https://eprint.iacr.org/2024/222" rel="noopener" target="_blank">Primary preprint: Chevignard, Fouque &amp; Schrottenloher, IACR ePrint 2024/222 ↗</a> <a class="src-link" href="https://doi.org/10.1007/978-3-032-01878-6_13" rel="noopener" target="_blank">CRYPTO 2025 proceedings (DOI) ↗</a></div></div>
-</div>
-</div>
-<div class="tl-item">
-<div class="tl-year">2025<span class="m">May</span></div>
-<div class="tl-body">
-<span class="tag t-road">Theory</span> <span class="tag t-context">Resource estimate</span>
-<h3>Gidney: RSA-2048 with under 1 million qubits</h3>
-<p>Craig Gidney’s May 2025 paper reduced his estimated physical-qubit requirement for factoring RSA-2048 from 20 million in 2019 to <em>fewer than 1 million</em> under the same stated hardware assumptions. The result is a major resource-estimate update; it does not demonstrate an RSA-2048 attack.</p>
-<button aria-expanded="false" class="expand-btn"><span class="chev">›</span>Why it matters</button>
-<div class="detail"><div class="detail-inner">
-<div class="layer mech"><div class="lh"><span class="dot"></span>Mechanism</div><p>The significance is that the estimated hardware target moved substantially under a comparable assumption set. The reduction comes from improvements in arithmetic, logical-qubit storage and magic-state handling rather than from a new physical machine.</p></div>
-<div class="layer nums"><div class="lh"><span class="dot"></span>The numbers</div><p>2019 estimate: about 20 million noisy qubits and an eight-hour runtime. 2025 estimate: fewer than 1 million noisy qubits and a runtime of less than one week. Both use a nearest-neighbour grid, 0.1% gate error, 1 μs surface-code cycle and 10 μs reaction time.</p></div>
-<div class="layer cav"><div class="lh"><span class="dot"></span>The honest caveat</div><p>This remains a resource <em>estimate</em>. No existing machine can execute the attack, and the result should not be converted into a CRQC arrival date. It is best used as evidence that cryptanalytic resource requirements can change materially as algorithms and fault-tolerance techniques improve.</p></div>
-<a class="src-link" href="https://arxiv.org/abs/2505.15917" rel="noopener" target="_blank">Primary source: Gidney, arXiv:2505.15917 (2025) ↗</a>
-</div></div>
-</div>
-</div>
-<div class="tl-item">
-<div class="tl-year">2026<span class="m">Mar</span></div>
-<div class="tl-body">
-<span class="tag t-road">Theory</span> <span class="tag t-hw">Hardware-specific</span>
-<h3>Neutral-atom co-design pushes Shor-scale estimates toward ~10,000 qubits</h3>
-<p>A Caltech/Oratomic/UC Berkeley team (Cain, Preskill, Bluvstein et al.) reported that cryptographically relevant Shor-scale computation could be possible with as few as ~10,000 reconfigurable atomic qubits by co-designing algorithms, high-rate quantum error correction and neutral-atom hardware. This is a different architecture and runtime regime from Gidney's RSA estimate, so it should not be plotted as a direct continuation of the same curve.</p>
-<button aria-expanded="false" class="expand-btn"><span class="chev">›</span>Why it matters</button>
-<div class="detail"><div class="detail-inner">
-<div class="layer mech"><div class="lh"><span class="dot"></span>Mechanism</div><p>This is where algorithm and hardware modality meet. qLDPC codes need long-range connections between qubits — something superconducting chips struggle with, but neutral atoms do naturally because they can be <em>physically moved</em>. Matching the code to the hardware slashes the requirement again. It also means watching only one hardware type (e.g. superconducting) gives a false sense of how far away the threat is.</p></div>
-<div class="layer nums"><div class="lh"><span class="dot"></span>The numbers</div><p>The paper's abstract gives an overall floor of about 10,000 reconfigurable atomic qubits for cryptographically relevant Shor-scale workloads. For P-256 it gives an example of about 26,000 physical qubits and a runtime of a few days; it says RSA-2048 would take one to two orders of magnitude longer. Those figures are architecture- and assumption-dependent.</p></div>
-<div class="layer cav"><div class="lh"><span class="dot"></span>The honest caveat</div><p>These are aggressive, assumption-heavy resource estimates with very long runtimes, and no neutral-atom machine is close to 10,000 <em>error-corrected</em> qubits today. But a slow code-breaker doesn't need to be fast — for "harvest now, decrypt later," patience is enough.</p></div>
-<a class="src-link" href="https://arxiv.org/abs/2603.28627" rel="noopener" target="_blank">Primary source: Cain et al., arXiv:2603.28627 (2026) ↗</a>
-</div></div>
-</div>
-</div>
-<div class="tl-item">
-<div class="tl-year">2026<span class="m">Mar</span></div>
-<div class="tl-body">
-<span class="tag t-road">Theory</span> <span class="tag t-context">Context</span>
-<h3>Google: P-256 ECDLP below 1,200 logical qubits in a 2026 resource study</h3>
-<p>Google researchers published new resource estimates for the 256-bit elliptic-curve discrete-log problem used in many modern TLS, SSH, code-signing and cryptocurrency deployments. Their study gives circuits below 1,200 logical qubits and models execution on a superconducting architecture using fewer than half a million physical qubits.</p>
-<button aria-expanded="false" class="expand-btn"><span class="chev">›</span>Why it matters</button>
-<div class="detail"><div class="detail-inner">
-<div class="layer mech"><div class="lh"><span class="dot"></span>Mechanism</div><p>The GRI survey uses RSA-2048 as its benchmark, but many deployed systems rely on elliptic-curve public-key cryptography. Tracking ECDLP resource estimates therefore gives a complementary view of quantum risk; organisations should inventory the algorithms they actually use rather than infer their exposure from RSA alone.</p></div>
-<div class="layer nums"><div class="lh"><span class="dot"></span>The numbers</div><p>The 2026 whitepaper reports either &lt;1,200 logical qubits with &lt;90 million Toffoli gates, or &lt;1,450 logical qubits with &lt;70 million Toffoli gates. Under its model of a superconducting architecture with 10<sup>−3</sup> physical error rates and planar connectivity, the circuits can run in minutes using fewer than 500,000 physical qubits.</p></div>
-<div class="layer cav"><div class="lh"><span class="dot"></span>The honest caveat</div><p>Still a resource estimate, not a demonstration. But it reframes the target: migration plans that track only RSA timelines may underestimate the relevance of elliptic-curve cryptography to the threat surface.</p></div>
-<a class="src-link" href="https://research.google/pubs/securing-elliptic-curve-cryptocurrencies-against-quantum-vulnerabilities-resource-estimates-and-mitigations/" rel="noopener" target="_blank">Primary source: Google Research / arXiv:2603.28846 (2026) ↗</a>
-</div></div>
-</div>
-</div>
-<div class="thread-head">
-<h3>Front 2 · The hardware &amp; policy front — the machine gets closer</h3>
-<p>Real processors, error-correction milestones, national programs, and the standards/deadlines that turn all of it into an obligation.</p>
-</div>
-<div class="tl-item">
+</div><div class="tl-item">
 <div class="tl-year">2023<span class="m">Dec</span></div>
 <div class="tl-body">
 <span class="tag t-hw">Hardware pivot</span> <span class="tag t-context">Context</span>
@@ -571,10 +860,9 @@
 <div class="layer nums"><div class="lh"><span class="dot"></span>The numbers</div><p>Condor: 1,121 qubits, with IBM describing performance as comparable to its previous 433-qubit Osprey. Heron: 133 qubits in its first revision, with IBM reporting a 3–5× improvement in device performance over its prior flagship Eagle processors. The 2023 GRI survey reported a 17–31% 10-year range.</p></div>
 <div class="layer cav"><div class="lh"><span class="dot"></span>The honest caveat</div><p>Lower error rates on a small chip are not the same as error correction. Heron made qubits better; it did not yet make them self-correcting. That threshold wasn't crossed until Willow the following year. Note: this is landscape context — the survey does not name Condor as a driver.</p></div>
 <a class="src-link" href="https://newsroom.ibm.com/2023-12-04-IBM-Debuts-Next-Generation-Quantum-Processor-IBM-Quantum-System-Two%2C-Extends-Roadmap-to-Advance-Era-of-Quantum-Utility" rel="noopener" target="_blank">Primary source: IBM Quantum Summit 2023 announcement ↗</a>
- <a class="src-link" href="https://globalriskinstitute.org/publication/2023-quantum-threat-timeline-report/" rel="noopener" target="_blank">Survey context: GRI 2023 ↗</a></div></div>
+<a class="src-link" href="https://globalriskinstitute.org/publication/2023-quantum-threat-timeline-report/" rel="noopener" target="_blank">Survey context: GRI 2023 ↗</a></div></div>
 </div>
-</div>
-<div class="tl-item">
+</div><div class="tl-item">
 <div class="tl-year">2024<span class="m">Aug</span></div>
 <div class="tl-body">
 <span class="tag t-policy">Policy</span> <span class="tag t-context">Context</span>
@@ -588,53 +876,7 @@
 <a class="src-link" href="https://www.federalregister.gov/documents/2024/08/14/2024-17956/announcing-issuance-of-federal-information-processing-standards-fips-fips-203-module-lattice-based" rel="noopener" target="_blank">Primary source: NIST FIPS 203/204/205, Federal Register (2024) ↗</a>
 </div></div>
 </div>
-</div>
-<div class="tl-item">
-<div class="tl-year">2024<span class="m">Dec</span></div>
-<div class="tl-body">
-<span class="tag t-hw">Hardware</span> <span class="tag t-context">Report-cited context</span>
-<h3>Google Willow — below threshold</h3>
-<p>Google reported below-threshold surface-code quantum memories on its Willow processors: logical error decreased as code distance increased, a key condition for scalable quantum error correction.</p>
-<button aria-expanded="false" class="expand-btn"><span class="chev">›</span>Why it matters</button>
-<div class="detail"><div class="detail-inner">
-<div class="layer mech"><div class="lh"><span class="dot"></span>Mechanism</div><p>Below-threshold operation means increasing the size of the error-correcting code suppresses logical error rather than amplifying it. That behaviour is foundational for large fault-tolerant systems, but it is still several engineering steps removed from cryptanalytic computation.</p></div>
-<div class="layer nums"><div class="lh"><span class="dot"></span>The numbers</div><p>On the 105-qubit Willow processor, the distance-7 surface-code memory used 101 qubits and reported a logical error of 0.143% per cycle with an error-suppression factor Λ = 2.14 ± 0.02. The logical memory lifetime exceeded its best constituent physical qubit by about 2.4×.</p></div>
-<div class="layer cav"><div class="lh"><span class="dot"></span>The honest caveat</div><p>This was an error-corrected memory experiment, not an RSA or ECC attack and not a general-purpose fault-tolerant computer. It demonstrates an important scaling property, while large-scale computation still requires much larger systems, logical operations, decoding, stability and system integration.</p></div>
-<a class="src-link" href="https://www.nature.com/articles/s41586-024-08449-y" rel="noopener" target="_blank">Primary source: Acharya et al., Nature (2024) ↗</a>
-</div></div>
-</div>
-</div>
-<div class="tl-item">
-<div class="tl-year">2025<span class="m">Mar</span></div>
-<div class="tl-body">
-<span class="tag t-hw">Hardware</span> <span class="tag t-context">Benchmark</span>
-<h3>Zuchongzhi 3.0 — 105-qubit superconducting benchmark</h3>
-<p>A USTC-led team reported a 105-qubit superconducting processor and a random-circuit-sampling experiment whose classical simulation cost was estimated to be far beyond Frontier under the paper’s benchmark assumptions. This is evidence of high-performance quantum hardware, not a cryptanalytic demonstration.</p>
-<button aria-expanded="false" class="expand-btn"><span class="chev">›</span>Why it matters</button>
-<div class="detail"><div class="detail-inner">
-<div class="layer mech"><div class="lh"><span class="dot"></span>Mechanism</div><p>Random-circuit sampling is a benchmark for quantum computational advantage: the processor samples outputs from random quantum circuits that are difficult to reproduce classically. The experiment does not run Shor’s algorithm or attack deployed cryptography.</p></div>
-<div class="layer nums"><div class="lh"><span class="dot"></span>The numbers</div><p>The processor comprises 105 qubits. Reported single-qubit, two-qubit and readout fidelities are 99.90%, 99.62% and 99.13%, respectively. For the 83-qubit, 32-cycle sampling task, the paper estimates that Frontier would require approximately 5.9 × 10^9 years to reproduce the task.</p></div>
-<div class="layer cav"><div class="lh"><span class="dot"></span>The honest caveat</div><p>The result is a sampling benchmark, not a code-breaking demonstration. It should therefore be used as evidence of processor capability and scaling progress, not as a direct estimate of proximity to breaking RSA or elliptic-curve cryptography.</p></div>
-<a class="src-link" href="https://link.aps.org/doi/10.1103/PhysRevLett.134.090601" rel="noopener" target="_blank">Primary source: Phys. Rev. Lett. 134, 090601 (2025) ↗</a>
-</div></div>
-</div>
-</div>
-<div class="tl-item">
-<div class="tl-year">2025<span class="m">Nov</span></div>
-<div class="tl-body">
-<span class="tag t-hw">Hardware</span> <span class="tag t-context">Different modality</span>
-<h3>Quantinuum Helios — 48 error-corrected logical qubits</h3>
-<p>Quantinuum's 98-physical-qubit trapped-ion Helios system reported 99.921% two-qubit gate fidelity and demonstrations including 48 error-corrected logical qubits at a 2:1 physical-to-logical encoding rate. A reminder that fault-tolerance progress must be tracked across multiple hardware modalities, not only superconducting systems.</p>
-<button aria-expanded="false" class="expand-btn"><span class="chev">›</span>Why it matters</button>
-<div class="detail"><div class="detail-inner">
-<div class="layer mech"><div class="lh"><span class="dot"></span>Mechanism</div><p>Helios uses trapped ions with high connectivity and high physical-gate fidelity, and Quantinuum demonstrated high-rate logical encodings using concatenated codes. The 2:1 result is a specific code-and-workload demonstration; it should not be read as a universal physical-to-logical conversion ratio for arbitrary fault-tolerant computation.</p></div>
-<div class="layer nums"><div class="lh"><span class="dot"></span>The numbers</div><p>Quantinuum reports 98 physical qubits at 99.921% two-qubit gate fidelity and 99.9975% one-qubit gate fidelity. Helios demonstrations include 94 error-detected logical qubits in a GHZ state, 50 error-detected logical qubits in a magnetism simulation, and 48 error-corrected logical qubits with better-than-physical performance.</p></div>
-<div class="layer cav"><div class="lh"><span class="dot"></span>The honest caveat</div><p>48 logical qubits is worlds away from the thousands needed for RSA, and trapped-ion clock speeds are slower than superconducting. High fidelity and low overhead are real advantages, but scale remains the open question for every platform.</p></div>
-<a class="src-link" href="https://www.quantinuum.com/press-releases/quantinuum-announces-commercial-launch-of-new-helios-quantum-computer-that-offers-unprecedented-accuracy-to-enable-generative-quantum-ai-genqai" rel="noopener" target="_blank">Primary source: Quantinuum Helios launch (2025) ↗</a>
-</div></div>
-</div>
-</div>
-<div class="tl-item">
+</div><div class="tl-item">
 <div class="tl-year">2024<span class="m">Sep</span></div>
 <div class="tl-body">
 <span class="tag t-road">Error correction</span> <span class="tag t-context">Overhead cut</span>
@@ -648,23 +890,118 @@
 <a class="src-link" href="https://arxiv.org/abs/2409.17595" rel="noopener" target="_blank">Primary source: Gidney, Shutty &amp; Jones, arXiv:2409.17595 (2024) ↗</a>
 </div></div>
 </div>
+</div><div class="tl-item">
+<div class="tl-year">2024<span class="m">Dec</span></div>
+<div class="tl-body">
+<span class="tag t-hw">Hardware</span> <span class="tag t-context">Report-cited context</span>
+<h3>Google Willow — below threshold</h3>
+<p>Google reported below-threshold surface-code quantum memories on its Willow processors: logical error decreased as code distance increased, a key condition for scalable quantum error correction.</p>
+<button aria-expanded="false" class="expand-btn"><span class="chev">›</span>Why it matters</button>
+<div class="detail"><div class="detail-inner">
+<div class="layer mech"><div class="lh"><span class="dot"></span>Mechanism</div><p>Below-threshold operation means increasing the size of the error-correcting code suppresses logical error rather than amplifying it. That behaviour is foundational for large fault-tolerant systems, but it is still several engineering steps removed from cryptanalytic computation.</p></div>
+<div class="layer nums"><div class="lh"><span class="dot"></span>The numbers</div><p>On the 105-qubit Willow processor, the distance-7 surface-code memory used 101 qubits and reported a logical error of 0.143% per cycle with an error-suppression factor Λ = 2.14 ± 0.02. The logical memory lifetime exceeded its best constituent physical qubit by about 2.4×.</p></div>
+<div class="layer cav"><div class="lh"><span class="dot"></span>The honest caveat</div><p>This was an error-corrected memory experiment, not an RSA or ECC attack and not a general-purpose fault-tolerant computer. It demonstrates an important scaling property, while large-scale computation still requires much larger systems, logical operations, decoding, stability and system integration.</p></div>
+<a class="src-link" href="https://www.nature.com/articles/s41586-024-08449-y" rel="noopener" target="_blank">Primary source: Acharya et al., Nature (2024) ↗</a>
+</div></div>
 </div>
-<div class="tl-item">
+</div><div class="tl-item">
+<div class="tl-year">2025<span class="m">Feb</span></div>
+<div class="tl-body">
+<span class="tag t-road">Theory</span> <span class="tag t-context">Resource-estimate context</span>
+<h3>The 1,730-qubit result (Chevignard–Fouque–Schrottenloher)</h3>
+<p>A CRYPTO 2025 paper estimated that factoring RSA-2048 can be carried out using about <em>1,730 logical qubits</em>, trading qubit count against a much larger number of operations and repeated runs. Gidney’s 2025 physical-resource estimate explicitly cites this approximate-residue arithmetic as one of the main sources of its qubit-count reduction.</p>
+<button aria-expanded="false" class="expand-btn"><span class="chev">›</span>Why it matters</button>
+<div class="detail"><div class="detail-inner">
+<div class="layer mech"><div class="lh"><span class="dot"></span>Mechanism</div><p>The threat timeline isn't only about building bigger machines — it's also about needing <em>smaller</em> ones. Every algorithmic improvement that reduces the qubits required to break RSA pulls Q-Day closer without a single new piece of hardware. This paper attacked the problem from the maths side, using approximate residue arithmetic to shrink the logical-qubit requirement dramatically.</p></div>
+<div class="layer nums"><div class="lh"><span class="dot"></span>The numbers</div><p>Reduced the logical-qubit count for factoring RSA-2048 to ~1,730 — roughly (0.5 + ε)·n logical qubits for an n-bit integer. This is the algorithmic groundwork the subsequent physical-resource estimate was built on.</p></div>
+<div class="layer cav"><div class="lh"><span class="dot"></span>The honest caveat</div><p>Logical qubits are not physical qubits — the earlier version of this algorithm needed an astronomically high gate count (~2×10¹² Toffoli gates), making it impractical until the follow-on work optimized it. It's a foundation, not a turnkey attack.</p></div>
+<a class="src-link" href="https://eprint.iacr.org/2024/222" rel="noopener" target="_blank">Primary preprint: Chevignard, Fouque &amp; Schrottenloher, IACR ePrint 2024/222 ↗</a> <a class="src-link" href="https://doi.org/10.1007/978-3-032-01878-6_13" rel="noopener" target="_blank">CRYPTO 2025 proceedings (DOI) ↗</a></div></div>
+</div>
+</div><div class="tl-item">
 <div class="tl-year">2025<span class="m">Feb</span></div>
 <div class="tl-body">
 <span class="tag t-hw">Hardware · contested</span> <span class="tag t-context">Context</span>
 <h3>Microsoft's Majorana programme — ambitious and still contested</h3>
 <p>Microsoft announced Majorana 1 in Feb 2025 and an upgraded Majorana 2 in Jun 2026, arguing that topological hardware could offer a scalable path to fault tolerance. The core topological interpretation remains actively contested in the scientific literature, so this belongs in the tracker as a high-upside but low-confidence hardware path.</p>
 <button aria-expanded="false" class="expand-btn"><span class="chev">›</span>Why it matters</button>
-<div class="detail"><div class="detail-inner"><a class="src-link" href="https://news.microsoft.com/source/features/innovation/majorana-2-microsoft-discovery-agentic-ai/" rel="noopener" target="_blank">Vendor source: Microsoft Majorana 2 (Jun 2026) ↗</a> 
+<div class="detail"><div class="detail-inner"><a class="src-link" href="https://news.microsoft.com/source/features/innovation/majorana-2-microsoft-discovery-agentic-ai/" rel="noopener" target="_blank">Vendor source: Microsoft Majorana 2 (Jun 2026) ↗</a>
 <div class="layer mech"><div class="lh"><span class="dot"></span>Mechanism</div><p>A completely different bet from Google's and IBM's. Instead of correcting errors with software and extra qubits, a topological qubit would resist errors in the hardware itself — protection built into the physics. If it works, it needs far fewer physical qubits per logical one. It's the high-risk, high-reward path.</p></div>
 <div class="layer nums"><div class="lh"><span class="dot"></span>The numbers</div><p>Majorana 1 was announced as an eight-qubit device with a claimed architecture intended to scale much further. Microsoft announced Majorana 2 in June 2026, but device count and roadmap claims should be read separately from evidence that the underlying states are genuinely topological.</p></div>
 <div class="layer cav"><div class="lh"><span class="dot"></span>The honest caveat</div><p>Scientific disagreement is current, not historical. A Nature <em>Matters Arising</em> article published 24 Jun 2026 argued that transport data underlying the topological-gap interpretation may instead be consistent with trivial mechanisms; Microsoft published a formal reply defending its interpretation. Present the programme as contested evidence, not a settled topological-qubit milestone.</p></div>
 <a class="src-link" href="https://www.nature.com/articles/s41586-026-10567-8" rel="noopener" target="_blank">Independent scrutiny: Nature Matters Arising (Jun 2026) ↗</a> <a class="src-link" href="https://www.nature.com/articles/s41586-026-10568-7" rel="noopener" target="_blank">Microsoft reply ↗</a>
 </div></div>
 </div>
+</div><div class="tl-item">
+<div class="tl-year">2025<span class="m">Mar</span></div>
+<div class="tl-body">
+<span class="tag t-hw">Hardware</span> <span class="tag t-context">Benchmark</span>
+<h3>Zuchongzhi 3.0 — 105-qubit superconducting benchmark</h3>
+<p>A USTC-led team reported a 105-qubit superconducting processor and a random-circuit-sampling experiment whose classical simulation cost was estimated to be far beyond Frontier under the paper’s benchmark assumptions. This is evidence of high-performance quantum hardware, not a cryptanalytic demonstration.</p>
+<button aria-expanded="false" class="expand-btn"><span class="chev">›</span>Why it matters</button>
+<div class="detail"><div class="detail-inner">
+<div class="layer mech"><div class="lh"><span class="dot"></span>Mechanism</div><p>Random-circuit sampling is a benchmark for quantum computational advantage: the processor samples outputs from random quantum circuits that are difficult to reproduce classically. The experiment does not run Shor’s algorithm or attack deployed cryptography.</p></div>
+<div class="layer nums"><div class="lh"><span class="dot"></span>The numbers</div><p>The processor comprises 105 qubits. Reported single-qubit, two-qubit and readout fidelities are 99.90%, 99.62% and 99.13%, respectively. For the 83-qubit, 32-cycle sampling task, the paper estimates that Frontier would require approximately 5.9 × 10^9 years to reproduce the task.</p></div>
+<div class="layer cav"><div class="lh"><span class="dot"></span>The honest caveat</div><p>The result is a sampling benchmark, not a code-breaking demonstration. It should therefore be used as evidence of processor capability and scaling progress, not as a direct estimate of proximity to breaking RSA or elliptic-curve cryptography.</p></div>
+<a class="src-link" href="https://link.aps.org/doi/10.1103/PhysRevLett.134.090601" rel="noopener" target="_blank">Primary source: Phys. Rev. Lett. 134, 090601 (2025) ↗</a>
+</div></div>
 </div>
-<div class="tl-item future">
+</div><div class="tl-item">
+<div class="tl-year">2025<span class="m">May</span></div>
+<div class="tl-body">
+<span class="tag t-road">Theory</span> <span class="tag t-context">Resource estimate</span>
+<h3>Gidney: RSA-2048 with under 1 million qubits</h3>
+<p>Craig Gidney’s May 2025 paper reduced his estimated physical-qubit requirement for factoring RSA-2048 from 20 million in 2019 to <em>fewer than 1 million</em> under the same stated hardware assumptions. The result is a major resource-estimate update; it does not demonstrate an RSA-2048 attack.</p>
+<button aria-expanded="false" class="expand-btn"><span class="chev">›</span>Why it matters</button>
+<div class="detail"><div class="detail-inner">
+<div class="layer mech"><div class="lh"><span class="dot"></span>Mechanism</div><p>The significance is that the estimated hardware target moved substantially under a comparable assumption set. The reduction comes from improvements in arithmetic, logical-qubit storage and magic-state handling rather than from a new physical machine.</p></div>
+<div class="layer nums"><div class="lh"><span class="dot"></span>The numbers</div><p>2019 estimate: about 20 million noisy qubits and an eight-hour runtime. 2025 estimate: fewer than 1 million noisy qubits and a runtime of less than one week. Both use a nearest-neighbour grid, 0.1% gate error, 1 μs surface-code cycle and 10 μs reaction time.</p></div>
+<div class="layer cav"><div class="lh"><span class="dot"></span>The honest caveat</div><p>This remains a resource <em>estimate</em>. No existing machine can execute the attack, and the result should not be converted into a CRQC arrival date. It is best used as evidence that cryptanalytic resource requirements can change materially as algorithms and fault-tolerance techniques improve.</p></div>
+<a class="src-link" href="https://arxiv.org/abs/2505.15917" rel="noopener" target="_blank">Primary source: Gidney, arXiv:2505.15917 (2025) ↗</a>
+</div></div>
+</div>
+</div><div class="tl-item">
+<div class="tl-year">2025<span class="m">Nov</span></div>
+<div class="tl-body">
+<span class="tag t-hw">Hardware</span> <span class="tag t-context">Different modality</span>
+<h3>Quantinuum Helios — 48 error-corrected logical qubits</h3>
+<p>Quantinuum's 98-physical-qubit trapped-ion Helios system reported 99.921% two-qubit gate fidelity and demonstrations including 48 error-corrected logical qubits at a 2:1 physical-to-logical encoding rate. A reminder that fault-tolerance progress must be tracked across multiple hardware modalities, not only superconducting systems.</p>
+<button aria-expanded="false" class="expand-btn"><span class="chev">›</span>Why it matters</button>
+<div class="detail"><div class="detail-inner">
+<div class="layer mech"><div class="lh"><span class="dot"></span>Mechanism</div><p>Helios uses trapped ions with high connectivity and high physical-gate fidelity, and Quantinuum demonstrated high-rate logical encodings using concatenated codes. The 2:1 result is a specific code-and-workload demonstration; it should not be read as a universal physical-to-logical conversion ratio for arbitrary fault-tolerant computation.</p></div>
+<div class="layer nums"><div class="lh"><span class="dot"></span>The numbers</div><p>Quantinuum reports 98 physical qubits at 99.921% two-qubit gate fidelity and 99.9975% one-qubit gate fidelity. Helios demonstrations include 94 error-detected logical qubits in a GHZ state, 50 error-detected logical qubits in a magnetism simulation, and 48 error-corrected logical qubits with better-than-physical performance.</p></div>
+<div class="layer cav"><div class="lh"><span class="dot"></span>The honest caveat</div><p>48 logical qubits is worlds away from the thousands needed for RSA, and trapped-ion clock speeds are slower than superconducting. High fidelity and low overhead are real advantages, but scale remains the open question for every platform.</p></div>
+<a class="src-link" href="https://www.quantinuum.com/press-releases/quantinuum-announces-commercial-launch-of-new-helios-quantum-computer-that-offers-unprecedented-accuracy-to-enable-generative-quantum-ai-genqai" rel="noopener" target="_blank">Primary source: Quantinuum Helios launch (2025) ↗</a>
+</div></div>
+</div>
+</div><div class="tl-item">
+<div class="tl-year">2026<span class="m">Mar</span></div>
+<div class="tl-body">
+<span class="tag t-road">Theory</span> <span class="tag t-hw">Hardware-specific</span>
+<h3>Neutral-atom co-design pushes Shor-scale estimates toward ~10,000 qubits</h3>
+<p>A Caltech/Oratomic/UC Berkeley team (Cain, Preskill, Bluvstein et al.) reported that cryptographically relevant Shor-scale computation could be possible with as few as ~10,000 reconfigurable atomic qubits by co-designing algorithms, high-rate quantum error correction and neutral-atom hardware. This is a different architecture and runtime regime from Gidney's RSA estimate, so it should not be plotted as a direct continuation of the same curve.</p>
+<button aria-expanded="false" class="expand-btn"><span class="chev">›</span>Why it matters</button>
+<div class="detail"><div class="detail-inner">
+<div class="layer mech"><div class="lh"><span class="dot"></span>Mechanism</div><p>This is where algorithm and hardware modality meet. qLDPC codes need long-range connections between qubits — something superconducting chips struggle with, but neutral atoms do naturally because they can be <em>physically moved</em>. Matching the code to the hardware slashes the requirement again. It also means watching only one hardware type (e.g. superconducting) gives a false sense of how far away the threat is.</p></div>
+<div class="layer nums"><div class="lh"><span class="dot"></span>The numbers</div><p>The paper's abstract gives an overall floor of about 10,000 reconfigurable atomic qubits for cryptographically relevant Shor-scale workloads. For P-256 it gives an example of about 26,000 physical qubits and a runtime of a few days; it says RSA-2048 would take one to two orders of magnitude longer. Those figures are architecture- and assumption-dependent.</p></div>
+<div class="layer cav"><div class="lh"><span class="dot"></span>The honest caveat</div><p>These are aggressive, assumption-heavy resource estimates with very long runtimes, and no neutral-atom machine is close to 10,000 <em>error-corrected</em> qubits today. But a slow code-breaker doesn't need to be fast — for "harvest now, decrypt later," patience is enough.</p></div>
+<a class="src-link" href="https://arxiv.org/abs/2603.28627" rel="noopener" target="_blank">Primary source: Cain et al., arXiv:2603.28627 (2026) ↗</a>
+</div></div>
+</div>
+</div><div class="tl-item">
+<div class="tl-year">2026<span class="m">Mar</span></div>
+<div class="tl-body">
+<span class="tag t-road">Theory</span> <span class="tag t-context">Context</span>
+<h3>Google: P-256 ECDLP below 1,200 logical qubits in a 2026 resource study</h3>
+<p>Google researchers published new resource estimates for the 256-bit elliptic-curve discrete-log problem used in many modern TLS, SSH, code-signing and cryptocurrency deployments. Their study gives circuits below 1,200 logical qubits and models execution on a superconducting architecture using fewer than half a million physical qubits.</p>
+<button aria-expanded="false" class="expand-btn"><span class="chev">›</span>Why it matters</button>
+<div class="detail"><div class="detail-inner">
+<div class="layer mech"><div class="lh"><span class="dot"></span>Mechanism</div><p>The GRI survey uses RSA-2048 as its benchmark, but many deployed systems rely on elliptic-curve public-key cryptography. Tracking ECDLP resource estimates therefore gives a complementary view of quantum risk; organisations should inventory the algorithms they actually use rather than infer their exposure from RSA alone.</p></div>
+<div class="layer nums"><div class="lh"><span class="dot"></span>The numbers</div><p>The 2026 whitepaper reports either &lt;1,200 logical qubits with &lt;90 million Toffoli gates, or &lt;1,450 logical qubits with &lt;70 million Toffoli gates. Under its model of a superconducting architecture with 10<sup>−3</sup> physical error rates and planar connectivity, the circuits can run in minutes using fewer than 500,000 physical qubits.</p></div>
+<div class="layer cav"><div class="lh"><span class="dot"></span>The honest caveat</div><p>Still a resource estimate, not a demonstration. But it reframes the target: migration plans that track only RSA timelines may underestimate the relevance of elliptic-curve cryptography to the threat surface.</p></div>
+<a class="src-link" href="https://research.google/pubs/securing-elliptic-curve-cryptocurrencies-against-quantum-vulnerabilities-resource-estimates-and-mitigations/" rel="noopener" target="_blank">Primary source: Google Research / arXiv:2603.28846 (2026) ↗</a>
+</div></div>
+</div>
+</div><div class="tl-item future">
 <div class="tl-year">2029<span class="m">target</span></div>
 <div class="tl-body">
 <span class="tag t-road">Roadmap</span> <span class="tag t-context">Context</span>
@@ -678,8 +1015,7 @@
 <a class="src-link" href="https://newsroom.ibm.com/2025-06-10-ibm-details-plan-to-build-first-large-scale-fault-tolerant-quantum-computer" rel="noopener" target="_blank">Primary source: IBM newsroom (June 2025) ↗</a>
 </div></div>
 </div>
-</div>
-</div>
+</div></div>
 </div>
 </section>
 <section id="mosca">
@@ -718,7 +1054,7 @@
 <div class="kicker">The regulatory clock · national &amp; sector mandates</div>
 <h2>Dates are converging — but their legal force differs</h2>
 <p class="sub">Governments and security authorities have attached dates to PQC transition, but they are not all equivalent: some are laws or executive requirements for defined federal systems, some are procurement/security policies, and others are roadmaps or guidance. For planning, the relevant date is the <strong>earliest requirement or policy target that actually applies to the system, contract, sector or jurisdiction in question</strong>. Recommendations and draft plans should not be described as “binding” unless their legal or policy scope makes that true.</p>
-<table class="dtable">
+<div class="table-scroll"><table class="dtable">
 <thead><tr><th>Date</th><th>Jurisdiction / body</th><th>Requirement / target</th><th>Status</th></tr></thead>
 <tbody>
 <tr><td class="rgroup" colspan="4">Asia-Pacific</td></tr>
@@ -740,7 +1076,7 @@
 <tr><td class="yr">2028 / 31 / 35</td><td>🇬🇧 UK — NCSC</td><td>3-phase: discovery by 2028, high-priority migration by 2031, complete by 2035. <a href="https://www.ncsc.gov.uk/news/pqc-migration-roadmap-unveiled" rel="noopener" target="_blank">NCSC ↗</a></td><td><span class="bind soft">Guidance</span></td></tr>
 <tr><td class="yr">2026 / 31 / 35</td><td>🇨🇦 Canada — Cyber Centre</td><td>ITSM.40.001: migration plans by Apr 2026, high-priority by 2031, all by 2035. <a href="https://www.cyber.gc.ca/en/guidance/roadmap-migration-post-quantum-cryptography-government-canada-itsm40001" rel="noopener" target="_blank">ITSM.40.001 ↗</a></td><td><span class="bind soft">Guidance</span></td></tr>
 </tbody>
-</table>
+</table></div>
 <p class="note" style="margin-top:14px"><strong>Singapore focus:</strong> MAS has not set a universal 2030/2035 disallowance date comparable to some overseas government-security policies. Its 2024 advisory emphasises cryptographic inventory, prioritisation and crypto-agility. For a Singapore organisation with overseas operations or government contracts, the planning date should be the earliest <em>applicable</em> requirement in scope — not every date in this table. The distinction between law, executive order, security policy, draft plan and guidance is deliberate.</p>
 </div>
 </section>
@@ -762,8 +1098,8 @@
 </div></div>
 <h3 style="margin-top:28px">The migration instruments</h3>
 <div class="cards2">
-<div class="icard cool"><h4>Quantum-Safe Migration Handbook V1 · Jul 2026</h4><p>Released by CSA, GovTech and IMDA after the formal 2025 public consultation. Version 1 incorporates stakeholder feedback, updates algorithm recommendations, introduces practical “no-regrets” moves, and includes guidance on crown-jewel identification and current CII requirements. CSA states that the Handbook will continue to be revised as the field evolves.</p><div class="evidence-links"><span class="ev-label">Evidence</span><a href="https://www.csa.gov.sg/resources/publications/quantum-safe-handbook-and-quantum-readiness-index/" rel="noopener" target="_blank">CSA Handbook/QRI V1</a><a href="https://www.csa.gov.sg/news-events/press-releases/csa-releases-a-quantum-safe-handbook-and-quantum-readiness-index/" rel="noopener" target="_blank">CSA 2025 consultation</a></div></div>
-<div class="icard cool"><h4>Quantum Readiness Index V1 · Jul 2026</h4><p>A five-domain self-assessment that helps organisations gauge readiness, identify gaps, prioritise migration actions, structure management discussions, and track progress through periodic reassessment.</p><div class="evidence-links"><span class="ev-label">Evidence</span><a href="https://www.csa.gov.sg/resources/publications/quantum-safe-handbook-and-quantum-readiness-index/" rel="noopener" target="_blank">CSA QRI V1</a></div></div>
+<div class="icard cool"><h4>Quantum-Safe Migration Handbook V1 · Jul 2026</h4><p>Published by CSA, GovTech and IMDA as Version 1 on 16 July 2026 after the formal 2025 public consultation. Version 1 incorporates stakeholder feedback, updates algorithm recommendations, introduces practical “no-regrets” moves, and includes guidance on crown-jewel identification and current CII requirements. CSA states that the Handbook will continue to be revised as the field evolves.</p><div class="evidence-links"><span class="ev-label">Evidence</span><a href="https://www.csa.gov.sg/resources/publications/quantum-safe-handbook-and-quantum-readiness-index/" rel="noopener" target="_blank">CSA Handbook/QRI V1</a><a href="https://www.csa.gov.sg/news-events/press-releases/csa-releases-a-quantum-safe-handbook-and-quantum-readiness-index/" rel="noopener" target="_blank">CSA 2025 consultation</a></div></div>
+<div class="icard cool"><h4>Quantum Readiness Index V1 · Jul 2026</h4><p>Published as Version 1 on 16 July 2026, this five-domain self-assessment helps organisations gauge readiness, identify gaps, prioritise migration actions, structure management discussions, and track progress through periodic reassessment.</p><div class="evidence-links"><span class="ev-label">Evidence</span><a href="https://www.csa.gov.sg/resources/publications/quantum-safe-handbook-and-quantum-readiness-index/" rel="noopener" target="_blank">CSA QRI V1</a></div></div>
 <div class="icard cool"><h4>NQSN+ · nationwide quantum-safe networks</h4><p>IMDA’s programme supports Singtel and SPTel with SpeQtral in building nationwide, interoperable quantum-safe networks. Businesses can integrate solutions including QKD and PQC, while the programme also works toward interoperability with overseas quantum-ready networks.</p><div class="evidence-links"><span class="ev-label">Evidence</span><a href="https://www.imda.gov.sg/about-imda/emerging-technologies-and-research/national-quantum-safe-network-plus" rel="noopener" target="_blank">IMDA NQSN+</a><a href="https://www.csa.gov.sg/news-events/speeches/senior-minister-of-state-tan-kiat-how-committee-of-supply-2026-speech/" rel="noopener" target="_blank">CSA COS 2026</a></div></div>
 <div class="icard cool"><h4>Public feedback remains part of the model</h4><p>The formal consultation ran from 23 Oct to 31 Dec 2025 and is closed. The July 2026 materials explicitly describe the tools as continuing to evolve; CSA still provides a channel for feedback or enquiries at <strong>quantum-safe@csa.gov.sg</strong>.</p><div class="evidence-links"><span class="ev-label">Evidence</span><a href="https://www.csa.gov.sg/news-events/press-releases/csa-releases-a-quantum-safe-handbook-and-quantum-readiness-index/" rel="noopener" target="_blank">CSA 2025 consultation</a><a href="https://www.csa.gov.sg/resources/publications/quantum-safe-handbook-and-quantum-readiness-index/" rel="noopener" target="_blank">CSA V1 — Jul 2026</a></div></div>
 </div>
@@ -775,6 +1111,169 @@
 <div class="node">NQSN+ deployment capability</div>
 </div><div class="evidence-links"><span class="ev-label">Synthesis basis</span><a href="https://www.nrf.gov.sg/quantum-research-coordination-between-astar-and-nus-and-combined-annual-funding/" rel="noopener" target="_blank">NRF quantum strategy</a><a href="https://www.csa.gov.sg/resources/publications/quantum-safe-handbook-and-quantum-readiness-index/" rel="noopener" target="_blank">CSA Handbook/QRI V1</a><a href="https://www.imda.gov.sg/about-imda/emerging-technologies-and-research/national-quantum-safe-network-plus" rel="noopener" target="_blank">IMDA NQSN+</a></div>
 <div class="verdict"><strong>Why it matters globally:</strong> Singapore illustrates a broader transition now visible internationally: the quantum threat remains uncertain in date, but migration is increasingly being treated as an engineering and governance programme that must begin before cryptanalytic capability arrives.<div class="evidence-links"><span class="ev-label">Evidence basis</span><a href="https://www.csa.gov.sg/resources/publications/quantum-safe-handbook-and-quantum-readiness-index/" rel="noopener" target="_blank">CSA V1</a><a href="https://pages.nist.gov/nccoe-migration-post-quantum-cryptography/" rel="noopener" target="_blank">NIST migration project</a></div></div><div class="evidence-links"><span class="ev-label">Analysis basis</span><a href="https://www.csa.gov.sg/resources/publications/quantum-safe-handbook-and-quantum-readiness-index/" rel="noopener" target="_blank">CSA Handbook/QRI V1</a><a href="https://pages.nist.gov/nccoe-migration-post-quantum-cryptography/" rel="noopener" target="_blank">NIST PQC migration</a><a href="https://globalriskinstitute.org/publication/quantum-threat-timeline-report-2025b/" rel="noopener" target="_blank">GRI 2025</a></div>
+</div>
+</section>
+<section id="toolkit">
+<div class="wrap">
+<div class="kicker">From awareness to action · practitioner resources</div>
+<h2>Migration Toolkit</h2>
+<p class="sub">A curated starting point for assessing quantum risk, discovering cryptography, building an inventory, and planning migration. The aim is practical help rather than product promotion: authoritative guidance and freely accessible resources are prioritised, and every item states what it can — and cannot — establish.</p>
+<div class="toolkit-principles">
+<strong>Free-first and vendor-neutral.</strong> This toolkit prioritises freely accessible government guidance, open standards, research methodologies, practitioner resources and open-source tools. Commercial products are not ranked or recommended. Inclusion does not constitute endorsement. Geographic context is stated explicitly: Singapore government resources are presented as <strong>🇸🇬 Singapore context</strong>, not as universal regulatory guidance.
+</div>
+<div aria-label="Suggested PQC migration workflow" class="toolkit-flow">
+<span class="toolkit-step">1 · Assess</span><span class="toolkit-arrow">→</span>
+<span class="toolkit-step">2 · Plan</span><span class="toolkit-arrow">→</span>
+<span class="toolkit-step">3 · Discover</span><span class="toolkit-arrow">→</span>
+<span class="toolkit-step">4 · Inventory</span><span class="toolkit-arrow">→</span>
+<span class="toolkit-step">5 · Implement &amp; test</span><span class="toolkit-arrow">→</span>
+<span class="toolkit-step">6 · Reassess</span>
+</div>
+<div class="toolkit-group">
+<h3>1 · Assess quantum risk and readiness</h3>
+<p class="group-sub">Start by understanding what must remain secure, how long it must remain secure, and whether the organisation is ready to execute a multi-year cryptographic migration.</p>
+<div class="tool-grid">
+<div class="tool-card">
+<div><span class="context">Global · methodology</span><span class="access">Free resource</span></div>
+<h4>GRI — Updated Methodology for Quantum Risk Assessment</h4>
+<div class="tool-meta">
+<div class="mk">Purpose</div><div class="mv">Assess quantum risk, migration readiness and cryptographic resilience.</div>
+<div class="mk">Use when</div><div class="mv">Establishing priorities before a technical migration programme begins.</div>
+</div>
+<div class="tool-limit"><strong>Limit:</strong> a risk methodology does not automatically discover cryptography in systems or prove technical readiness.</div>
+<div class="evidence-links"><span class="ev-label">Primary source</span><a href="https://globalriskinstitute.org/publication/an-updated-methodology-for-quantum-risk-assessment/" rel="noopener" target="_blank">GRI updated methodology</a></div>
+</div>
+<div class="tool-card sg">
+<div><span class="context sg">🇸🇬 Singapore context</span><span class="access">Free · government</span></div>
+<h4>CSA — Quantum Readiness Index V1</h4>
+<div class="tool-meta">
+<div class="mk">Purpose</div><div class="mv">Five-domain organisational self-assessment for quantum-safe readiness.</div>
+<div class="mk">Use when</div><div class="mv">A Singapore organisation wants to identify readiness gaps, prioritise action and support management discussions.</div>
+</div>
+<div class="tool-limit"><strong>Limit:</strong> this is Singapore government guidance and a self-assessment tool. It does not scan infrastructure, and organisations outside Singapore should also follow their applicable national guidance.</div>
+<div class="evidence-links"><span class="ev-label">Singapore government source</span><a href="https://www.csa.gov.sg/resources/publications/quantum-safe-handbook-and-quantum-readiness-index/" rel="noopener" target="_blank">CSA QRI V1 · 16 Jul 2026</a></div>
+</div>
+</div>
+</div>
+<div class="toolkit-group">
+<h3>2 · Plan the migration</h3>
+<p class="group-sub">Use authoritative guidance and roadmaps to turn risk findings into a staged programme of work, with owners, priorities, migration sequencing and continuing review.</p>
+<div class="tool-grid">
+<div class="tool-card">
+<div><span class="context">US government · broadly useful technical guidance</span><span class="access">Free · government</span></div>
+<h4>NIST NCCoE — Migration to Post-Quantum Cryptography</h4>
+<div class="tool-meta">
+<div class="mk">Purpose</div><div class="mv">Current migration guidance organised around cryptographic visibility/risk management and interoperability/benchmarking.</div>
+<div class="mk">Use when</div><div class="mv">Building a technical migration programme around NIST PQC standards.</div>
+</div>
+<div class="tool-limit"><strong>Limit:</strong> NIST guidance is authoritative for its stated scope, but organisations must still apply their own sector, national and contractual requirements.</div>
+<div class="evidence-links"><span class="ev-label">Authoritative source</span><a href="https://pages.nist.gov/nccoe-migration-post-quantum-cryptography/" rel="noopener" target="_blank">NIST NCCoE migration project</a></div>
+</div>
+<div class="tool-card sg">
+<div><span class="context sg">🇸🇬 Singapore context</span><span class="access">Free · government</span></div>
+<h4>CSA / GovTech / IMDA — Quantum-Safe Migration Handbook V1</h4>
+<div class="tool-meta">
+<div class="mk">Purpose</div><div class="mv">Practical Singapore guidance including no-regrets moves, crown-jewel identification and current CII considerations.</div>
+<div class="mk">Use when</div><div class="mv">Planning quantum-safe migration in the Singapore context.</div>
+</div>
+<div class="tool-limit"><strong>Limit:</strong> this is Singapore-context guidance, not a universal international compliance standard.</div>
+<div class="evidence-links"><span class="ev-label">Singapore government source</span><a href="https://www.csa.gov.sg/resources/publications/quantum-safe-handbook-and-quantum-readiness-index/" rel="noopener" target="_blank">CSA Handbook V1 · 16 Jul 2026</a></div>
+</div>
+<div class="tool-card">
+<div><span class="context">General · industry coalition</span><span class="access">Free resource</span></div>
+<h4>PQC Coalition — Migration Roadmap</h4>
+<div class="tool-meta">
+<div class="mk">Purpose</div><div class="mv">A staged roadmap covering preparation, baseline understanding, planning/execution, and monitoring/evaluation.</div>
+<div class="mk">Use when</div><div class="mv">An organisation needs a practical programme structure that can be tailored to its environment.</div>
+</div>
+<div class="tool-limit"><strong>Limit:</strong> a roadmap structures work; it does not validate whether individual systems have been migrated securely.</div>
+<div class="evidence-links"><span class="ev-label">Authoritative publication</span><a href="https://www.mitre.org/news-insights/news-release/post-quantum-cryptography-coalition-unveils-pqc-migration-roadmap" rel="noopener" target="_blank">MITRE / PQC Coalition roadmap</a></div>
+</div>
+</div>
+</div>
+<div class="toolkit-group">
+<h3>3 · Discover cryptography</h3>
+<p class="group-sub">NIST describes cryptographic discovery and inventory as a foundational migration activity: organisations cannot effectively prioritise or migrate cryptography they have not identified.</p>
+<div class="tool-grid">
+<div class="tool-card">
+<div><span class="context">Technical · SSH/TLS</span><span class="access">Free · open source</span></div>
+<h4>pqcscan</h4>
+<div class="tool-meta">
+<div class="mk">Purpose</div><div class="mv">Scan SSH and TLS servers for their stated support of post-quantum cryptographic algorithms.</div>
+<div class="mk">Access</div><div class="mv">Open-source utility; source and documentation are publicly available.</div>
+</div>
+<div class="tool-limit"><strong>Limit:</strong> observable SSH/TLS support does not prove that the whole server, application, data flow or organisation has completed quantum-safe migration.</div>
+<div class="evidence-links"><span class="ev-label">Project + NIST reference</span><a href="https://github.com/anvilsecure/pqcscan" rel="noopener" target="_blank">pqcscan repository</a><a href="https://pages.nist.gov/nccoe-migration-post-quantum-cryptography/" rel="noopener" target="_blank">NIST tool listing</a></div>
+</div>
+<div class="tool-card">
+<div><span class="context">Technical · TLS</span><span class="access">Free · open source</span></div>
+<h4>sslscan2</h4>
+<div class="tool-meta">
+<div class="mk">Purpose</div><div class="mv">Test SSL/TLS-enabled services and enumerate supported cipher suites, key-exchange groups and signature algorithms; current versions include post-quantum group support.</div>
+<div class="mk">Access</div><div class="mv">Open-source utility (GPL-3.0).</div>
+</div>
+<div class="tool-limit"><strong>Limit:</strong> TLS configuration is only one part of cryptographic posture; scan output is not evidence of organisation-wide migration.</div>
+<div class="evidence-links"><span class="ev-label">Project + NIST reference</span><a href="https://github.com/rbsec/sslscan" rel="noopener" target="_blank">sslscan repository</a><a href="https://pages.nist.gov/nccoe-migration-post-quantum-cryptography/" rel="noopener" target="_blank">NIST tool listing</a></div>
+</div>
+</div>
+</div>
+<div class="toolkit-group">
+<h3>4 · Build and maintain the cryptographic inventory</h3>
+<p class="group-sub">Scanner output becomes useful when findings are recorded, owned, prioritised and continuously maintained as a cryptographic inventory rather than treated as a one-off assessment.</p>
+<div class="tool-grid">
+<div class="tool-card">
+<div><span class="context">General · workbook</span><span class="access">Free resource</span></div>
+<h4>PQC Coalition — PQC Inventory Workbook</h4>
+<div class="tool-meta">
+<div class="mk">Purpose</div><div class="mv">A starting template for a centralised inventory that tracks systems/assets and migration priority.</div>
+<div class="mk">Use when</div><div class="mv">Turning discovery results into an owned system-level migration record.</div>
+</div>
+<div class="tool-limit"><strong>Limit:</strong> the workbook does not automatically populate itself and is not a substitute for technical discovery.</div>
+<div class="evidence-links"><span class="ev-label">Authoritative publication</span><a href="https://www.mitre.org/news-insights/news-release/post-quantum-cryptography-coalition-publishes-pqc-inventory-workbook" rel="noopener" target="_blank">MITRE / PQC Coalition workbook</a><a href="https://pages.nist.gov/nccoe-migration-post-quantum-cryptography/" rel="noopener" target="_blank">NIST recommendation</a></div>
+</div>
+<div class="tool-card">
+<div><span class="context">Technical · open standard</span><span class="access">Free · open</span></div>
+<h4>CycloneDX — Cryptography Bill of Materials (CBOM)</h4>
+<div class="tool-meta">
+<div class="mk">Purpose</div><div class="mv">Represent cryptographic assets and dependencies such as algorithms, keys, certificates and protocols in a structured bill of materials.</div>
+<div class="mk">Use when</div><div class="mv">Building machine-processable cryptographic visibility and supporting PQC readiness.</div>
+</div>
+<div class="tool-limit"><strong>Limit:</strong> CBOM is a representation and management mechanism; complete coverage still depends on reliable discovery and data collection.</div>
+<div class="evidence-links"><span class="ev-label">Authoritative guide</span><a href="https://cyclonedx.org/guides/" rel="noopener" target="_blank">CycloneDX CBOM guide</a><a href="https://cyclonedx.org/capabilities/cbom/" rel="noopener" target="_blank">CycloneDX CBOM capability</a></div>
+</div>
+</div>
+</div>
+<div class="toolkit-group">
+<h3>5 · Implement, test and reassess</h3>
+<p class="group-sub">Migration is not complete when an algorithm is selected. Test interoperability, performance, certificate and protocol behaviour, then repeat discovery and readiness assessment as systems and standards change.</p>
+<div class="tool-grid">
+<div class="tool-card">
+<div><span class="context">US government · testing</span><span class="access">Free · government</span></div>
+<h4>NIST NCCoE — Interoperability and Benchmarking resources</h4>
+<div class="tool-meta">
+<div class="mk">Purpose</div><div class="mv">Support testing of PQC implementations and integration into technologies such as TLS, alongside cryptographic visibility work.</div>
+<div class="mk">Use when</div><div class="mv">Moving from inventory and planning into implementation validation.</div>
+</div>
+<div class="tool-limit"><strong>Limit:</strong> laboratory interoperability results do not automatically validate a specific production deployment.</div>
+<div class="evidence-links"><span class="ev-label">Authoritative source</span><a href="https://pages.nist.gov/nccoe-migration-post-quantum-cryptography/" rel="noopener" target="_blank">NIST NCCoE migration project</a></div>
+</div>
+<div class="tool-card sg">
+<div><span class="context sg">🇸🇬 Singapore context</span><span class="access">Free · government</span></div>
+<h4>Re-run the CSA Quantum Readiness Index</h4>
+<div class="tool-meta">
+<div class="mk">Purpose</div><div class="mv">Track changes in organisational readiness over time after migration actions are implemented.</div>
+<div class="mk">Use when</div><div class="mv">Reviewing progress periodically in the Singapore context.</div>
+</div>
+<div class="tool-limit"><strong>Limit:</strong> readiness scoring complements — but does not replace — technical verification and security testing.</div>
+<div class="evidence-links"><span class="ev-label">Singapore government source</span><a href="https://www.csa.gov.sg/resources/publications/quantum-safe-handbook-and-quantum-readiness-index/" rel="noopener" target="_blank">CSA QRI V1</a></div>
+</div>
+</div>
+</div>
+<div class="commercial-note">
+<strong>Enterprise and commercial tooling.</strong> Enterprise-scale cryptographic discovery and management products exist, and NIST NCCoE works with a number of collaborators. This site does not rank or recommend commercial products. Practitioners who need enterprise tooling can consult NIST's current project/tool listing and evaluate products against their own technical, procurement and assurance requirements. Participation in or reference by an NCCoE project should not be interpreted as NIST certification or endorsement.
+<div class="evidence-links"><span class="ev-label">Reference</span><a href="https://pages.nist.gov/nccoe-migration-post-quantum-cryptography/" rel="noopener" target="_blank">NIST NCCoE migration/tool listing</a></div>
+</div>
+<p class="note" style="margin-top:18px"><strong>Practical starting point:</strong> if you are beginning from zero, assess risk/readiness, identify crown-jewel systems and long-lived sensitive data, begin a cryptographic inventory, scan reachable SSH/TLS services, represent and own the findings, prioritise RSA/ECC dependencies by risk and migration complexity, then test and reassess continuously. No single scanner or workbook can establish organisation-wide quantum safety.</p>
 </div>
 </section>
 <section id="counter">
@@ -795,34 +1294,39 @@
 <div class="wrap">
 <div class="kicker">How to read the tracker · methodology</div>
 <h2>Five evidence classes — deliberately kept separate</h2>
-<p class="sub">The credibility of a quantum-threat tracker depends less on collecting dramatic headlines than on identifying what kind of evidence each headline actually represents. A hardware demonstration, a resource estimate, an expert survey, a vendor roadmap and a government deadline answer different questions.</p><div class="evidence-links"><span class="ev-label">Section evidence</span><a href="https://pages.nist.gov/nccoe-migration-post-quantum-cryptography/" rel="noopener" target="_blank">NIST migration project</a><a href="https://globalriskinstitute.org/publication/quantum-threat-timeline-report-2025b/" rel="noopener" target="_blank">GRI 2025</a></div>
+<p class="sub">The credibility of a quantum-threat tracker depends less on collecting dramatic headlines than on identifying what kind of evidence each headline actually represents. A hardware demonstration, a resource estimate, an expert survey, a vendor roadmap and a government deadline answer different questions.</p><div class="evidence-links"><span class="ev-label">Methodology sources</span><a href="https://pages.nist.gov/nccoe-migration-post-quantum-cryptography/" rel="noopener" target="_blank">NIST migration project</a><a href="https://globalriskinstitute.org/publication/quantum-threat-timeline-report-2025b/" rel="noopener" target="_blank">GRI 2025</a></div>
 <div class="tiers">
-<div class="tier measured"><div class="tl">1 · Measured result</div><p>Demonstrated on real hardware or empirically observed. Strong evidence for what a system achieved under the reported conditions, but not automatically evidence of cryptanalytic capability.</p><div class="evidence-links"><span class="ev-label">Representative source</span><a href="https://www.nature.com/articles/s41586-024-08449-y" rel="noopener" target="_blank">Example: Willow — Nature</a></div></div>
-<div class="tier estimated"><div class="tl">2 · Resource estimate</div><p>Technical calculations under stated assumptions. Valuable for understanding feasibility, but sensitive to architecture, runtime, error model, code choice and engineering constraints.</p><div class="evidence-links"><span class="ev-label">Representative source</span><a href="https://arxiv.org/abs/2505.15917" rel="noopener" target="_blank">Example: Gidney 2025</a></div></div>
-<div class="tier opinion"><div class="tl">3 · Expert opinion</div><p>Surveyed or attributed judgement about future timelines. Useful as a sentiment signal, but it remains opinion rather than measurement.</p><div class="evidence-links"><span class="ev-label">Representative source</span><a href="https://globalriskinstitute.org/publication/quantum-threat-timeline-report-2025b/" rel="noopener" target="_blank">Example: GRI 2025</a></div></div>
-<div class="tier opinion"><div class="tl">4 · Vendor roadmap / claim</div><p>Targets, engineering plans and company statements. Important signals of intent and investment, but not independent forecasts and not guaranteed delivery dates.</p><div class="evidence-links"><span class="ev-label">Representative source</span><a href="https://www.ibm.com/roadmaps/quantum/" rel="noopener" target="_blank">Example: IBM roadmap</a></div></div>
-<div class="tier measured"><div class="tl">5 · Policy / standards</div><p>Standards, laws, executive orders, security policies, roadmaps and guidance. These can create real migration obligations or planning milestones even when the CRQC date remains uncertain.</p><div class="evidence-links"><span class="ev-label">Representative source</span><a href="https://www.nist.gov/pqc" rel="noopener" target="_blank">Examples: NIST PQC</a><a href="https://www.whitehouse.gov/presidential-actions/2026/06/securing-the-nation-against-advanced-cryptographic-attacks/" rel="noopener" target="_blank">EO 14412</a></div></div>
+<div class="tier measured"><div class="tl">1 · Measured result</div><p>Demonstrated on real hardware or empirically observed. Strong evidence for what a system achieved under the reported conditions, but not automatically evidence of cryptanalytic capability.</p><div class="evidence-links"><span class="ev-label">Representative evidence</span><a href="https://www.nature.com/articles/s41586-024-08449-y" rel="noopener" target="_blank">Willow · Nature</a><a href="https://link.aps.org/doi/10.1103/PhysRevLett.134.090601" rel="noopener" target="_blank">Zuchongzhi 3.0 · PRL</a><a href="https://www.quantinuum.com/blog/technical-perspective-by-the-end-of-the-decade-we-will-deliver-universal-fault-tolerant-quantum-computing" rel="noopener" target="_blank">Quantinuum Helios</a></div></div>
+<div class="tier estimated"><div class="tl">2 · Resource estimate</div><p>Technical calculations under stated assumptions. Valuable for understanding feasibility, but sensitive to architecture, runtime, error model, code choice and engineering constraints.</p><div class="evidence-links"><span class="ev-label">Representative evidence</span><a href="https://arxiv.org/abs/1905.09749" rel="noopener" target="_blank">Gidney 2019</a><a href="https://arxiv.org/abs/2505.15917" rel="noopener" target="_blank">Gidney 2025</a><a href="https://arxiv.org/abs/2603.28627" rel="noopener" target="_blank">Cain et al. 2026</a></div></div>
+<div class="tier opinion"><div class="tl">3 · Expert opinion</div><p>Surveyed or attributed judgement about future timelines. Useful as a sentiment signal, but it remains opinion rather than measurement.</p><div class="evidence-links"><span class="ev-label">Representative evidence</span><a href="https://globalriskinstitute.org/publication/quantum-threat-timeline-report-2025b/" rel="noopener" target="_blank">GRI 2025 survey</a><a href="https://www.evolutionq.com/post/the-quantum-threat-timeline-why-organizations-must-act-now" rel="noopener" target="_blank">GRI 2024 survey</a></div></div>
+<div class="tier opinion"><div class="tl">4 · Vendor roadmap / claim</div><p>Targets, engineering plans and company statements. Important signals of intent and investment, but not independent forecasts and not guaranteed delivery dates.</p><div class="evidence-links"><span class="ev-label">Representative evidence</span><a href="https://newsroom.ibm.com/2025-06-10-ibm-details-plan-to-build-first-large-scale-fault-tolerant-quantum-computer" rel="noopener" target="_blank">IBM Starling roadmap</a><a href="https://www.quantinuum.com/blog/technical-perspective-by-the-end-of-the-decade-we-will-deliver-universal-fault-tolerant-quantum-computing" rel="noopener" target="_blank">Quantinuum Apollo roadmap</a><a href="https://azure.microsoft.com/en-us/blog/quantum/2025/02/19/microsoft-unveils-majorana-1-the-worlds-first-quantum-processor-powered-by-topological-qubits/" rel="noopener" target="_blank">Microsoft Majorana claim</a></div></div>
+<div class="tier measured"><div class="tl">5 · Policy / standards</div><p>Standards, laws, executive orders, security policies, roadmaps and guidance. These can create real migration obligations or planning milestones even when the CRQC date remains uncertain.</p><div class="evidence-links"><span class="ev-label">Representative evidence</span><a href="https://www.nist.gov/news-events/news/2024/08/nist-releases-first-3-finalized-post-quantum-encryption-standards" rel="noopener" target="_blank">NIST PQC standards</a><a href="https://media.defense.gov/2022/Sep/07/2003071834/-1/-1/0/CSA_CNSA_2.0_ALGORITHMS_.PDF" rel="noopener" target="_blank">NSA CNSA 2.0</a><a href="https://www.csa.gov.sg/resources/publications/quantum-safe-handbook-and-quantum-readiness-index/" rel="noopener" target="_blank">🇸🇬 CSA Handbook / QRI V1</a></div></div>
 </div>
-<p class="note">The strongest conclusions appear when several independent evidence classes point in the same direction. Cross-paper qubit counts are not treated as directly comparable unless their assumptions, architecture and runtime are sufficiently aligned. Inference is labelled as inference, and contested claims are presented with the relevant scrutiny.</p>
+<p class="note" style="margin-top:14px"><strong>How to use the examples: </strong>Representative evidence shows the breadth of each evidence class; the number of examples is not a score of evidential strength. A measured result, a resource estimate, an expert survey, a vendor claim and a policy instrument answer different questions and should not be weighted as if they were interchangeable.</p><p class="note">The strongest conclusions appear when several independent evidence classes point in the same direction. Cross-paper qubit counts are not treated as directly comparable unless their assumptions, architecture and runtime are sufficiently aligned. Inference is labelled as inference, and contested claims are presented with the relevant scrutiny.</p>
 </div>
 </section>
 <section id="watch">
 <div class="wrap">
-<div class="kicker">On the horizon · what would change the tracker</div>
-<h2>Leading indicators from August 2026 onward</h2>
-<p class="sub">The most useful signals are those that would alter the factual record, change confidence in the CRQC timeline, or change the urgency and sequencing of migration. These are the developments most likely to trigger an update.</p><div class="attrib"><div class="attrib-h">Evidence rule for this tracker</div><p>Each factual watch item links directly to its supporting source and carries two labels: a provenance status and an evidence type. Primary or authoritative sources are preferred. Secondary reporting is labelled as reported evidence rather than presented as independently verified fact.</p></div>
-<div class="evidence-legend" aria-label="Evidence badge legend">
-  <span class="legend-copy"><span class="evidence-badge prov-verified">Verified</span><span><strong>Primary/authoritative support</strong></span></span>
-  <span class="legend-copy"><span class="evidence-badge prov-reported">Reported</span><span><strong>Credible secondary reporting</strong></span></span>
-  <span class="legend-copy"><span class="evidence-badge prov-assessment">Assessment</span><span><strong>Interpretation derived from cited evidence</strong></span></span>
-  <span class="legend-copy"><span class="evidence-badge etype">Evidence type</span><span>hardware, resource estimate, policy, standard, deployment signal, market news, expert opinion, vendor roadmap, etc.</span></span>
+<div class="kicker">Decision signals · what would change the assessment</div>
+<h2>What would change our assessment?</h2>
+<p class="sub">The quantum threat timeline is not fixed. This section tracks developments that could materially change one of three things: our estimate of when a cryptographically relevant quantum computer may arrive, the urgency of migration, or the order in which systems should be migrated. The purpose is not to react to every quantum-computing headline, but to identify evidence that should cause assumptions to be revisited or action to be accelerated.</p>
+<div class="cards2" style="margin:10px 0 22px">
+<div class="icard cool"><h4>Could change threat timing</h4><p>Hardware milestones, error-correction results and cryptanalytic resource estimates that materially alter what a CRQC would require.</p></div>
+<div class="icard warn"><h4>Could change migration urgency</h4><p>New regulation, standards, security advisories or evidence that increases the cost of waiting.</p></div>
+<div class="icard cool"><h4>Could change migration execution</h4><p>Platform support, interoperability results and deployment tooling that change what can be implemented now.</p></div>
+</div>
+<div class="attrib"><div class="attrib-h">How to read these signals</div><p>Decisions should not be driven by headlines alone. Each item is labelled by both provenance and evidence type so measured results, policy changes, vendor claims, deployment signals and analytical assessments are not treated as equivalent. Primary or authoritative sources are preferred, while secondary reporting is explicitly labelled as reported evidence rather than presented as independently verified fact.</p></div>
+<div aria-label="Evidence badge legend" class="evidence-legend">
+<span class="legend-copy"><span class="evidence-badge prov-verified">Verified</span><span><strong>Primary/authoritative support</strong></span></span>
+<span class="legend-copy"><span class="evidence-badge prov-reported">Reported</span><span><strong>Credible secondary reporting</strong></span></span>
+<span class="legend-copy"><span class="evidence-badge prov-assessment">Assessment</span><span><strong>Interpretation derived from cited evidence</strong></span></span>
+<span class="legend-copy"><span class="evidence-badge etype">Evidence type</span><span>hardware, resource estimate, policy, standard, deployment signal, market news, expert opinion, vendor roadmap, etc.</span></span>
 </div>
 <div class="watch">
 <div class="witem"><div class="evidence-badges"><span class="evidence-badge prov-reported">Reported</span><span class="evidence-badge etype">Deployment signal</span></div><div class="wtag">Deployment · 12 Aug 2026</div><h4>Google extends PQC into the Android device trust chain</h4><p>Google announced Android 17 post-quantum security changes: ML-DSA is integrated into Verified Boot and Android Keystore; Remote Attestation begins a transition toward PQC-compliant certificate chains; and hybrid PQC signing is supported for apps. Pixel 11 launch coverage further reports that the Titan M3 security chip adopts NIST PQC standards. The Titan M3-specific statement remains secondary product reporting rather than an explicit Google hardware specification, so it is treated here as a deployment signal rather than independently verified hardware evidence. This increases implementation urgency slightly, but does not change the estimated CRQC arrival date or the resource-estimate charts.</p><div class="evidence-links"><span class="ev-label">Evidence</span><a href="https://blog.google/security/security-for-the-quantum-era-implementing-post-quantum-cryptography-in-android/" rel="noopener" target="_blank">Google Android 17 PQC</a><a href="https://blog.google/innovation-and-ai/technology/safety-security/cryptography-migration-timeline/" rel="noopener" target="_blank">Google 2029 timeline</a><a class="secondary-evidence" href="https://www.androidcentral.com/phones/live/made-by-google-2026-launch-live-pixel-11-pixel-11-pro-fold-pixel-watch-5-and-everything-that-was-announced" rel="noopener" target="_blank">Pixel 11/Titan M3 report</a></div></div>
 <div class="witem"><div class="evidence-badges"><span class="evidence-badge prov-verified">Verified</span><span class="evidence-badge etype">Deployment signal</span></div><div class="wtag">Deployment · 29 Jul 2026</div><h4>Cloudflare begins post-quantum authentication deployment</h4><p>Cloudflare added ML-DSA support for post-quantum authentication on selected Cloudflare-to-origin connections through Authenticated Origin Pulls and Custom Origin Trust Store. Cloudflare presents this as an authentication milestone in its broader roadmap toward post-quantum security across its products by 2029. This is production-deployment evidence, not evidence that a CRQC is closer, and it does not change the threat-probability or cryptanalytic resource-estimate charts.</p><div class="evidence-links"><span class="ev-label">Primary sources</span><a href="https://blog.cloudflare.com/post-quantum-authentication-to-origins/" rel="noopener" target="_blank">Cloudflare: PQ authentication to origins</a><a href="https://blog.cloudflare.com/post-quantum-roadmap/" rel="noopener" target="_blank">Cloudflare PQ roadmap</a></div></div>
 <div class="witem"><div class="evidence-badges"><span class="evidence-badge prov-verified">Verified</span><span class="evidence-badge etype">Deployment measurement · preprint</span></div><div class="wtag">Measurement study · 3 Aug 2026</div><h4>Internet-visible PQC adoption is real but uneven</h4><p>A measurement study covering 4,665 UK organisations reports post-quantum key-exchange support on 44.0% of reachable HTTPS services but 6.4% of reachable SMTP services; 144 organisations supported PQC across both web and email infrastructure, and the study observed no post-quantum certificate signatures in the measured endpoints. The authors also report that infrastructure-provider choice was more predictive of observed PQC support than organisational sector. For this dataset, visible PQC capability should therefore not be read as proof of organisation-wide migration.</p><div class="evidence-links"><span class="ev-label">Primary research preprint</span><a href="https://arxiv.org/abs/2608.02147" rel="noopener" target="_blank">arXiv:2608.02147</a></div></div>
 <div class="witem"><div class="evidence-badges"><span class="evidence-badge prov-verified">Verified</span><span class="evidence-badge etype">Deployment signal · software</span></div><div class="wtag">Enterprise software · 11 Aug 2026</div><h4>Windows Server 2025 expands operational PQC certificate support</h4><p>Microsoft's August 2026 Windows Server 2025 cumulative update improves post-quantum certificate support by restoring PQC options during Certificate Authority configuration and enabling enrolment with newly created PQC certificate templates. This is evidence that deployable PQC capability is entering maintained enterprise infrastructure. It is not evidence that Windows Server is comprehensively quantum-safe, and it does not change the estimated arrival date of a cryptographically relevant quantum computer or the cryptanalytic resource-estimate charts.</p><div class="evidence-links"><span class="ev-label">Primary source</span><a href="https://support.microsoft.com/help/5120233" rel="noopener" target="_blank">Microsoft Support — KB5120233</a></div></div>
-
 <div class="witem"><div class="wtag">Algorithms</div><h4>Independent review of 2026 resource estimates</h4><p>Watch whether neutral-atom Shor and P-256 ECDLP estimates survive independent scrutiny, implementation-level costing, alternative error models and reproduction.</p><div class="evidence-links"><span class="ev-label">Evidence</span><a href="https://arxiv.org/abs/2603.28627" rel="noopener" target="_blank">Cain et al. 2026</a><a href="https://research.google/pubs/securing-elliptic-curve-cryptocurrencies-against-quantum-vulnerabilities-resource-estimates-and-mitigations/" rel="noopener" target="_blank">Google P-256 study</a></div></div>
 <div class="witem"><div class="wtag">Hardware</div><h4>Logical-qubit scaling and sustained error performance</h4><p>Watch for systems that combine larger logical-qubit counts with sustained logical error performance, useful circuit depth and credible paths to modular scaling.</p><div class="evidence-links"><span class="ev-label">Evidence</span><a href="https://www.nature.com/articles/s41586-024-08449-y" rel="noopener" target="_blank">Willow — Nature</a><a href="https://www.quantinuum.com/press-releases/quantinuum-announces-commercial-launch-of-new-helios-quantum-computer-that-offers-unprecedented-accuracy-to-enable-generative-quantum-ai-genqai" rel="noopener" target="_blank">Quantinuum Helios</a><a href="https://www.ibm.com/roadmaps/quantum/" rel="noopener" target="_blank">IBM roadmap</a></div></div>
 <div class="witem"><div class="wtag">Error correction</div><h4>High-rate codes on real systems</h4><p>qLDPC and other high-rate approaches may reduce fault-tolerance overhead under suitable architectures. Convincing system-level demonstrations would matter more than isolated theoretical ratios.</p><div class="evidence-links"><span class="ev-label">Evidence</span><a href="https://arxiv.org/abs/2603.28627" rel="noopener" target="_blank">Cain et al. 2026</a><a href="https://newsroom.ibm.com/2025-06-10-IBM-Sets-the-Course-to-Build-Worlds-First-Large-Scale%2C-Fault-Tolerant-Quantum-Computer-at-New-IBM-Quantum-Data-Center" rel="noopener" target="_blank">IBM fault-tolerance roadmap</a></div></div>
@@ -885,7 +1389,6 @@
 <li><span class="stype sp-news">Context</span>IBM Condor/Heron 2023 processor detail (qubit-count vs quality pivot). <a href="https://www.ibm.com/quantum/blog/quantum-roadmap-2033" rel="noopener" target="_blank">IBM Quantum roadmap</a></li>
 <li><span class="stype sp-primary">Primary</span>NIST NCCoE — Migration to Post-Quantum Cryptography FAQ (updated 30 Jun 2026). <a href="https://pages.nist.gov/nccoe-migration-post-quantum-cryptography/" rel="noopener" target="_blank">pages.nist.gov</a></li><li><span class="stype sp-primary">Primary</span>NIST CSWP 39upd1 — Considerations for Achieving Crypto Agility: Strategies and Practices (updated 29 Jun 2026). <a href="https://csrc.nist.gov/pubs/cswp/39/upd1/considerations-for-achieving-crypto-agility/final" rel="noopener" target="_blank">csrc.nist.gov</a></li><li><span class="stype sp-primary">Primary</span>Global Risk Institute/evolutionQ — Quantum Briefing: Recent Quantum-Computing Progress and its Implications for Cybersecurity (22 Jun 2026). <a href="https://globalriskinstitute.org/publication/quantum-briefing-recent-quantum-computing-progress-and-its-implications-for-cybersecurity/" rel="noopener" target="_blank">globalriskinstitute.org</a></li><li><span class="stype sp-primary">Primary</span>Cloudflare — <em>Post-quantum authentication to origins</em> (29 Jul 2026), documenting ML-DSA support for Authenticated Origin Pulls and Custom Origin Trust Store; plus Cloudflare's post-quantum roadmap targeting broader post-quantum security by 2029. <a href="https://blog.cloudflare.com/post-quantum-authentication-to-origins/" rel="noopener" target="_blank">deployment post</a> · <a href="https://blog.cloudflare.com/post-quantum-roadmap/" rel="noopener" target="_blank">roadmap</a></li>
 <li><span class="stype sp-primary">Primary preprint</span><em>Post-Quantum Cryptography Adoption Across UK Organisations</em> (3 Aug 2026), measurement study of 4,665 organisations and externally visible HTTPS/SMTP PQC deployment. <a href="https://arxiv.org/abs/2608.02147" rel="noopener" target="_blank">arXiv:2608.02147</a></li>
-
 <li><span class="stype sp-primary">Primary</span>Microsoft — Windows Server 2025 cumulative update KB5120233 (11 Aug 2026), documenting improvements to post-quantum certificate support, including PQC options during Certificate Authority configuration and enrolment using newly created PQC certificate templates. <a href="https://support.microsoft.com/help/5120233" rel="noopener" target="_blank">Microsoft Support — KB5120233</a></li>
 </ol>
 <p class="note" style="margin-top:22px"><strong>Integrity note:</strong> the GRI survey is opinion evidence, not a measured forecast. Hardware demonstrations, resource estimates and policy deadlines are kept as separate evidence types. Where this page discusses likely reasons expert sentiment moved, that interpretation is not treated as proof of causation. The 2025 edition had 26 respondents, so its 28–49% range should always be read with sample-size and binning caveats.</p>
@@ -964,32 +1467,95 @@ new Chart(document.getElementById('c'),{
   }
 });
 new Chart(document.getElementById('c2'),{
-  type:'line',
+  type:'scatter',
   data:{
-    labels:['RSA 2019','RSA 2025','Neutral-atom 2026'],
-    datasets:[{
-      label:'Representative physical-qubit resource estimate',
-      data:[20000000,1000000,10000],
-      borderColor:'#c0532f',backgroundColor:'rgba(192,83,47,.10)',
-      borderWidth:2,pointRadius:6,pointBackgroundColor:'#c0532f',
-      pointBorderColor:'#fff',pointBorderWidth:2,fill:true,tension:.1
-    }]
+    datasets:[
+      {
+        label:'Comparable RSA estimates',
+        data:[
+          {x:1,y:20000000,label:'RSA 2019'},
+          {x:2,y:1000000,label:'RSA 2025'}
+        ],
+        showLine:false,
+        pointRadius:7,
+        pointHoverRadius:8,
+        pointBackgroundColor:'#c0532f',
+        pointBorderColor:'#fff',
+        pointBorderWidth:2
+      },
+      {
+        label:'Architecture-specific neutral-atom result',
+        data:[
+          {x:3,y:10000,label:'Neutral-atom 2026'}
+        ],
+        showLine:false,
+        pointRadius:8,
+        pointHoverRadius:9,
+        pointStyle:'rectRot',
+        pointBackgroundColor:'#2f7fb5',
+        pointBorderColor:'#fff',
+        pointBorderWidth:2
+      }
+    ]
   },
   options:{
-    responsive:true,maintainAspectRatio:false,
+    responsive:true,
+    maintainAspectRatio:false,
+    layout:{padding:{left:12,right:18,top:8,bottom:0}},
     scales:{
-      y:{type:'logarithmic',min:10000,max:30000000,
-        ticks:{color:'#7c8b96',font:{size:12},callback:function(v){
-          if(v===10000)return'10K';if(v===100000)return'100K';if(v===1000000)return'1M';
-          if(v===10000000)return'10M';if(v===20000000)return'20M';return null;}},
-        grid:{color:'#e8eceb'}},
-      x:{ticks:{color:'#3d4f5d',font:{size:14,weight:'600'}},grid:{display:false}}
+      y:{
+        type:'logarithmic',
+        min:5000,
+        max:50000000,
+        ticks:{
+          color:'#7c8b96',
+          font:{size:12},
+          callback:function(v){
+            if(v===10000)return'10K';
+            if(v===100000)return'100K';
+            if(v===1000000)return'1M';
+            if(v===10000000)return'10M';
+            return null;
+          }
+        },
+        grid:{color:'#e8eceb'}
+      },
+      x:{
+        type:'linear',
+        min:0.55,
+        max:3.45,
+        afterBuildTicks:function(axis){
+          axis.ticks=[{value:1},{value:2},{value:3}];
+        },
+        ticks:{
+          autoSkip:false,
+          maxRotation:0,
+          minRotation:0,
+          padding:10,
+          color:'#3d4f5d',
+          font:{size:13,weight:'600'},
+          callback:function(v){
+            if(v===1)return ['RSA','2019'];
+            if(v===2)return ['RSA','2025'];
+            if(v===3)return ['Neutral-atom','2026'];
+            return '';
+          }
+        },
+        grid:{display:false},
+        border:{display:false}
+      }
     },
     plugins:{
       legend:{display:false},
-      tooltip:{callbacks:{label:function(c){
-        var v=c.parsed.y;var s=v>=1000000?(v/1000000)+'M':(v/1000)+'K';
-        return s+' physical qubits';}}}
+      tooltip:{callbacks:{
+        title:function(items){return items[0].raw.label;},
+        label:function(c){
+          var v=c.raw.y;
+          var s=v>=1000000?(v/1000000)+'M':(v/1000)+'K';
+          if(c.datasetIndex===1) return s+' physical qubits · architecture-specific neutral-atom/QEC result';
+          return s+' physical qubits · comparable RSA estimate';
+        }
+      }}
     }
   }
 });
