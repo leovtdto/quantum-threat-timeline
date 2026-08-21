@@ -2,7 +2,7 @@
 
 Enhanced GitHub Pages edition of the Quantum Threat Timeline.
 
-This version keeps the same factual content and structure as the fact-checked 14 August 2026 edition, but refreshes the front-end presentation to feel more like a strategic risk dashboard than a static report.
+This version keeps the same factual content and structure as the fact-checked constantly since August 2026.
 
 ## Publish on GitHub Pages
 
