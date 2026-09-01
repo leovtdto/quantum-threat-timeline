@@ -811,8 +811,344 @@
       display:none;
     }
   }
+
+  /* v38.1 signal triage — keep current news useful without turning the tracker into a news feed */
+  .triage-summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:0 0 14px}
+  .triage-lane{border:1px solid var(--line);border-radius:11px;padding:12px 14px;background:#fbfcfc}
+  .triage-lane.move{border-left:4px solid var(--coral)}
+  .triage-lane.monitor{border-left:4px solid var(--mid)}
+  .triage-lane .th{font-size:10.5px;font-weight:900;letter-spacing:.09em;text-transform:uppercase;margin-bottom:5px}
+  .triage-lane.move .th{color:var(--coral)} .triage-lane.monitor .th{color:var(--mid)}
+  .triage-lane p{font-size:11.8px;line-height:1.45;color:var(--ink-soft);margin:0}
+  .triage-badge{display:inline-flex;align-items:center;padding:4px 8px;border-radius:999px;font-size:9.8px;font-weight:900;letter-spacing:.07em;text-transform:uppercase;line-height:1;margin-bottom:7px}
+  .triage-badge.move{background:#f4e6e1;color:#8f3b1f;border:1px solid #e5c4b8}
+  .triage-badge.monitor{background:#e4eef5;color:#0f3d5c;border:1px solid #c8dce9}
+  .latest-card.monitor-only{background:#fbfcfd;border-top:3px solid #8fc2df}
+  @media(max-width:700px){.triage-summary{grid-template-columns:1fr}}
+
 </style>
-<meta content="2026-08-26-pending-review" name="qtl-build"/></head>
+<meta content="v39-#21" name="qtl-build"/>
+<style id="qtl-2033-landing-styles">
+/* ===== LANDING HERO (dark, high-impact) — self-contained ===== */
+  .qland{
+    --l-bg:#050912; --l-bg2:#0a1120; --l-panel:#0d1526; --l-line:rgba(255,255,255,.09);
+    --l-ink:#eef4fb; --l-soft:#aebcce; --l-faint:#7e8da3;
+    --l-teal:#22d3c5; --l-cyan:#39c7e0; --l-amber:#f0a63a; --l-coral:#f2683c;
+    --l-violet:#8b7cf0; --l-green:#38d39f;
+    position:relative; background:
+      radial-gradient(1100px 620px at 50% -8%, rgba(34,211,197,.10), transparent 60%),
+      radial-gradient(900px 520px at 88% 12%, rgba(240,166,58,.09), transparent 60%),
+      radial-gradient(900px 520px at 10% 18%, rgba(57,199,224,.08), transparent 62%),
+      linear-gradient(180deg,var(--l-bg) 0%, var(--l-bg2) 70%, #0b1322 100%);
+    color:var(--l-ink); overflow:hidden; border-bottom:1px solid var(--l-line);
+    font-family:'Helvetica Neue',Arial,sans-serif;
+  }
+  .qland::before{
+    content:""; position:absolute; inset:0; pointer-events:none; opacity:.5;
+    background-image:linear-gradient(rgba(120,180,220,.05) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(120,180,220,.05) 1px,transparent 1px);
+    background-size:46px 46px; mask-image:radial-gradient(ellipse 80% 70% at 50% 30%,#000 30%,transparent 78%);
+  }
+  .qland-in{position:relative;max-width:1080px;margin:0 auto;padding:52px 24px 60px;z-index:1}
+
+  .ql-pill{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--l-teal);border:1px solid rgba(34,211,197,.4);background:rgba(34,211,197,.08);
+    padding:7px 15px;border-radius:999px}
+  .ql-pill .dot{width:7px;height:7px;border-radius:50%;background:var(--l-teal);box-shadow:0 0 10px var(--l-teal)}
+  .ql-head{text-align:center}
+  .ql-head h2{font-size:clamp(30px,5.4vw,58px);line-height:1.04;font-weight:800;letter-spacing:-.02em;margin:20px 0 0;color:#fff}
+  .ql-head h2 em{font-style:normal;background:linear-gradient(90deg,var(--l-teal),var(--l-cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .ql-lede{max-width:60ch;margin:18px auto 0;font-size:17px;color:var(--l-soft);line-height:1.55}
+  .ql-assess{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 22px;margin-top:22px;font-size:12.5px;
+    font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--l-faint)}
+  .ql-assess span{display:inline-flex;align-items:center;gap:8px}
+  .ql-assess .mk{width:6px;height:6px;border-radius:50%;background:var(--l-cyan)}
+
+  /* convergence row */
+  /* convergence stage — SVG arrows behind, three text columns above */
+  .ql-stage{position:relative;margin:38px 0 8px;min-height:340px}
+  .ql-arrows{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+  .ql-conv{position:relative;z-index:1;display:grid;grid-template-columns:1fr auto 1fr;gap:24px;align-items:center;min-height:340px}
+  .ql-traj h3{font-size:15px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;margin:0 0 4px}
+  .ql-traj p{font-size:14px;color:var(--l-soft);margin:0 0 14px;line-height:1.5}
+  .ql-traj .win{font-size:clamp(26px,3.4vw,40px);font-weight:800;letter-spacing:-.01em;line-height:1;margin:0}
+  .ql-traj .winlbl{font-size:13px;color:var(--l-soft);margin-top:8px;max-width:26ch;line-height:1.45}
+  .ql-traj.up h3{color:var(--l-teal)} .ql-traj.up .win{color:var(--l-teal)}
+  .ql-traj.down{text-align:right} .ql-traj.down h3{color:var(--l-amber)} .ql-traj.down .win{color:var(--l-amber)}
+  .ql-traj.down .winlbl{margin-left:auto}
+
+  /* logo row — real <img> if present, styled colored wordmark fallback via ::after on the link */
+  .ql-brands{display:flex;gap:18px;align-items:center;margin-top:18px;flex-wrap:wrap}
+  .ql-traj.down .ql-brands{justify-content:flex-end}
+  .ql-logo{display:inline-flex;align-items:center;height:26px;position:relative}
+  .ql-logo img{height:26px;width:auto;max-width:130px;object-fit:contain;filter:brightness(0) invert(1) opacity(.85);transition:filter .2s}
+  .ql-logo:hover img{filter:none}
+  /* wordmark shown by default; if you add real logo files AND allow them in the CSP,
+     set the .has-logo class on the section to hide wordmarks and show <img> instead. */
+  .ql-logo .wm{font-weight:800;font-size:15px;letter-spacing:.01em;white-space:nowrap}
+  .qland:not(.has-logo) .ql-logo img{display:none}
+  .qland.has-logo .ql-logo .wm{display:none}
+  .wm-ibm{color:#4a8fe0} .wm-google{background:linear-gradient(90deg,#4285F4,#EA4335 40%,#FBBC05 70%,#34A853);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .wm-meta{color:#3b82f6} .wm-caltech{color:#f2683c} .wm-oratomic{color:#7fb0ff} .wm-quantinuum{color:#c7d2e6} .wm-quera{color:#c7d2e6}
+
+  /* glowing animated orb */
+  .ql-core{width:200px;height:200px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;margin:0 auto;position:relative;z-index:2;
+    background:radial-gradient(circle at 50% 42%,rgba(6,14,26,.9),rgba(6,14,26,.65) 55%,transparent 72%);
+    border:1px solid rgba(255,255,255,.14);
+    box-shadow:0 0 0 1px rgba(34,211,197,.25),0 0 70px 8px rgba(34,211,197,.22),0 0 90px 20px rgba(240,166,58,.14),inset 0 0 46px rgba(120,180,220,.10)}
+  .ql-core::before{content:"";position:absolute;inset:-14px;border-radius:50%;
+    background:conic-gradient(from 210deg,rgba(34,211,197,.0),rgba(34,211,197,.55) 12%,rgba(57,199,224,.2) 30%,transparent 46%,transparent 62%,rgba(240,166,58,.5) 82%,rgba(242,104,60,.2) 92%,transparent);
+    -webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 3px),#000 calc(100% - 2px));
+    mask:radial-gradient(farthest-side,transparent calc(100% - 3px),#000 calc(100% - 2px));
+    animation:ql-spin 9s linear infinite;opacity:.9}
+  .ql-core::after{content:"";position:absolute;inset:-30px;border-radius:50%;pointer-events:none;
+    background:radial-gradient(circle,rgba(34,211,197,.16),transparent 62%);animation:ql-pulse 4.5s ease-in-out infinite}
+  @keyframes ql-spin{to{transform:rotate(360deg)}}
+  @keyframes ql-pulse{0%,100%{opacity:.5;transform:scale(1)}50%{opacity:.95;transform:scale(1.07)}}
+  .ql-core .yr{font-size:48px;font-weight:800;color:#fff;line-height:1;letter-spacing:-.02em;text-shadow:0 0 18px rgba(120,190,220,.5);position:relative;z-index:1}
+  .ql-core .cap{font-size:10.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--l-soft);margin-top:8px;line-height:1.55;position:relative;z-index:1}
+
+  /* animated dashed pulse travelling the trajectories */
+  .ql-path-teal,.ql-path-amber{fill:none;stroke-width:2.4}
+  .ql-path-teal{stroke:url(#qlTeal)} .ql-path-amber{stroke:url(#qlAmber)}
+  .ql-dot{r:4} .ql-dot.teal{fill:#22d3c5} .ql-dot.amber{fill:#f0a63a}
+  .ql-flow{fill:none;stroke-width:2.4;stroke-linecap:round;stroke-dasharray:6 220;animation:ql-flow 3.2s linear infinite}
+  .ql-flow.teal{stroke:#7ff5ea} .ql-flow.amber{stroke:#ffd08a}
+  @keyframes ql-flow{to{stroke-dashoffset:-226}}
+  @media(prefers-reduced-motion:reduce){.ql-core::before,.ql-core::after,.ql-flow{animation:none}}
+
+  .ql-conv-note{position:relative;z-index:1;max-width:64ch;margin:6px auto 0;text-align:center;font-size:13px;color:var(--l-faint);line-height:1.5}
+
+  /* evidence columns */
+  .ql-sec-h{text-align:center;font-size:13px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--l-soft);margin:52px 0 22px;position:relative}
+  .ql-ev{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .ql-card{background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.01));border:1px solid var(--l-line);border-radius:14px;padding:20px}
+  .ql-card .no{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px}
+  .ql-card.c1 .no{color:var(--l-teal)} .ql-card.c2 .no{color:var(--l-amber)} .ql-card.c3 .no{color:var(--l-violet)}
+  .ql-card h4{font-size:16px;font-weight:800;color:#fff;line-height:1.28;margin:0 0 12px}
+  .ql-card .dir{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--l-soft);margin-bottom:10px}
+  .ql-row{padding:10px 0;border-top:1px solid var(--l-line)}
+  .ql-row:first-of-type{border-top:none}
+  .ql-row .r-h{font-size:13.5px;font-weight:800;color:#fff;margin:0}
+  .ql-row .r-h b{font-weight:800;color:var(--l-cyan)}
+  .ql-row .r-b{font-size:12.5px;color:var(--l-soft);margin:4px 0 0;line-height:1.5}
+  .ql-signal{margin-top:14px;padding:11px 13px;border-radius:10px;background:rgba(255,255,255,.04);border:1px solid var(--l-line);font-size:12.5px;color:var(--l-soft);line-height:1.5}
+  .ql-signal b{color:#fff;letter-spacing:.06em;text-transform:uppercase;font-size:11px}
+  .ql-note-box{margin-top:14px;padding:12px 14px;border-radius:10px;border:1px solid rgba(139,124,240,.35);background:rgba(139,124,240,.08);font-size:12.5px;color:var(--l-soft);line-height:1.5}
+  .ql-note-box b{color:#c9c0ff}
+
+  /* scenario band */
+  .ql-band{margin:44px 0 0;padding:26px 22px;border-radius:16px;border:1px solid var(--l-line);
+    background:linear-gradient(90deg,rgba(34,211,197,.06),rgba(240,166,58,.07) 50%,rgba(139,124,240,.06));
+    display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:18px;align-items:center;text-align:center}
+  .ql-band .case .k{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
+  .ql-band .case .yr{font-size:clamp(24px,3vw,34px);font-weight:800;line-height:1}
+  .ql-band .case p{font-size:12.5px;color:var(--l-soft);margin:8px auto 0;max-width:30ch;line-height:1.5}
+  .ql-band .case.early .k,.ql-band .case.early .yr{color:var(--l-teal)}
+  .ql-band .case.central .k{color:var(--l-amber)} .ql-band .case.central .yr{font-size:clamp(34px,4.4vw,52px);color:#fff}
+  .ql-band .case.central .sub{font-size:12px;color:var(--l-soft);margin-top:4px}
+  .ql-band .case.late .k,.ql-band .case.late .yr{color:var(--l-violet)}
+
+  /* change grid */
+  .ql-change{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+  .ql-chg{border-radius:14px;padding:18px;border:1px solid var(--l-line)}
+  .ql-chg.earlier{background:rgba(34,211,197,.06);border-color:rgba(34,211,197,.28)}
+  .ql-chg.keep{background:rgba(57,199,224,.05);border-color:rgba(57,199,224,.24)}
+  .ql-chg.later{background:rgba(139,124,240,.06);border-color:rgba(139,124,240,.28)}
+  .ql-chg .ch{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .ql-chg.earlier .ch{color:var(--l-teal)} .ql-chg.keep .ch{color:var(--l-cyan)} .ql-chg.later .ch{color:var(--l-violet)}
+  .ql-chg ul{list-style:none;margin:0;padding:0}
+  .ql-chg li{font-size:12.8px;color:var(--l-soft);line-height:1.5;padding:6px 0 6px 22px;position:relative}
+  .ql-chg li::before{content:"";position:absolute;left:0;top:11px;width:9px;height:9px;border-radius:50%}
+  .ql-chg.earlier li::before{background:var(--l-teal)} .ql-chg.keep li::before{background:var(--l-cyan)} .ql-chg.later li::before{background:var(--l-violet)}
+
+  /* footer strip + CTA */
+  .ql-foot{margin-top:40px;display:flex;flex-wrap:wrap;gap:20px 40px;justify-content:space-between;
+    padding-top:22px;border-top:1px solid var(--l-line)}
+  .ql-foot .fh{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--l-faint);margin-bottom:8px}
+  .ql-foot .src{font-size:12px;color:var(--l-soft);line-height:1.7;max-width:60ch}
+  .ql-cta{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:40px}
+  .ql-cta a{font-size:14px;font-weight:800;letter-spacing:.02em;text-decoration:none;padding:13px 26px;border-radius:999px;transition:transform .15s,box-shadow .15s}
+  .ql-cta a.primary{background:linear-gradient(90deg,var(--l-teal),var(--l-cyan));color:#04121a;box-shadow:0 6px 24px rgba(34,211,197,.28)}
+  .ql-cta a.ghost{color:var(--l-ink);border:1px solid var(--l-line);background:rgba(255,255,255,.03)}
+  .ql-cta a:hover{transform:translateY(-2px)}
+  .ql-scroll{display:block;text-align:center;margin-top:20px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--l-faint);text-decoration:none}
+
+  @media(max-width:860px){
+    .ql-arrows{display:none}
+    .ql-stage,.ql-conv{min-height:0}
+    .ql-conv{grid-template-columns:1fr;text-align:center;gap:32px}
+    .ql-traj.down{text-align:center}.ql-traj.down .winlbl{margin:8px auto 0}
+    .ql-traj .ql-brands,.ql-traj.down .ql-brands{justify-content:center}
+    .ql-ev{grid-template-columns:1fr}
+    .ql-band{grid-template-columns:1fr;gap:24px}
+    .ql-change{grid-template-columns:1fr}
+  }
+
+  .ql-card-brands{
+    display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+    margin:2px 0 13px;padding:9px 10px;
+    border:1px solid var(--l-line);border-radius:10px;
+    background:linear-gradient(90deg,rgba(255,255,255,.045),rgba(255,255,255,.015));
+  }
+  .ql-card-brands .lbl{
+    flex-basis:100%;font-size:9px;font-weight:800;letter-spacing:.11em;
+    text-transform:uppercase;color:var(--l-faint);margin-bottom:2px;
+  }
+  .ql-card-brand{
+    display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    height:30px;padding:0 9px;border-radius:8px;
+    background:#07101c;border:1px solid rgba(255,255,255,.11);
+    white-space:nowrap;font-size:10px;font-weight:900;letter-spacing:.02em;
+  }
+  .ql-card-brand .mark{
+    width:18px;height:18px;border-radius:5px;display:inline-flex;
+    align-items:center;justify-content:center;font-size:10px;font-weight:950;
+    background:rgba(255,255,255,.08);
+  }
+  .ql-card.c1 .ql-card-brand{color:#d7f7f3;border-color:rgba(34,211,197,.18)}
+  .ql-card.c1 .ql-card-brand .mark{color:var(--l-teal);background:rgba(34,211,197,.08)}
+  .ql-card.c2 .ql-card-brand{color:#ffe0ba;border-color:rgba(240,166,58,.18)}
+  .ql-card.c2 .ql-card-brand .mark{color:var(--l-amber);background:rgba(240,166,58,.08)}
+  .ql-card.c3 .ql-card-brand{color:#e2dcff;border-color:rgba(139,124,240,.20)}
+  .ql-card.c3 .ql-card-brand .mark{color:#c9c0ff;background:rgba(139,124,240,.09)}
+  .ql-card-brand.ibm .word{letter-spacing:.10em}
+  .ql-card-brand.google .mark{
+    background:conic-gradient(from -45deg,#4285F4 0 25%,#34A853 0 50%,#FBBC05 0 75%,#EA4335 0);
+    color:#fff;border-radius:50%;
+  }
+  .ql-card-brand.meta .mark{font-size:16px;color:#5ba4ff;background:rgba(59,130,246,.08)}
+  .ql-card-brand.caltech .mark{color:#ff8159}
+  .ql-card-brand.oratomic .mark{color:#7fb0ff}
+  @media(max-width:700px){.ql-card-brand{flex:1 1 auto;min-width:96px}}
+
+.qland .ql-pill{font-size:16px!important;font-weight:950!important;letter-spacing:.13em!important;color:#041018!important;background:linear-gradient(90deg,#22d3c5,#49e5d6)!important;border:1px solid rgba(125,255,239,.9)!important;padding:10px 21px!important;box-shadow:0 0 0 5px rgba(34,211,197,.08),0 0 28px rgba(34,211,197,.26),0 10px 30px rgba(0,0,0,.20)!important}
+.qland .ql-pill .dot{width:8px!important;height:8px!important;background:#073d3a!important;box-shadow:0 0 0 3px rgba(7,61,58,.12)!important}
+.qland .ql-traj.down{position:relative;z-index:3;padding:18px 0 18px 42px;align-self:center}
+.qland .ql-traj.down::before{content:"";position:absolute;z-index:-1;inset:-6px -12px -6px 18px;border-radius:18px;background:linear-gradient(90deg,rgba(5,9,18,0) 0%,rgba(5,9,18,.74) 24%,rgba(5,9,18,.94) 62%,rgba(5,9,18,.98) 100%)}
+.qland .ql-traj.down h3,.qland .ql-traj.down p,.qland .ql-traj.down .ql-brands{position:relative;z-index:4}
+.qland .ql-traj.down .ql-brands{margin-top:16px;gap:15px}
+.qland .ql-src{display:inline-flex;align-items:center;gap:4px;margin-top:5px;font-size:10px;font-weight:800;color:#8edfff;text-decoration:none;border-bottom:1px solid rgba(142,223,255,.45)}
+.qland .ql-card.c2 .ql-src{color:#ffc178;border-bottom-color:rgba(255,193,120,.45)}
+.qland .ql-card.c3 .ql-src{color:#d5b5ff;border-bottom-color:rgba(213,181,255,.45)}
+.qland .ql-src::after{content:"↗";font-size:9px}
+@media(max-width:820px){.qland .ql-pill{font-size:14px!important;padding:9px 17px!important}.qland .ql-traj.down{padding:0;text-align:center}.qland .ql-traj.down::before{display:none}}
+
+
+/* ===== v40.2 brand-colour polish =====
+   Section colours still communicate evidence type; organisation wordmarks use
+   organisation-specific colours so identity is not confused with evidence class. */
+
+/* top trajectory fallback wordmarks */
+.qland .wm-ibm{color:#0F62FE!important;text-shadow:0 0 14px rgba(15,98,254,.18)}
+.qland .wm-quantinuum{
+  color:#A78BFA!important;
+  background:linear-gradient(90deg,#7C5CFC 0%,#A78BFA 48%,#E3D7FF 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent!important;
+}
+.qland .wm-quera{
+  color:#EAF7FF!important;
+  background:linear-gradient(90deg,#53C8FF 0%,#78E2C0 42%,#EAF7FF 72%);
+  -webkit-background-clip:text;background-clip:text;color:transparent!important;
+}
+.qland .wm-google{
+  background:linear-gradient(90deg,#4285F4 0 24%,#EA4335 24% 44%,#FBBC05 44% 67%,#34A853 67% 100%)!important;
+  -webkit-background-clip:text!important;background-clip:text!important;color:transparent!important;
+}
+.qland .wm-oratomic{color:#7FB0FF!important;text-shadow:0 0 12px rgba(127,176,255,.16)}
+.qland .wm-caltech{color:#FF6C0C!important;text-shadow:0 0 12px rgba(255,108,12,.14)}
+
+/* all chips keep the same neutral container; identity is carried by mark + word */
+.qland .ql-card-brand{
+  background:linear-gradient(180deg,#091421,#07101c)!important;
+  border-color:rgba(255,255,255,.12)!important;
+  color:#DCE7F2!important;
+}
+.qland .ql-card-brand .word{font-weight:900}
+
+/* IBM */
+.qland .ql-card-brand.ibm{border-color:rgba(15,98,254,.34)!important}
+.qland .ql-card-brand.ibm .mark{
+  color:#fff!important;background:#0F62FE!important;
+  box-shadow:0 0 14px rgba(15,98,254,.24)
+}
+.qland .ql-card-brand.ibm .word{color:#78A9FF!important;letter-spacing:.10em}
+
+/* Quantinuum */
+.qland .ql-card-brand.quantinuum{border-color:rgba(124,92,252,.32)!important}
+.qland .ql-card-brand.quantinuum .mark{
+  color:#fff!important;
+  background:linear-gradient(135deg,#5B3FD6,#9A75FF)!important;
+  box-shadow:0 0 14px rgba(124,92,252,.22)
+}
+.qland .ql-card-brand.quantinuum .word{
+  background:linear-gradient(90deg,#A78BFA,#E4DCFF);
+  -webkit-background-clip:text;background-clip:text;color:transparent!important
+}
+
+/* QuEra — dark-blue/white wordmark with coloured-dot accent */
+.qland .ql-card-brand.quera{border-color:rgba(83,200,255,.28)!important}
+.qland .ql-card-brand.quera .mark{
+  color:#06121A!important;
+  background:
+    radial-gradient(circle at 72% 28%,#F7C843 0 12%,transparent 13%),
+    radial-gradient(circle at 25% 72%,#53C8FF 0 13%,transparent 14%),
+    radial-gradient(circle at 76% 78%,#72D6A8 0 12%,transparent 13%),
+    #E9F5FF!important;
+}
+.qland .ql-card-brand.quera .word{color:#BFEAFF!important}
+
+/* Google */
+.qland .ql-card-brand.google{border-color:rgba(66,133,244,.30)!important}
+.qland .ql-card-brand.google .mark{
+  background:conic-gradient(from -45deg,#4285F4 0 25%,#34A853 0 50%,#FBBC05 0 75%,#EA4335 0)!important;
+  color:#fff!important;border-radius:50%!important
+}
+.qland .ql-card-brand.google .word{
+  background:linear-gradient(90deg,#4285F4 0 24%,#EA4335 24% 44%,#FBBC05 44% 67%,#34A853 67% 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent!important
+}
+
+/* Oratomic */
+.qland .ql-card-brand.oratomic{border-color:rgba(127,176,255,.30)!important}
+.qland .ql-card-brand.oratomic .mark{
+  color:#DCE9FF!important;background:linear-gradient(135deg,#254A82,#4A78C2)!important;
+  box-shadow:0 0 12px rgba(127,176,255,.18)
+}
+.qland .ql-card-brand.oratomic .word{color:#9FC4FF!important}
+
+/* Caltech — official primary orange */
+.qland .ql-card-brand.caltech{border-color:rgba(255,108,12,.34)!important}
+.qland .ql-card-brand.caltech .mark{
+  color:#fff!important;background:#FF6C0C!important;
+  box-shadow:0 0 12px rgba(255,108,12,.18)
+}
+.qland .ql-card-brand.caltech .word{color:#FF8F4C!important}
+
+/* GRI */
+.qland .ql-card-brand.gri{border-color:rgba(31,171,164,.28)!important}
+.qland .ql-card-brand.gri .mark{
+  color:#fff!important;background:linear-gradient(135deg,#126E77,#22A69C)!important
+}
+.qland .ql-card-brand.gri .word{color:#7FE0D6!important}
+
+/* evolutionQ */
+.qland .ql-card-brand.evolutionq{border-color:rgba(139,124,240,.32)!important}
+.qland .ql-card-brand.evolutionq .mark{
+  color:#fff!important;background:linear-gradient(135deg,#5A4FB0,#8B7CF0)!important
+}
+.qland .ql-card-brand.evolutionq .word{
+  background:linear-gradient(90deg,#B7AFFF,#E1DCFF);
+  -webkit-background-clip:text;background-clip:text;color:transparent!important
+}
+
+/* slightly more visual separation between brand identity and evidence-stream colour */
+.qland .ql-card-brands .lbl{opacity:.9}
+
+</style>
+<meta content="v40.2-brand-colour-polish" name="qtl-verified-build"/>
+</head>
 <body>
 <header class="hero">
 <div class="wrap">
@@ -828,7 +1164,7 @@
 </div>
 </div>
 <div class="update-box">
-<div class="urow"><span>Last fact-checked</span><strong>26 August 2026 · 17:45 SGT</strong></div>
+<div class="urow"><span>Last fact-checked</span><strong>31 August 2026 · 16:10 SGT</strong></div>
 <div class="urow"><span>Scope</span><strong>Global · Singapore lens</strong></div>
 </div>
 </div>
@@ -852,6 +1188,210 @@
 <a href="#sources">Sources</a>
 </div>
 </nav>
+<!-- Landing evidence re-verified 31 Aug 2026: IBM 2029 milestone linked to current IBM Technology Atlas; Cain et al. attribution checked against Caltech/Oratomic sources. -->
+<section class="qland" aria-label="Why ~2033 — when the cryptographic breakthrough could happen">
+<div class="qland-in">
+
+  <div class="ql-head">
+    <span class="ql-pill"><span class="dot"></span>Why ~2033?</span>
+    <h2>When could the cryptographic <em>breakthrough</em> happen?</h2>
+    <p class="ql-lede">A cryptographically relevant quantum computer would break the RSA and elliptic-curve cryptography protecting almost everything online. Here is where the evidence points — read as the overlap of two independent trajectories, not a prediction.</p>
+    <div class="ql-assess">
+      <span><span class="mk"></span>Assessment</span>
+      <span><span class="mk"></span>Technical synthesis</span>
+      <span><span class="mk"></span>Low–moderate confidence</span>
+    </div>
+  </div>
+
+  <div class="ql-stage">
+  <svg class="ql-arrows" viewBox="0 0 1080 340" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+    <defs>
+      <linearGradient id="qlTeal" x1="0" y1="1" x2="1" y2="0">
+        <stop offset="0" stop-color="#1a8f80"/><stop offset="1" stop-color="#3fe6d4"/>
+      </linearGradient>
+      <linearGradient id="qlAmber" x1="1" y1="1" x2="0" y2="0">
+        <stop offset="0" stop-color="#a05a1e"/><stop offset="1" stop-color="#ffbe4d"/>
+      </linearGradient>
+      <marker id="qlHeadTeal" markerWidth="9" markerHeight="9" refX="6" refY="4.5" orient="auto">
+        <path d="M0,0 L9,4.5 L0,9 Z" fill="#3fe6d4"/>
+      </marker>
+      <marker id="qlHeadAmber" markerWidth="9" markerHeight="9" refX="6" refY="4.5" orient="auto">
+        <path d="M0,0 L9,4.5 L0,9 Z" fill="#ffbe4d"/>
+      </marker>
+    </defs>
+    <!-- rising teal trajectory, left -> centre, arrowhead into orb -->
+    <path class="ql-path-teal" marker-end="url(#qlHeadTeal)"
+      d="M20,250 C130,232 210,205 300,150 C360,113 400,92 452,86"/>
+    <path class="ql-flow teal" d="M20,250 C130,232 210,205 300,150 C360,113 400,92 452,86"/>
+    <circle class="ql-dot teal" cx="90"  cy="242"/>
+    <circle class="ql-dot teal" cx="180" cy="212"/>
+    <circle class="ql-dot teal" cx="270" cy="168"/>
+    <circle class="ql-dot teal" cx="360" cy="112"/>
+    <!-- descending amber trajectory, right -> centre, arrowhead into orb -->
+    <path class="ql-path-amber" marker-end="url(#qlHeadAmber)"
+      d="M1060,282 C958,270 868,248 782,214 C715,187 669,145 628,106"/>
+    <path class="ql-flow amber" d="M1060,282 C958,270 868,248 782,214 C715,187 669,145 628,106"/>
+    <circle class="ql-dot amber" cx="990" cy="272"/>
+    <circle class="ql-dot amber" cx="890" cy="252"/>
+    <circle class="ql-dot amber" cx="790" cy="218"/>
+    <circle class="ql-dot amber" cx="700" cy="170"/>
+  </svg>
+
+  <div class="ql-conv">
+    <div class="ql-traj up">
+      <h3>Quantum capability ↑</h3>
+      <p>The hardware trajectory is moving up.</p>
+      <p class="win">~2028–2033</p>
+      <p class="winlbl">Target window vendors give for large-scale, fault-tolerant capability.</p>
+      <div class="ql-brands">
+        <span class="ql-logo"><img src="logos/ibm.svg" alt="IBM"/><span class="wm wm-ibm">IBM</span></span>
+        <span class="ql-logo"><img src="logos/quantinuum.svg" alt="Quantinuum"/><span class="wm wm-quantinuum">Quantinuum</span></span>
+        <span class="ql-logo"><img src="logos/quera.svg" alt="QuEra"/><span class="wm wm-quera">QuEra</span></span>
+      </div>
+    </div>
+
+    <div class="ql-core">
+      <div class="yr">~2033</div>
+      <div class="cap">Technical<br/>convergence<br/>estimate</div>
+    </div>
+
+    <div class="ql-traj down">
+      <h3>Attack requirement ↓</h3>
+      <p>The resources an attack needs are moving down.</p>
+      <p class="win">~2030–2033</p>
+      <p class="winlbl">Estimated window when attack requirements fall into reach.</p>
+      <div class="ql-brands">
+        <span class="ql-logo"><img src="logos/google.svg" alt="Google"/><span class="wm wm-google">Google</span></span>
+        <span class="ql-logo"><img src="logos/oratomic.svg" alt="Oratomic"/><span class="wm wm-oratomic">Oratomic</span></span>
+        <span class="ql-logo"><img src="logos/caltech.svg" alt="Caltech"/><span class="wm wm-caltech">Caltech</span></span>
+      </div>
+    </div>
+  </div>
+  </div>
+  <p class="ql-conv-note">Neither trajectory proves a cryptographically relevant quantum computer exists today. The ~2033 estimate reflects where two independent lines of current evidence overlap — it is a reading of the evidence, not a forecast.</p>
+
+  <div class="ql-sec-h">The evidence behind the estimate</div>
+  <div class="ql-ev">
+
+    <div class="ql-card c1">
+      <div class="no">01 · Hardware trajectory</div>
+      <h4>Fault-tolerant capability is being targeted around 2028–2033.</h4>
+      <div class="dir">Capability ↑</div>
+      <div class="ql-card-brands" aria-label="Hardware organisations represented in this evidence stream">
+        <div class="lbl">Organisations in this evidence stream</div>
+        <span class="ql-card-brand ibm"><span class="mark">I</span><span class="word">IBM</span></span>
+        <span class="ql-card-brand quantinuum"><span class="mark">Q</span><span class="word">Quantinuum</span></span>
+        <span class="ql-card-brand quera"><span class="mark">Q</span><span class="word">QuEra</span></span>
+      </div>
+      <div class="ql-row"><p class="r-h">IBM · <b>2029</b></p><p class="r-b">Starting target: 200 logical qubits and 100 million gates.</p><a class="ql-src" href="https://www.ibm.com/roadmaps/quantum/2030/" target="_blank" rel="noopener">IBM roadmap</a></div>
+      <div class="ql-row"><p class="r-h">IBM · <b>2033+</b></p><p class="r-b">"Blue Jay" goal: 2,000 logical qubits and 1 billion gates.</p><a class="ql-src" href="https://www.ibm.com/roadmaps/quantum/2033%2B/" target="_blank" rel="noopener">IBM roadmap</a></div>
+      <div class="ql-row"><p class="r-h">Quantinuum · <b>by 2030</b></p><p class="r-b">Roadmap to universal, fully fault-tolerant computing with hundreds of logical qubits and millions of gates.</p><a class="ql-src" href="https://www.quantinuum.com/press-releases/quantinuum-unveils-accelerated-roadmap-to-achieve-universal-fault-tolerant-quantum-computing-by-2030" target="_blank" rel="noopener">Quantinuum source</a></div>
+      <div class="ql-row"><p class="r-h">QuEra · <b>2028 / 2028–29</b></p><p class="r-b">Libra targets 256 logical / &gt;10,000 physical qubits in 2028; next generation targets 1,000+ logical / &gt;20,000 physical qubits.</p><a class="ql-src" href="https://www.quera.com/our-quantum-roadmap" target="_blank" rel="noopener">QuEra roadmap</a></div>
+      <div class="ql-signal"><b>Signal</b> — large fault-tolerant systems are being planned for the turn of the decade.</div>
+    </div>
+
+    <div class="ql-card c2">
+      <div class="no">02 · Cryptanalytic resource estimates</div>
+      <h4>The modeled machine an attack needs is getting smaller.</h4>
+      <div class="dir">Requirement ↓</div>
+      <div class="ql-card-brands" aria-label="Research organisations represented in this evidence stream">
+        <div class="lbl">Research organisations represented</div>
+        <span class="ql-card-brand google"><span class="mark">G</span><span class="word">Google</span></span>
+        <span class="ql-card-brand oratomic"><span class="mark">O</span><span class="word">Oratomic</span></span>
+        <span class="ql-card-brand caltech"><span class="mark">C</span><span class="word">Caltech</span></span>
+      </div>
+      <div class="ql-row"><p class="r-h">RSA-2048 · Gidney 2025</p><p class="r-b">Estimate fell from ~20M noisy qubits / 8 hours (2019) to under 1M / under 1 week under the stated assumptions.</p><a class="ql-src" href="https://arxiv.org/abs/2505.15917" target="_blank" rel="noopener">Gidney preprint</a></div>
+      <div class="ql-row"><p class="r-h">ECC-256 · Babbush et al. 2026</p><p class="r-b">~1,200 logical qubits / ~90M Toffoli gates; one modeled realization uses ~500K physical qubits.</p><a class="ql-src" href="https://arxiv.org/abs/2603.28846" target="_blank" rel="noopener">Babbush et al. preprint</a></div>
+      <div class="ql-row"><p class="r-h">ECC-256 · Luo et al. 2026</p><p class="r-b">Space-efficient construction reduces logical width to 835 qubits, with a different gate-count trade-off.</p><a class="ql-src" href="https://arxiv.org/abs/2607.13816" target="_blank" rel="noopener">Luo et al. preprint</a></div>
+      <div class="ql-row"><p class="r-h">P-256 · Cain et al. 2026</p><p class="r-b">Neutral-atom model: ~26,000 physical qubits for a few-day attack under the paper's assumptions (as few as 10,000 for larger runtimes).</p><a class="ql-src" href="https://arxiv.org/abs/2603.28627" target="_blank" rel="noopener">Cain et al. preprint</a></div>
+      <div class="ql-signal"><b>Signal</b> — published ECC attack requirements are approaching the scale of early fault-tolerant hardware roadmaps.</div>
+    </div>
+
+    <div class="ql-card c3">
+      <div class="no">03 · Independent probability calibration</div>
+      <h4>Expert judgement stays more conservative — and acts as a check.</h4>
+      <div class="dir">External calibration</div>
+      <div class="ql-card-brands" aria-label="External calibration organisations">
+        <div class="lbl">External calibration organisations</div>
+        <span class="ql-card-brand gri"><span class="mark">G</span><span class="word">GRI</span></span>
+        <span class="ql-card-brand evolutionq"><span class="mark">eQ</span><span class="word">evolutionQ</span></span>
+      </div>
+      <div class="ql-row"><p class="r-h">GRI / evolutionQ · Mar 2026</p><p class="r-b">Survey of 26 experts: a CRQC was assessed at 28–49% within 10 years and 51–70% within 15 years.</p><a class="ql-src" href="https://globalriskinstitute.org/publication/quantum-threat-timeline-report-2025b/" target="_blank" rel="noopener">GRI / evolutionQ report</a></div>
+      <div class="ql-row"><p class="r-h">Calendar interpretation</p><p class="r-b">Those horizons correspond roughly to 2036 and 2041. The survey brackets a later 50% region but does not name a precise arrival year.</p></div>
+      <div class="ql-row"><p class="r-h">How this tracker uses it</p><p class="r-b">Expert elicitation is valuable external calibration but is a snapshot of the evidence available when participants formed their views. Hardware, error correction and resource estimates are moving quickly, and several significant results have appeared since the latest survey cycle.</p></div>
+      <div class="ql-note-box"><b>Our expectation:</b> if the present technical trajectory continues, future expert assessments may shorten the estimated timeline. We reassess the central estimate whenever new evidence warrants.</div>
+      <div class="ql-signal"><b>Signal</b> — expert opinion still sits later than the newest technical convergence indicators.</div>
+    </div>
+
+  </div>
+
+  <div class="ql-band">
+    <div class="case early">
+      <div class="k">🚀 Early case</div>
+      <div class="yr">~2030</div>
+      <p>Aggressive roadmaps succeed quickly and integration goes smoother than expected.</p>
+    </div>
+    <div class="case central">
+      <div class="k">Central technical estimate</div>
+      <div class="yr">~2033</div>
+      <div class="sub">Evidence-weighted synthesis</div>
+    </div>
+    <div class="case late">
+      <div class="k">⏳ Later case</div>
+      <div class="yr">~2036+</div>
+      <p>Scaling, QEC overhead or other bottlenecks delay convergence beyond the early 2030s.</p>
+    </div>
+  </div>
+
+  <div class="ql-sec-h" style="margin-bottom:6px">What would change this estimate?</div>
+  <div class="ql-change">
+    <div class="ql-chg earlier">
+      <div class="ch">← Move earlier</div>
+      <ul>
+        <li>A roadmap system is demonstrated at scale with high logical fidelity.</li>
+        <li>Another major reduction in cryptanalytic resource requirements.</li>
+        <li>QEC overhead drops materially, reducing the physical resources needed.</li>
+      </ul>
+    </div>
+    <div class="ql-chg keep">
+      <div class="ch">Keep ~2033</div>
+      <ul>
+        <li>Hardware capability and attack requirements keep converging broadly along current trajectories.</li>
+        <li>No major surprises in scaling, QEC or architecture integration.</li>
+      </ul>
+    </div>
+    <div class="ql-chg later">
+      <div class="ch">Move later →</div>
+      <ul>
+        <li>Major roadmap slips, or architectures fail to scale as expected.</li>
+        <li>QEC or control/decoding bottlenecks increase overhead.</li>
+        <li>Attack-resource assumptions prove unrealistic in practice.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="ql-cta">
+    <a class="primary" href="#timeline">See the evidence timeline</a>
+    <a class="ghost" href="#toolkit">Start your migration</a>
+    <a class="ghost" href="#executive-summary">Current assessment</a>
+  </div>
+
+  <div class="ql-foot">
+    <div>
+      <div class="fh">Key sources (latest 2025–2026)</div>
+      <p class="src">IBM Roadmap (Mar 2026) · Quantinuum Roadmap (May 2025) · QuEra Roadmap (2025) · Gidney (May 2025) · Babbush et al. (Jul 2026) · Luo et al. (Jul 2026) · Cain et al. (Mar 2026) · GRI / evolutionQ (Mar 2026) · IETF RFC 10024 (Aug 2026) · CSA/GovTech market-readiness RFI (Aug 2026)</p>
+    </div>
+    <div>
+      <div class="fh">Last updated</div>
+      <p class="src">31 Aug 2026 · updated whenever substantive new technical evidence appears.</p>
+    </div>
+  </div>
+
+  <a class="ql-scroll" href="#executive-summary">↓ Read the full tracker</a>
+
+</div>
+</section>
+
 <section class="exec-dashboard" id="executive-summary">
 <div class="wrap">
 <div class="exec-panel">
@@ -874,37 +1414,70 @@
 </div>
 </div>
 <div class="latest-band">
-<div class="latest-head"><h3>Latest developments · evidence-linked</h3><span>Primary sources beside each claim</span></div>
-<div class="latest-grid">
-<div class="latest-card">
-<div class="evidence-badges"><span class="evidence-badge prov-reported">Reported</span><span class="evidence-badge etype">Deployment signal</span></div>
-<div class="date">12 Aug 2026</div>
-<h4>Google extends PQC into the Android device trust chain</h4>
-<p>Android 17 integrates ML-DSA into platform security; Titan M3-specific coverage remains reported evidence.</p>
-<div class="evidence-links"><a href="https://blog.google/security/security-for-the-quantum-era-implementing-post-quantum-cryptography-in-android/" rel="noopener" target="_blank">Google source</a></div>
+<div class="latest-head"><h3>Latest developments · triaged</h3><span>Only assessment-changing evidence moves the needle</span></div>
+<div class="triage-summary">
+<div class="triage-lane move"><div class="th">Moves the needle</div><p>Evidence strong enough to change CRQC timing, migration urgency, or migration execution priorities. No item in the current 31 Aug review crosses that threshold. <strong>One important factual-currency correction is incorporated below:</strong> HAWK is no longer an active NIST Round-3 signature candidate.</p></div>
+<div class="triage-lane monitor"><div class="th">Monitor only</div><p>Relevant developments worth retaining for context, but not promoted into the core threat assessment unless later evidence changes their significance.</p></div>
 </div>
-<div class="latest-card">
+<div class="latest-grid" style="grid-template-columns:repeat(3,minmax(0,1fr))">
+<div class="latest-card monitor-only">
+<div class="triage-badge monitor">Monitor only · factual correction</div>
+<div class="evidence-badges"><span class="evidence-badge prov-verified">Verified</span><span class="evidence-badge etype">Standard / cryptanalysis</span></div>
+<div class="date">28–29 Jul 2026 · incorporated 31 Aug 2026</div>
+<h4>HAWK withdrawn from NIST's additional-signature process</h4>
+<p>Anthropic reported an improved key-recovery attack against HAWK on 28 Jul 2026. NIST subsequently confirmed that the HAWK team withdrew the scheme from consideration on 29 Jul. HAWK is therefore no longer an active Round-3 candidate. NIST states that the finding does not affect its finalized PQC standards such as ML-KEM and ML-DSA.</p>
+<div class="evidence-links"><a href="https://www.nist.gov/pqc" rel="noopener" target="_blank">NIST PQC update</a><a href="https://www.nist.gov/news-events/news/2026/05/nine-candidates-advance-third-round-additional-digital-signatures-pqc" rel="noopener" target="_blank">NIST Round-3 status</a><a href="https://www.anthropic.com/research/discovering-cryptographic-weaknesses" rel="noopener" target="_blank">Anthropic technical disclosure</a></div>
+</div>
+<div class="latest-card monitor-only">
+<div class="triage-badge monitor">Monitor only</div>
+<div class="evidence-badges"><span class="evidence-badge prov-verified">Verified</span><span class="evidence-badge etype">Vendor roadmap</span></div>
+<div class="date">27 Aug 2026</div>
+<h4>Diraq publishes utility-scale silicon-spin roadmap</h4>
+<p>Diraq targets 150,000 physical / up to 1,000 logical qubits by 2029 and more than 2 million physical / more than 10,000 logical qubits by 2031. These are company roadmap targets, not measured hardware results, so they do not change the current CRQC assessment.</p>
+<div class="evidence-links"><a href="https://www.diraq.com/newsdesk/diraq-sets-roadmap-for-utility-scale-quantum-computing-with-millions-of-qubits-on-a-single-silicon-chip" rel="noopener" target="_blank">Diraq source</a></div>
+</div>
+<div class="latest-card monitor-only">
+<div class="triage-badge monitor">Monitor only</div>
+<div class="evidence-badges"><span class="evidence-badge prov-verified">Verified</span><span class="evidence-badge etype">Market news</span></div>
+<div class="date">26 Aug 2026</div>
+<h4>IBM completes acquisition of HRL Laboratories</h4>
+<p>IBM says HRL adds silicon-spin, sensing, materials, cryogenics, control, packaging and interconnect expertise complementary to its superconducting programme. The acquisition may broaden IBM's technical options, but it is not a demonstrated capability milestone.</p>
+<div class="evidence-links"><a href="https://newsroom.ibm.com/2026-08-26-ibm-completes-acquisition-of-hrl-laboratories-to-accelerate-the-future-of-quantum" rel="noopener" target="_blank">IBM source</a></div>
+</div>
+<div class="latest-card monitor-only">
+<div class="triage-badge monitor">Monitor only</div>
+<div class="evidence-badges"><span class="evidence-badge prov-verified">Verified</span><span class="evidence-badge etype">Quantum communications</span></div>
+<div class="date">26 Aug 2026 · peer-reviewed</div>
+<h4>Intermodal QKD demonstrated over an 18 km free-space link</h4>
+<p>Researchers used adaptive optics to couple a turbulent free-space quantum channel into standard single-mode fibre and generated secure keys at 200 bit/s with room-temperature detectors. It advances hybrid quantum-network engineering, not cryptanalytic quantum-computing capability.</p>
+<div class="evidence-links"><a href="https://www.nature.com/articles/s41534-026-01358-0" rel="noopener" target="_blank">npj Quantum Information</a></div>
+</div>
+<div class="latest-card monitor-only">
+<div class="triage-badge monitor">Monitor only</div>
+<div class="evidence-badges"><span class="evidence-badge prov-verified">Verified</span><span class="evidence-badge etype">Market infrastructure · vendor roadmap</span></div>
+<div class="date">28 Aug 2026</div>
+<h4>Canada backs Xanadu quantum-manufacturing expansion</h4>
+<p>Canada committed CAD $195 million through the Strategic Response Fund toward Xanadu's CAD $893 million project to expand R&amp;D and establish advanced manufacturing capabilities for photonic and semiconductor components used in quantum systems. The programme is intended to support manufacturing processes compatible with future fault-tolerant quantum computing; it is industrial-capacity evidence, not a measured computing milestone.</p>
+<div class="evidence-links"><a href="https://www.canada.ca/en/innovation-science-economic-development/news/2026/08/government-of-canada-invests-in-xanadu-to-build-up-advanced-quantum-manufacturing-in-canada.html" rel="noopener" target="_blank">Government of Canada</a><a href="https://investors.xanadu.ai/news-releases/news-release-details/xanadu-secures-cad-195-million-and-establishes-landmark-advanced" rel="noopener" target="_blank">Xanadu</a></div>
+</div>
+<div class="latest-card monitor-only">
+<div class="triage-badge monitor">Monitor only</div>
+<div class="evidence-badges"><span class="evidence-badge prov-verified">Verified</span><span class="evidence-badge etype">Market news</span></div>
+<div class="date">27 Aug 2026</div>
+<h4>Pasqal completes public-market transaction</h4>
+<p>Pasqal reported approximately US$360 million of cash available at closing after completing its business combination with Bleichroeder Acquisition Corp. II. The company says the capital will support neutral-atom QPU manufacturing and deployment, commercial expansion, and its roadmap toward fault-tolerant quantum computing. This strengthens the industrialisation signal, not demonstrated cryptanalytic capability.</p>
+<div class="evidence-links"><a href="https://www.pasqal.com/newsroom/pasqal-and-bleichroeder-acquisition-corp-ii-complete-business-combination/" rel="noopener" target="_blank">Pasqal</a></div>
+</div>
+<div class="latest-card monitor-only">
+<div class="triage-badge monitor">Monitor only</div>
 <div class="evidence-badges"><span class="evidence-badge prov-verified">Verified</span><span class="evidence-badge etype">Deployment signal</span></div>
-<div class="date">29 Jul 2026</div>
-<h4>Cloudflare begins post-quantum authentication deployment</h4>
-<p>ML-DSA support expands PQC from key establishment toward production authentication workflows.</p>
-<div class="evidence-links"><a href="https://blog.cloudflare.com/post-quantum-authentication-to-origins/" rel="noopener" target="_blank">Cloudflare source</a></div>
-</div>
-<div class="latest-card">
-<div class="evidence-badges"><span class="evidence-badge prov-verified">Verified</span><span class="evidence-badge etype">Deployment measurement</span></div>
-<div class="date">3 Aug 2026 · preprint</div>
-<h4>Internet-visible PQC adoption remains uneven</h4>
-<p>UK measurement data shows deployment is real but fragmented; visible support does not equal organisation-wide migration.</p>
-<div class="evidence-links"><a href="https://arxiv.org/abs/2608.02147" rel="noopener" target="_blank">Research source</a></div>
-</div>
-<div class="latest-card">
-<div class="evidence-badges"><span class="evidence-badge prov-verified">Verified</span><span class="evidence-badge etype">Deployment signal · software</span></div>
-<div class="date">11 Aug 2026</div>
-<h4>Windows Server 2025 expands PQC certificate support</h4>
-<p>Microsoft improves PQC certificate-authority configuration and certificate-template enrolment.</p>
-<div class="evidence-links"><a href="https://support.microsoft.com/en-us/servicing/os/windows-server/2026/08/kb5120233-windows-server-2025-security-update" rel="noopener" target="_blank">Microsoft source</a></div>
+<div class="date">26 Aug 2026</div>
+<h4>StarkWare reports a quantum-safe Bitcoin transaction on mainnet</h4>
+<p>StarkWare reports that Avihu Levy's Quantum-Safe Bitcoin method was used in a transaction mined on Bitcoin mainnet without changing Bitcoin consensus rules. This is a live-network migration experiment and does not mean Bitcoin has adopted a post-quantum standard or that the construction has ecosystem-wide independent validation.</p>
+<div class="evidence-links"><a href="https://starkware.co/blog/the-first-quantum-safe-bitcoin-transaction-has-been-mined/" rel="noopener" target="_blank">StarkWare</a></div>
 </div>
 </div>
+<p class="note"><strong>Current review:</strong> all seven developments shown above remain <strong>Monitor only</strong>. None changes the core charts, CRQC assessment or migration-urgency conclusion. <strong>Triage rule:</strong> monitor-only items are promoted only if later evidence materially changes threat timing, migration urgency or migration execution priorities.</p>
 </div>
 <div class="audience-paths">
 <div class="audience-path"><strong>For leaders</strong><span>Use <a href="#trend">Trend</a>, <a href="#collapse">Collapse</a>, <a href="#hndl">HNDL</a> and <a href="#deadlines">Deadlines</a> to understand why timing uncertainty does not remove migration urgency.</span></div>
@@ -1235,15 +1808,17 @@
 <div class="tl-body">
 <span class="tag t-policy">Standardization process</span>
 <span class="tag t-context">Candidate algorithms</span>
-<h3>NIST advances nine additional PQC signature candidates to Round 3</h3>
-<p>NIST selected FAEST, HAWK, MAYO, MQOM, QR-UOV, SDitH, SNOVA, SQIsign and UOV to advance to the third round of its Additional Digital Signatures process. These are candidate algorithms, not standards; the third evaluation phase is expected to last approximately two years.</p>
+<h3>NIST advances nine additional PQC signature candidates to Round 3; HAWK later withdrawn</h3>
+<p>NIST selected nine candidates in May 2026 — FAEST, HAWK, MAYO, MQOM, QR-UOV, SDitH, SNOVA, SQIsign and UOV — to advance to the third round of its Additional Digital Signatures process. On 29 Jul 2026, NIST updated the status after the HAWK team withdrew its algorithm following Anthropic's disclosure of a mathematical vulnerability. HAWK is no longer an active Round-3 candidate.</p>
 <details class="native-detail">
 <summary>Why it matters</summary>
-<div class="layer mech"><div class="lh"><span class="dot"></span>Mechanism</div><p>The additional-signature process is intended to evaluate further public-key signature options that could augment NIST's existing standardized signature portfolio.</p></div>
-<div class="layer nums"><div class="lh"><span class="dot"></span>The numbers</div><p>Nine candidates advanced after the second round: FAEST, HAWK, MAYO, MQOM, QR-UOV, SDitH, SNOVA, SQIsign and UOV.</p></div>
-<div class="layer cav"><div class="lh"><span class="dot"></span>The honest caveat</div><p>Round-3 candidates are not approved standards. Their advancement does not change the recommendation to deploy NIST's already-finalized PQC standards where appropriate.</p></div>
-<a class="src-link" href="https://www.nist.gov/news-events/news/2026/05/nine-candidates-advance-third-round-additional-digital-signatures-pqc" rel="noopener" target="_blank">Primary source: NIST Round-3 announcement (14 May 2026) ↗</a>
-<a class="src-link" href="https://csrc.nist.gov/pubs/ir/8610/final" rel="noopener" target="_blank">Technical source: NIST IR 8610 ↗</a>
+<div class="layer mech"><div class="lh"><span class="dot"></span>Mechanism</div><p>The additional-signature process is intended to evaluate further public-key signature options that could augment NIST's existing standardized signature portfolio. The HAWK episode illustrates why candidate algorithms continue to undergo intensive public cryptanalysis before standardization.</p></div>
+<div class="layer nums"><div class="lh"><span class="dot"></span>Current status</div><p>Nine candidates advanced in May 2026. After HAWK's July withdrawal, eight remain active in Round 3: FAEST, MAYO, MQOM, QR-UOV, SDitH, SNOVA, SQIsign and UOV.</p></div>
+<div class="layer cav"><div class="lh"><span class="dot"></span>The honest caveat</div><p>Round-3 candidates are not approved standards. NIST states that the HAWK finding does not affect its finalized PQC standards such as ML-KEM and ML-DSA, which remain ready for implementation.</p></div>
+<a class="src-link" href="https://www.nist.gov/news-events/news/2026/05/nine-candidates-advance-third-round-additional-digital-signatures-pqc" rel="noopener" target="_blank">Primary source: NIST Round-3 announcement, updated 29 Jul 2026 ↗</a>
+<a class="src-link" href="https://www.nist.gov/pqc" rel="noopener" target="_blank">Current status: NIST PQC page ↗</a>
+<a class="src-link" href="https://www.anthropic.com/research/discovering-cryptographic-weaknesses" rel="noopener" target="_blank">Technical disclosure: Anthropic, 28 Jul 2026 ↗</a>
+<a class="src-link" href="https://csrc.nist.gov/pubs/ir/8610/final" rel="noopener" target="_blank">Historical selection report: NIST IR 8610 ↗</a>
 </details>
 </div>
 </div><div class="tl-item">
@@ -1422,6 +1997,7 @@
 <div class="cards2">
 <div class="icard cool"><h4>Quantum-Safe Migration Handbook V1 · Jul 2026</h4><p>Published by CSA, GovTech and IMDA as Version 1 on 16 July 2026 after the formal 2025 public consultation. Version 1 incorporates stakeholder feedback, updates algorithm recommendations, introduces practical “no-regrets” moves, and includes guidance on crown-jewel identification and current CII requirements. CSA states that the Handbook will continue to be revised as the field evolves.</p><div class="evidence-links"><span class="ev-label">Evidence</span><a href="https://isomer-user-content.by.gov.sg/36/350e4bd5-fa25-4609-8e78-5e159d9da245/CSA%27s%20Quantum-Safe%20Handbook%20V1%20Dtd%2016%20Jul%2026.pdf" rel="noopener" target="_blank">CSA Handbook V1 ↗</a><a href="https://www.csa.gov.sg/news-events/press-releases/csa-releases-a-quantum-safe-handbook-and-quantum-readiness-index/" rel="noopener" target="_blank">CSA 2025 consultation</a></div></div>
 <div class="icard cool"><h4>Quantum Readiness Index V1 · Jul 2026</h4><p>Published as Version 1 on 16 July 2026, this five-domain self-assessment helps organisations gauge readiness, identify gaps, prioritise migration actions, structure management discussions, and track progress through periodic reassessment.</p><div class="evidence-links"><span class="ev-label">Evidence</span><a href="https://isomer-user-content.by.gov.sg/36/9002b9b1-bb24-46de-8e16-e09458a14d22/Quantum%20Readiness%20Index%20dtd%2016%20Jul%2026%20V1.pdf" rel="noopener" target="_blank">CSA QRI V1</a></div></div>
+<div class="icard cool"><div class="evidence-badges"><span class="evidence-badge prov-verified">Verified</span><span class="evidence-badge etype">Policy / deployment readiness</span></div><h4>CSA + GovTech quantum-safe market-readiness RFI · 26 Aug 2026</h4><p>CSA and GovTech launched a Request for Information to understand the availability of quantum-safe products, platforms, consulting and system-integration services that can support organisations in migration. CSA states that the exercise is intended to give early visibility into market capability as CII owners and government agencies prepare for Singapore's quantum-safe migration milestones. Responses close on 27 November 2026. This is implementation-readiness evidence, not a change in CRQC timing.</p><div class="evidence-links"><span class="ev-label">Primary source</span><a href="https://www.csa.gov.sg/resources/quantum-safe-market-readiness-and-capability/" rel="noopener" target="_blank">CSA · Quantum-Safe Market Readiness and Capability</a></div></div>
 <div class="icard cool"><div class="evidence-badges"><span class="evidence-badge prov-verified">Verified</span><span class="evidence-badge etype">Deployment signal</span></div><h4>SIT + IBM Quantum-Safe Centre · Aug 2026</h4><p>Singapore Institute of Technology and IBM announced plans on 18 August 2026 to establish a Quantum-Safe Centre at SIT’s Punggol Campus, targeted for launch by the end of 2026. The planned centre is intended to support organisational readiness assessment, hands-on test bedding of quantum-safe technologies, training, workshops and structured migration planning. This is a deployment-readiness signal rather than evidence that a cryptographically relevant quantum computer is closer.</p><div class="evidence-links"><span class="ev-label">Primary source</span><a href="https://asean.newsroom.ibm.com/Singapore-Institute-of-Technology-and-IBM-Aim-to-Establish-Quantum-Safe-Centre-that-Addresses-Post-Quantum-Risks-and-Advances-Singapores-Quantum-Safe-Resilience" rel="noopener" target="_blank">IBM / SIT announcement · 18 Aug 2026</a></div></div>
 <div class="icard cool"><h4>NQSN+ · nationwide quantum-safe networks</h4><p>IMDA’s programme supports Singtel and SPTel with SpeQtral in building nationwide, interoperable quantum-safe networks. Businesses can integrate solutions including QKD and PQC, while the programme also works toward interoperability with overseas quantum-ready networks.</p><div class="evidence-links"><span class="ev-label">Evidence</span><a href="https://www.imda.gov.sg/about-imda/emerging-technologies-and-research/quantum-safe-technologies" rel="noopener" target="_blank">IMDA NQSN+</a><a href="https://www.csa.gov.sg/news-events/speeches/senior-minister-of-state-tan-kiat-how-committee-of-supply-2026-speech/" rel="noopener" target="_blank">CSA COS 2026</a></div></div>
 <div class="icard cool"><h4>Public feedback remains part of the model</h4><p>The formal consultation ran from 23 Oct to 31 Dec 2025 and is closed. The July 2026 materials explicitly describe the tools as continuing to evolve; CSA still provides a channel for feedback or enquiries at <strong>quantum-safe@csa.gov.sg</strong>.</p><div class="evidence-links"><span class="ev-label">Evidence</span><a href="https://www.csa.gov.sg/news-events/press-releases/csa-releases-a-quantum-safe-handbook-and-quantum-readiness-index/" rel="noopener" target="_blank">CSA 2025 consultation</a><a href="https://www.csa.gov.sg/resources/publications/quantum-safe-handbook-and-quantum-readiness-index/" rel="noopener" target="_blank">CSA V1 — Jul 2026</a></div></div>
@@ -1430,9 +2006,10 @@
 <div class="node">National quantum R&amp;D and capability</div><div class="arr">→</div>
 <div class="node">CSA · GovTech · IMDA guidance</div><div class="arr">→</div>
 <div class="node">QRI readiness assessment</div><div class="arr">→</div>
+<div class="node">Market readiness / capability</div><div class="arr">→</div>
 <div class="node">Sector and CII action</div><div class="arr">→</div>
 <div class="node">NQSN+ deployment capability</div>
-</div><div class="evidence-links"><span class="ev-label">Synthesis basis</span><a href="https://www.pmo.gov.sg/newsroom/dpm-heng-swee-keat-at-the-asia-tech-x-singapore-2024-opening-ceremony/" rel="noopener" target="_blank">PMO · National Quantum Strategy launch (May 2024)</a><a href="https://www.csa.gov.sg/resources/publications/quantum-safe-handbook-and-quantum-readiness-index/" rel="noopener" target="_blank">CSA Handbook/QRI V1</a><a href="https://www.imda.gov.sg/about-imda/emerging-technologies-and-research/quantum-safe-technologies" rel="noopener" target="_blank">IMDA NQSN+</a></div>
+</div><div class="evidence-links"><span class="ev-label">Synthesis basis</span><a href="https://www.pmo.gov.sg/newsroom/dpm-heng-swee-keat-at-the-asia-tech-x-singapore-2024-opening-ceremony/" rel="noopener" target="_blank">PMO · National Quantum Strategy launch (May 2024)</a><a href="https://www.csa.gov.sg/resources/publications/quantum-safe-handbook-and-quantum-readiness-index/" rel="noopener" target="_blank">CSA Handbook/QRI V1</a><a href="https://www.csa.gov.sg/resources/quantum-safe-market-readiness-and-capability/" rel="noopener" target="_blank">CSA/GovTech market-readiness RFI</a><a href="https://www.imda.gov.sg/about-imda/emerging-technologies-and-research/quantum-safe-technologies" rel="noopener" target="_blank">IMDA NQSN+</a></div>
 <div class="verdict"><strong>Why it matters globally:</strong> Singapore illustrates a broader transition now visible internationally: the quantum threat remains uncertain in date, but migration is increasingly being treated as an engineering and governance programme that must begin before cryptanalytic capability arrives.<div class="evidence-links"><span class="ev-label">Evidence basis</span><a href="https://www.csa.gov.sg/resources/publications/quantum-safe-handbook-and-quantum-readiness-index/" rel="noopener" target="_blank">CSA V1</a><a href="https://www.nccoe.nist.gov/applied-cryptography/migration-to-pqc" rel="noopener" target="_blank">NIST migration project</a></div></div><div class="evidence-links"><span class="ev-label">Analysis basis</span><a href="https://www.csa.gov.sg/resources/publications/quantum-safe-handbook-and-quantum-readiness-index/" rel="noopener" target="_blank">CSA Handbook/QRI V1</a><a href="https://www.nccoe.nist.gov/applied-cryptography/migration-to-pqc" rel="noopener" target="_blank">NIST PQC migration</a><a href="https://globalriskinstitute.org/publication/an-updated-methodology-for-quantum-risk-assessment/" rel="noopener" target="_blank">GRI risk methodology ↗</a></div>
 </div>
 </section>
@@ -1633,6 +2210,7 @@
 <div class="kicker">Decision signals · what would change the assessment</div>
 <h2>What would change our assessment?</h2>
 <p class="sub">The quantum threat timeline is not fixed. This section tracks developments that could materially change one of three things: our estimate of when a cryptographically relevant quantum computer may arrive, the urgency of migration, or the order in which systems should be migrated. The purpose is not to react to every quantum-computing headline, but to identify evidence that should cause assumptions to be revisited or action to be accelerated.</p>
+<div class="triage-summary"><div class="triage-lane move"><div class="th">Moves the needle</div><p>Promote only when evidence changes threat timing, migration urgency or execution priorities.</p></div><div class="triage-lane monitor"><div class="th">Monitor only</div><p>Keep relevant context without allowing every new announcement, paper or deployment to crowd the permanent assessment.</p></div></div>
 <div class="cards2" style="margin:10px 0 22px">
 <div class="icard cool"><h4>Could change threat timing</h4><p>Hardware milestones, error-correction results and cryptanalytic resource estimates that materially alter what a CRQC would require.</p></div>
 <div class="icard warn"><h4>Could change migration urgency</h4><p>New regulation, standards, security advisories or evidence that increases the cost of waiting.</p></div>
@@ -1655,7 +2233,7 @@
 <div class="witem"><div class="wtag">Hardware</div><h4>Logical-qubit scaling and sustained error performance</h4><p>Watch for systems that combine larger logical-qubit counts with sustained logical error performance, useful circuit depth and credible paths to modular scaling.</p><div class="evidence-links"><span class="ev-label">Evidence</span><a href="https://www.nature.com/articles/s41586-024-08449-y" rel="noopener" target="_blank">Willow — Nature</a><a href="https://www.quantinuum.com/press-releases/quantinuum-announces-commercial-launch-of-new-helios-quantum-computer-that-offers-unprecedented-accuracy-to-enable-generative-quantum-ai-genqai" rel="noopener" target="_blank">Quantinuum Helios</a><a href="https://www.ibm.com/roadmaps/quantum/" rel="noopener" target="_blank">IBM roadmap</a></div></div>
 <div class="witem"><div class="wtag">Error correction</div><h4>High-rate codes on real systems</h4><p>qLDPC and other high-rate approaches may reduce fault-tolerance overhead under suitable architectures. Convincing system-level demonstrations would matter more than isolated theoretical ratios.</p><div class="evidence-links"><span class="ev-label">Evidence</span><a href="https://arxiv.org/abs/2603.28627" rel="noopener" target="_blank">Cain et al. 2026</a><a href="https://newsroom.ibm.com/2025-06-10-IBM-Sets-the-Course-to-Build-Worlds-First-Large-Scale%2C-Fault-Tolerant-Quantum-Computer-at-New-IBM-Quantum-Data-Center" rel="noopener" target="_blank">IBM fault-tolerance roadmap</a></div></div>
 <div class="witem"><div class="evidence-badges"><span class="evidence-badge prov-verified">Verified</span><span class="evidence-badge etype">Standard / deployment signal</span></div><div class="wtag">Trusted hardware · 24 Aug 2026</div><h4>TCG defines a baseline for PQC-ready TPMs</h4><p>The Trusted Computing Group states that conformance to PC Client Platform TPM Profile 1.07 is the minimum baseline for a PQC-ready TPM and distinguishes fully PQC-ready devices from TPMs that are securely PQC-upgradeable. PTP 1.07 incorporates post-quantum requirements from the TPM 2.0 Library specification, including ML-KEM and ML-DSA support. This is a standards and deployment-readiness signal: it shows that PQC migration is reaching device identity, attestation and hardware roots of trust, but it does not change CRQC timing.</p><div class="evidence-links"><span class="ev-label">Primary sources</span><a href="https://trustedcomputinggroup.org/is-your-tpm-truly-pqc-ready/" rel="noopener" target="_blank">TCG · PQC-ready TPM guidance</a><a href="https://trustedcomputinggroup.org/resource/pc-client-platform-tpm-profile-ptp-specification/" rel="noopener" target="_blank">TCG · PTP 1.07 specification</a></div></div>
-<div class="witem"><div class="wtag">Standards</div><h4>PQC moves from algorithms into protocols and infrastructure</h4><p>Track IETF protocol work and the surrounding PKI, certificate, HSM, TPM and platform ecosystem that turns standardized algorithms into deployable infrastructure.</p><div class="evidence-links"><span class="ev-label">Evidence</span><a href="https://www.nist.gov/pqc" rel="noopener" target="_blank">NIST PQC</a><a href="https://www.nccoe.nist.gov/applied-cryptography/migration-to-pqc" rel="noopener" target="_blank">NIST migration project</a></div></div>
+<div class="witem"><div class="evidence-badges"><span class="evidence-badge prov-verified">Verified</span><span class="evidence-badge etype">Standard / migration execution</span></div><div class="wtag">IETF standard · Aug 2026</div><h4>RFC 10024 standardises hybrid ML-KEM key agreement for TLS 1.3</h4><p>IETF RFC 10024 defines three post-quantum/traditional hybrid TLS 1.3 key-agreement groups: X25519MLKEM768, SecP256r1MLKEM768 and SecP384r1MLKEM1024. This is an Internet Standards Track Proposed Standard and provides interoperable code points for combining ML-KEM with ECDHE. It strengthens migration execution by moving PQC from algorithm standards into deployable internet protocols, but it does not change CRQC timing or the core threat assessment.</p><div class="evidence-links"><span class="ev-label">Primary standard</span><a href="https://www.rfc-editor.org/rfc/rfc10024.html" rel="noopener" target="_blank">IETF / RFC Editor · RFC 10024</a></div></div>
 <div class="witem"><div class="wtag">Policy</div><h4>New migration requirements and implementation milestones</h4><p>Changes in laws, executive orders, security policies, government guidance, procurement rules or sector requirements can alter migration urgency even without a hardware breakthrough.</p><div class="evidence-links"><span class="ev-label">Evidence</span><a href="https://www.whitehouse.gov/presidential-actions/2026/06/securing-the-nation-against-advanced-cryptographic-attacks/" rel="noopener" target="_blank">EO 14412</a><a href="https://www.csa.gov.sg/resources/publications/quantum-safe-handbook-and-quantum-readiness-index/" rel="noopener" target="_blank">CSA Handbook/QRI V1</a></div></div>
 <div class="witem"><div class="wtag">Research thread</div><h4>Implementation vulnerabilities after standardisation</h4><p>A related research stream examines the gap between standardized PQC and safe deployment: validation, arithmetic and parameter handling, secret lifecycle, protocol integration, configuration and assurance boundaries.</p><div class="evidence-links"><span class="ev-label">Evidence</span><a href="https://www.nccoe.nist.gov/applied-cryptography/migration-to-pqc" rel="noopener" target="_blank">NIST migration project</a><a href="https://csrc.nist.gov/pubs/cswp/39/upd1/considerations-for-achieving-crypto-agility/final" rel="noopener" target="_blank">NIST crypto agility</a></div></div>
 </div>
@@ -1721,6 +2299,16 @@
 <li><span class="stype sp-primary">Primary · peer-reviewed</span>Malcolm et al. — <em>Computing efficiently in QLDPC codes</em>, Nature Communications 17, 7286 (20 May 2026). Introduces SHYPS QLDPC codes and reports efficient logical Clifford operations plus circuit-level simulations supporting lower-overhead fault-tolerant computation under the study's assumptions. <a href="https://www.nature.com/articles/s41467-026-73061-9" rel="noopener" target="_blank">Nature Communications ↗</a></li>
 <li><span class="stype sp-primary">Primary</span>U.S. Department of the Treasury — <em>Treasury Announces the Quantum-Readiness Task Force</em> (24 Aug 2026), establishing a public-private financial-sector initiative with workstreams on PQC transition, third-party/vendor readiness, and digital-asset/emerging-technology risk. <a href="https://home.treasury.gov/news/press-releases/sb0615" rel="noopener" target="_blank">U.S. Treasury ↗</a></li>
 <li><span class="stype sp-primary">Primary</span>Trusted Computing Group — PQC-ready TPM guidance (24 Aug 2026) and PC Client Platform TPM Profile 1.07. TCG defines PTP 1.07 conformance as the baseline for a PQC-ready TPM and distinguishes securely PQC-upgradeable devices. <a href="https://trustedcomputinggroup.org/is-your-tpm-truly-pqc-ready/" rel="noopener" target="_blank">TCG guidance</a> · <a href="https://trustedcomputinggroup.org/resource/pc-client-platform-tpm-profile-ptp-specification/" rel="noopener" target="_blank">PTP 1.07 ↗</a></li>
+
+<li><span class="stype sp-primary">Primary · standards / cryptanalysis</span>NIST / Anthropic — HAWK candidate status update. Anthropic disclosed an improved attack on HAWK on 28 Jul 2026; NIST updated its Round-3 announcement on 29 Jul to record the HAWK team's withdrawal and states that HAWK will not be standardized or deployed through that process. NIST also states that the finding does not affect its finalized PQC standards such as ML-KEM and ML-DSA. <a href="https://www.nist.gov/pqc" rel="noopener" target="_blank">NIST PQC status ↗</a> · <a href="https://www.nist.gov/news-events/news/2026/05/nine-candidates-advance-third-round-additional-digital-signatures-pqc" rel="noopener" target="_blank">NIST Round-3 update ↗</a> · <a href="https://www.anthropic.com/research/discovering-cryptographic-weaknesses" rel="noopener" target="_blank">Anthropic technical disclosure ↗</a></li>
+<li><span class="stype sp-primary">Primary</span>Diraq — <em>The Case for Silicon</em> roadmap announcement (27 Aug 2026), targeting 150,000 physical / up to 1,000 logical qubits by 2029 and more than 2 million physical / more than 10,000 logical qubits by 2031. Treated as a vendor roadmap, not measured hardware evidence. <a href="https://www.diraq.com/newsdesk/diraq-sets-roadmap-for-utility-scale-quantum-computing-with-millions-of-qubits-on-a-single-silicon-chip" rel="noopener" target="_blank">Diraq ↗</a></li>
+<li><span class="stype sp-primary">Primary</span>IBM — completion of HRL Laboratories acquisition (26 Aug 2026), adding expertise including silicon-spin qubits, quantum sensing, cryogenics, control electronics, packaging and interconnect technologies. <a href="https://newsroom.ibm.com/2026-08-26-ibm-completes-acquisition-of-hrl-laboratories-to-accelerate-the-future-of-quantum" rel="noopener" target="_blank">IBM Newsroom ↗</a></li>
+<li><span class="stype sp-primary">Primary</span>Rossi et al. — <em>Intermodal quantum key distribution over an 18-km free-space channel with adaptive optics and room-temperature detectors</em>, npj Quantum Information (26 Aug 2026). <a href="https://www.nature.com/articles/s41534-026-01358-0" rel="noopener" target="_blank">Nature / npj Quantum Information ↗</a></li>
+<li><span class="stype sp-primary">Primary · government</span>Government of Canada — <em>Government of Canada invests in Xanadu to build up advanced quantum manufacturing in Canada</em> (28 Aug 2026): CAD $195 million through the Strategic Response Fund toward Xanadu's CAD $893 million project to expand R&amp;D and establish advanced manufacturing capabilities. The release describes manufacturing-process qualification compatible with future fault-tolerant quantum computing; this is not a measured FTQC result. <a href="https://www.canada.ca/en/innovation-science-economic-development/news/2026/08/government-of-canada-invests-in-xanadu-to-build-up-advanced-quantum-manufacturing-in-canada.html" rel="noopener" target="_blank">Canada.ca ↗</a> · <a href="https://investors.xanadu.ai/news-releases/news-release-details/xanadu-secures-cad-195-million-and-establishes-landmark-advanced" rel="noopener" target="_blank">Xanadu ↗</a></li>
+<li><span class="stype sp-primary">Primary</span>Pasqal — completion of its business combination with Bleichroeder Acquisition Corp. II (27 Aug 2026), reporting approximately US$360 million of cash available at closing and stating that capital will support QPU manufacturing/deployment and its fault-tolerant roadmap. <a href="https://www.pasqal.com/newsroom/pasqal-and-bleichroeder-acquisition-corp-ii-complete-business-combination/" rel="noopener" target="_blank">Pasqal ↗</a></li>
+<li><span class="stype sp-primary">Primary · vendor demonstration</span>StarkWare — <em>The first quantum-safe Bitcoin transaction has been mined</em> (26 Aug 2026), reporting a Bitcoin-mainnet transaction using Avihu Levy's Quantum-Safe Bitcoin method without changing Bitcoin consensus rules. Retained as a deployment experiment, not as evidence of protocol-wide Bitcoin PQC adoption or independent ecosystem validation. <a href="https://starkware.co/blog/the-first-quantum-safe-bitcoin-transaction-has-been-mined/" rel="noopener" target="_blank">StarkWare ↗</a></li>
+<li><span class="stype sp-primary">Primary · standard</span>IETF / RFC Editor — <em>RFC 10024: Post-Quantum Traditional (PQ/T) Hybrid Key Agreement Mechanisms for TLS 1.3</em> (Aug 2026). Defines X25519MLKEM768, SecP256r1MLKEM768 and SecP384r1MLKEM1024 as hybrid ML-KEM + ECDHE TLS 1.3 groups. <a href="https://www.rfc-editor.org/rfc/rfc10024.html" rel="noopener" target="_blank">RFC 10024 ↗</a></li>
+<li><span class="stype sp-primary">Primary · Singapore government</span>Cyber Security Agency of Singapore / GovTech — <em>Quantum-Safe Market Readiness and Capability</em> (26 Aug 2026). RFI covering products, platforms, consulting and system-integration services supporting CII owners and government agencies preparing for quantum-safe migration milestones; responses close 27 Nov 2026. <a href="https://www.csa.gov.sg/resources/quantum-safe-market-readiness-and-capability/" rel="noopener" target="_blank">CSA ↗</a></li>
 </ol>
 <p class="note" style="margin-top:22px"><strong>Integrity note:</strong> the GRI survey is opinion evidence, not a measured forecast. Hardware demonstrations, resource estimates and policy deadlines are kept as separate evidence types. Where this page discusses likely reasons expert sentiment moved, that interpretation is not treated as proof of causation. The 2025 edition had 26 respondents, so its 28–49% range should always be read with sample-size and binning caveats.</p>
 </div>
