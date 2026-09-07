@@ -1086,6 +1086,10 @@
 
 .qland .ql-pill{font-size:16px!important;font-weight:950!important;letter-spacing:.13em!important;color:#041018!important;background:linear-gradient(90deg,#22d3c5,#49e5d6)!important;border:1px solid rgba(125,255,239,.9)!important;padding:10px 21px!important;box-shadow:0 0 0 5px rgba(34,211,197,.08),0 0 28px rgba(34,211,197,.26),0 10px 30px rgba(0,0,0,.20)!important}
 .qland .ql-pill .dot{width:8px!important;height:8px!important;background:#073d3a!important;box-shadow:0 0 0 3px rgba(7,61,58,.12)!important}
+/* keep the left narrative clear of the rising trajectory */
+.qland .ql-traj.up{position:relative;z-index:3;padding:18px 42px 18px 0;align-self:center;transform:translateX(-22px)}
+.qland .ql-traj.up::before{content:"";position:absolute;z-index:-1;inset:-6px 18px -6px -12px;border-radius:18px;background:linear-gradient(90deg,rgba(5,9,18,.98) 0%,rgba(5,9,18,.95) 58%,rgba(5,9,18,.76) 82%,rgba(5,9,18,0) 100%)}
+.qland .ql-traj.up h3,.qland .ql-traj.up p,.qland .ql-traj.up .ql-brands{position:relative;z-index:4}
 .qland .ql-traj.down{position:relative;z-index:3;padding:18px 0 18px 42px;align-self:center}
 .qland .ql-traj.down::before{content:"";position:absolute;z-index:-1;inset:-6px -12px -6px 18px;border-radius:18px;background:linear-gradient(90deg,rgba(5,9,18,0) 0%,rgba(5,9,18,.74) 24%,rgba(5,9,18,.94) 62%,rgba(5,9,18,.98) 100%)}
 .qland .ql-traj.down h3,.qland .ql-traj.down p,.qland .ql-traj.down .ql-brands{position:relative;z-index:4}
@@ -1094,7 +1098,7 @@
 .qland .ql-card.c2 .ql-src{color:#ffc178;border-bottom-color:rgba(255,193,120,.45)}
 .qland .ql-card.c3 .ql-src{color:#d5b5ff;border-bottom-color:rgba(213,181,255,.45)}
 .qland .ql-src::after{content:"↗";font-size:9px}
-@media(max-width:820px){.qland .ql-pill{font-size:14px!important;padding:9px 17px!important}.qland .ql-traj.down{padding:0;text-align:center}.qland .ql-traj.down::before{display:none}}
+@media(max-width:820px){.qland .ql-pill{font-size:14px!important;padding:9px 17px!important}.qland .ql-traj.up{padding:0;text-align:center;transform:none}.qland .ql-traj.up::before{display:none}.qland .ql-traj.down{padding:0;text-align:center}.qland .ql-traj.down::before{display:none}}
 
 
 /* ===== v40.2 brand-colour polish =====
@@ -1208,7 +1212,7 @@
 .qland .ql-card-brands .lbl{opacity:.9}
 
 </style>
-<meta content="v40.2-brand-colour-polish" name="qtl-verified-build"/>
+<meta content="v40.3-tracker-daily-07sep2026" name="qtl-verified-build"/>
 </head>
 <body>
 <header class="hero">
@@ -1225,7 +1229,7 @@
 </div>
 </div>
 <div class="update-box">
-<div class="urow"><span>Last fact-checked</span><strong>31 August 2026 · 16:10 SGT</strong></div>
+<div class="urow"><span>Last fact-checked</span><strong>7 September 2026 · 16:24 SGT</strong></div>
 <div class="urow"><span>Scope</span><strong>Global · Singapore lens</strong></div>
 </div>
 </div>
@@ -1249,210 +1253,191 @@
 <a href="#sources">Sources</a>
 </div>
 </nav>
-<!-- Landing evidence re-verified 31 Aug 2026: IBM 2029 milestone linked to current IBM Technology Atlas; Cain et al. attribution checked against Caltech/Oratomic sources. -->
-<section class="qland" aria-label="Why ~2033 — when the cryptographic breakthrough could happen">
+<!-- Landing evidence re-verified 7 Sep 2026: IBM 2029 milestone linked to current IBM Technology Atlas; Cain et al. attribution checked against Caltech/Oratomic sources. -->
+<section aria-label="Why ~2033 — when the cryptographic breakthrough could happen" class="qland">
 <div class="qland-in">
-
-  <div class="ql-head">
-    <span class="ql-pill"><span class="dot"></span>Why ~2033?</span>
-    <h2>When could the cryptographic <em>breakthrough</em> happen?</h2>
-    <p class="ql-lede">A cryptographically relevant quantum computer would break the RSA and elliptic-curve cryptography protecting almost everything online. Here is where the evidence points — read as the overlap of two independent trajectories, not a prediction.</p>
-    <div class="ql-assess">
-      <span><span class="mk"></span>Assessment</span>
-      <span><span class="mk"></span>Technical synthesis</span>
-      <span><span class="mk"></span>Low–moderate confidence</span>
-    </div>
-  </div>
-
-  <div class="ql-stage">
-  <svg class="ql-arrows" viewBox="0 0 1080 340" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-    <defs>
-      <linearGradient id="qlTeal" x1="0" y1="1" x2="1" y2="0">
-        <stop offset="0" stop-color="#1a8f80"/><stop offset="1" stop-color="#3fe6d4"/>
-      </linearGradient>
-      <linearGradient id="qlAmber" x1="1" y1="1" x2="0" y2="0">
-        <stop offset="0" stop-color="#a05a1e"/><stop offset="1" stop-color="#ffbe4d"/>
-      </linearGradient>
-      <marker id="qlHeadTeal" markerWidth="9" markerHeight="9" refX="6" refY="4.5" orient="auto">
-        <path d="M0,0 L9,4.5 L0,9 Z" fill="#3fe6d4"/>
-      </marker>
-      <marker id="qlHeadAmber" markerWidth="9" markerHeight="9" refX="6" refY="4.5" orient="auto">
-        <path d="M0,0 L9,4.5 L0,9 Z" fill="#ffbe4d"/>
-      </marker>
-    </defs>
-    <!-- rising teal trajectory, left -> centre, arrowhead into orb -->
-    <path class="ql-path-teal" marker-end="url(#qlHeadTeal)"
-      d="M20,250 C130,232 210,205 300,150 C360,113 400,92 452,86"/>
-    <path class="ql-flow teal" d="M20,250 C130,232 210,205 300,150 C360,113 400,92 452,86"/>
-    <circle class="ql-dot teal" cx="90"  cy="242"/>
-    <circle class="ql-dot teal" cx="180" cy="212"/>
-    <circle class="ql-dot teal" cx="270" cy="168"/>
-    <circle class="ql-dot teal" cx="360" cy="112"/>
-    <!-- descending amber trajectory, right -> centre, arrowhead into orb -->
-    <path class="ql-path-amber" marker-end="url(#qlHeadAmber)"
-      d="M1060,282 C958,270 868,248 782,214 C715,187 669,145 628,106"/>
-    <path class="ql-flow amber" d="M1060,282 C958,270 868,248 782,214 C715,187 669,145 628,106"/>
-    <circle class="ql-dot amber" cx="990" cy="272"/>
-    <circle class="ql-dot amber" cx="890" cy="252"/>
-    <circle class="ql-dot amber" cx="790" cy="218"/>
-    <circle class="ql-dot amber" cx="700" cy="170"/>
-  </svg>
-
-  <div class="ql-conv">
-    <div class="ql-traj up">
-      <h3>Quantum capability ↑</h3>
-      <p>The hardware trajectory is moving up.</p>
-      <p class="win">~2028–2033</p>
-      <p class="winlbl">Target window vendors give for large-scale, fault-tolerant capability.</p>
-      <div class="ql-brands">
-        <span class="ql-logo"><img src="logos/ibm.svg" alt="IBM"/><span class="wm wm-ibm">IBM</span></span>
-        <span class="ql-logo"><img src="logos/quantinuum.svg" alt="Quantinuum"/><span class="wm wm-quantinuum">Quantinuum</span></span>
-        <span class="ql-logo"><img src="logos/quera.svg" alt="QuEra"/><span class="wm wm-quera">QuEra</span></span>
-      </div>
-    </div>
-
-    <div class="ql-core">
-      <div class="yr">~2033</div>
-      <div class="cap">Technical<br/>convergence<br/>estimate</div>
-    </div>
-
-    <div class="ql-traj down">
-      <h3>Attack requirement ↓</h3>
-      <p>The resources an attack needs are moving down.</p>
-      <p class="win">~2030–2033</p>
-      <p class="winlbl">Estimated window when attack requirements fall into reach.</p>
-      <div class="ql-brands">
-        <span class="ql-logo"><img src="logos/google.svg" alt="Google"/><span class="wm wm-google">Google</span></span>
-        <span class="ql-logo"><img src="logos/oratomic.svg" alt="Oratomic"/><span class="wm wm-oratomic">Oratomic</span></span>
-        <span class="ql-logo"><img src="logos/caltech.svg" alt="Caltech"/><span class="wm wm-caltech">Caltech</span></span>
-      </div>
-    </div>
-  </div>
-  </div>
-  <p class="ql-conv-note">Neither trajectory proves a cryptographically relevant quantum computer exists today. The ~2033 estimate reflects where two independent lines of current evidence overlap — it is a reading of the evidence, not a forecast.</p>
-
-  <div class="ql-sec-h">The evidence behind the estimate</div>
-  <div class="ql-ev">
-
-    <div class="ql-card c1">
-      <div class="no">01 · Hardware trajectory</div>
-      <h4>Fault-tolerant capability is being targeted around 2028–2033.</h4>
-      <div class="dir">Capability ↑</div>
-      <div class="ql-card-brands" aria-label="Hardware organisations represented in this evidence stream">
-        <div class="lbl">Organisations in this evidence stream</div>
-        <span class="ql-card-brand ibm"><span class="mark">I</span><span class="word">IBM</span></span>
-        <span class="ql-card-brand quantinuum"><span class="mark">Q</span><span class="word">Quantinuum</span></span>
-        <span class="ql-card-brand quera"><span class="mark">Q</span><span class="word">QuEra</span></span>
-      </div>
-      <div class="ql-row"><p class="r-h">IBM · <b>2029</b></p><p class="r-b">Starting target: 200 logical qubits and 100 million gates.</p><a class="ql-src" href="https://www.ibm.com/roadmaps/quantum/2030/" target="_blank" rel="noopener">IBM roadmap</a></div>
-      <div class="ql-row"><p class="r-h">IBM · <b>2033+</b></p><p class="r-b">"Blue Jay" goal: 2,000 logical qubits and 1 billion gates.</p><a class="ql-src" href="https://www.ibm.com/roadmaps/quantum/2033%2B/" target="_blank" rel="noopener">IBM roadmap</a></div>
-      <div class="ql-row"><p class="r-h">Quantinuum · <b>by 2030</b></p><p class="r-b">Roadmap to universal, fully fault-tolerant computing with hundreds of logical qubits and millions of gates.</p><a class="ql-src" href="https://www.quantinuum.com/press-releases/quantinuum-unveils-accelerated-roadmap-to-achieve-universal-fault-tolerant-quantum-computing-by-2030" target="_blank" rel="noopener">Quantinuum source</a></div>
-      <div class="ql-row"><p class="r-h">QuEra · <b>2028 / 2028–29</b></p><p class="r-b">Libra targets 256 logical / &gt;10,000 physical qubits in 2028; next generation targets 1,000+ logical / &gt;20,000 physical qubits.</p><a class="ql-src" href="https://www.quera.com/our-quantum-roadmap" target="_blank" rel="noopener">QuEra roadmap</a></div>
-      <div class="ql-signal"><b>Signal</b> — large fault-tolerant systems are being planned for the turn of the decade.</div>
-    </div>
-
-    <div class="ql-card c2">
-      <div class="no">02 · Cryptanalytic resource estimates</div>
-      <h4>The modeled machine an attack needs is getting smaller.</h4>
-      <div class="dir">Requirement ↓</div>
-      <div class="ql-card-brands" aria-label="Research organisations represented in this evidence stream">
-        <div class="lbl">Research organisations represented</div>
-        <span class="ql-card-brand google"><span class="mark">G</span><span class="word">Google</span></span>
-        <span class="ql-card-brand oratomic"><span class="mark">O</span><span class="word">Oratomic</span></span>
-        <span class="ql-card-brand caltech"><span class="mark">C</span><span class="word">Caltech</span></span>
-      </div>
-      <div class="ql-row"><p class="r-h">RSA-2048 · Gidney 2025</p><p class="r-b">Estimate fell from ~20M noisy qubits / 8 hours (2019) to under 1M / under 1 week under the stated assumptions.</p><a class="ql-src" href="https://arxiv.org/abs/2505.15917" target="_blank" rel="noopener">Gidney preprint</a></div>
-      <div class="ql-row"><p class="r-h">ECC-256 · Babbush et al. 2026</p><p class="r-b">~1,200 logical qubits / ~90M Toffoli gates; one modeled realization uses ~500K physical qubits.</p><a class="ql-src" href="https://arxiv.org/abs/2603.28846" target="_blank" rel="noopener">Babbush et al. preprint</a></div>
-      <div class="ql-row"><p class="r-h">ECC-256 · Luo et al. 2026</p><p class="r-b">Space-efficient construction reduces logical width to 835 qubits, with a different gate-count trade-off.</p><a class="ql-src" href="https://arxiv.org/abs/2607.13816" target="_blank" rel="noopener">Luo et al. preprint</a></div>
-      <div class="ql-row"><p class="r-h">P-256 · Cain et al. 2026</p><p class="r-b">Neutral-atom model: ~26,000 physical qubits for a few-day attack under the paper's assumptions (as few as 10,000 for larger runtimes).</p><a class="ql-src" href="https://arxiv.org/abs/2603.28627" target="_blank" rel="noopener">Cain et al. preprint</a></div>
-      <div class="ql-signal"><b>Signal</b> — published ECC attack requirements are approaching the scale of early fault-tolerant hardware roadmaps.</div>
-    </div>
-
-    <div class="ql-card c3">
-      <div class="no">03 · Independent probability calibration</div>
-      <h4>Expert judgement stays more conservative — and acts as a check.</h4>
-      <div class="dir">External calibration</div>
-      <div class="ql-card-brands" aria-label="External calibration organisations">
-        <div class="lbl">External calibration organisations</div>
-        <span class="ql-card-brand gri"><span class="mark">G</span><span class="word">GRI</span></span>
-        <span class="ql-card-brand evolutionq"><span class="mark">eQ</span><span class="word">evolutionQ</span></span>
-      </div>
-      <div class="ql-row"><p class="r-h">GRI / evolutionQ · Mar 2026</p><p class="r-b">Survey of 26 experts: a CRQC was assessed at 28–49% within 10 years and 51–70% within 15 years.</p><a class="ql-src" href="https://globalriskinstitute.org/publication/quantum-threat-timeline-report-2025b/" target="_blank" rel="noopener">GRI / evolutionQ report</a></div>
-      <div class="ql-row"><p class="r-h">Calendar interpretation</p><p class="r-b">Those horizons correspond roughly to 2036 and 2041. The survey brackets a later 50% region but does not name a precise arrival year.</p></div>
-      <div class="ql-row"><p class="r-h">How this tracker uses it</p><p class="r-b">Expert elicitation is valuable external calibration but is a snapshot of the evidence available when participants formed their views. Hardware, error correction and resource estimates are moving quickly, and several significant results have appeared since the latest survey cycle.</p></div>
-      <div class="ql-note-box"><b>Our expectation:</b> if the present technical trajectory continues, future expert assessments may shorten the estimated timeline. We reassess the central estimate whenever new evidence warrants.</div>
-      <div class="ql-signal"><b>Signal</b> — expert opinion still sits later than the newest technical convergence indicators.</div>
-    </div>
-
-  </div>
-
-  <div class="ql-band">
-    <div class="case early">
-      <div class="k">🚀 Early case</div>
-      <div class="yr">~2030</div>
-      <p>Aggressive roadmaps succeed quickly and integration goes smoother than expected.</p>
-    </div>
-    <div class="case central">
-      <div class="k">Central technical estimate</div>
-      <div class="yr">~2033</div>
-      <div class="sub">Evidence-weighted synthesis</div>
-    </div>
-    <div class="case late">
-      <div class="k">⏳ Later case</div>
-      <div class="yr">~2036+</div>
-      <p>Scaling, QEC overhead or other bottlenecks delay convergence beyond the early 2030s.</p>
-    </div>
-  </div>
-
-  <div class="ql-sec-h" style="margin-bottom:6px">What would change this estimate?</div>
-  <div class="ql-change">
-    <div class="ql-chg earlier">
-      <div class="ch">← Move earlier</div>
-      <ul>
-        <li>A roadmap system is demonstrated at scale with high logical fidelity.</li>
-        <li>Another major reduction in cryptanalytic resource requirements.</li>
-        <li>QEC overhead drops materially, reducing the physical resources needed.</li>
-      </ul>
-    </div>
-    <div class="ql-chg keep">
-      <div class="ch">Keep ~2033</div>
-      <ul>
-        <li>Hardware capability and attack requirements keep converging broadly along current trajectories.</li>
-        <li>No major surprises in scaling, QEC or architecture integration.</li>
-      </ul>
-    </div>
-    <div class="ql-chg later">
-      <div class="ch">Move later →</div>
-      <ul>
-        <li>Major roadmap slips, or architectures fail to scale as expected.</li>
-        <li>QEC or control/decoding bottlenecks increase overhead.</li>
-        <li>Attack-resource assumptions prove unrealistic in practice.</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="ql-cta">
-    <a class="primary" href="#timeline">See the evidence timeline</a>
-    <a class="ghost" href="#toolkit">Start your migration</a>
-    <a class="ghost" href="#executive-summary">Current assessment</a>
-  </div>
-
-  <div class="ql-foot">
-    <div>
-      <div class="fh">Key sources (latest 2025–2026)</div>
-      <p class="src">IBM Roadmap (Mar 2026) · Quantinuum Roadmap (May 2025) · QuEra Roadmap (2025) · Gidney (May 2025) · Babbush et al. (Jul 2026) · Luo et al. (Jul 2026) · Cain et al. (Mar 2026) · GRI / evolutionQ (Mar 2026) · IETF RFC 10024 (Aug 2026) · CSA/GovTech market-readiness RFI (Aug 2026)</p>
-    </div>
-    <div>
-      <div class="fh">Last updated</div>
-      <p class="src">31 Aug 2026 · updated whenever substantive new technical evidence appears.</p>
-    </div>
-  </div>
-
-  <a class="ql-scroll" href="#executive-summary">↓ Read the full tracker</a>
-
+<div class="ql-head">
+<span class="ql-pill"><span class="dot"></span>Why ~2033?</span>
+<h2>When could the cryptographic <em>breakthrough</em> happen?</h2>
+<p class="ql-lede">A cryptographically relevant quantum computer would break the RSA and elliptic-curve cryptography protecting almost everything online. Here is where the evidence points — read as the overlap of two independent trajectories, not a prediction.</p>
+<div class="ql-assess">
+<span><span class="mk"></span>Assessment</span>
+<span><span class="mk"></span>Technical synthesis</span>
+<span><span class="mk"></span>Low–moderate confidence</span>
+</div>
+</div>
+<div class="ql-stage">
+<svg aria-hidden="true" class="ql-arrows" preserveaspectratio="xMidYMid meet" viewbox="0 0 1080 340">
+<defs>
+<lineargradient id="qlTeal" x1="0" x2="1" y1="1" y2="0">
+<stop offset="0" stop-color="#1a8f80"></stop><stop offset="1" stop-color="#3fe6d4"></stop>
+</lineargradient>
+<lineargradient id="qlAmber" x1="1" x2="0" y1="1" y2="0">
+<stop offset="0" stop-color="#a05a1e"></stop><stop offset="1" stop-color="#ffbe4d"></stop>
+</lineargradient>
+<marker id="qlHeadTeal" markerheight="9" markerwidth="9" orient="auto" refx="6" refy="4.5">
+<path d="M0,0 L9,4.5 L0,9 Z" fill="#3fe6d4"></path>
+</marker>
+<marker id="qlHeadAmber" markerheight="9" markerwidth="9" orient="auto" refx="6" refy="4.5">
+<path d="M0,0 L9,4.5 L0,9 Z" fill="#ffbe4d"></path>
+</marker>
+</defs>
+<!-- rising teal trajectory, left -> centre, arrowhead into orb -->
+<path class="ql-path-teal" d="M20,250 C130,232 210,205 300,150 C360,113 400,92 452,86" marker-end="url(#qlHeadTeal)"></path>
+<path class="ql-flow teal" d="M20,250 C130,232 210,205 300,150 C360,113 400,92 452,86"></path>
+<circle class="ql-dot teal" cx="90" cy="242"></circle>
+<circle class="ql-dot teal" cx="180" cy="212"></circle>
+<circle class="ql-dot teal" cx="270" cy="168"></circle>
+<circle class="ql-dot teal" cx="360" cy="112"></circle>
+<!-- descending amber trajectory, right -> centre, arrowhead into orb -->
+<path class="ql-path-amber" d="M1060,282 C958,270 868,248 782,214 C715,187 669,145 628,106" marker-end="url(#qlHeadAmber)"></path>
+<path class="ql-flow amber" d="M1060,282 C958,270 868,248 782,214 C715,187 669,145 628,106"></path>
+<circle class="ql-dot amber" cx="990" cy="272"></circle>
+<circle class="ql-dot amber" cx="890" cy="252"></circle>
+<circle class="ql-dot amber" cx="790" cy="218"></circle>
+<circle class="ql-dot amber" cx="700" cy="170"></circle>
+</svg>
+<div class="ql-conv">
+<div class="ql-traj up">
+<h3>Quantum computing capability ↑</h3>
+<p>Quantum-computing hardware and fault-tolerant capability are advancing.</p>
+<p class="win">~2028–2033</p>
+<p class="winlbl">Vendor target window for large-scale, fault-tolerant quantum computing.</p>
+<div class="ql-brands">
+<span class="ql-logo"><img alt="IBM" src="logos/ibm.svg"/><span class="wm wm-ibm">IBM</span></span>
+<span class="ql-logo"><img alt="Quantinuum" src="logos/quantinuum.svg"/><span class="wm wm-quantinuum">Quantinuum</span></span>
+<span class="ql-logo"><img alt="QuEra" src="logos/quera.svg"/><span class="wm wm-quera">QuEra</span></span>
+</div>
+</div>
+<div class="ql-core">
+<div class="yr">~2033</div>
+<div class="cap">Estimated<br/>cryptographic<br/>risk window</div>
+</div>
+<div class="ql-traj down">
+<h3>Resources needed to break cryptography ↓</h3>
+<p>Published research is reducing estimated resources needed for quantum cryptanalysis.</p>
+<p class="win">~2030–2033</p>
+<p class="winlbl">Estimated window when published attack-resource requirements could become reachable.</p>
+<div class="ql-brands">
+<span class="ql-logo"><img alt="Google" src="logos/google.svg"/><span class="wm wm-google">Google</span></span>
+<span class="ql-logo"><img alt="Oratomic" src="logos/oratomic.svg"/><span class="wm wm-oratomic">Oratomic</span></span>
+<span class="ql-logo"><img alt="Caltech" src="logos/caltech.svg"/><span class="wm wm-caltech">Caltech</span></span>
+</div>
+</div>
+</div>
+</div>
+<p class="ql-conv-note">Neither trajectory proves a cryptographically relevant quantum computer exists today. The ~2033 window is an assessment of where current quantum-computing capability targets and published cryptanalytic resource estimates overlap — not “Q-Day” and not a prediction.</p>
+<div class="ql-sec-h">The evidence behind the estimate</div>
+<div class="ql-ev">
+<div class="ql-card c1">
+<div class="no">01 · Hardware trajectory</div>
+<h4>Fault-tolerant capability is being targeted around 2028–2033.</h4>
+<div class="dir">Computing capability ↑</div>
+<div aria-label="Hardware organisations represented in this evidence stream" class="ql-card-brands">
+<div class="lbl">Organisations in this evidence stream</div>
+<span class="ql-card-brand ibm"><span class="mark">I</span><span class="word">IBM</span></span>
+<span class="ql-card-brand quantinuum"><span class="mark">Q</span><span class="word">Quantinuum</span></span>
+<span class="ql-card-brand quera"><span class="mark">Q</span><span class="word">QuEra</span></span>
+</div>
+<div class="ql-row"><p class="r-h">IBM · <b>2029</b></p><p class="r-b">Starting target: 200 logical qubits and 100 million gates.</p><a class="ql-src" href="https://www.ibm.com/roadmaps/quantum/2030/" rel="noopener" target="_blank">IBM roadmap</a></div>
+<div class="ql-row"><p class="r-h">IBM · <b>2033+</b></p><p class="r-b">"Blue Jay" goal: 2,000 logical qubits and 1 billion gates.</p><a class="ql-src" href="https://www.ibm.com/roadmaps/quantum/2033%2B/" rel="noopener" target="_blank">IBM roadmap</a></div>
+<div class="ql-row"><p class="r-h">Quantinuum · <b>by 2030</b></p><p class="r-b">Roadmap to universal, fully fault-tolerant computing with hundreds of logical qubits and millions of gates.</p><a class="ql-src" href="https://www.quantinuum.com/press-releases/quantinuum-unveils-accelerated-roadmap-to-achieve-universal-fault-tolerant-quantum-computing-by-2030" rel="noopener" target="_blank">Quantinuum source</a></div>
+<div class="ql-row"><p class="r-h">QuEra · <b>2028 / 2028–29</b></p><p class="r-b">Libra targets 256 logical / &gt;10,000 physical qubits in 2028; next generation targets 1,000+ logical / &gt;20,000 physical qubits.</p><a class="ql-src" href="https://www.quera.com/our-quantum-roadmap" rel="noopener" target="_blank">QuEra roadmap</a></div>
+<div class="ql-signal"><b>Signal</b> — large fault-tolerant systems are being planned for the turn of the decade.</div>
+</div>
+<div class="ql-card c2">
+<div class="no">02 · Cryptanalytic resource estimates</div>
+<h4>The modeled machine an attack needs is getting smaller.</h4>
+<div class="dir">Resources needed ↓</div>
+<div aria-label="Research organisations represented in this evidence stream" class="ql-card-brands">
+<div class="lbl">Research organisations represented</div>
+<span class="ql-card-brand google"><span class="mark">G</span><span class="word">Google</span></span>
+<span class="ql-card-brand oratomic"><span class="mark">O</span><span class="word">Oratomic</span></span>
+<span class="ql-card-brand caltech"><span class="mark">C</span><span class="word">Caltech</span></span>
+</div>
+<div class="ql-row"><p class="r-h">RSA-2048 · Gidney 2025</p><p class="r-b">Estimate fell from ~20M noisy qubits / 8 hours (2019) to under 1M / under 1 week under the stated assumptions.</p><a class="ql-src" href="https://arxiv.org/abs/2505.15917" rel="noopener" target="_blank">Gidney preprint</a></div>
+<div class="ql-row"><p class="r-h">ECC-256 · Babbush et al. 2026</p><p class="r-b">~1,200 logical qubits / ~90M Toffoli gates; one modeled realization uses ~500K physical qubits.</p><a class="ql-src" href="https://arxiv.org/abs/2603.28846" rel="noopener" target="_blank">Babbush et al. preprint</a></div>
+<div class="ql-row"><p class="r-h">ECC-256 · Luo et al. 2026</p><p class="r-b">Space-efficient construction reduces logical width to 835 qubits, with a different gate-count trade-off.</p><a class="ql-src" href="https://arxiv.org/abs/2607.13816" rel="noopener" target="_blank">Luo et al. preprint</a></div>
+<div class="ql-row"><p class="r-h">P-256 · Cain et al. 2026</p><p class="r-b">Neutral-atom model: ~26,000 physical qubits for a few-day attack under the paper's assumptions (as few as 10,000 for larger runtimes).</p><a class="ql-src" href="https://arxiv.org/abs/2603.28627" rel="noopener" target="_blank">Cain et al. preprint</a></div>
+<div class="ql-signal"><b>Signal</b> — published ECC attack requirements are approaching the scale of early fault-tolerant hardware roadmaps.</div>
+</div>
+<div class="ql-card c3">
+<div class="no">03 · Independent probability calibration</div>
+<h4>Expert judgement stays more conservative — and acts as a check.</h4>
+<div class="dir">External calibration</div>
+<div aria-label="External calibration organisations" class="ql-card-brands">
+<div class="lbl">External calibration organisations</div>
+<span class="ql-card-brand gri"><span class="mark">G</span><span class="word">GRI</span></span>
+<span class="ql-card-brand evolutionq"><span class="mark">eQ</span><span class="word">evolutionQ</span></span>
+</div>
+<div class="ql-row"><p class="r-h">GRI / evolutionQ · Mar 2026</p><p class="r-b">Survey of 26 experts: a CRQC was assessed at 28–49% within 10 years and 51–70% within 15 years.</p><a class="ql-src" href="https://globalriskinstitute.org/publication/quantum-threat-timeline-report-2025b/" rel="noopener" target="_blank">GRI / evolutionQ report</a></div>
+<div class="ql-row"><p class="r-h">Calendar interpretation</p><p class="r-b">Those horizons correspond roughly to 2036 and 2041. The survey brackets a later 50% region but does not name a precise arrival year.</p></div>
+<div class="ql-row"><p class="r-h">How this tracker uses it</p><p class="r-b">Expert elicitation is valuable external calibration but is a snapshot of the evidence available when participants formed their views. Hardware, error correction and resource estimates are moving quickly, and several significant results have appeared since the latest survey cycle.</p></div>
+<div class="ql-note-box"><b>Our expectation:</b> if the present technical trajectory continues, future expert assessments may shorten the estimated timeline. We reassess the central estimate whenever new evidence warrants.</div>
+<div class="ql-signal"><b>Signal</b> — expert opinion still sits later than the newest technical convergence indicators.</div>
+</div>
+</div>
+<div class="ql-band">
+<div class="case early">
+<div class="k">🚀 Early case</div>
+<div class="yr">~2030</div>
+<p>Aggressive roadmaps succeed quickly and integration goes smoother than expected.</p>
+</div>
+<div class="case central">
+<div class="k">Central technical estimate</div>
+<div class="yr">~2033</div>
+<div class="sub">Evidence-weighted synthesis</div>
+</div>
+<div class="case late">
+<div class="k">⏳ Later case</div>
+<div class="yr">~2036+</div>
+<p>Scaling, QEC overhead or other bottlenecks delay convergence beyond the early 2030s.</p>
+</div>
+</div>
+<div class="ql-sec-h" style="margin-bottom:6px">What would change this estimate?</div>
+<div class="ql-change">
+<div class="ql-chg earlier">
+<div class="ch">← Move earlier</div>
+<ul>
+<li>A roadmap system is demonstrated at scale with high logical fidelity.</li>
+<li>Another major reduction in cryptanalytic resource requirements.</li>
+<li>QEC overhead drops materially, reducing the physical resources needed.</li>
+</ul>
+</div>
+<div class="ql-chg keep">
+<div class="ch">Keep ~2033</div>
+<ul>
+<li>Hardware capability and attack requirements keep converging broadly along current trajectories.</li>
+<li>No major surprises in scaling, QEC or architecture integration.</li>
+</ul>
+</div>
+<div class="ql-chg later">
+<div class="ch">Move later →</div>
+<ul>
+<li>Major roadmap slips, or architectures fail to scale as expected.</li>
+<li>QEC or control/decoding bottlenecks increase overhead.</li>
+<li>Attack-resource assumptions prove unrealistic in practice.</li>
+</ul>
+</div>
+</div>
+<div class="ql-cta">
+<a class="primary" href="#timeline">See the evidence timeline</a>
+<a class="ghost" href="#toolkit">Start your migration</a>
+<a class="ghost" href="#executive-summary">Current assessment</a>
+</div>
+<div class="ql-foot">
+<div>
+<div class="fh">Key sources (latest 2025–2026)</div>
+<p class="src">IBM Roadmap (Mar 2026) · IBM Nighthawk r2 (31 Aug 2026) · Quantinuum Roadmap (May 2025) · QuEra Roadmap (2025) · Gidney (May 2025) · Babbush et al. (Jul 2026) · Luo et al. (Jul 2026) · Cain et al. (Mar 2026) · GRI / evolutionQ (Mar 2026) · IETF RFC 10024 + IAB PQ authentication (Aug 2026) · G7 PQC Call to Action (Sep 2026) · EU roadmap feedback/FAQ (Sep 2026) · CSA/GovTech market-readiness RFI (Aug 2026)</p>
+</div>
+<div>
+<div class="fh">Last updated</div>
+<p class="src">7 Sep 2026 · updated whenever substantive new technical, standards, policy or deployment evidence appears.</p>
+</div>
+</div>
+<a class="ql-scroll" href="#executive-summary">↓ Read the full tracker</a>
 </div>
 </section>
-
 <section class="exec-dashboard" id="executive-summary">
 <div class="wrap">
 <div class="exec-panel">
@@ -1477,32 +1462,25 @@
 <div class="latest-band">
 <div class="latest-head"><h3>Decision-relevant updates</h3><span>Importance first; recency second</span></div>
 <div class="decision-stack">
-
 <div class="decision-block a">
 <div class="decision-label"><span class="name">A · What moves the needle</span><span class="state">Current status: no change</span></div>
-<p><strong>Use this category only when new evidence would change the technical convergence picture shown above.</strong> The test is simple: would we revise the quantum-capability trajectory, the attack-resource trajectory, or the resulting ~2033 technical convergence estimate?</p>
+<p><strong>Use this category only when new evidence would change the cryptographic-risk picture shown above.</strong> The test is simple: would we revise the quantum-computing capability trajectory, the estimated resources needed to break public-key cryptography, or the resulting ~2033 convergence window?</p>
 <div class="needle-axes">
-<div class="needle-axis"><strong>Quantum capability ↑</strong><span>Measured hardware, logical-qubit or fault-tolerance evidence strong enough to change the expected capability trajectory.</span></div>
-<div class="needle-axis"><strong>Attack requirement ↓</strong><span>Cryptanalytic or resource-estimate evidence strong enough to change the resources needed to break deployed public-key cryptography.</span></div>
-<div class="needle-axis"><strong>~2033 convergence</strong><span>If either side changes materially, reconsider the synthesis window. No current 31 Aug item does so.</span></div>
+<div class="needle-axis"><strong>Quantum computing capability ↑</strong><span>Measured hardware, logical-qubit or fault-tolerance evidence strong enough to change the expected quantum-computing capability trajectory.</span></div>
+<div class="needle-axis"><strong>Resources needed to break cryptography ↓</strong><span>Cryptanalytic or resource-estimate evidence strong enough to change the estimated resources needed to break deployed public-key cryptography.</span></div>
+<div class="needle-axis"><strong>~2033 estimated risk window</strong><span>If either side changes materially, reconsider the convergence window. No evidence identified through 7 Sep 2026 warrants moving it.</span></div>
 </div>
 </div>
-
 <div class="decision-block b">
 <div class="decision-label"><span class="name">B · Changes the migration picture</span><span class="state">Important, but no ~2033 change</span></div>
 <p>These developments matter because they change standards, migration execution or readiness, even though they do not change the technical convergence estimate.</p>
 <div class="migration-grid">
+<div class="migration-item"><div class="date">3 Sep 2026 · VERIFIED · POLICY</div><h4>G7 issues coordinated call to accelerate PQC transition</h4><p>The G7 Cybersecurity Working Group calls on public- and private-sector decision-makers to begin or accelerate PQC transition now. This strengthens migration urgency but is coordinated policy guidance, not a binding migration deadline.</p><div class="evidence-links"><a href="https://cyber.gouv.fr/en/publications/jointly-led-international-publications/preparing-for-the-post-quantum-era-a-call-to-action/" rel="noopener" target="_blank">G7 / ANSSI call to action</a></div></div>
 <div class="migration-item">
-<div class="date">28–29 Jul 2026 · VERIFIED · STANDARD / CRYPTANALYSIS</div>
-<h4>HAWK withdrawn from NIST's additional-signature process</h4>
-<p>HAWK is no longer an active Round-3 candidate after new cryptanalysis; NIST states that its finalized PQC standards are unaffected.</p>
-<div class="evidence-links"><a href="https://www.nist.gov/pqc" rel="noopener" target="_blank">NIST status</a><a href="https://www.anthropic.com/research/discovering-cryptographic-weaknesses" rel="noopener" target="_blank">Technical disclosure</a></div>
-</div>
-<div class="migration-item">
-<div class="date">Aug 2026 · VERIFIED · STANDARD / MIGRATION EXECUTION</div>
-<h4>RFC 10024 standardises hybrid ML-KEM key agreement for TLS 1.3</h4>
-<p>The IETF standard defines interoperable hybrid ML-KEM + ECDHE groups for TLS 1.3, moving PQC further into deployable internet protocols.</p>
-<div class="evidence-links"><a href="https://www.rfc-editor.org/rfc/rfc10024.html" rel="noopener" target="_blank">RFC 10024</a></div>
+<div class="date">Aug–Sep 2026 · VERIFIED · STANDARD / DEPLOYMENT GAP</div>
+<h4>Key establishment is deploying; post-quantum authentication still lags</h4>
+<p>RFC 10024 standardises interoperable hybrid ML-KEM + ECDHE groups for TLS 1.3. The IAB separately notes that post-quantum authentication has not moved nearly as far and that specification work is no longer the only constraint, highlighting production barriers across protocols, certificates, cryptographic modules and operational deployment.</p>
+<div class="evidence-links"><a href="https://www.rfc-editor.org/rfc/rfc10024.html" rel="noopener" target="_blank">RFC 10024</a><a href="https://www.ietf.org/blog/iab-pq-workshop-cfp/" rel="noopener" target="_blank">IAB · PQ authentication</a></div>
 </div>
 <div class="migration-item">
 <div class="date">26 Aug 2026 · VERIFIED · POLICY / DEPLOYMENT READINESS</div>
@@ -1512,21 +1490,19 @@
 </div>
 </div>
 </div>
-
 <div class="decision-block c">
 <div class="decision-label"><span class="name">C · Keep watch</span><span class="state">Compressed signals · no assessment change</span></div>
 <p>Credible developments worth retaining for context, but not important enough to compete visually with assessment-changing evidence.</p>
 <div class="watch-lines">
-<div class="watch-line"><div class="wd">28 Aug</div><div class="wc"><strong>Xanadu / Canada</strong> — CAD $195M federal backing for advanced quantum-manufacturing expansion. <strong>VERIFIED · MARKET INFRASTRUCTURE / VENDOR ROADMAP · No timeline change.</strong></div><div class="wl"><a href="https://www.canada.ca/en/innovation-science-economic-development/news/2026/08/government-of-canada-invests-in-xanadu-to-build-up-advanced-quantum-manufacturing-in-canada.html" rel="noopener" target="_blank">Source ↗</a></div></div>
-<div class="watch-line"><div class="wd">27 Aug</div><div class="wc"><strong>Diraq</strong> — targets 150,000 physical / up to 1,000 logical qubits by 2029 and >2M / >10,000 by 2031. <strong>VERIFIED · VENDOR ROADMAP · No timeline change.</strong></div><div class="wl"><a href="https://www.diraq.com/newsdesk/diraq-sets-roadmap-for-utility-scale-quantum-computing-with-millions-of-qubits-on-a-single-silicon-chip" rel="noopener" target="_blank">Source ↗</a></div></div>
-<div class="watch-line"><div class="wd">27 Aug</div><div class="wc"><strong>Pasqal</strong> — reports ~US$360M cash available at closing to support neutral-atom manufacturing, deployment and FTQC roadmap. <strong>VERIFIED · MARKET NEWS · No timeline change.</strong></div><div class="wl"><a href="https://www.pasqal.com/newsroom/pasqal-and-bleichroeder-acquisition-corp-ii-complete-business-combination/" rel="noopener" target="_blank">Source ↗</a></div></div>
-<div class="watch-line"><div class="wd">26 Aug</div><div class="wc"><strong>IBM / HRL</strong> — acquisition broadens IBM's silicon-spin and supporting quantum-engineering capability. <strong>VERIFIED · MARKET NEWS · No timeline change.</strong></div><div class="wl"><a href="https://newsroom.ibm.com/2026-08-26-ibm-completes-acquisition-of-hrl-laboratories-to-accelerate-the-future-of-quantum" rel="noopener" target="_blank">Source ↗</a></div></div>
+<div class="watch-line"><div class="wd">31 Aug</div><div class="wc"><strong>India C-DOT</strong> — Government telecom R&amp;D centre unveiled 14 indigenous quantum-security products spanning QKD and PQC for communications networks. <strong>VERIFIED · DEPLOYMENT SIGNAL / QUANTUM COMMUNICATIONS · No timeline change.</strong></div><div class="wl"><a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2305167&amp;lang=1&amp;reg=48" rel="noopener" target="_blank">Source ↗</a></div></div><div class="watch-line"><div class="wd">31 Aug</div><div class="wc"><strong>IBM Nighthawk r2</strong> — IBM reports 120 programmable qubits, more than 100,000 circuit executions/s and accurate observable estimation on 7,500+ gate circuits, meeting a stated 2026 roadmap milestone. <strong>VERIFIED · HARDWARE · Capability progress; ~2033 unchanged.</strong></div><div class="wl"><a href="https://www.ibm.com/quantum/blog/nighthawk-r2" rel="noopener" target="_blank">Source ↗</a></div></div><div class="watch-line"><div class="wd">28 Aug</div><div class="wc"><strong>Xanadu / Canada</strong> — CAD $195M federal backing for advanced quantum-manufacturing expansion. <strong>VERIFIED · MARKET INFRASTRUCTURE / VENDOR ROADMAP · No timeline change.</strong></div><div class="wl"><a href="https://www.canada.ca/en/innovation-science-economic-development/news/2026/08/government-of-canada-invests-in-xanadu-to-build-up-advanced-quantum-manufacturing-in-canada.html" rel="noopener" target="_blank">Source ↗</a></div></div>
+<div class="watch-line"><div class="wd">27 Aug</div><div class="wc"><strong>Diraq</strong> — targets 150,000 physical / up to 1,000 logical qubits by 2029 and &gt;2M / &gt;10,000 by 2031. <strong>VERIFIED · VENDOR ROADMAP · No timeline change.</strong></div><div class="wl"><a href="https://www.diraq.com/newsdesk/diraq-sets-roadmap-for-utility-scale-quantum-computing-with-millions-of-qubits-on-a-single-silicon-chip" rel="noopener" target="_blank">Source ↗</a></div></div>
+
+
 <div class="watch-line"><div class="wd">26 Aug</div><div class="wc"><strong>Intermodal QKD</strong> — 18 km free-space-to-fibre QKD with 200 bit/s secure-key generation using room-temperature detectors. <strong>VERIFIED · QUANTUM COMMUNICATIONS · No timeline change.</strong></div><div class="wl"><a href="https://www.nature.com/articles/s41534-026-01358-0" rel="noopener" target="_blank">Source ↗</a></div></div>
 <div class="watch-line"><div class="wd">26 Aug</div><div class="wc"><strong>StarkWare / Bitcoin</strong> — reported quantum-safe Bitcoin mainnet transaction experiment without changing consensus rules. <strong>VERIFIED · DEPLOYMENT SIGNAL · No timeline change.</strong></div><div class="wl"><a href="https://starkware.co/blog/the-first-quantum-safe-bitcoin-transaction-has-been-mined/" rel="noopener" target="_blank">Source ↗</a></div></div>
 </div>
 <div class="internal-rule"><strong>D · Internal only:</strong> relevant items that do not earn scarce public-page space remain in monitoring and are published only if later evidence raises their significance.</div>
 </div>
-
 </div>
 <div class="audience-paths">
 <div class="audience-path"><strong>For leaders</strong><span>Use <a href="#trend">Trend</a>, <a href="#collapse">Collapse</a>, <a href="#hndl">HNDL</a> and <a href="#deadlines">Deadlines</a> to understand why timing uncertainty does not remove migration urgency.</span></div>
@@ -1534,13 +1510,12 @@
 </div>
 </div>
 </div>
-</section>
+</div></section>
 <section id="contents">
 <div class="wrap">
 <div class="kicker">Reader's guide</div>
 <h2>Contents</h2>
 <p class="sub">Read from beginning to end as a concise guide to the quantum threat, or jump directly to the question most relevant to you. The contents below map onto the existing tracker without changing the underlying sections.</p>
-
 <div class="cards2">
 <div class="icard cool">
 <h4>Part I — Understand the threat</h4>
@@ -1553,7 +1528,6 @@
 <p><strong>04 — The Quantum Threat Timeline.</strong> Trace the major technical, standards, policy and deployment developments shaping the assessment.</p>
 <div class="mini-tools"><a href="#timeline">Timeline</a></div>
 </div>
-
 <div class="icard cool">
 <h4>Part II — Understand why the problem starts now</h4>
 <p><strong>05 — When Does Migration Become Urgent?</strong> Use Mosca's inequality to connect data lifetime, migration time and the threat horizon.</p>
@@ -1563,7 +1537,6 @@
 <p><strong>07 — What Actually Needs Protection?</strong> Translate quantum risk into decisions about data, cryptography and dependent systems.</p>
 <div class="mini-tools"><a href="#protect">Protect</a></div>
 </div>
-
 <div class="icard cool">
 <h4>Part III — Follow the migration</h4>
 <p><strong>08 — The Global Migration Clock.</strong> Compare policy, standards and transition milestones across jurisdictions and sectors.</p>
@@ -1573,13 +1546,11 @@
 <p><strong>10 — From Standards to Real-World Deployment.</strong> Track evidence that PQC is moving into operating systems, internet infrastructure, certificates and enterprise platforms.</p>
 <div class="mini-tools"><a href="#watch">Watch 2026 · deployment evidence</a></div>
 </div>
-
 <div class="icard cool">
 <h4>Part IV — Take action</h4>
 <p><strong>11 — The PQC Migration Toolkit.</strong> Move from understanding the problem to discovery, inventory, prioritisation, testing, migration and crypto-agility.</p>
 <div class="mini-tools"><a href="#toolkit">Migration Toolkit</a></div>
 </div>
-
 <div class="icard cool">
 <h4>Part V — Challenge the conclusion</h4>
 <p><strong>12 — The Counter-Case: Why the Threat May Take Longer.</strong> Examine the strongest reasons for caution and the limits of headline progress.</p>
@@ -1592,7 +1563,6 @@
 <div class="mini-tools"><a href="#glossary">Glossary</a><a href="#sources">Sources</a></div>
 </div>
 </div>
-
 <div class="attrib" style="margin-top:22px">
 <div class="attrib-h">Short reading paths</div>
 <p><strong>For leaders:</strong> Threat → Urgency → HNDL → Global deadlines → Singapore</p>
@@ -1911,7 +1881,7 @@
 <div class="layer mech"><div class="lh"><span class="dot"></span>Mechanism</div><p>IBM is pursuing modular fault-tolerant systems based on high-rate quantum error-correcting codes rather than assuming surface-code overheads forever. If the planned code, coupler, decoder and module milestones work together, the architecture could substantially reduce the physical resources needed per useful logical computation.</p></div>
 <div class="layer nums"><div class="lh"><span class="dot"></span>The numbers</div><p>Current IBM roadmap: Kookaburra in 2026 to demonstrate a Starling module with logical processing plus quantum memory; Cockatoo in 2027 to demonstrate inter-module entanglement; Starling in 2029 targeting 200 logical qubits and 100 million gates.</p></div>
 <div class="layer nums"><div class="lh"><span class="dot"></span>Aug 2026 engineering milestone</div><p>IBM reported that it had physically connected two modular cryogenic systems into a shared operating environment below 15 mK. IBM says each enclosure provides up to 12× more wiring space than its widely used current quantum systems and intends the architecture to support direct inter-chip links using L-couplers. This is a concrete systems-engineering milestone supporting IBM's modular fault-tolerance programme, but it does not demonstrate Starling, a CRQC or cryptanalytic capability.</p><div class="evidence-links"><span class="ev-label">Primary source</span><a href="https://newsroom.ibm.com/2026-08-19-ibm-connects-its-first-modular-cryogenic-systems-in-milestone-toward-fault-tolerant-quantum-computing" rel="noopener" target="_blank">IBM modular cryogenic systems · 19 Aug 2026</a></div></div>
-<div class="layer cav"><div class="lh"><span class="dot"></span>The honest caveat</div><p>IBM explicitly labels the roadmap as current intent that is subject to change or withdrawal. Treat 2029 as a leading indicator of engineering ambition and investment — not as a forecast that Starling will necessarily ship on that date.</p></div>
+<div class="layer nums"><div class="lh"><span class="dot"></span>31 Aug 2026 measured hardware milestone</div><p>IBM reports that Nighthawk r2, with 120 programmable qubits, executes more than 100,000 circuits per second and has demonstrated accurate observable estimation on circuits containing 7,500+ gates, an important 2026 IBM Quantum Roadmap milestone. This converts a prospective 2026 circuit-scale target into reported measured hardware performance, but it is not a demonstration of large-scale fault-tolerant logical computation, a CRQC or cryptanalytic capability.</p><div class="evidence-links"><span class="ev-label">Primary source</span><a href="https://www.ibm.com/quantum/blog/nighthawk-r2" rel="noopener" target="_blank">IBM Quantum Nighthawk r2 · 31 Aug 2026</a></div></div><div class="layer cav"><div class="lh"><span class="dot"></span>The honest caveat</div><p>IBM explicitly labels the roadmap as current intent that is subject to change or withdrawal. Treat 2029 as a leading indicator of engineering ambition and investment — not as a forecast that Starling will necessarily ship on that date.</p></div>
 <a class="src-link" href="https://newsroom.ibm.com/2025-06-10-IBM-Sets-the-Course-to-Build-Worlds-First-Large-Scale%2C-Fault-Tolerant-Quantum-Computer-at-New-IBM-Quantum-Data-Center" rel="noopener" target="_blank">Primary source: IBM Starling announcement (Jun 2025) ↗</a>
 </details>
 </div>
@@ -2017,12 +1987,12 @@
 <tr><td class="yr">24 Aug 2026</td><td>U.S. Treasury — Quantum-Readiness Task Force</td><td><div class="evidence-badges"><span class="evidence-badge prov-verified">Verified</span><span class="evidence-badge etype">Policy / deployment signal</span></div>The U.S. Department of the Treasury launched a public-private Quantum-Readiness Task Force to accelerate the financial sector's transition to quantum-safe technology. Its three workstreams cover Sector Alignment &amp; PQC Transition, Third-Party &amp; Vendor Readiness, and Digital Assets &amp; Emerging Technology Risk. This is a sector-level implementation and coordination signal rather than evidence that a CRQC is closer. <a href="https://home.treasury.gov/news/press-releases/sb0615" rel="noopener" target="_blank">U.S. Treasury ↗</a></td><td><span class="bind soft">Sector policy / coordination</span></td></tr>
 <tr><td class="yr">to 2035</td><td>NIST IR 8547</td><td>Describes NIST's expected staged transition from quantum-vulnerable algorithms to PQC and informs federal/industry migration planning. As of 14 Aug 2026 it remains an <strong>Initial Public Draft</strong>; it should not be presented as a final binding rule. <a href="https://csrc.nist.gov/pubs/ir/8547/ipd" rel="noopener" target="_blank">IR 8547 ↗</a></td><td><span class="bind soft">Draft transition plan</span></td></tr>
 <tr><td class="rgroup" colspan="4">Europe &amp; Canada</td></tr>
-<tr><td class="yr">2026 / 30 / 35</td><td>🇪🇺 EU — EC / NIS Cooperation Group</td><td>The coordinated implementation roadmap sets common target horizons for Member States, including early national planning, high-risk systems by around 2030 and broader transition by 2035. It is a coordinated roadmap, not a directly self-executing EU-wide ban. <a href="https://digital-strategy.ec.europa.eu/en/library/coordinated-implementation-roadmap-transition-post-quantum-cryptography" rel="noopener" target="_blank">roadmap ↗</a></td><td><span class="bind soft">Coordinated roadmap</span></td></tr>
+<tr><td class="yr">3 Sep 2026</td><td>G7 Cybersecurity Working Group</td><td><div class="evidence-badges"><span class="evidence-badge prov-verified">Verified</span><span class="evidence-badge etype">Policy</span></div>The G7 Cybersecurity Working Group called on public- and private-sector decision-makers to begin or accelerate PQC transition, describing the transition as a critical security issue requiring collective and coordinated action. This is coordinated policy guidance and <strong>not a binding migration deadline</strong>. <a href="https://cyber.gouv.fr/en/publications/jointly-led-international-publications/preparing-for-the-post-quantum-era-a-call-to-action/" rel="noopener" target="_blank">G7 / ANSSI ↗</a></td><td><span class="bind soft">Coordinated policy · not binding</span></td></tr><tr><td class="yr">2026 / 30 / 35</td><td>🇪🇺 EU — EC / NIS Cooperation Group</td><td>The coordinated implementation roadmap sets common target horizons for Member States, including early national planning, high-risk systems by around 2030 and broader transition by 2035. It is a coordinated roadmap, not a directly self-executing EU-wide ban. <strong>Sep 2026 update:</strong> after 97 consultation submissions, the NIS Cooperation Group published feedback and an FAQ clarifying quantum-risk estimation, milestones, prioritisation, hybrid schemes, the EU role and national roadmaps. <a href="https://digital-strategy.ec.europa.eu/en/library/coordinated-implementation-roadmap-transition-post-quantum-cryptography" rel="noopener" target="_blank">roadmap ↗</a> <a href="https://digital-strategy.ec.europa.eu/en/library/eu-roadmap-post-quantum-cryptography-survey-feedback" rel="noopener" target="_blank">survey feedback / FAQ ↗</a></td><td><span class="bind soft">Coordinated roadmap</span></td></tr>
 <tr><td class="yr">Now</td><td>🇩🇪 Germany — BSI</td><td>BSI treats preparation for the quantum threat as part of cybersecurity risk management and recommends transition planning to quantum-safe cryptography. A single universal German 2030/2032 legal deadline could not be substantiated from the cited BSI page, so this tracker does not present one. <a href="https://www.bsi.bund.de/SharedDocs/Downloads/EN/BSI/Crypto/PQC-joint-statement-2025.pdf?__blob=publicationFile&amp;v=3" rel="noopener" target="_blank">BSI joint statement ↗</a></td><td><span class="bind soft">Guidance</span></td></tr>
 <tr><td class="yr">2028 / 31 / 35</td><td>🇬🇧 UK — NCSC</td><td>3-phase: discovery by 2028, high-priority migration by 2031, complete by 2035. <a href="https://www.ncsc.gov.uk/news/pqc-migration-roadmap-unveiled" rel="noopener" target="_blank">NCSC ↗</a></td><td><span class="bind soft">Guidance</span></td></tr>
 <tr><td class="yr">2026 / 31 / 35</td><td>🇨🇦 Canada — Cyber Centre</td><td>ITSM.40.001: migration plans by Apr 2026, high-priority by 2031, all by 2035. <a href="https://www.cyber.gc.ca/en/guidance/roadmap-migration-post-quantum-cryptography-government-canada-itsm40001" rel="noopener" target="_blank">ITSM.40.001 ↗</a></td><td><span class="bind soft">Guidance</span></td></tr>
 </tbody>
-</table></div>
+</table></div><div class="attrib" style="margin-top:22px"><div class="attrib-h">Government capability &amp; deployment signals — not mandates</div><div class="evidence-badges"><span class="evidence-badge prov-verified">Verified</span><span class="evidence-badge etype">Deployment signal / quantum communications</span></div><p><strong>India C-DOT · 31 Aug 2026.</strong> C-DOT, the telecom R&amp;D centre of India's Department of Telecommunications, unveiled 14 indigenous quantum-security products spanning QKD and PQC. This is evidence of government-backed capability and deployment readiness, <strong>not</strong> a regulatory requirement or migration deadline.</p><div class="evidence-links"><span class="ev-label">Primary source</span><a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2305167&amp;lang=1&amp;reg=48" rel="noopener" target="_blank">Government of India · PIB</a></div></div>
 <p class="note" style="margin-top:14px"><strong>Singapore focus:</strong> MAS has not set a universal 2030/2035 disallowance date comparable to some overseas government-security policies. Its 2024 advisory emphasises cryptographic inventory, prioritisation and crypto-agility. For a Singapore organisation with overseas operations or government contracts, the planning date should be the earliest <em>applicable</em> requirement in scope — not every date in this table. The distinction between law, executive order, security policy, draft plan and guidance is deliberate.</p>
 </div>
 </section>
@@ -2260,7 +2230,7 @@
 <div class="kicker">Decision signals · what would change the assessment</div>
 <h2>What would change our assessment?</h2>
 <p class="sub">The quantum threat timeline is not fixed. This section separates evidence that would change the <strong>technical convergence estimate</strong> from evidence that changes the <strong>migration picture</strong>, and from developments that are merely worth watching. The purpose is not to react to every quantum-computing headline, but to preserve reader focus on evidence that should change assumptions or action.</p>
-<div class="triage-summary"><div class="triage-lane move"><div class="th">A · Moves the needle</div><p>Only evidence that changes the quantum-capability trajectory, attack-resource trajectory or the resulting technical convergence estimate.</p></div><div class="triage-lane monitor"><div class="th">B / C · Migration change or keep watch</div><p>Important migration changes remain prominent; credible non-decisive signals are compressed. Lower-value items stay internal and are not published.</p></div></div>
+<div class="triage-summary"><div class="triage-lane move"><div class="th">A · Moves the needle</div><p>Only evidence that changes the quantum-computing capability trajectory, the estimated resources needed to break cryptography, or the resulting ~2033 convergence window.</p></div><div class="triage-lane monitor"><div class="th">B / C · Migration change or keep watch</div><p>Important migration changes remain prominent; credible non-decisive signals are compressed. Lower-value items stay internal and are not published.</p></div></div>
 <div class="cards2" style="margin:10px 0 22px">
 <div class="icard cool"><h4>Could change threat timing</h4><p>Hardware milestones, error-correction results and cryptanalytic resource estimates that materially alter what a CRQC would require.</p></div>
 <div class="icard warn"><h4>Could change migration urgency</h4><p>New regulation, standards, security advisories or evidence that increases the cost of waiting.</p></div>
@@ -2283,9 +2253,9 @@
 <div class="witem"><div class="wtag">Hardware</div><h4>Logical-qubit scaling and sustained error performance</h4><p>Watch for systems that combine larger logical-qubit counts with sustained logical error performance, useful circuit depth and credible paths to modular scaling.</p><div class="evidence-links"><span class="ev-label">Evidence</span><a href="https://www.nature.com/articles/s41586-024-08449-y" rel="noopener" target="_blank">Willow — Nature</a><a href="https://www.quantinuum.com/press-releases/quantinuum-announces-commercial-launch-of-new-helios-quantum-computer-that-offers-unprecedented-accuracy-to-enable-generative-quantum-ai-genqai" rel="noopener" target="_blank">Quantinuum Helios</a><a href="https://www.ibm.com/roadmaps/quantum/" rel="noopener" target="_blank">IBM roadmap</a></div></div>
 <div class="witem"><div class="wtag">Error correction</div><h4>High-rate codes on real systems</h4><p>qLDPC and other high-rate approaches may reduce fault-tolerance overhead under suitable architectures. Convincing system-level demonstrations would matter more than isolated theoretical ratios.</p><div class="evidence-links"><span class="ev-label">Evidence</span><a href="https://arxiv.org/abs/2603.28627" rel="noopener" target="_blank">Cain et al. 2026</a><a href="https://newsroom.ibm.com/2025-06-10-IBM-Sets-the-Course-to-Build-Worlds-First-Large-Scale%2C-Fault-Tolerant-Quantum-Computer-at-New-IBM-Quantum-Data-Center" rel="noopener" target="_blank">IBM fault-tolerance roadmap</a></div></div>
 <div class="witem"><div class="evidence-badges"><span class="evidence-badge prov-verified">Verified</span><span class="evidence-badge etype">Standard / deployment signal</span></div><div class="wtag">Trusted hardware · 24 Aug 2026</div><h4>TCG defines a baseline for PQC-ready TPMs</h4><p>The Trusted Computing Group states that conformance to PC Client Platform TPM Profile 1.07 is the minimum baseline for a PQC-ready TPM and distinguishes fully PQC-ready devices from TPMs that are securely PQC-upgradeable. PTP 1.07 incorporates post-quantum requirements from the TPM 2.0 Library specification, including ML-KEM and ML-DSA support. This is a standards and deployment-readiness signal: it shows that PQC migration is reaching device identity, attestation and hardware roots of trust, but it does not change CRQC timing.</p><div class="evidence-links"><span class="ev-label">Primary sources</span><a href="https://trustedcomputinggroup.org/is-your-tpm-truly-pqc-ready/" rel="noopener" target="_blank">TCG · PQC-ready TPM guidance</a><a href="https://trustedcomputinggroup.org/resource/pc-client-platform-tpm-profile-ptp-specification/" rel="noopener" target="_blank">TCG · PTP 1.07 specification</a></div></div>
-<div class="witem"><div class="evidence-badges"><span class="evidence-badge prov-verified">Verified</span><span class="evidence-badge etype">Standard / migration execution</span></div><div class="wtag">IETF standard · Aug 2026</div><h4>RFC 10024 standardises hybrid ML-KEM key agreement for TLS 1.3</h4><p>IETF RFC 10024 defines three post-quantum/traditional hybrid TLS 1.3 key-agreement groups: X25519MLKEM768, SecP256r1MLKEM768 and SecP384r1MLKEM1024. This is an Internet Standards Track Proposed Standard and provides interoperable code points for combining ML-KEM with ECDHE. It strengthens migration execution by moving PQC from algorithm standards into deployable internet protocols, but it does not change CRQC timing or the core threat assessment.</p><div class="evidence-links"><span class="ev-label">Primary standard</span><a href="https://www.rfc-editor.org/rfc/rfc10024.html" rel="noopener" target="_blank">IETF / RFC Editor · RFC 10024</a></div></div>
-<div class="witem"><div class="wtag">Policy</div><h4>New migration requirements and implementation milestones</h4><p>Changes in laws, executive orders, security policies, government guidance, procurement rules or sector requirements can alter migration urgency even without a hardware breakthrough.</p><div class="evidence-links"><span class="ev-label">Evidence</span><a href="https://www.whitehouse.gov/presidential-actions/2026/06/securing-the-nation-against-advanced-cryptographic-attacks/" rel="noopener" target="_blank">EO 14412</a><a href="https://www.csa.gov.sg/resources/publications/quantum-safe-handbook-and-quantum-readiness-index/" rel="noopener" target="_blank">CSA Handbook/QRI V1</a></div></div>
-<div class="witem"><div class="wtag">Research thread</div><h4>Implementation vulnerabilities after standardisation</h4><p>A related research stream examines the gap between standardized PQC and safe deployment: validation, arithmetic and parameter handling, secret lifecycle, protocol integration, configuration and assurance boundaries.</p><div class="evidence-links"><span class="ev-label">Evidence</span><a href="https://www.nccoe.nist.gov/applied-cryptography/migration-to-pqc" rel="noopener" target="_blank">NIST migration project</a><a href="https://csrc.nist.gov/pubs/cswp/39/upd1/considerations-for-achieving-crypto-agility/final" rel="noopener" target="_blank">NIST crypto agility</a></div></div>
+<div class="witem"><div class="evidence-badges"><span class="evidence-badge prov-verified">Verified</span><span class="evidence-badge etype">Standard / migration execution</span></div><div class="wtag">Standard / deployment gap</div><h4>Key establishment advances while post-quantum authentication remains a deployment gap</h4><p>RFC 10024 provides interoperable hybrid ML-KEM + ECDHE groups for TLS 1.3. The IAB notes that post-quantum authentication has not moved nearly as far and that specification work is no longer the only constraint, with production deployment affected by certificates, protocol limits, cryptographic modules, firmware and other operational dependencies.</p><div class="evidence-links"><span class="ev-label">Evidence</span><a href="https://www.rfc-editor.org/rfc/rfc10024.html" rel="noopener" target="_blank">RFC 10024</a><a href="https://www.ietf.org/blog/iab-pq-workshop-cfp/" rel="noopener" target="_blank">IAB · PQ authentication</a></div></div>
+<div class="witem"><div class="wtag">Policy</div><h4>New migration requirements and implementation milestones</h4><p>Changes in laws, executive orders, security policies, government guidance, procurement rules or sector requirements can alter migration urgency even without a hardware breakthrough. The G7 Cybersecurity Working Group’s 3 Sep 2026 call to action is a current example of coordinated policy pressure without a binding universal deadline.</p><div class="evidence-links"><span class="ev-label">Evidence</span><a href="https://www.whitehouse.gov/presidential-actions/2026/06/securing-the-nation-against-advanced-cryptographic-attacks/" rel="noopener" target="_blank">EO 14412</a><a href="https://www.csa.gov.sg/resources/publications/quantum-safe-handbook-and-quantum-readiness-index/" rel="noopener" target="_blank">CSA Handbook/QRI V1</a><a href="https://cyber.gouv.fr/en/publications/jointly-led-international-publications/preparing-for-the-post-quantum-era-a-call-to-action/" rel="noopener" target="_blank">G7 PQC call to action</a></div></div>
+<div class="witem"><div class="evidence-badges"><span class="evidence-badge prov-assessment">Assessment</span><span class="evidence-badge etype">Implementation risk</span></div><div class="wtag">Research thread</div><h4>Implementation vulnerabilities after standardisation</h4><p>A related research stream examines the gap between standardized PQC and safe deployment: validation, arithmetic and parameter handling, secret lifecycle, protocol integration, configuration and assurance boundaries. The IAB’s Aug 2026 observation independently reinforces the need to treat migration as an implementation and deployment problem rather than an algorithm-selection exercise alone; it does not validate any specific taxonomy.</p><div class="evidence-links"><span class="ev-label">Evidence</span><a href="https://www.nccoe.nist.gov/applied-cryptography/migration-to-pqc" rel="noopener" target="_blank">NIST migration project</a><a href="https://csrc.nist.gov/pubs/cswp/39/upd1/considerations-for-achieving-crypto-agility/final" rel="noopener" target="_blank">NIST crypto agility</a><a href="https://www.ietf.org/blog/iab-pq-workshop-cfp/" rel="noopener" target="_blank">IAB · PQ authentication</a></div></div>
 </div>
 </div>
 </section>
@@ -2314,9 +2284,9 @@
 <div class="kicker">Follow updates</div>
 <h2>Follow the Quantum Threat Timeline</h2>
 <p class="follow-lede"><strong>Know when the assessment changes.</strong> Receive occasional updates when significant developments in quantum computing, post-quantum cryptography, policy, standards or real-world deployment materially affect the timeline.</p>
-<form action="https://buttondown.com/api/emails/embed-subscribe/leovtdto" method="post" class="embeddable-buttondown-form">
+<form action="https://buttondown.com/api/emails/embed-subscribe/leovtdto" class="embeddable-buttondown-form" method="post">
 <label for="bd-email">Enter your email</label>
-<input type="email" name="email" id="bd-email" autocomplete="email" required/>
+<input autocomplete="email" id="bd-email" name="email" required="" type="email"/>
 <input type="submit" value="Subscribe"/>
 </form>
 <p class="follow-meta">No routine marketing · Confirmation-based subscription · Unsubscribe anytime · Email subscriptions are processed by <a href="https://buttondown.com/leovtdto" rel="noopener" target="_blank">Buttondown</a>.</p>
@@ -2364,7 +2334,6 @@
 <li><span class="stype sp-primary">Primary · peer-reviewed</span>Malcolm et al. — <em>Computing efficiently in QLDPC codes</em>, Nature Communications 17, 7286 (20 May 2026). Introduces SHYPS QLDPC codes and reports efficient logical Clifford operations plus circuit-level simulations supporting lower-overhead fault-tolerant computation under the study's assumptions. <a href="https://www.nature.com/articles/s41467-026-73061-9" rel="noopener" target="_blank">Nature Communications ↗</a></li>
 <li><span class="stype sp-primary">Primary</span>U.S. Department of the Treasury — <em>Treasury Announces the Quantum-Readiness Task Force</em> (24 Aug 2026), establishing a public-private financial-sector initiative with workstreams on PQC transition, third-party/vendor readiness, and digital-asset/emerging-technology risk. <a href="https://home.treasury.gov/news/press-releases/sb0615" rel="noopener" target="_blank">U.S. Treasury ↗</a></li>
 <li><span class="stype sp-primary">Primary</span>Trusted Computing Group — PQC-ready TPM guidance (24 Aug 2026) and PC Client Platform TPM Profile 1.07. TCG defines PTP 1.07 conformance as the baseline for a PQC-ready TPM and distinguishes securely PQC-upgradeable devices. <a href="https://trustedcomputinggroup.org/is-your-tpm-truly-pqc-ready/" rel="noopener" target="_blank">TCG guidance</a> · <a href="https://trustedcomputinggroup.org/resource/pc-client-platform-tpm-profile-ptp-specification/" rel="noopener" target="_blank">PTP 1.07 ↗</a></li>
-
 <li><span class="stype sp-primary">Primary · standards / cryptanalysis</span>NIST / Anthropic — HAWK candidate status update. Anthropic disclosed an improved attack on HAWK on 28 Jul 2026; NIST updated its Round-3 announcement on 29 Jul to record the HAWK team's withdrawal and states that HAWK will not be standardized or deployed through that process. NIST also states that the finding does not affect its finalized PQC standards such as ML-KEM and ML-DSA. <a href="https://www.nist.gov/pqc" rel="noopener" target="_blank">NIST PQC status ↗</a> · <a href="https://www.nist.gov/news-events/news/2026/05/nine-candidates-advance-third-round-additional-digital-signatures-pqc" rel="noopener" target="_blank">NIST Round-3 update ↗</a> · <a href="https://www.anthropic.com/research/discovering-cryptographic-weaknesses" rel="noopener" target="_blank">Anthropic technical disclosure ↗</a></li>
 <li><span class="stype sp-primary">Primary</span>Diraq — <em>The Case for Silicon</em> roadmap announcement (27 Aug 2026), targeting 150,000 physical / up to 1,000 logical qubits by 2029 and more than 2 million physical / more than 10,000 logical qubits by 2031. Treated as a vendor roadmap, not measured hardware evidence. <a href="https://www.diraq.com/newsdesk/diraq-sets-roadmap-for-utility-scale-quantum-computing-with-millions-of-qubits-on-a-single-silicon-chip" rel="noopener" target="_blank">Diraq ↗</a></li>
 <li><span class="stype sp-primary">Primary</span>IBM — completion of HRL Laboratories acquisition (26 Aug 2026), adding expertise including silicon-spin qubits, quantum sensing, cryogenics, control electronics, packaging and interconnect technologies. <a href="https://newsroom.ibm.com/2026-08-26-ibm-completes-acquisition-of-hrl-laboratories-to-accelerate-the-future-of-quantum" rel="noopener" target="_blank">IBM Newsroom ↗</a></li>
@@ -2374,7 +2343,7 @@
 <li><span class="stype sp-primary">Primary · vendor demonstration</span>StarkWare — <em>The first quantum-safe Bitcoin transaction has been mined</em> (26 Aug 2026), reporting a Bitcoin-mainnet transaction using Avihu Levy's Quantum-Safe Bitcoin method without changing Bitcoin consensus rules. Retained as a deployment experiment, not as evidence of protocol-wide Bitcoin PQC adoption or independent ecosystem validation. <a href="https://starkware.co/blog/the-first-quantum-safe-bitcoin-transaction-has-been-mined/" rel="noopener" target="_blank">StarkWare ↗</a></li>
 <li><span class="stype sp-primary">Primary · standard</span>IETF / RFC Editor — <em>RFC 10024: Post-Quantum Traditional (PQ/T) Hybrid Key Agreement Mechanisms for TLS 1.3</em> (Aug 2026). Defines X25519MLKEM768, SecP256r1MLKEM768 and SecP384r1MLKEM1024 as hybrid ML-KEM + ECDHE TLS 1.3 groups. <a href="https://www.rfc-editor.org/rfc/rfc10024.html" rel="noopener" target="_blank">RFC 10024 ↗</a></li>
 <li><span class="stype sp-primary">Primary · Singapore government</span>Cyber Security Agency of Singapore / GovTech — <em>Quantum-Safe Market Readiness and Capability</em> (26 Aug 2026). RFI covering products, platforms, consulting and system-integration services supporting CII owners and government agencies preparing for quantum-safe migration milestones; responses close 27 Nov 2026. <a href="https://www.csa.gov.sg/resources/quantum-safe-market-readiness-and-capability/" rel="noopener" target="_blank">CSA ↗</a></li>
-</ol>
+<li><span class="stype sp-primary">Primary · hardware</span>IBM — <em>IBM Quantum Nighthawk r2—more circuits, faster</em> (31 Aug 2026), reporting 120 programmable qubits, more than 100,000 circuit executions/s and accurate observable estimation on 7,500+ gate circuits. <a href="https://www.ibm.com/quantum/blog/nighthawk-r2" rel="noopener" target="_blank">IBM Quantum ↗</a></li><li><span class="stype sp-primary">Primary · standard / deployment</span>IETF / IAB — <em>Post-Quantum Authentication: Up Next</em> (27 Aug 2026), documenting that PQ key establishment has moved into deployment while PQ authentication lags and specification work is no longer the only deployment constraint. <a href="https://www.ietf.org/blog/iab-pq-workshop-cfp/" rel="noopener" target="_blank">IETF / IAB ↗</a></li><li><span class="stype sp-primary">Primary · policy</span>G7 Cybersecurity Working Group / ANSSI — <em>Preparing for the Post-Quantum Era: A Call to Action</em> (3 Sep 2026), coordinated policy guidance urging public and private organisations to act on PQC transition. <a href="https://cyber.gouv.fr/en/publications/jointly-led-international-publications/preparing-for-the-post-quantum-era-a-call-to-action/" rel="noopener" target="_blank">ANSSI / G7 ↗</a></li><li><span class="stype sp-primary">Primary · policy</span>European Commission / NIS Cooperation Group — <em>EU Roadmap on Post-Quantum Cryptography - Survey feedback</em> (2 Sep 2026), reporting 97 submissions and a new FAQ clarifying risk estimation, milestones, prioritisation, hybrid schemes, EU role and national roadmaps. <a href="https://digital-strategy.ec.europa.eu/en/library/eu-roadmap-post-quantum-cryptography-survey-feedback" rel="noopener" target="_blank">European Commission ↗</a></li><li><span class="stype sp-primary">Primary · government / deployment</span>Government of India, Ministry of Communications — C-DOT announcement of 14 indigenous quantum-security products spanning QKD and PQC (31 Aug 2026). <a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2305167&amp;lang=1&amp;reg=48" rel="noopener" target="_blank">PIB India ↗</a></li></ol>
 <p class="note" style="margin-top:22px"><strong>Integrity note:</strong> the GRI survey is opinion evidence, not a measured forecast. Hardware demonstrations, resource estimates and policy deadlines are kept as separate evidence types. Where this page discusses likely reasons expert sentiment moved, that interpretation is not treated as proof of causation. The 2025 edition had 26 respondents, so its 28–49% range should always be read with sample-size and binning caveats.</p>
 </div>
 </section>
@@ -2392,6 +2361,6 @@
 </div>
 </div>
 </footer>
-<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "8f34a81aa8034ac9bd91740ff2d3ffa5"}'></script><!-- End Cloudflare Web Analytics -->
+<!-- Cloudflare Web Analytics --><script data-cf-beacon='{"token": "8f34a81aa8034ac9bd91740ff2d3ffa5"}' src="https://static.cloudflareinsights.com/beacon.min.js" type="module"></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
