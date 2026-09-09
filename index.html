@@ -927,9 +927,9 @@
 
   /* convergence row */
   /* convergence stage — SVG arrows behind, three text columns above */
-  .ql-stage{position:relative;margin:38px 0 8px;min-height:340px}
+  .ql-stage{position:relative;margin:38px 0 8px;min-height:540px}
   .ql-arrows{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
-  .ql-conv{position:relative;z-index:1;display:grid;grid-template-columns:1fr auto 1fr;gap:24px;align-items:center;min-height:340px}
+  .ql-conv{position:relative;z-index:1;display:grid;grid-template-columns:1fr auto 1fr;gap:24px;align-items:center;min-height:540px}
   .ql-traj h3{font-size:15px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;margin:0 0 4px}
   .ql-traj p{font-size:14px;color:var(--l-soft);margin:0 0 14px;line-height:1.5}
   .ql-traj .win{font-size:clamp(26px,3.4vw,40px);font-weight:800;letter-spacing:-.01em;line-height:1;margin:0}
@@ -937,6 +937,48 @@
   .ql-traj.up h3{color:var(--l-teal)} .ql-traj.up .win{color:var(--l-teal)}
   .ql-traj.down{text-align:right} .ql-traj.down h3{color:var(--l-amber)} .ql-traj.down .win{color:var(--l-amber)}
   .ql-traj.down .winlbl{margin-left:auto}
+
+  /* reviewer-strengthened convergence method: capability gives WHEN; attack studies give WHAT */
+  .ql-capabilities,.ql-thresholds{display:grid;grid-template-columns:1fr;gap:6px;margin:9px 0 2px}
+  .ql-capabilities{justify-items:start}
+  .ql-thresholds{justify-items:end}
+  .ql-capability,.ql-threshold{width:min(100%,310px);padding:7px 10px;border-radius:9px;text-align:left}
+  .ql-capability{background:rgba(34,211,197,.065);border:1px solid rgba(34,211,197,.23)}
+  .ql-threshold{background:rgba(240,166,58,.07);border:1px solid rgba(240,166,58,.24)}
+  .ql-capability .tk,.ql-threshold .tk{display:block;font-size:9.4px;font-weight:850;letter-spacing:.05em;text-transform:uppercase;margin-bottom:2px}
+  .ql-capability .tk{color:#8ee8df}.ql-threshold .tk{color:#ffc178}
+  .ql-capability strong,.ql-threshold strong{display:block;font-size:12.4px;line-height:1.24;color:#fff}
+  .ql-capability small,.ql-threshold small{display:block;font-size:10px;line-height:1.3;color:var(--l-soft);margin-top:2px}
+  .ql-capability a,.ql-threshold a{display:inline-block;margin-top:3px;font-size:9.4px;font-weight:800;text-decoration:none}
+  .ql-capability a{color:#8ee8df;border-bottom:1px solid rgba(142,232,223,.4)}
+  .ql-threshold a{color:#ffc178;border-bottom:1px solid rgba(255,193,120,.4)}
+  .ql-measured{width:min(100%,310px);margin-top:7px;padding:7px 9px;border-radius:8px;background:rgba(57,199,224,.045);border:1px dashed rgba(57,199,224,.28);font-size:9.8px;line-height:1.35;color:var(--l-soft)}
+  .ql-measured b{color:#a8ebf4}.ql-measured a{color:#8edfff;text-decoration:none;border-bottom:1px solid rgba(142,223,255,.4);font-weight:800}
+  .ql-method{position:relative;z-index:2;display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:10px;align-items:stretch;margin:20px auto 0;max-width:980px;padding:16px;border:1px solid var(--l-line);border-radius:14px;background:rgba(255,255,255,.035)}
+  .ql-method-label{grid-column:1/-1;font-size:10px;font-weight:900;letter-spacing:.11em;text-transform:uppercase;color:var(--l-violet);margin-bottom:1px}
+  .ql-method-step{display:grid;grid-template-columns:27px 1fr;gap:8px;align-items:start;min-width:0}
+  .ql-method-step>span{width:25px;height:25px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(34,211,197,.13);border:1px solid rgba(34,211,197,.3);font-size:11px;font-weight:900;color:#79f1e5}
+  .ql-method-step.result>span{background:rgba(139,124,240,.14);border-color:rgba(139,124,240,.34);color:#d5cbff}
+  .ql-method-step b{display:block;font-size:12px;color:#fff;margin-bottom:3px}
+  .ql-method-step p{font-size:10.8px;line-height:1.4;color:var(--l-soft);margin:0}
+  .ql-method-op{align-self:center;font-size:19px;font-weight:900;color:var(--l-faint)}
+  .ql-tech-formulation{position:relative;z-index:2;max-width:950px;margin:11px auto 0;text-align:center}
+  .ql-tech-formulation summary{cursor:pointer;display:inline-block;font-size:10.8px;font-weight:800;color:var(--l-faint);border-bottom:1px dotted rgba(151,165,187,.55)}
+  .ql-tech-body{margin-top:11px!important;padding:14px 16px;border:1px solid rgba(151,165,187,.18);border-radius:12px;background:rgba(255,255,255,.025);text-align:left;font-size:10.8px;line-height:1.48;color:var(--l-faint)}
+  .ql-tech-defs{display:grid;gap:8px;margin:0!important}
+  .ql-tech-def{display:grid;grid-template-columns:58px 1fr;gap:10px;align-items:start;margin:0!important;padding:8px 10px;border-radius:8px;background:rgba(255,255,255,.025)}
+  .ql-tech-symbol{font-weight:900;color:#dbe7f1;white-space:nowrap}
+  .ql-tech-copy{color:var(--l-faint)}
+  .ql-tech-rule{margin:10px 0 0!important;padding-top:10px;border-top:1px solid rgba(151,165,187,.16);text-align:center}
+  .ql-tech-rule strong{color:var(--l-soft)}
+  .ql-tech-formulation strong{color:var(--l-soft)}
+  @media(max-width:620px){.ql-tech-def{grid-template-columns:1fr;gap:3px}.ql-tech-body{padding:12px}.ql-tech-rule{text-align:left}}
+  @media(max-width:820px){
+    .ql-method{grid-template-columns:1fr;gap:9px}
+    .ql-method-op{display:none}
+    .ql-capabilities,.ql-thresholds{justify-items:stretch}
+    .ql-capability,.ql-threshold,.ql-measured{width:100%}
+  }
 
   /* logo row — real <img> if present, styled colored wordmark fallback via ::after on the link */
   .ql-brands{display:flex;gap:18px;align-items:center;margin-top:18px;flex-wrap:wrap}
@@ -1266,7 +1308,7 @@
 <div class="ql-head">
 <span class="ql-pill"><span class="dot"></span>Why ~2033?</span>
 <h2>When could the cryptographic <em>breakthrough</em> happen?</h2>
-<p class="ql-lede">A cryptographically relevant quantum computer would break the RSA and elliptic-curve cryptography protecting almost everything online. Here is where the evidence points — read as the overlap of two independent trajectories, not a prediction.</p>
+<p class="ql-lede">A cryptographically relevant quantum computer becomes a practical threat only when available quantum-computing capability can satisfy the resources required by a quantum attack. Attack studies define <strong>what machine is required</strong>; hardware evidence maps <strong>when comparable capability might exist</strong>. The ~2033 date is the output of comparing those two evidence streams — not a date taken from either one.</p>
 <div class="ql-assess">
 <span><span class="mk"></span>Assessment</span>
 <span><span class="mk"></span>Technical synthesis</span>
@@ -1306,10 +1348,17 @@
 </svg>
 <div class="ql-conv">
 <div class="ql-traj up">
-<h3>Quantum computing capability ↑</h3>
-<p>Quantum-computing hardware and fault-tolerant capability are advancing.</p>
+<h3>When could sufficient quantum capability exist?</h3>
+<p>Roadmaps and measured progress provide the calendar side of the comparison.</p>
 <p class="win">~2028–2033</p>
-<p class="winlbl">Vendor target window for large-scale, fault-tolerant quantum computing.</p>
+<p class="winlbl">Vendor target window for increasingly large fault-tolerant systems.</p>
+<div class="ql-capabilities">
+<div class="ql-capability"><span class="tk">QuEra · 2028–29</span><strong>256 logical → 1,000+ logical qubits</strong><small>Roadmap progression across Libra and the following generation.</small><a href="https://www.quera.com/our-quantum-roadmap" rel="noopener" target="_blank">QuEra roadmap ↗</a></div>
+<div class="ql-capability"><span class="tk">IBM · 2029</span><strong>200 qubits · 100M gates</strong><small>Starling fault-tolerant system target.</small><a href="https://www.ibm.com/roadmaps/quantum/2030/" rel="noopener" target="_blank">IBM roadmap ↗</a></div>
+<div class="ql-capability"><span class="tk">Quantinuum · by 2030</span><strong>Hundreds of logical qubits</strong><small>Universal FTQC target with millions of operations.</small><a href="https://www.quantinuum.com/press-releases/quantinuum-unveils-accelerated-roadmap-to-achieve-universal-fault-tolerant-quantum-computing-by-2030" rel="noopener" target="_blank">Quantinuum source ↗</a></div>
+<div class="ql-capability"><span class="tk">IBM · 2033+</span><strong>Up to 2,000 qubits · 1B gates</strong><small>Blue Jay large-scale fault-tolerant target.</small><a href="https://www.ibm.com/roadmaps/quantum/2030/" rel="noopener" target="_blank">IBM roadmap ↗</a></div>
+</div>
+<div class="ql-measured"><b>Measured progress, not FTQC:</b> IBM Nighthawk r2 reports 120 programmable qubits and accurate observable estimation on 7,500+ gate circuits. <a href="https://www.ibm.com/quantum/blog/nighthawk-r2" rel="noopener" target="_blank">IBM source ↗</a></div>
 <div class="ql-brands">
 <span class="ql-logo"><img alt="IBM" src="logos/ibm.svg"/><span class="wm wm-ibm">IBM</span></span>
 <span class="ql-logo"><img alt="Quantinuum" src="logos/quantinuum.svg"/><span class="wm wm-quantinuum">Quantinuum</span></span>
@@ -1321,10 +1370,14 @@
 <div class="cap">Estimated<br/>cryptographic<br/>risk window</div>
 </div>
 <div class="ql-traj down">
-<h3>Resources needed to break cryptography ↓</h3>
-<p>Published research is reducing estimated resources needed for quantum cryptanalysis.</p>
-<p class="win">~2030–2033</p>
-<p class="winlbl">Estimated window when published attack-resource requirements could become reachable.</p>
+<h3>What would a cryptographic attack require?</h3>
+<p>Published research estimates the machine requirements; these are thresholds, not dates.</p>
+<div class="ql-thresholds">
+<div class="ql-threshold"><span class="tk">ECC-256 · Babbush et al. 2026</span><strong>≤1,200 logical qubits</strong><small>≤90M Toffoli gates</small><a href="https://research.google/pubs/securing-elliptic-curve-cryptocurrencies-against-quantum-vulnerabilities-resource-estimates-and-mitigations-2/" rel="noopener" target="_blank">Google / PRX Quantum ↗</a></div>
+<div class="ql-threshold"><span class="tk">ECC-256 · Luo et al. 2026</span><strong>835 logical qubits</strong><small>Space-efficient construction with a different gate-count trade-off.</small><a href="https://arxiv.org/abs/2607.13816" rel="noopener" target="_blank">Luo et al. preprint ↗</a></div>
+<div class="ql-threshold"><span class="tk">secp256k1 · IonQ 2026</span><strong>1,457 logical · 19,397 physical qubits</strong><small>~39M logical Toffoli operations · 25.7-day modeled runtime.</small><a href="https://cdn.prod.website-files.com/68836d4838193cb461ebc7d2/6a9f3d3ada3cb06dec2ac20e_IonQ%20Fully%20Compiled%20End-to-End%20Resource%20Estimate%20for%20Breaking%20256-Bit%20Elliptic-Curve%20Signatures.pdf" rel="noopener" target="_blank">IonQ technical paper ↗</a></div>
+<div class="ql-threshold"><span class="tk">RSA-2048 · Gidney 2025</span><strong>&lt;1M noisy physical qubits</strong><small>&lt;1 week · under the paper's stated assumptions.</small><a href="https://arxiv.org/abs/2505.15917" rel="noopener" target="_blank">Gidney preprint ↗</a></div>
+</div>
 <div class="ql-brands">
 <span class="ql-logo"><img alt="Google" src="logos/google.svg"/><span class="wm wm-google">Google</span></span>
 <span class="ql-logo"><img alt="Oratomic" src="logos/oratomic.svg"/><span class="wm wm-oratomic">Oratomic</span></span>
@@ -1334,12 +1387,21 @@
 </div>
 </div>
 </div>
-<p class="ql-conv-note">Neither trajectory proves a cryptographically relevant quantum computer exists today. The ~2033 window is an assessment of where current quantum-computing capability targets and published cryptanalytic resource estimates overlap — not “Q-Day” and not a prediction.</p>
+<p class="ql-conv-note"><strong>Attack studies tell us WHAT is required.</strong> Quantum-computing evidence helps estimate <strong>WHEN</strong> comparable capability may exist. The ~2033 window is derived from comparing the two.</p>
+<div class="ql-method" aria-label="How the estimate is derived">
+<div class="ql-method-label">How the estimate is derived</div>
+<div class="ql-method-step"><span>1</span><div><b>What machine is needed?</b><p>Attack studies estimate qubits, operations, runtime, error assumptions and architecture.</p></div></div>
+<div class="ql-method-op">→</div>
+<div class="ql-method-step"><span>2</span><div><b>When might comparable capability exist?</b><p>Roadmaps and measured progress provide the calendar mapping for increasingly capable fault-tolerant systems.</p></div></div>
+<div class="ql-method-op">→</div>
+<div class="ql-method-step result"><span>3</span><div><b>Where do the two become comparable?</b><p>The overlap gives the estimated cryptographic risk window: ~2033.</p></div></div>
+</div>
+<details class="ql-tech-formulation"><summary>Technical Formulation</summary><div class="ql-tech-body"><div class="ql-tech-defs"><div class="ql-tech-def"><div class="ql-tech-symbol">C(t)</div><div class="ql-tech-copy"><strong>Quantum-computing capability at time t.</strong> The capability plausibly available at calendar time <em>t</em>, including logical/physical qubits, executable operations, fidelity, runtime and architectural constraints.</div></div><div class="ql-tech-def"><div class="ql-tech-symbol">R<sub>k</sub></div><div class="ql-tech-copy"><strong>Resources required to attack cryptosystem k.</strong> The qubits, operations, runtime, error assumptions and architecture specified by the relevant attack study.</div></div><div class="ql-tech-def"><div class="ql-tech-symbol">t*</div><div class="ql-tech-copy"><strong>Earliest plausible convergence time.</strong> The earliest time when available quantum-computing capability could satisfy a compatible cryptanalytic resource requirement.</div></div></div><p class="ql-tech-rule"><strong>Formal rule:</strong> t* = inf { t : C(t) ≽ R<sub>k</sub> }.<br/>This is an architecture-aware, order-of-magnitude compatibility test. A vendor's generic gate budget is <strong>not</strong> treated as directly interchangeable with an attack paper's Toffoli count.</p></div></details>
 <div class="ql-sec-h">The evidence behind the estimate</div>
 <div class="ql-ev">
 <div class="ql-card c1">
 <div class="no">01 · Hardware trajectory</div>
-<h4>Fault-tolerant capability is being targeted around 2028–2033.</h4>
+<h4>Capability evidence supplies the calendar mapping: when might comparable fault-tolerant scale exist?</h4>
 <div class="dir">Computing capability ↑</div>
 <div aria-label="Hardware organisations represented in this evidence stream" class="ql-card-brands">
 <div class="lbl">Organisations in this evidence stream</div>
@@ -1351,11 +1413,11 @@
 <div class="ql-row"><p class="r-h">IBM · <b>2033+</b></p><p class="r-b">"Blue Jay" goal: 2,000 logical qubits and 1 billion gates.</p><a class="ql-src" href="https://www.ibm.com/roadmaps/quantum/2033%2B/" rel="noopener" target="_blank">IBM roadmap</a></div>
 <div class="ql-row"><p class="r-h">Quantinuum · <b>by 2030</b></p><p class="r-b">Roadmap to universal, fully fault-tolerant computing with hundreds of logical qubits and millions of gates.</p><a class="ql-src" href="https://www.quantinuum.com/press-releases/quantinuum-unveils-accelerated-roadmap-to-achieve-universal-fault-tolerant-quantum-computing-by-2030" rel="noopener" target="_blank">Quantinuum source</a></div>
 <div class="ql-row"><p class="r-h">QuEra · <b>2028 / 2028–29</b></p><p class="r-b">Libra targets 256 logical / &gt;10,000 physical qubits in 2028; next generation targets 1,000+ logical / &gt;20,000 physical qubits.</p><a class="ql-src" href="https://www.quera.com/our-quantum-roadmap" rel="noopener" target="_blank">QuEra roadmap</a></div>
-<div class="ql-signal"><b>Signal</b> — large fault-tolerant systems are being planned for the turn of the decade.</div>
+<div class="ql-signal"><b>Role in the method</b> — these roadmaps provide the calendar-side capability evidence: when machines of increasing fault-tolerant scale might become available. They do not prove that any listed system can execute a cryptanalytic workload.</div>
 </div>
 <div class="ql-card c2">
 <div class="no">02 · Cryptanalytic resource estimates</div>
-<h4>The modeled machine an attack needs is getting smaller.</h4>
+<h4>Attack research supplies the requirement vector: what machine would a cryptanalytic workload need?</h4>
 <div class="dir">Resources needed ↓</div>
 <div aria-label="Research organisations represented in this evidence stream" class="ql-card-brands">
 <div class="lbl">Research organisations represented</div>
@@ -1369,7 +1431,7 @@
 <div class="ql-row"><p class="r-h">ECC-256 · Luo et al. 2026</p><p class="r-b">Space-efficient construction reduces logical width to 835 qubits, with a different gate-count trade-off.</p><a class="ql-src" href="https://arxiv.org/abs/2607.13816" rel="noopener" target="_blank">Luo et al. preprint</a></div>
 <div class="ql-row"><p class="r-h">P-256 · Cain et al. 2026</p><p class="r-b">Neutral-atom model: ~26,000 physical qubits for a few-day attack under the paper's assumptions (as few as 10,000 for larger runtimes).</p><a class="ql-src" href="https://arxiv.org/abs/2603.28627" rel="noopener" target="_blank">Cain et al. preprint</a></div>
 <div class="ql-row"><p class="r-h">secp256k1 · IonQ 2026</p><p class="r-b">Architecture-specific trapped-ion/qLDPC estimate: 19,397 physical qubits, 1,457 logical qubits and ~39 million logical Toffoli operations, with an estimated 25.7-day runtime per attempt. This is a resource estimate, not a demonstrated cryptanalytic attack.</p><a class="ql-src" href="https://www.ionq.com/news/ionq-publishes-worlds-first-fully-compiled-end-to-end-blueprint-for-breaking-256-bit-elliptic-curve-signatures" rel="noopener" target="_blank">IonQ announcement</a> <a class="ql-src" href="https://cdn.prod.website-files.com/68836d4838193cb461ebc7d2/6a9f3d3ada3cb06dec2ac20e_IonQ%20Fully%20Compiled%20End-to-End%20Resource%20Estimate%20for%20Breaking%20256-Bit%20Elliptic-Curve%20Signatures.pdf" rel="noopener" target="_blank">Technical paper</a></div>
-<div class="ql-signal"><b>Signal</b> — published ECC attack requirements are approaching the scale of early fault-tolerant hardware roadmaps.</div>
+<div class="ql-signal"><b>Role in the method</b> — these studies define the computational demand: what resources an attack would require. They do <strong>not</strong> independently establish a threat date; a date appears only after comparing those requirements with the capability that may be available at a given time.</div>
 </div>
 <div class="ql-card c3">
 <div class="no">03 · Independent probability calibration</div>
@@ -1474,11 +1536,11 @@
 <div class="decision-stack">
 <div class="decision-block a">
 <div class="decision-label"><span class="name">A · What moves the needle</span><span class="state">New resource-estimate evidence · ~2033 unchanged</span></div>
-<p><strong>Use this category only when new evidence would change the cryptographic-risk picture shown above.</strong> The test is simple: would we revise the quantum-computing capability trajectory, the estimated resources needed to break public-key cryptography, or the resulting ~2033 convergence window?</p>
+<p><strong>Use this category only when new evidence changes either side of the comparison or the point where they become compatible.</strong> Attack studies define what resources are required; hardware and fault-tolerance evidence estimate what capability may be available over time. The ~2033 assessment changes only when new evidence shifts the earliest plausible point where available capability could satisfy a compatible attack requirement.</p>
 <div class="needle-axes">
-<div class="needle-axis"><strong>Quantum computing capability ↑</strong><span>Measured hardware, logical-qubit or fault-tolerance evidence strong enough to change the expected quantum-computing capability trajectory.</span></div>
-<div class="needle-axis"><strong>Resources needed to break cryptography ↓</strong><span>Cryptanalytic or resource-estimate evidence strong enough to change the estimated resources needed to break deployed public-key cryptography.</span></div>
-<div class="needle-axis"><strong>~2033 estimated risk window</strong><span>If either side changes materially, reconsider the convergence window. New IonQ resource-estimate evidence on 8 Sep strengthens the falling-resource side, but does not by itself warrant moving the ~2033 assessment.</span></div>
+<div class="needle-axis"><strong>Quantum-computing capability ↑</strong><span>Measured hardware, logical-qubit, fidelity, executable-depth or fault-tolerance evidence that changes the capability plausibly available at a given time.</span></div>
+<div class="needle-axis"><strong>Attack-resource requirement ↓</strong><span>Cryptanalytic resource estimates that change the qubits, operations, runtime, error assumptions or architecture required for an attack.</span></div>
+<div class="needle-axis"><strong>Estimated convergence · ~2033</strong><span>Reassess only when the point where projected capability and attack requirements become compatible moves. The 8 Sep IonQ estimate strengthens the attack-resource evidence but does not, by itself, supply a calendar date.</span></div>
 </div>
 <div class="migration-grid" style="margin-top:16px">
 <div class="migration-item">
